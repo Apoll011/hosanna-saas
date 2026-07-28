@@ -174,7 +174,7 @@ export function StaffLines({ className }: { className?: string }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="1"
-          opacity={0.25}
+          opacity={0.7}
         />
       ))}
     </svg>
