@@ -155,6 +155,28 @@ Features:
 * [ ] Enhanced search filters.
 * [ ] Performance optimizations for very large libraries.
 
+###Auto-Transpose with Capo Suggestions
+* What: When a song is transposed, suggest the capo fret + easy open-chord shape (C, G, D, A, E / Am, Em, Bm, F#m) so guitarists avoid barre chords
+* Logic: capo fret = (target key − preferred shape key) mod 12; rank suggestions by lowest fret first, show 2–3 options
+* Fallback: if no clean shape match, show "no capo needed / barre chords" instead of nothing
+* UI: small dismissible tag near key selector (e.g. "Capo 3 → play in G"); don't force on non-guitarists
+* Nice-to-have: only surface to users tagged as guitar/ukulele (if instrument data exists per musician)
+* Nice-to-have: user preference toggle — "lowest capo" vs "easiest shape" (they sometimes conflict)
+* QA: test flat keys (Db, Gb, Ab) — these produce the trickiest/least intuitive suggestions
+* Effort: low — lookup table + modular math, no backend/data model changes, mostly frontend display; one sprint
+
+
+###In-App Pitch-Shifted MP3 Rehearsal
+* What: Let singers shift the pitch of a song's rehearsal MP3 to their own singing key, using the song's existing key data (like transpose.video, but auto-linked to your ChordPro key instead of a blind slider)
+* Core logic: reuse the transpose engine — shift semitones = target key − original key; apply to audio pitch-shift, not just chord display
+* MVP scope: pitch-shift only — skip speed control, looping, formant/vocal-reducer (Pro-tier complexity) for v1
+* UI: simple slider or key-picker next to the MP3 player, auto-prefilled with the calculated shift, adjustable manually
+* Fallback: if shift is extreme (many semitones), warn about audio quality degradation rather than silently producing a distorted result
+* Blocker to check first: confirm licensing rights to pitch-shift/redistribute the MP3s (separate legal question from chord chart licensing/CCLI)
+* Technical risk: real-time pitch shift without artifacts (chipmunk effect) needs a decent DSP library — don't underestimate as "just a slider"
+* Timing: phase 2, post-launch fast-follow — not a pre-launch blocker
+* Effort: medium-high — new audio processing capability, not a reuse of existing display logic like the capo feature
+
 
 -------------
 Autores podem reportar musicas no hosanna sem licensa e enviamos avisos a igreja
