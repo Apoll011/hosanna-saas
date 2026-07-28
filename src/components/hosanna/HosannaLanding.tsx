@@ -57,7 +57,7 @@ function useReveal() {
 /* ------------------------------------------------------------------ */
 function Logo({ className }: { className?: string }) {
   return (
-    <a href="#top" className={cn("flex items-center gap-2 font-display", className)}>
+    <a href="/#top" className={cn("flex items-center gap-2 font-display", className)}>
                <div
             className="
               w-14 h-14 rounded-[22px]
@@ -92,7 +92,7 @@ const NAV = [
   { label: "Perguntas Frequentes", href: "#faq" },
 ];
 
-function Nav() {
+export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -116,7 +116,7 @@ function Nav() {
           {NAV.map((n) => (
             <a
               key={n.href}
-              href={n.href}
+              href={`/${n.href}`}
               className={cn("text-sm font-medium  transition-colors ",
                 scrolled
           ? "text-foreground hover:text-foreground/80"
@@ -131,7 +131,7 @@ function Nav() {
             asChild
             className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
           >
-            <a href="#pricing">Experimentar Grátis</a>
+            <a href="/#pricing">Experimentar Grátis</a>
           </Button>
         </div>
         <button
@@ -148,7 +148,7 @@ function Nav() {
             {NAV.map((n) => (
               <a
                 key={n.href}
-                href={n.href}
+                href={`/${n.href}`}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
               >
@@ -159,7 +159,7 @@ function Nav() {
               asChild
               className="mt-2 rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
             >
-              <a href="#pricing" onClick={() => setOpen(false)}>Experimentar Grátis</a>
+              <a href="/#pricing" onClick={() => setOpen(false)}>Experimentar Grátis</a>
             </Button>
           </div>
         </div>
@@ -171,7 +171,7 @@ function Nav() {
 /* ------------------------------------------------------------------ */
 /*  Decorative staff lines                                            */
 /* ------------------------------------------------------------------ */
-function StaffLines({ className }: { className?: string }) {
+export function StaffLines({ className }: { className?: string }) {
   return (
     <svg
       aria-hidden
@@ -1033,7 +1033,7 @@ function FinalCTA() {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-border bg-background py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:px-8">
@@ -1044,8 +1044,7 @@ function Footer() {
           </p>
         </div>
         {[
-          { title: "Produto", links: [["Funcionalidades", "#features"], ["Como Funciona", "#how"], ["Preços", "#pricing"], ["Perguntas Frequentes", "#faq"]] },
-          { title: "Empresa", links: [["Sobre", "#"], ["Contacto", "mailto:ola@hosanna.app"], ["Blog", "#"]] },
+          { title: "Produto", links: [["Funcionalidades", "/#features"], ["Como Funciona", "/#how"], ["Preços", "/#pricing"], ["Perguntas Frequentes", "/#faq"]] },
           { title: "Suporte", links: [["Centro de Ajuda", "#"], ["Guia ChordPro", "#"], ["Estado do serviço", "#"]] },
         ].map((col) => (
           <div key={col.title}>
@@ -1070,9 +1069,8 @@ function Footer() {
       <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-border px-5 pt-6 text-xs text-muted-foreground md:flex-row md:px-8">
         <div>© {new Date().getFullYear()} Hosanna. Feito para equipas de louvor em todo o lado.</div>
         <div className="flex gap-5">
-          <a href="#" className="hover:text-foreground">Privacidade</a>
-          <a href="#" className="hover:text-foreground">Termos</a>
-          <a href="mailto:ola@hosanna.app" className="hover:text-foreground">ola@hosanna.app</a>
+          <a href="legal" className="hover:text-foreground">Documentos Legais</a>
+          <a href="mailto:hosanna.contact@gmail.com" className="hover:text-foreground">hosanna.contact@gmail.com</a>
         </div>
       </div>
     </footer>

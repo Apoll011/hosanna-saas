@@ -17,13 +17,10 @@ O serviço organiza-se por instâncias isoladas chamadas "Tenants" (Igrejas). A 
 **1.4. Direitos de Autor e Licenciamento CCLI**
 O Cliente reconhece que é o único responsável pelo conteúdo (letras, cifras, notas, ficheiros ChordPro) que introduz, armazena e reproduz na plataforma. É exigido que o Cliente possua as devidas licenças ativas, como a CCLI (Christian Copyright Licensing International), ou autorização expressa dos autores, para qualquer material protegido por direitos de autor. O Hosanna atua apenas como prestador de infraestrutura tecnológica.
 
-**1.5. Propriedade Intelectual do Hosanna**
-Todo o código-fonte, design, logótipos, arquitetura da base de dados (excluindo os dados inseridos pelos Clientes) e infraestrutura da App Mobile e Dashboard são propriedade exclusiva do Hosanna. O utilizador obtém apenas uma licença limitada, revogável, não exclusiva e intransferível para utilizar o software.
-
-**1.6. Alterações aos Termos**
+**1.5. Alterações aos Termos**
 Reservamo-nos o direito de modificar estes Termos a qualquer momento. Os Administradores serão notificados de alterações substanciais por e-mail ou através de um aviso no Dashboard com 30 dias de antecedência. O uso continuado após as alterações constitui aceitação dos novos termos.
 
-**1.7. Resolução de Litígios**
+**1.6. Resolução de Litígios**
 Estes Termos são regidos e interpretados de acordo com as leis de Portugal. Para a resolução de qualquer litígio emergente da interpretação ou execução destes Termos, será exclusivamente competente o Tribunal da Comarca de Lisboa, com renúncia expressa a qualquer outro.
 
 ---
