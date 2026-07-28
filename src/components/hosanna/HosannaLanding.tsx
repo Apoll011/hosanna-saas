@@ -28,7 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import dashboardImg from "@/assets/dashboard-preview.jpg";
 import mobileImg from "@/assets/mobile-preview.jpg";
-import logo from '@/assets/logo.png';
+import logo from '@/assets/hosanna_logo.png';
 
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal                                                     */
@@ -62,7 +62,7 @@ function Logo({ className }: { className?: string }) {
       className={cn("flex items-center", className)}
     >
       <img
-        src="src\assets\hosanna_logo.png"
+        src={logo}
         alt="Hosanna Studio"
         className="w-14 h-14 object-contain transition-transform hover:scale-105 hover:rotate-2"
       />
