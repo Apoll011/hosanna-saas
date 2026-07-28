@@ -185,3 +185,8 @@ Enviar emails. relatorios etc etc
 Adicionar no mobile alto contraste
 Login remove placholders and just leave the inputs empty
 Search on studio need to be fixed, if i click any where else it need to stop searching
+add Church info and logo, on the dashboard
+On the dash board folder view allow for draging folders and songs into another folder
+Fix settings ui and text on dashboard
+ON register dashboard dont accept password less than 6 char
+on dashboard put the tenat-slug on the url dashboard.url/tenant-url
