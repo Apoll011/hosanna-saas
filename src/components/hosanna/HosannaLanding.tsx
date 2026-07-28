@@ -58,26 +58,9 @@ function useReveal() {
 function Logo({ className }: { className?: string }) {
   return (
     <a href="/#top" className={cn("flex items-center gap-2 font-display", className)}>
-               <div
-            className="
-              w-14 h-14 rounded-[22px]
-              flex items-center justify-center
-              mb-4
-              border
-              transition-transform
-              hover:scale-105 hover:rotate-2
-            "
-            style={{
-              backgroundColor: "#EEF4FA",
-              borderColor: "#D3E5F8",
-            }}
-          >
-            <img
-              src={logo}
-              alt="Hosanna Studio"
-              className="w-14 h-14 object-contain"
-            />
-          </div>
+               <div>
+                <img src="src\assets\hosanna_logo.png" alt="Hosanna Logo" />
+               </div>
     </a>
   );
 }
