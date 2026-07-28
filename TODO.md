@@ -56,32 +56,22 @@
 
 ### First-Time Setup Wizard
 
-* [ ] Add an onboarding flow shown on first launch.
+* [x] Add an onboarding flow shown on first launch.
 
 The setup should allow users to connect to their church in multiple ways:
 
-* [ ] Scan a QR Code.
-* [ ] Paste an access token.
-* [ ] Manually enter the server URL.
+* [x] Scan a QR Code.
 * [ ] Automatically test the connection.
 * [ ] Display success/error feedback.
-* [ ] Save configuration locally.
-* [ ] Allow rerunning the setup later from Settings.
-
-Potential future QR payload:
-
-```text
-hosanna://connect
-Server URL
-Access Token
-Church Name
+* [x] Save configuration locally.
+* [x] Allow rerunning the setup later from Settings.
 ```
 
 ---
 
 ### UI Consistency
 
-* [ ] Unify the design of the **Songs** and **Services** pages.
+* [x] Unify the design of the **Songs** and **Services** pages.
 
 Current goal:
 
