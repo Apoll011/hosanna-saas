@@ -58,9 +58,23 @@ function useReveal() {
 function Logo({ className }: { className?: string }) {
   return (
     <a href="/#top" className={cn("flex items-center gap-2 font-display", className)}>
-               <div>
-                <img src="src\assets\hosanna_logo.png" alt="Hosanna Logo" />
-               </div>
+               <div
+            className="
+              w-14 h-14 rounded-[22px]
+              flex items-center justify-center
+              mb-4
+              border
+              transition-transform
+              hover:scale-105 hover:rotate-2
+            "
+            
+          >
+            <img
+              src="src\assets\hosanna-logo.png"
+              alt="Hosanna Studio"
+              className="w-14 h-14 object-contain"
+            />
+          </div>
     </a>
   );
 }
@@ -821,7 +835,7 @@ function Pricing() {
                 size="lg"
                 className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
               >
-                <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new?plan=base&payment=${annual ? 'yearly' : 'montly'}`}>
+                <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new?plan=base&payment==${annual ? 'yearly' : 'montly'}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
