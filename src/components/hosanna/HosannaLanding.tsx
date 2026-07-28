@@ -28,6 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import dashboardImg from "@/assets/dashboard-preview.jpg";
 import mobileImg from "@/assets/mobile-preview.jpg";
+import logo from '@/assets/logo.png';
 
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal                                                     */
@@ -57,14 +58,26 @@ function useReveal() {
 function Logo({ className }: { className?: string }) {
   return (
     <a href="#top" className={cn("flex items-center gap-2 font-display", className)}>
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-gold">
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 18V5l12-2v13" />
-          <circle cx="6" cy="18" r="3" />
-          <circle cx="18" cy="16" r="3" />
-        </svg>
-      </span>
-      <span className="text-xl font-semibold tracking-tight">Hosanna</span>
+               <div
+            className="
+              w-14 h-14 rounded-[22px]
+              flex items-center justify-center
+              mb-4
+              border
+              transition-transform
+              hover:scale-105 hover:rotate-2
+            "
+            style={{
+              backgroundColor: "#EEF4FA",
+              borderColor: "#D3E5F8",
+            }}
+          >
+            <img
+              src={logo}
+              alt="Hosanna Studio"
+              className="w-14 h-14 object-contain"
+            />
+          </div>
     </a>
   );
 }
@@ -93,7 +106,7 @@ function Nav() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border/60"
+          ? "bg-background/85 backdrop-blur-md"
           : "bg-transparent",
       )}
     >
@@ -104,7 +117,10 @@ function Nav() {
             <a
               key={n.href}
               href={n.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+              className={cn("text-sm font-medium  transition-colors ",
+                scrolled
+          ? "text-foreground hover:text-foreground/80"
+          : "text-gold-foreground/80 hover:text-gold-foreground")}
             >
               {n.label}
             </a>
@@ -189,7 +205,7 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-36 md:px-8 md:pb-32 md:pt-44">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold-gradient/60 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold-gradient">
             Planeamento de louvor, reinventado
           </span>
           <h1 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
@@ -202,7 +218,7 @@ function Hero() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
             O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a
             organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso
-            imediato às canções de que precisa — em vez de andarem a saltar entre pastas,
+            imediato às canções de que precisa. Em vez de andarem a saltar entre pastas,
             aplicações de mensagens e cifras impressas.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -307,8 +323,8 @@ function Problem() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader eyebrow="Porquê o Hosanna" title="Preparar um culto não devia parecer arqueologia.">
           Muitas igrejas dependem de uma mistura de cancioneiros em papel, pastas na cloud,
-          aplicações de mensagens e software demasiado complicado para preparar o louvor —
-          tornando difícil manter toda a gente na mesma versão de uma canção ou preparar um
+          aplicações de mensagens e software demasiado complicado para preparar o louvor.
+          Tornando difícil manter toda a gente na mesma versão de uma canção ou preparar um
           culto com rapidez.
         </SectionHeader>
         <div className="reveal mt-14 grid gap-6 md:grid-cols-3">
@@ -544,7 +560,7 @@ function HowItWorks() {
               key={s.n}
               className="reveal rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-7 backdrop-blur-sm transition-all hover:-translate-y-1"
             >
-              <div className="font-display text-4xl text-gold">{s.n}</div>
+              <div className="font-display text-4xl text-gold-gradient">{s.n}</div>
               <h3 className="mt-3 font-display text-xl font-semibold text-primary-foreground">
                 {s.title}
               </h3>
@@ -762,8 +778,8 @@ function Pricing() {
           >
             <span
               className={cn(
-                "absolute top-1 h-5 w-5 rounded-full bg-gold transition-transform",
-                annual ? "translate-x-8" : "translate-x-1",
+                "absolute top-1 h-5 w-5 rounded-full transition-transform",
+                annual ? "translate-x-1 bg-white/80" : "-translate-x-5 bg-gold",
               )}
             />
           </button>
@@ -881,12 +897,24 @@ function Vision() {
 /*  FAQ                                                               */
 /* ------------------------------------------------------------------ */
 const ROADMAP = [
-  "Ferramentas de edição de canções mais poderosas",
-  "Fluxos de importação mais inteligentes",
+  "Editor de cultos completamente renovado e mais intuitivo",
+  "Exportação profissional em PDF para canções, cultos e pastas",
+  "Assistente de configuração inicial com QR Code, token ou URL",
+  "Experiência unificada entre as páginas de Canções e Cultos",
   "Versículos bíblicos integrados no planeamento de cultos",
-  "Geração de PDF a partir do painel",
-  "Melhorias contínuas na sincronização e edição offline",
-  "Planos acessíveis para igrejas de qualquer tamanho",
+  "Modelos de cultos reutilizáveis e duplicação de serviços",
+  "Editor de canções com uma experiência ChordPro melhorada",
+  "Importação inteligente com deteção automática de duplicados",
+  "Operações em massa para gerir grandes bibliotecas musicais",
+  "Sincronização offline mais rápida e resolução de conflitos",
+  "Sincronização em segundo plano na aplicação móvel",
+  "Personalização da identidade visual de cada igreja",
+  "Registo simplificado de igrejas e gestão de organizações",
+  "Subscrições acessíveis por igreja, e não por utilizador",
+  "Estatísticas de utilização e histórico de cultos",
+  "Melhor acessibilidade, animações e atalhos de teclado",
+  "Pesquisa avançada e filtros inteligentes",
+  "Otimizações de desempenho para bibliotecas de grande dimensão",
 ];
 
 function Roadmap() {
