@@ -4,7 +4,7 @@ import { HosannaLanding } from "@/components/hosanna/HosannaLanding";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hosanna — Planeia o teu louvor. Organiza a tua música." },
+      { title: "Hosanna - Planeia o teu louvor. Organiza a tua música." },
       {
         name: "description",
         content:

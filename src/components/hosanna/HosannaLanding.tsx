@@ -335,7 +335,7 @@ function Problem() {
             },
             {
               title: "Um plano partilhado",
-              body: "Prepara cultos com antecedência e dá a cada músico as mesmas canções, na mesma ordem.",
+              body: "Prepara cultos com antecedência e partilha a mesma ordem de canções, versículos, anúncios e mensagens com toda a equipa.",
             },
             {
               title: "Vista pessoal para cada músico",
@@ -522,8 +522,8 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "Adiciona canções e ordena",
-    body: "Puxa canções da tua biblioteca e arrasta-as para a ordem perfeita.",
+    title: "Monta a estrutura",
+    body: "Puxa canções da tua biblioteca, insere versículos bíblicos, anúncios ou momentos da palavra, e arrasta tudo para a ordem perfeita.",
   },
   {
     n: "03",
@@ -685,8 +685,8 @@ function ExportSection() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             Importa e exporta no formato aberto ChordPro, para migração ou cópias de
-            segurança fáceis. Exporta um culto completo — ordem, acordes e letras de todas
-            as canções — como PDF pronto a imprimir, direto da app móvel.
+            segurança fáceis. Exporta um culto completo — ordem, versículos, anúncios, mensagens, acordes e letras de todas as
+            canções — como PDF pronto a imprimir, direto da app móvel.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-foreground">
             <li className="flex items-start gap-2">
@@ -710,11 +710,11 @@ function ExportSection() {
             </div>
             <div className="space-y-2 text-sm">
               {[
+                "Boas-vindas e Avisos",
                 "Great Are You Lord — All Sons & Daughters",
+                "Leitura Bíblica — Salmos 100",
                 "10,000 Reasons — Matt Redman",
-                "Who You Say I Am — Hillsong Worship",
-                "Goodness of God — Bethel Music",
-                "King of Kings — Hillsong Worship",
+                "Mensagem — Pr. João",
               ].map((s, i) => (
                 <div
                   key={s}
@@ -743,7 +743,7 @@ const PLAN_FEATURES = [
   "Canções, pastas e cultos ilimitados",
   "Biblioteca completa em ChordPro com pesquisa por título, artista, letra, tom, etiquetas ou número",
   "Sincronização offline na app móvel",
-  "Exportação de cultos em PDF (ordem + acordes/letras)",
+  "Exportação de cultos em PDF (ordem completa, versículos, anúncios + acordes/letras)",
   "Importação e exportação em formato ChordPro",
 ];
 
@@ -901,7 +901,6 @@ const ROADMAP = [
   "Exportação profissional em PDF para canções, cultos e pastas",
   "Assistente de configuração inicial com QR Code, token ou URL",
   "Experiência unificada entre as páginas de Canções e Cultos",
-  "Versículos bíblicos integrados no planeamento de cultos",
   "Modelos de cultos reutilizáveis e duplicação de serviços",
   "Editor de canções com uma experiência ChordPro melhorada",
   "Importação inteligente com deteção automática de duplicados",
