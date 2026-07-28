@@ -838,7 +838,7 @@ function Pricing() {
                 size="lg"
                 className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
               >
-                <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new?plan=base&payment==${annual ? 'yearly' : 'montly'}`}>
+                <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new?plan=base&payment=${annual ? 'yearly' : 'montly'}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
