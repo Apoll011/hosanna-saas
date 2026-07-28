@@ -64,7 +64,7 @@ function Logo({ className }: { className?: string }) {
       <img
         src={logo}
         alt="Hosanna Studio"
-        className="w-14 h-14 object-contain transition-transform hover:scale-105 hover:rotate-2"
+        className="w-14 h-14 rounded-xl object-contain transition-transform hover:scale-105 hover:rotate-2"
       />
     </a>
   );
