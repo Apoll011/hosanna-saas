@@ -67,10 +67,13 @@ function Logo({ className }: { className?: string }) {
               transition-transform
               hover:scale-105 hover:rotate-2
             "
-            
+            style={{
+              backgroundColor: "#EEF4FA",
+              borderColor: "#D3E5F8",
+            }}
           >
             <img
-              src="src\assets\hosanna-logo.png"
+              src={logo}
               alt="Hosanna Studio"
               className="w-14 h-14 object-contain"
             />
