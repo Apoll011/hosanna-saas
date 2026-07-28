@@ -139,11 +139,11 @@ Features:
 
 * [ ] Service statistics.
 * [x] Recently used songs.
-* [ ] Better keyboard shortcuts.
+* [x] Better keyboard shortcuts.
 * [ ] Improved accessibility.
 * [ ] More animations and micro-interactions.
 * [ ] Enhanced search filters.
-* [ ] Performance optimizations for very large libraries.
+* [x] Performance optimizations for very large libraries.
 
 ###Auto-Transpose with Capo Suggestions
 * What: When a song is transposed, suggest the capo fret + easy open-chord shape (C, G, D, A, E / Am, Em, Bm, F#m) so guitarists avoid barre chords
@@ -176,7 +176,7 @@ Features:
 - Login remove placholders and just leave the inputs empty
 - Search on studio need to be fixed, if i click any where else it need to stop searching
 - add Church info and logo, on the dashboard
-- On the dash board folder view allow for draging folders and songs into another folder
+- [x] On the dash board folder view allow for draging folders and songs into another folder
 - Fix settings ui and text on dashboard
 - [x] ON register dashboard dont accept password less than 6 char
 - on dashboard put the tenat-slug on the url dashboard.url/tenant-url
