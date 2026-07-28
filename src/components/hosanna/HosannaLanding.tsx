@@ -838,12 +838,12 @@ function Pricing() {
                 size="lg"
                 className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
               >
-                <a href="#">
+                <a href={`${import.meta.env.DASHBOARD_URL}/new?plan=${annual ? 'base-yearly' : 'base-montly'}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
               <p className="mt-3 text-center text-xs text-primary-foreground/60">
-                14 dias grátis · Sem cartão de crédito
+                14 dias grátis
               </p>
             </div>
           </div>
