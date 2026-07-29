@@ -3,13 +3,13 @@
 **Última atualização:** 28 de julho de 2026
 
 **1.1. Aceitação dos Termos**
-Bem-vindo ao Hosanna, operado por Tiago Inês, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Tenant), ou usar o Dashboard e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
+Bem-vindo ao Hosanna, operado por Tiago Inês, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Dashboard e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
 
 **1.2. Descrição da Plataforma e Serviço**
 O Hosanna é uma plataforma de Software as a Service (SaaS) destinada a igrejas, ministérios e equipas de louvor ("Clientes"). A plataforma fornece ferramentas para a organização de bibliotecas musicais, planeamento de cultos, e partilha de alinhamentos com músicos através de tokens de acesso, permitindo a visualização offline na App Mobile. O Hosanna não fornece, nem vende, partituras, letras ou obras musicais de terceiros.
 
-**1.3. Contas, Tenants e Administradores**
-O serviço organiza-se por instâncias isoladas chamadas "Tenants" (Igrejas). A pessoa que cria o Tenant torna-se o Administrador principal. O Administrador:
+**1.3. Contas, Workspaces e Administradores**
+O serviço organiza-se por instâncias isoladas chamadas "Workspaces" (Igrejas). A pessoa que cria o Workspace torna-se o Administrador principal. O Administrador:
 * É responsável por manter a confidencialidade das credenciais de acesso;
 * É o único responsável por todas as atividades que ocorram sob a sua conta;
 * Tem autoridade para convidar outros administradores e gerar `MusicianTokens` temporários para a sua equipa.
@@ -28,7 +28,7 @@ Estes Termos são regidos e interpretados de acordo com as leis de Portugal. Par
 # 2. Política de Privacidade
 
 **2.1. O Nosso Compromisso com o RGPD**
-No Hosanna, a privacidade é fundamental. Cumprimos integralmente o Regulamento Geral sobre a Proteção de Dados (RGPD - Regulamento UE 2016/679). Para efeitos de processamento, a Igreja (Tenant) atua como Responsável pelo Tratamento (Data Controller) e o Hosanna atua como Subcontratante (Data Processor).
+No Hosanna, a privacidade é fundamental. Cumprimos integralmente o Regulamento Geral sobre a Proteção de Dados (RGPD - Regulamento UE 2016/679). Para efeitos de processamento, a Igreja (Workspace) atua como Responsável pelo Tratamento (Data Controller) e o Hosanna atua como Subcontratante (Data Processor).
 
 **2.2. Dados Recolhidos**
 * **Dados de Administradores:** Quando regista a sua igreja, recolhemos o seu Nome, E-mail e Palavra-passe (guardada sob a forma de hash seguro). Recolhemos também dados de faturação processados externamente.
@@ -47,7 +47,7 @@ Os seus dados não são vendidos. Partilhamos dados apenas com fornecedores de i
 * **Stripe:** Para processamento de pagamentos encriptados.
 
 **2.5. Retenção e Eliminação de Dados (Direito ao Esquecimento)**
-Se um Administrador decidir apagar o seu Tenant através do Dashboard, o Hosanna executa uma eliminação em cascata ("Cascade Delete") instantânea. Todos os perfis de Admin, músicas, cultos, pastas e tokens associados a esse Tenant são permanentemente erradicados da base de dados de produção.
+Se um Administrador decidir apagar o seu Workspace através do Dashboard, o Hosanna executa uma eliminação em cascata ("Cascade Delete") instantânea. Todos os perfis de Admin, músicas, cultos, pastas e tokens associados a esse Workspace são permanentemente erradicados da base de dados de produção.
 
 **2.6. Contacto do Encarregado da Proteção de Dados (DPO)**
 Para exercer os seus direitos (acesso, retificação, portabilidade ou eliminação), contacte-nos através do e-mail: hosanna.contact@gmail.com.
@@ -85,7 +85,7 @@ A Política de Uso Aceitável estabelece as regras de conduta para garantir que 
 5. **Abuso de Recursos:** Sobrecarregar intencionalmente os nossos servidores com pedidos excessivos que prejudiquem a experiência de outras igrejas.
 
 **4.3. Consequências da Violação**
-O Hosanna reserva-se o direito de, a seu exclusivo critério, investigar denúncias. A violação desta AUP resultará num aviso formal ou na suspensão imediata (e sem direito a reembolso) do Tenant. 
+O Hosanna reserva-se o direito de, a seu exclusivo critério, investigar denúncias. A violação desta AUP resultará num aviso formal ou na suspensão imediata (e sem direito a reembolso) do Workspace. 
 
 ---
 
@@ -156,7 +156,7 @@ Se a cobrança do seu cartão falhar, o Hosanna fará novas tentativas automáti
 # 9. Política de Direitos de Autor e DMCA
 
 **9.1. Responsabilidade do Conteúdo**
-O Hosanna é fornecido como uma ferramenta de organização de ficheiros de texto (ChordPro). O Hosanna não efetua uma curadoria prévia, moderação ou revisão do conteúdo submetido. A responsabilidade legal pelas obras submetidas pertence ao Tenant.
+O Hosanna é fornecido como uma ferramenta de organização de ficheiros de texto (ChordPro). O Hosanna não efetua uma curadoria prévia, moderação ou revisão do conteúdo submetido. A responsabilidade legal pelas obras submetidas pertence ao Workspace.
 
 **9.2. Procedimento de Notificação (Takedown Notice)**
 Se for titular de direitos de autor, editor ou representante legal, e acreditar que uma Igreja alojou ou está a distribuir uma obra sua sem licenciamento válido na nossa infraestrutura, deve enviar uma notificação formal para hosanna.contact@gmail.com contendo:
@@ -166,7 +166,7 @@ Se for titular de direitos de autor, editor ou representante legal, e acreditar 
 
 **9.3. Ação por parte do Hosanna**
 Uma vez recebida a queixa:
-* Iremos imediatamente notificar o Administrador do Tenant alvo da reclamação.
+* Iremos imediatamente notificar o Administrador do Workspace alvo da reclamação.
 * Bloquearemos ou removeremos preventivamente o acesso a essa música em específico.
 * Permitiremos ao Administrador apresentar uma contra-notificação, caso possua uma licença ativa da CCLI que o autorize a utilizar a obra em contexto eclesiástico e privado.
 
@@ -178,7 +178,7 @@ Uma vez recebida a queixa:
 O Hosanna foi desenhado para facilitar a colaboração pacífica, organizada e edificante dentro das equipas de louvor. 
 
 **10.2. Boas Práticas Internas**
-* **Manutenção da Biblioteca:** Recomendamos vivamente o uso padronizado de Tags e Pastas. Evite duplicar músicas na base de dados do seu Tenant para facilitar a pesquisa aos restantes músicos.
+* **Manutenção da Biblioteca:** Recomendamos vivamente o uso padronizado de Tags e Pastas. Evite duplicar músicas na base de dados do seu Workspace para facilitar a pesquisa aos restantes músicos.
 * **Uso Adequado das Notas:** A funcionalidade de "Notas de Serviço" e "Notas de Música" deve ser usada estritamente para logística e dinâmicas do culto (ex: "Entrar em Acústico", "Atenção ao andamento").
 * **Respeito pelas Configurações Pessoais:** O design da App Mobile garante que a transposição de tons ou ocultação de acordes feita no ecrã de um músico não afeta o ecrã do colega. Encorajamos as equipas a respeitarem a autonomia visual de cada instrumentista/vocalista.
 
