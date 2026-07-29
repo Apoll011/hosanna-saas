@@ -942,7 +942,7 @@ const FAQS = [
   },
   {
     q: "Existe um período gratuito?",
-    a: "Todos os planos começam com 14 dias grátis. Sem cartão de crédito — basta registares-te, convidares a tua equipa e experimentares num domingo real.",
+    a: "Todos os planos começam com 14 dias grátis. Basta registares-te, convidares a tua equipa e experimentares num domingo real.",
   },
   {
     q: "Várias equipas de louvor podem partilhar uma biblioteca?",
