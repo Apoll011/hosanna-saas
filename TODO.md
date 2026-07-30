@@ -1,182 +1,130 @@
-# TODO.md
-
 # Hosanna Roadmap
 
-## High Priority
+## To Do (Current & High Priority)
 
-### Dashboard
-
-* [x] **Improve the Service Editor UI**
-
-  * Redesign the layout to feel more modern and polished.
-  * Make adding songs faster and require fewer clicks.
-  * Improve drag-and-drop interactions.
-  * Better distinguish songs, notes, and general service notes.
-  * Add richer editing experience for service notes.
-  * Improve spacing, typography, and hierarchy throughout the editor.
-
+### Dashboard & UI
 * [ ] **PDF Export from Context Menu**
+  * Generate professional-looking PDFs for:
+    * **Songs:** Title, Artist, Chords and lyrics, Church logo, Footer with page numbers.
+    * **Services:** Title, Date, General notes, Songs in order, Song-specific notes, Fully rendered ChordPro sheets, Church logo.
+    * **Folders:** Title, Table of contents, Every song contained within, Page numbers, Church logo.
+* [ ] Add Church info and logo to the dashboard.
+* [ ] Fix settings UI and text on the dashboard.
+* [ ] Put the tenant-slug on the URL (`dashboard.url/tenant-slug`).
+* [ ] Fix the "Add" button on the dashboard.
+* [ ] Fix the logo positioning on the dashboard.
+* [ ] Fix search in the studio (clicking outside should stop/close the search).
+* [ ] When dragging multiple selections, show all selected items.
+* [ ] When moving songs via dragging, use batch move logic.
+* [ ] Add a way to display the folder count inside a folder.
+* [ ] If a folder is empty, do not prompt for the "type of delete".
+* [ ] Login: Remove placeholders and leave the inputs completely empty.
 
-  * Add an **Export** option to the context menu for:
+### Mobile App & Live Experience
+* [ ] **First-Time Setup Wizard Updates**
+  * Automatically test the connection.
+  * Display success/error feedback.
+* [ ] Add a high-contrast mode for accessibility.
+* [ ] Improved overall accessibility.
+* [ ] Add more animations and micro-interactions.
+* [ ] **Share Service Options:** Add a quick way to share a setlist outside the app (e.g., "Share to WhatsApp" generating a text list of songs, keys, and YouTube links).
+* [ ] **Bluetooth Pedal Support:** Add keyboard mapping for musicians using Bluetooth pedals (PageFlip, AirTurn) to turn pages.
 
-    * Songs
-    * Services
-    * Folders
-  * Export should generate professional-looking PDFs.
-
-  #### Song PDF
-
-  * Song title
-  * Artist
-  * Chords and lyrics
-  * Church logo
-  * Footer with page numbers
-
-  #### Service PDF
-
-  * Service title
-  * Date
-  * General service notes
-  * Songs in order
-  * Song-specific notes
-  * Fully rendered ChordPro sheets
-  * Church logo
-
-  #### Folder PDF
-
-  * Folder title
-  * Table of contents
-  * Every song contained within the folder
-  * Page numbers
-  * Church logo
-
----
-
-## Mobile
-
-### First-Time Setup Wizard
-
-* [x] Add an onboarding flow shown on first launch.
-
-The setup should allow users to connect to their church in multiple ways:
-
-* [x] Scan a QR Code.
-* [ ] Automatically test the connection.
-* [ ] Display success/error feedback.
-* [x] Save configuration locally.
-* [x] Allow rerunning the setup later from Settings.
-
-
----
-
-### UI Consistency
-
-* [x] Unify the design of the **Songs** and **Services** pages.
-
-Current goal:
-
-* Use the same layout language.
-* Match spacing and paddings.
-* Reuse card components.
-* Reuse search bars.
-* Use identical section headers.
-* Make navigation feel seamless between both tabs.
-
----
-
-## PDF Improvements
-
-* [ ] Design a reusable PDF theme.
-
-Features:
-
-* Church branding/logo.
-* Consistent typography.
-* Proper margins.
-* Automatic page numbering.
-* Optional dark logo/light logo.
-* Better chord formatting.
-* Improved page breaks.
-* Printable A4 layout.
-
----
-
-## Future Improvements
-
-### Service Planning
-
-* [x] Bible verses attached to services.
-* [ ] Service templates.
-* [ ] Duplicate existing services.
-* [ ] Archive old services.
-
-### Song Management
-
-* [ ] Improve the song editor.
-* [ ] Better ChordPro editing experience.
-* [ ] Smarter import wizard.
-* [x] Bulk song operations.
+### Service & Song Management
+* [ ] Add the ability to change the church name.
+* [ ] Add the ability to edit the service name and date (date input must be in `dd/mm/yyyy` format).
+* [ ] Overhaul the service editing saving system (notes saving needs an `updatedAt` field).
+* [ ] Create service templates.
+* [ ] Allow duplicating existing services.
+* [ ] Allow archiving old services.
+* [ ] Build a smarter import wizard.
 * [ ] Detect duplicate songs during import.
+* [ ] Add service statistics.
+
+### New Features (Core)
+* [ ] **Auto-Transpose with Capo Suggestions**
+  * **What:** Suggest capo fret + easy open-chord shapes (C, G, D, A, E / Am, Em, Bm, F#m) to avoid barre chords.
+  * **Logic:** `Capo fret = (target key − preferred shape key) mod 12`. Rank by lowest fret first, show 2–3 options.
+  * **UI:** Small dismissible tag near key selector.
+  * **Fallback:** Show "no capo needed / barre chords" if no clean shape matches.
+* [ ] **YouTube Pitch-Shifting (Rehearsal Mode)**
+  * **What:** Shift the audio pitch of a linked YouTube video to match the singer's key using Hosanna's transpose engine.
+  * *Note:* Replaces the old MP3 idea. Will require researching web audio APIs or browser-level manipulation since native YouTube iframes don't support pitch shifting out of the box.
 
 ### Synchronization
-
-* [ ] Improve offline editing.
+* [ ] Improve offline editing capabilities.
 * [ ] Preserve offline edits during synchronization.
-* [ ] Conflict resolution instead of "last write wins."
-* [ ] Background synchronization for the mobile app.
+* [ ] Implement conflict resolution (replace "last write wins").
+* [ ] Add background synchronization for the mobile app.
 
-### SaaS
-
-* [x] Create a marketing landing page.
-* [ ] Church registration flow.
-* [ ] Tenant billing.
-* [ ] Affordable monthly subscription per church (not per user).
+### SaaS, Website & Deployment
+* [ ] Tenant billing implementation.
 * [ ] Church branding customization.
+* [ ] Add a "Mobile" section on the SaaS landing page redirecting to the app download.
+* [ ] Change the placement of the "Legal Documents" (Documentos Legais) on the SaaS site.
+* [ ] Fix scrolling on the dashboard tenant registration page.
+* [ ] Publish the website using Google Search Console (SEO).
+* [ ] Create Dev and Production modes for deployment services.
+
+### Engine, Tech Debt & Administration
+* [ ] **Library Architecture:** Move all ChordPro parsing and viewing to a shared library so Mobile and Dashboard use the identical implementation.
+* [ ] **Custom ChordPro:** Create a custom Ace/ChordPro library based on the import tool to customize snippets and highlighting.
+* [ ] **Documentation:** Create a comprehensive ChordPro guide. 
+* [ ] **Reporting:** Allow authors to report unlicensed songs on Hosanna, triggering an automated warning to the church.
+* [ ] **Error Tracking:** Report system errors using Sentry.
+* [ ] **Comms:** Setup automated emails, reports, etc.
+
+### PDF Improvements
+* [ ] **Design a reusable PDF theme**
+  * Church branding/logo (Optional dark/light logo).
+  * Consistent typography and proper margins.
+  * Automatic page numbering.
+  * Better chord formatting and improved page breaks.
+  * Printable A4 layout.
 
 ---
 
-## Nice to Have
+## Future / Nice to Have (Phase 2+)
 
-* [ ] Service statistics.
-* [x] Recently used songs.
+* [ ] **CCLI Auto-Reporting:** Generate a monthly report that admins can download to easily see how many times a song was played for CCLI compliance.
+* [ ] **Direct CCLI SongSelect Import:** Integration to pull lyrics and chords straight from SongSelect.
+* [ ] **Role-Based Access Control (RBAC):** Restrict who can edit, delete, or just view/transpose songs.
+* [ ] **Musician Scheduling/Rosters:** Add the ability to assign specific musicians to specific services.
+* [ ] **Multi-Campus Support:** Allow a single church tenant to have multiple locations sharing the same song database but running distinct services.
+* [ ] **Full Localization (i18n):** Translate the App, Dashboard, SaaS, and Server into English, Spanish, and Portuguese.
+* [ ] **Congregation Projection (ProPresenter Style):** A stage display/presentation mode to project lyrics to the church screens for the congregation.
+* [ ] **Separate Metronome Tool:** A dedicated tool for a metronome/click-track (kept out of the main song view to avoid clutter).
+
+---
+
+## Done
+
+### Dashboard & UI
+* [x] **Improve the Service Editor UI** (Redesigned layout, faster song adding, better drag-and-drop, richer notes editing).
+* [x] On the dashboard folder view, allow dragging folders and songs into another folder.
+* [x] Enhanced search filters.
 * [x] Better keyboard shortcuts.
-* [ ] Improved accessibility.
-* [ ] More animations and micro-interactions.
-* [ ] Enhanced search filters.
+* [x] Recently used songs implemented.
 * [x] Performance optimizations for very large libraries.
 
-###Auto-Transpose with Capo Suggestions
-* What: When a song is transposed, suggest the capo fret + easy open-chord shape (C, G, D, A, E / Am, Em, Bm, F#m) so guitarists avoid barre chords
-* Logic: capo fret = (target key − preferred shape key) mod 12; rank suggestions by lowest fret first, show 2–3 options
-* Fallback: if no clean shape match, show "no capo needed / barre chords" instead of nothing
-* UI: small dismissible tag near key selector (e.g. "Capo 3 → play in G"); don't force on non-guitarists
-* Nice-to-have: only surface to users tagged as guitar/ukulele (if instrument data exists per musician)
-* Nice-to-have: user preference toggle — "lowest capo" vs "easiest shape" (they sometimes conflict)
-* QA: test flat keys (Db, Gb, Ab) — these produce the trickiest/least intuitive suggestions
-* Effort: low — lookup table + modular math, no backend/data model changes, mostly frontend display; one sprint
+### Mobile App & Live Experience
+* [x] **First-Time Setup Wizard** (Onboarding flow, QR code scanning, local config saving, rerun from settings).
+* [x] **UI Consistency** (Unified design language between Songs and Services pages).
+* [x] **Number Systems:** Support for Nashville Number System and Solfège built into the transpose engine.
+* [x] **Display Formatting Toggles:** Users can choose to view chords on top of the screen or above the lyrics, and notes above the lyrics.
+* [x] **Service Comments:** Team members can leave comments on a service to communicate with each other.
 
+### Service & Song Management
+* [x] Bible verses attached to services.
+* [x] Improved the song editor.
+* [x] Better ChordPro editing experience.
+* [x] Bulk song operations.
+* [x] ChordPro syntax coloring automatically applied based on song sections.
+* [x] BPM (Beats Per Minute) field supported for songs.
+* [x] Medley support (Handled by creating a unified song via pasting).
 
-###In-App Pitch-Shifted MP3 Rehearsal
-* What: Let singers shift the pitch of a song's rehearsal MP3 to their own singing key, using the song's existing key data (like transpose.video, but auto-linked to your ChordPro key instead of a blind slider)
-* Core logic: reuse the transpose engine — shift semitones = target key − original key; apply to audio pitch-shift, not just chord display
-* MVP scope: pitch-shift only — skip speed control, looping, formant/vocal-reducer (Pro-tier complexity) for v1
-* UI: simple slider or key-picker next to the MP3 player, auto-prefilled with the calculated shift, adjustable manually
-* Fallback: if shift is extreme (many semitones), warn about audio quality degradation rather than silently producing a distorted result
-* Blocker to check first: confirm licensing rights to pitch-shift/redistribute the MP3s (separate legal question from chord chart licensing/CCLI)
-* Technical risk: real-time pitch shift without artifacts (chipmunk effect) needs a decent DSP library — don't underestimate as "just a slider"
-* Timing: phase 2, post-launch fast-follow — not a pre-launch blocker
-* Effort: medium-high — new audio processing capability, not a reuse of existing display logic like the capo feature
-
-
--------------
-- Autores podem reportar musicas no hosanna sem licensa e enviamos avisos a igreja
-- Reporar erros com sentry
-- Enviar emails. relatorios etc etc
-- Adicionar no mobile alto contraste
-- Login remove placholders and just leave the inputs empty
-- Search on studio need to be fixed, if i click any where else it need to stop searching
-- add Church info and logo, on the dashboard
-- [x] On the dash board folder view allow for draging folders and songs into another folder
-- Fix settings ui and text on dashboard
-- [x] ON register dashboard dont accept password less than 6 char
-- on dashboard put the tenat-slug on the url dashboard.url/tenant-url
+### SaaS, Website & Deployment
+* [x] Created a marketing landing page.
+* [x] Church registration flow.
+* [x] Affordable monthly subscription per church (not per user).
+* [x] On dashboard registration, passwords less than 6 characters are no longer accepted.
