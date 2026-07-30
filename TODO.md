@@ -1,130 +1,64 @@
-# Hosanna Roadmap
+### Hosanna Roadmap Migration
 
-## To Do (Current & High Priority)
+| Title | Module | Priority | Labels | Parent | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Add church info and logo to dashboard | Dashboard | High | church, ui, settings, feature | | **Goal:** Enable church branding within the dashboard. **AC:** - Input fields for church name and metadata - Image uploader for logo - Logo displays in header/sidebar. |
+| Fix settings UI and text on dashboard | Dashboard | Urgent | ui, ux, bug, settings | | **Problem:** Current settings page has layout issues and typos. **Goal:** Polished settings interface. **AC:** - Correct all text strings - Align UI elements with design system. |
+| Implement tenant-slug URL routing | Dashboard | High | api, refactor, saas | | **Goal:** Update URL structure to include tenant-slug. **AC:** - Dynamic routing based on tenant - Redirects for old URL structures. |
+| Fix dashboard Add button | Dashboard | Urgent | bug, ui, ux | | **Problem:** The "Add" button is unresponsive or broken. **Goal:** Restore core functionality for adding items. **AC:** - Button triggers correct modal or action. |
+| Fix logo positioning on dashboard | Dashboard | Medium | ui, ux, bug | | **Problem:** Logo alignment is inconsistent. **Goal:** Responsive and centered logo placement. **AC:** - Logo follows CSS grid/flex rules consistently across screen sizes. |
+| Fix search closing behavior in studio | Dashboard | Urgent | search, ux, bug | | **Problem:** Search stays open after clicking away. **Goal:** Implement "click outside to close" logic. **AC:** - Search results close on blur or exterior click. |
+| Show all items during multi-selection drag | Dashboard | Medium | drag-drop, ux, enhancement | | **Goal:** Improve visual feedback during drag operations. **AC:** - Ghost image shows count or stack of all selected items being dragged. |
+| Implement batch move logic for songs | Shared Engine | High | songs, performance, drag-drop | | **Goal:** Optimize database writes when moving groups of songs. **AC:** - Single API call for multi-song moves - Update UI state optimistically. |
+| Display folder item count | Dashboard | Medium | folders, ui, enhancement | | **Goal:** Provide at-a-glance info for folder contents. **AC:** - Small badge or text showing total items inside the folder. |
+| Remove delete type prompt for empty folders | Dashboard | Low | folders, ux, enhancement | | **Goal:** Streamline deletion workflow. **AC:** - If folder is empty, delete immediately without asking for type of delete. |
+| Remove login input placeholders | Dashboard | Low | authentication, ui, ux | | **Goal:** Cleaner login interface. **AC:** - Username and Password fields have no placeholder text. |
+| Add context menu dots to folder and song views | Dashboard | Medium | folders, songs, ui, ux | | **Goal:** Improve accessibility of actions. **AC:** - Three dots icon triggers context menu for every list item. |
+| Implement automatic connection testing in wizard | Mobile | High | sync, feature, ux | First-Time Setup Wizard Updates | **Goal:** Verify server connectivity during onboarding. **AC:** - Ping server automatically during the connection step - Auto-advance on success. |
+| Add success/error feedback to setup wizard | Mobile | High | ui, ux, documentation | First-Time Setup Wizard Updates | **Goal:** Inform user of setup status. **AC:** - Clear visual indicators for success or failure - Actionable error messages for failed connections. |
+| Add high-contrast mode for accessibility | Mobile | High | accessibility, ui, enhancement | | **Goal:** Improve readability for low-vision users. **AC:** - Toggle in settings - WCAG AAA compliant color ratios. |
+| Improve overall mobile accessibility | Mobile | Medium | accessibility, ux | | **Goal:** Broad accessibility audit and fixes. **AC:** - Screen reader labels for all buttons - Focus indicators for keyboard navigation. |
+| Add UI animations and micro-interactions | Mobile | Low | ui, ux, enhancement | | **Goal:** Make the app feel premium and responsive. **AC:** - Smooth transitions between views - Haptic feedback on button presses. |
+| Implement Share Service to WhatsApp or Text | Mobile | High | feature, services, songs | Share Service Options | **Goal:** Quick external sharing of setlists. **AC:** - Generate text string containing Song Title, Key, and YouTube link - Native share sheet trigger. |
+| Add Bluetooth pedal keyboard mapping | Mobile | High | feature, performance, ui | | **Goal:** Hands-free page turning for musicians. **AC:** - Map PageUp, PageDown, and Arrow keys to navigation - Compatibility with AirTurn and PageFlip pedals. |
+| Enable church name editing | Dashboard | Medium | church, settings, feature | | **Goal:** Allow admins to rename their organization. **AC:** - Update field in settings - Propagate change to UI and PDFs. |
+| Implement service name and date editing | Dashboard | High | services, ui, bug | | **Goal:** Allow modification of scheduled services. **AC:** - Date input restricted to dd/mm/yyyy - Validation for past and future dates. |
+| Overhaul service saving with updatedAt tracking | Server | Urgent | services, tech-debt, api | | **Problem:** Service notes can be overwritten without version tracking. **Goal:** Robust saving system. **AC:** - Add updatedAt timestamp to notes schema - Prevent stale data overwrites. |
+| Create service templates | Shared Engine | Medium | services, feature | | **Goal:** Speed up service creation. **AC:** - Save setlist structures as templates - Apply Template button on new service creation. |
+| Implement service duplication | Shared Engine | Medium | services, feature | | **Goal:** Clone existing services. **AC:** - Deep copy of song list and notes - User selects new date for the cloned service. |
+| Add service archiving functionality | Server | Low | services, enhancement | | **Goal:** Declutter active service lists. **AC:** - Archive flag in database - Filtered view for Active versus Archived services. |
+| Build smart import wizard | Shared Engine | High | import, feature, ux | | **Goal:** Simplify song migration from other platforms. **AC:** - Auto-detection of song parts like Verse and Chorus - Preview pane before finalizing. |
+| Implement duplicate song detection during import | Shared Engine | High | import, bug, songs | | **Problem:** Users accidentally import the same song multiple times. **Goal:** Clean song database. **AC:** - Check Title and Artist against DB - Prompt user to merge or skip duplicates. |
+| Add service statistics | Dashboard | Low | services, feature | | **Goal:** Data-driven setlist planning. **AC:** - Display last played and frequency metrics for songs. |
+| Implement trash bin for deleted items | Shared Engine | Medium | folders, songs, feature | | **Goal:** Prevent accidental data loss. **AC:** - 30-day retention for deleted songs and services - Restore functionality. |
+| Calculate capo fret and open-chord shapes | Shared Engine | High | songs, feature, refactor | Auto-Transpose with Capo Suggestions | **Goal:** Suggest capo fret and easy open-chord shapes to avoid barre chords. **AC:** - Logic uses Capo fret = (target key minus preferred shape key) mod 12 - Rank by lowest fret first - Return 2 to 3 options. |
+| Add capo UI tag to key selector | Dashboard | High | ui, ux, songs | Auto-Transpose with Capo Suggestions | **Goal:** Visual display of capo suggestions. **AC:** - Small dismissible tag near transpose UI - Show 2 to 3 shape options. |
+| Implement capo fallback state | Shared Engine | High | ui, ux, songs | Auto-Transpose with Capo Suggestions | **Goal:** Handle edge cases where no easy open chords are available. **AC:** - If no clean shape matches, show fallback text reading no capo needed or barre chords. |
+| Implement YouTube pitch-shifting engine | Shared Engine | High | youtube, feature, songs | YouTube Pitch-Shifting | **Goal:** Match video audio pitch to the transposed key. **AC:** - Research and implement Web Audio API or browser-level manipulation for pitch shifting - Synchronize pitch shift with song transpose state. |
+| Improve offline editing capabilities | Mobile | High | offline, sync, feature | | **Goal:** Full app utility without internet. **AC:** - Local storage of song edits - Queue changes for later sync. |
+| Preserve offline edits during synchronization | Shared Engine | Urgent | sync, tech-debt, bug | | **Problem:** Syncing sometimes wipes local unpushed changes. **Goal:** Data integrity. **AC:** - Verify local state before pulling server state. |
+| Implement conflict resolution logic | Server | Urgent | sync, api, tech-debt | | **Problem:** Last write wins causes data loss in teams. **Goal:** Intelligent merging. **AC:** - Detect simultaneous edits - Prompt user or merge non-conflicting fields automatically. |
+| Implement background synchronization | Mobile | High | sync, performance | | **Goal:** Keep data fresh without manual refresh. **AC:** - Use background tasks to fetch updates periodically. |
+| Create custom Ace ChordPro library | Shared Engine | Medium | refactor, songs, tech-debt | | **Goal:** Better control over song editing UI. **AC:** - Custom syntax highlighting - Snippet support for common ChordPro tags. |
+| Create comprehensive ChordPro guide | Shared Engine | Low | documentation | | **Goal:** Onboard users to the ChordPro format. **AC:** - In-app help page or external markdown documentation. |
+| Implement unlicensed song reporting | SaaS | Low | church, api, services | | **Goal:** Facilitate legal compliance. **AC:** - Report button for authors - Automated email warning to church admin. |
+| Integrate Sentry for error tracking | Server | High | tech-debt, performance | | **Goal:** Proactive bug fixing and monitoring. **AC:** - Catch and log frontend and backend exceptions to Sentry. |
+| Setup automated system communications | Server | Medium | saas, authentication | | **Goal:** Automate user engagement and alerts. **AC:** - Transactional emails for welcome and password reset - Automated weekly service reports. |
+| Add church branding and logos to PDF theme | Shared Engine | High | pdf, church, feature | Design a reusable PDF theme | **Goal:** Allow churches to brand printed materials. **AC:** - Support injecting church logo into PDF header - Support optional dark and light logo variants. |
+| Implement consistent typography and margins in PDFs | Shared Engine | High | pdf, ui, enhancement | Design a reusable PDF theme | **Goal:** Improve readability of exported sheets. **AC:** - Apply standardized legible fonts - Ensure uniform margins on all edges. |
+| Add automatic page numbering to PDFs | Shared Engine | High | pdf, enhancement | Design a reusable PDF theme | **Goal:** Better physical setlist organization. **AC:** - Generate automatic page numbers on the footer of every page. |
+| Improve chord formatting and page breaks in PDFs | Shared Engine | High | pdf, ux, bug | Design a reusable PDF theme | **Goal:** Prevent awkward visual breaks in printed music. **AC:** - Format chords cleanly above lyrics - Logic to prevent page breaks in the middle of a song section. |
+| Implement printable A4 layout for PDFs | Shared Engine | High | pdf, feature | Design a reusable PDF theme | **Goal:** Ensure standard print compatibility. **AC:** - Force document dimensions and scaling to exactly match A4 paper. |
 
-### Dashboard & UI
-* [ ] **PDF Export from Context Menu**
-  * Generate professional-looking PDFs for:
-    * **Songs:** Title, Artist, Chords and lyrics, Church logo, Footer with page numbers.
-    * **Services:** Title, Date, General notes, Songs in order, Song-specific notes, Fully rendered ChordPro sheets, Church logo.
-    * **Folders:** Title, Table of contents, Every song contained within, Page numbers, Church logo.
-* [ ] Add Church info and logo to the dashboard.
-* [ ] Fix settings UI and text on the dashboard.
-* [ ] Put the tenant-slug on the URL (`dashboard.url/tenant-slug`).
-* [ ] Fix the "Add" button on the dashboard.
-* [ ] Fix the logo positioning on the dashboard.
-* [ ] Fix search in the studio (clicking outside should stop/close the search).
-* [ ] When dragging multiple selections, show all selected items.
-* [ ] When moving songs via dragging, use batch move logic.
-* [ ] Add a way to display the folder count inside a folder.
-* [ ] If a folder is empty, do not prompt for the "type of delete".
-* [ ] Login: Remove placeholders and leave the inputs completely empty.
+### Future / Nice to Have
 
-### Mobile App & Live Experience
-* [ ] **First-Time Setup Wizard Updates**
-  * Automatically test the connection.
-  * Display success/error feedback.
-* [ ] Add a high-contrast mode for accessibility.
-* [ ] Improved overall accessibility.
-* [ ] Add more animations and micro-interactions.
-* [ ] **Share Service Options:** Add a quick way to share a setlist outside the app (e.g., "Share to WhatsApp" generating a text list of songs, keys, and YouTube links).
-* [ ] **Bluetooth Pedal Support:** Add keyboard mapping for musicians using Bluetooth pedals (PageFlip, AirTurn) to turn pages.
-
-### Service & Song Management
-* [ ] Add the ability to change the church name.
-* [ ] Add the ability to edit the service name and date (date input must be in `dd/mm/yyyy` format).
-* [ ] Overhaul the service editing saving system (notes saving needs an `updatedAt` field).
-* [ ] Create service templates.
-* [ ] Allow duplicating existing services.
-* [ ] Allow archiving old services.
-* [ ] Build a smarter import wizard.
-* [ ] Detect duplicate songs during import.
-* [ ] Add service statistics.
-
-### New Features (Core)
-* [ ] **Auto-Transpose with Capo Suggestions**
-  * **What:** Suggest capo fret + easy open-chord shapes (C, G, D, A, E / Am, Em, Bm, F#m) to avoid barre chords.
-  * **Logic:** `Capo fret = (target key − preferred shape key) mod 12`. Rank by lowest fret first, show 2–3 options.
-  * **UI:** Small dismissible tag near key selector.
-  * **Fallback:** Show "no capo needed / barre chords" if no clean shape matches.
-* [ ] **YouTube Pitch-Shifting (Rehearsal Mode)**
-  * **What:** Shift the audio pitch of a linked YouTube video to match the singer's key using Hosanna's transpose engine.
-  * *Note:* Replaces the old MP3 idea. Will require researching web audio APIs or browser-level manipulation since native YouTube iframes don't support pitch shifting out of the box.
-
-### Synchronization
-* [ ] Improve offline editing capabilities.
-* [ ] Preserve offline edits during synchronization.
-* [ ] Implement conflict resolution (replace "last write wins").
-* [ ] Add background synchronization for the mobile app.
-
-### SaaS, Website & Deployment
-* [ ] Tenant billing implementation.
-* [ ] Church branding customization.
-* [ ] Add a "Mobile" section on the SaaS landing page redirecting to the app download.
-* [ ] Change the placement of the "Legal Documents" (Documentos Legais) on the SaaS site.
-* [ ] Fix scrolling on the dashboard tenant registration page.
-* [ ] Publish the website using Google Search Console (SEO).
-* [ ] Create Dev and Production modes for deployment services.
-
-### Engine, Tech Debt & Administration
-* [ ] **Library Architecture:** Move all ChordPro parsing and viewing to a shared library so Mobile and Dashboard use the identical implementation.
-* [ ] **Custom ChordPro:** Create a custom Ace/ChordPro library based on the import tool to customize snippets and highlighting.
-* [ ] **Documentation:** Create a comprehensive ChordPro guide. 
-* [ ] **Reporting:** Allow authors to report unlicensed songs on Hosanna, triggering an automated warning to the church.
-* [ ] **Error Tracking:** Report system errors using Sentry.
-* [ ] **Comms:** Setup automated emails, reports, etc.
-
-### PDF Improvements
-* [ ] **Design a reusable PDF theme**
-  * Church branding/logo (Optional dark/light logo).
-  * Consistent typography and proper margins.
-  * Automatic page numbering.
-  * Better chord formatting and improved page breaks.
-  * Printable A4 layout.
-
----
-
-## Future / Nice to Have (Phase 2+)
-
-* [ ] **CCLI Auto-Reporting:** Generate a monthly report that admins can download to easily see how many times a song was played for CCLI compliance.
-* [ ] **Direct CCLI SongSelect Import:** Integration to pull lyrics and chords straight from SongSelect.
-* [ ] **Role-Based Access Control (RBAC):** Restrict who can edit, delete, or just view/transpose songs.
-* [ ] **Musician Scheduling/Rosters:** Add the ability to assign specific musicians to specific services.
-* [ ] **Multi-Campus Support:** Allow a single church tenant to have multiple locations sharing the same song database but running distinct services.
-* [ ] **Full Localization (i18n):** Translate the App, Dashboard, SaaS, and Server into English, Spanish, and Portuguese.
-* [ ] **Congregation Projection (ProPresenter Style):** A stage display/presentation mode to project lyrics to the church screens for the congregation.
-* [ ] **Separate Metronome Tool:** A dedicated tool for a metronome/click-track (kept out of the main song view to avoid clutter).
-
----
-
-## Done
-
-### Dashboard & UI
-* [x] **Improve the Service Editor UI** (Redesigned layout, faster song adding, better drag-and-drop, richer notes editing).
-* [x] On the dashboard folder view, allow dragging folders and songs into another folder.
-* [x] Enhanced search filters.
-* [x] Better keyboard shortcuts.
-* [x] Recently used songs implemented.
-* [x] Performance optimizations for very large libraries.
-
-### Mobile App & Live Experience
-* [x] **First-Time Setup Wizard** (Onboarding flow, QR code scanning, local config saving, rerun from settings).
-* [x] **UI Consistency** (Unified design language between Songs and Services pages).
-* [x] **Number Systems:** Support for Nashville Number System and Solfège built into the transpose engine.
-* [x] **Display Formatting Toggles:** Users can choose to view chords on top of the screen or above the lyrics, and notes above the lyrics.
-* [x] **Service Comments:** Team members can leave comments on a service to communicate with each other.
-
-### Service & Song Management
-* [x] Bible verses attached to services.
-* [x] Improved the song editor.
-* [x] Better ChordPro editing experience.
-* [x] Bulk song operations.
-* [x] ChordPro syntax coloring automatically applied based on song sections.
-* [x] BPM (Beats Per Minute) field supported for songs.
-* [x] Medley support (Handled by creating a unified song via pasting).
-
-### SaaS, Website & Deployment
-* [x] Created a marketing landing page.
-* [x] Church registration flow.
-* [x] Affordable monthly subscription per church (not per user).
-* [x] On dashboard registration, passwords less than 6 characters are no longer accepted.
+| Title | Module | Priority | Labels | Parent | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Generate monthly CCLI compliance reports | SaaS | Low | ccli, documentation, church | | **Goal:** Simplify song reporting. **AC:** - Downloadable monthly report of song usage counts. |
+| Integrate Direct CCLI SongSelect Import | Shared Engine | Low | ccli, import, api | | **Goal:** Import directly from CCLI. **AC:** - OAuth with SongSelect - Direct lyric and chord pulling into database. |
+| Implement Role-Based Access Control | Server | Low | authentication, settings, feature | | **Goal:** Manage team permissions. **AC:** - Roles for Admin, Editor, Viewer - Restrict delete and edit actions based on role. |
+| Implement musician scheduling and rosters | Dashboard | Low | services, feature, ui | | **Goal:** Manage volunteer teams. **AC:** - Assign users to specific service roles per event. |
+| Add multi-campus support | SaaS | Low | church, saas, folders | | **Goal:** Support large organizations. **AC:** - Shared song DB across tenant - Distinct service schedules per campus location. |
+| Implement full i18n localization | Shared Engine | Low | localization, ux | | **Goal:** Support international users. **AC:** - Architecture to support translation files - Translates app into English, Spanish, and Portuguese. |
+| Build congregation projection mode | Mobile | Low | feature, ui, church | | **Goal:** ProPresenter-style lyrics display. **AC:** - External display output - High-contrast text view for lyrics only without chords. |
+| Create dedicated metronome tool | Mobile | Low | feature, performance | | **Goal:** Provide timing for rehearsals. **AC:** - Visual and audio click functionality - Separate UI view kept out of the main song view. |
