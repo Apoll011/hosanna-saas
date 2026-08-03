@@ -1105,11 +1105,11 @@ export function Footer() {
         <div>© {new Date().getFullYear()} Hosanna Studio. Todos os direitos reservados.</div>
         <div className="flex gap-8">
           <a
-            href="mailto:hosanna.contact@gmail.com"
+            href="mailto:hosanna.songbook@gmail.com"
             className="hover:text-primary transition-colors flex items-center gap-2"
           >
             <Mail className="w-3 h-3" />
-            hosanna.contact@gmail.com
+            hosanna.songbook@gmail.com
           </a>
         </div>
       </div>

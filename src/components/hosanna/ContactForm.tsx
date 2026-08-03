@@ -73,7 +73,7 @@ export function ContactForm() {
                   <div>
                     <h3 className="font-bold text-xl mb-1 text-primary">E-mail</h3>
                     <p className="text-muted-foreground text-lg break-all">
-                      hosanna.contact@gmail.com
+                      hosanna.songbook@gmail.com
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">Resposta em menos de 24h</p>
                   </div>
