@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, MessageSquare, Send, Sparkles } from "lucide-react";
+import { Mail, MessageSquare, Send } from "lucide-react";
 import { useEffect } from "react";
 import { StaffLines } from "./HosannaLanding";
 
@@ -44,13 +44,13 @@ export function ContactForm() {
             Vamos <span className="text-blue-300">falar?</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-2xl mx-auto">
-            Dúvidas, sugestões ou apenas um "olá" — estamos aqui para servir a sua igreja com
+            Dúvidas, sugestões ou apenas um "olá". Estamos aqui para servir a sua igreja com
             excelência.
           </p>
         </div>
       </section>
 
-      <section className="py-12 md:py-16 relative z-20">
+      <section className="p-12 md:p-16 relative z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Side: Info */}
@@ -66,29 +66,27 @@ export function ContactForm() {
               </div>
 
               <div className="grid gap-8">
-                <div className="flex items-start gap-6 group">
-                  <div className="p-4 rounded-2xl bg-blue-50 text-primary shadow-sm border border-blue-100 transition-colors group-hover:bg-primary group-hover:text-white shrink-0">
-                    <Mail className="w-8 h-8" />
+                <div className="flex items-start gap-6">
+                  <div className="p-4 rounded-lg border border-border text-primary shrink-0">
+                    <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-1 text-primary">E-mail</h3>
                     <p className="text-muted-foreground text-lg break-all">
                       hosanna.contact@gmail.com
                     </p>
-                    <p className="text-sm font-semibold text-blue-500 mt-1 uppercase tracking-wider">
-                      Resposta em menos de 24h
-                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">Resposta em menos de 24h</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
-                  <div className="p-4 rounded-2xl bg-blue-50 text-primary shadow-sm border border-blue-100 transition-colors group-hover:bg-primary group-hover:text-white shrink-0">
-                    <MessageSquare className="w-8 h-8" />
+                <div className="flex items-start gap-6">
+                  <div className="p-4 rounded-lg border border-border text-primary shrink-0">
+                    <MessageSquare className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-1 text-primary">Redes Sociais</h3>
                     <p className="text-muted-foreground text-lg">@hosanna.studio</p>
-                    <div className="flex gap-6 mt-3 text-base font-bold text-blue-600">
+                    <div className="flex gap-6 mt-3 text-base font-semibold text-primary">
                       <span className="cursor-pointer hover:underline">Instagram</span>
                       <span className="cursor-pointer hover:underline">YouTube</span>
                     </div>
@@ -96,25 +94,21 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="p-10 bg-white rounded-3xl border border-blue-100 shadow-soft relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:scale-110 transition-transform">
-                  <Sparkles className="w-24 h-24 text-primary" />
-                </div>
-                <h4 className="font-display font-bold text-xl mb-4 text-primary relative z-10">
+              <div className="p-8 border border-border rounded-lg">
+                <h4 className="font-display font-bold text-xl mb-4 text-primary">
                   Desenvolvimento Ativo
                 </h4>
-                <p className="text-muted-foreground leading-relaxed relative z-10">
+                <p className="text-muted-foreground leading-relaxed">
                   Como estamos em fase inicial, o seu feedback é a nossa bússola. Se sente falta de
                   alguma funcionalidade ou encontrou algo que pode ser melhorado, por favor,
                   partilhe connosco.
                 </p>
               </div>
             </div>
-
             {/* Right Side: Form */}
             <div className="bg-white p-8 md:p-10 lg:p-12 rounded-3xl shadow-soft border border-blue-50 reveal">
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-3">
                     <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
                       Nome
@@ -122,7 +116,7 @@ export function ContactForm() {
                     <input
                       type="text"
                       placeholder="Como o devemos chamar?"
-                      className="w-full px-6 py-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
+                      className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                     />
                   </div>
                   <div className="space-y-3">
@@ -132,19 +126,19 @@ export function ContactForm() {
                     <input
                       type="text"
                       placeholder="Nome da sua igreja"
-                      className="w-full px-6 py-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
+                      className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                    E-mail Profissional
+                    E-mail
                   </label>
                   <input
                     type="email"
                     placeholder="exemplo@igreja.com"
-                    className="w-full px-6 py-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
+                    className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                   />
                 </div>
 
@@ -153,7 +147,7 @@ export function ContactForm() {
                     Assunto
                   </label>
                   <div className="relative">
-                    <select className="w-full px-6 py-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none appearance-none text-lg">
+                    <select className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none appearance-none text-lg">
                       <option>Suporte Técnico</option>
                       <option>Sugestão de Funcionalidade</option>
                       <option>Dúvida sobre Planos</option>
@@ -177,12 +171,12 @@ export function ContactForm() {
                   ></textarea>
                 </div>
 
-                <Button className="w-full py-9 rounded-2xl bg-primary text-white font-bold text-xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group">
+                <Button className="w-full py-6 rounded-2xl bg-primary text-white font-bold text-xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group">
                   Enviar Mensagem
                   <Send className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
-                <p className="text-center text-xs text-muted-foreground mt-6 leading-relaxed">
+                <p className="text-center text-xs text-muted-foreground mt-2 leading-relaxed">
                   Ao submeter este formulário, concorda com o processamento dos seus dados de acordo
                   com a nossa{" "}
                   <span className="underline cursor-pointer">Política de Privacidade</span>.
