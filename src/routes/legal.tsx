@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
 
-import legalContent from "@/content/legal.md?raw"; 
+import legalContent from "@/content/legal.md?raw";
 
-import { Nav, Footer, StaffLines } from "@/components/hosanna/HosannaLanding"; 
+import { Footer, Nav, StaffLines } from "@/components/hosanna/HosannaLanding";
 
 export const Route = createFileRoute("/legal")({
   head: () => ({
@@ -11,7 +11,8 @@ export const Route = createFileRoute("/legal")({
       { title: "Hosanna - Documentos Legais" },
       {
         name: "description",
-        content: "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
+        content:
+          "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
       },
     ],
   }),
@@ -35,7 +36,8 @@ function LegalPage() {
               Documentos Legais
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
-              Termos de serviço, política de privacidade e os nossos compromissos contigo e com a tua igreja.
+              Termos de serviço, política de privacidade e os nossos compromissos contigo e com a
+              tua igreja.
             </p>
           </div>
         </section>
@@ -43,7 +45,7 @@ function LegalPage() {
         {/* Markdown Content Section */}
         <section className="bg-background py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-5 md:px-8">
-            <div className="prose prose-slate dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-a:text-[color:var(--gold)] hover:prose-a:text-[color:var(--gold)]/80 prose-a:transition-colors prose-primary max-w-none">
+            <div className="prose prose-slate dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-a:text-gold hover:prose-a:text-(--gold)/80 prose-a:transition-colors prose-primary max-w-none">
               <ReactMarkdown>{legalContent}</ReactMarkdown>
             </div>
           </div>
