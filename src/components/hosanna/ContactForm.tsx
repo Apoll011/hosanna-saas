@@ -40,7 +40,7 @@ export function ContactForm() {
           <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 mb-8 border border-white/10">
             Apoio à Equipa
           </div>
-          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight">
+          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
             Vamos <span className="text-blue-300">falar?</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-2xl mx-auto">
