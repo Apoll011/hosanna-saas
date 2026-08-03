@@ -30,7 +30,7 @@ export function ContactForm() {
   return (
     <div className="bg-[#f8fafc] min-h-screen selection:bg-primary/10 font-sans">
       {/* Hero Header */}
-      <section className="bg-hero-gradient pt-[160px] pb-12 text-white overflow-hidden relative -mt-[120px]">
+      <section className="bg-hero-gradient pt-40 pb-12 text-white overflow-hidden relative -mt-30">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
         <div className="absolute inset-0 text-white/10">
           <StaffLines className="top-24 opacity-40" />

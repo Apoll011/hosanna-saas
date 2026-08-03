@@ -72,7 +72,7 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div className="sticky top-[-40px] z-50">
+    <div className="sticky -top-10 z-50">
       <EarlyAccessBanner />
       <header
         className={cn(
@@ -1122,7 +1122,7 @@ function EarlyAccessBanner() {
     <div className="bg-blue-600 py-2 text-center text-white px-4">
       <div className="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">
         <Zap className="h-4 w-4 fill-current text-blue-200" />
-        <span>Estamos em desenvolvimento inicial. Junte-se a nós nesta jornada!</span>
+        <span>Estamos na fase de desenvolvimento inicial. Junte-se a nós nesta jornada!</span>
       </div>
     </div>
   );
