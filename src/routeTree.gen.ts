@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChordproRouteImport } from './routes/chordpro'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LegalRouteImport } from './routes/legal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChordproRoute = ChordproRouteImport.update({
+  id: '/chordpro',
+  path: '/chordpro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LegalRoute = LegalRouteImport.update({
@@ -25,27 +37,35 @@ const LegalRoute = LegalRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chordpro': typeof ChordproRoute
+  '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chordpro': typeof ChordproRoute
+  '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chordpro': typeof ChordproRoute
+  '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legal'
+  fullPaths: '/' | '/chordpro' | '/contact' | '/legal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legal'
-  id: '__root__' | '/' | '/legal'
+  to: '/' | '/chordpro' | '/contact' | '/legal'
+  id: '__root__' | '/' | '/chordpro' | '/contact' | '/legal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChordproRoute: typeof ChordproRoute
+  ContactRoute: typeof ContactRoute
   LegalRoute: typeof LegalRoute
 }
 
@@ -56,6 +76,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chordpro': {
+      id: '/chordpro'
+      path: '/chordpro'
+      fullPath: '/chordpro'
+      preLoaderRoute: typeof ChordproRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/legal': {
@@ -70,6 +104,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChordproRoute: ChordproRoute,
+  ContactRoute: ContactRoute,
   LegalRoute: LegalRoute,
 }
 export const routeTree = rootRouteImport

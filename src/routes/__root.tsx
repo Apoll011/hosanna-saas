@@ -11,6 +11,8 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
+import { getSEOMeta } from "../lib/seo";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -70,25 +72,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hosanna - Planeamento de Louvor para Igrejas" },
-      {
-        name: "description",
-        content:
-          "Planeia o teu louvor, organiza a tua música e dá a cada músico acesso imediato às canções de que precisa. O Hosanna é a plataforma moderna de planeamento de louvor para igrejas.",
-      },
-      { name: "author", content: "Hosanna" },
-      { property: "og:title", content: "Hosanna - Planeamento de Louvor para Igrejas" },
-      {
-        property: "og:description",
-        content:
-          "Um único lugar focado para construir a tua biblioteca de canções, planear cultos e conduzir o louvor com confiança.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: getSEOMeta(),
     links: [
       {
         rel: "stylesheet",

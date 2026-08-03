@@ -1,34 +1,36 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  Music,
-  Calendar,
-  FolderTree,
-  Search,
-  Smartphone,
-  Monitor,
-  WifiOff,
-  Sliders,
-  Sun,
-  FileDown,
-  Users,
-  ShieldCheck,
-  ArrowRight,
-  Check,
-  Menu,
-  X,
-  Sparkles,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import dashboardImg from "@/assets/dashboard-preview.jpg";
+import logo from "@/assets/hosanna_logo.png";
+import mobileImg from "@/assets/mobile-preview.jpg";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import dashboardImg from "@/assets/dashboard-preview.jpg";
-import mobileImg from "@/assets/mobile-preview.jpg";
-import logo from '@/assets/hosanna_logo.png';
+import {
+  ArrowRight,
+  Check,
+  FileDown,
+  FolderTree,
+  Mail,
+  Menu,
+  Monitor,
+  Music,
+  Play,
+  Search,
+  ShieldCheck,
+  Sliders,
+  Smartphone,
+  Sparkles,
+  Sun,
+  Users,
+  WifiOff,
+  X,
+  Zap,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal                                                     */
@@ -57,10 +59,7 @@ function useReveal() {
 /* ------------------------------------------------------------------ */
 function Logo({ className }: { className?: string }) {
   return (
-    <a
-      href="/#top"
-      className={cn("flex items-center", className)}
-    >
+    <a href="/#top" className={cn("flex items-center", className)}>
       <img
         src={logo}
         alt="Hosanna Studio"
@@ -75,84 +74,94 @@ function Logo({ className }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 const NAV = [
   { label: "Funcionalidades", href: "#features" },
-  { label: "Como Funciona", href: "#how" },
+  { label: "ChordPro", href: "/chordpro" },
   { label: "Preços", href: "#pricing" },
-  { label: "Perguntas Frequentes", href: "#faq" },
+  { label: "Contacto", href: "/contact" },
 ];
+
+const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL || "/login";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/85 backdrop-blur-md"
-          : "bg-transparent",
-      )}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <Logo />
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={`/${n.href}`}
-              className={cn("text-sm font-medium  transition-colors ",
-                scrolled
-          ? "text-foreground hover:text-foreground/80"
-          : "text-gold-foreground/80 hover:text-gold-foreground")}
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <div className="hidden md:block">
-          <Button
-            asChild
-            className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
-          >
-            <a href="/#pricing">Experimentar Grátis</a>
-          </Button>
-        </div>
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-      {open && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
-          <div className="flex flex-col gap-1 px-5 py-4">
+    <div className="sticky top-[-40px] z-50">
+      <EarlyAccessBanner />
+      <header
+        className={cn(
+          "transition-all duration-300",
+          scrolled ? "bg-background/85 backdrop-blur-md shadow-sm" : "bg-transparent",
+        )}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+          <Logo />
+          <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
               <a
                 key={n.href}
-                href={`/${n.href}`}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
+                href={n.href.startsWith("/") ? n.href : `/${n.href}`}
+                className={cn(
+                  "text-sm font-medium transition-colors ",
+                  scrolled
+                    ? "text-foreground hover:text-foreground/80"
+                    : "text-white/90 hover:text-white",
+                )}
               >
                 {n.label}
               </a>
             ))}
+          </nav>
+          <div className="hidden md:block">
             <Button
               asChild
-              className="mt-2 rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
+              className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
             >
-              <a href="/#pricing" onClick={() => setOpen(false)}>Experimentar Grátis</a>
+              <a href={dashboardUrl}>Experimentar Grátis</a>
             </Button>
           </div>
+          <button
+            className={cn(
+              "md:hidden transition-colors",
+              scrolled ? "text-foreground" : "text-white",
+            )}
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-      )}
-    </header>
+        {open && (
+          <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
+            <div className="flex flex-col gap-1 px-5 py-4">
+              {NAV.map((n) => (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
+                >
+                  {n.label}
+                </a>
+              ))}
+              <Button
+                asChild
+                className="mt-2 rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
+              >
+                <a href={dashboardUrl} onClick={() => setOpen(false)}>
+                  Experimentar Grátis
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </header>
+    </div>
   );
 }
 
@@ -185,52 +194,53 @@ export function StaffLines({ className }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-hero-gradient text-primary-foreground">
+    <section
+      id="top"
+      className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-[120px] pt-[120px]"
+    >
       <div className="absolute inset-0 text-gold/40">
         <StaffLines className="top-24" />
         <StaffLines className="bottom-24" />
       </div>
       <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-36 md:px-8 md:pb-32 md:pt-44">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold-gradient/60 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold-gradient">
-            Planeamento de louvor, reinventado
-          </span>
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            Planeia o teu louvor.
-            <br />
-            Organiza a tua música.
-            <br />
-            <span className="text-gold-gradient">Serve com confiança.</span>
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
+            <Sparkles className="h-3 w-3 text-blue-300" />
+            Desenvolvido para Líderes de Louvor
+          </div>
+          <h1 className="mt-8 font-display text-5xl leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl reveal">
+            Organize o seu louvor com <span className="text-blue-300">excelência</span>.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
-            O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a
-            organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso
-            imediato às canções de que precisa. Em vez de andarem a saltar entre pastas,
-            aplicações de mensagens e cifras impressas.
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-blue-50/80 md:text-xl reveal">
+            Dê à sua equipa a clareza e o foco que eles merecem. Planos de culto, cifras dinâmicas e
+            escalas inteligentes num só lugar.
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row reveal">
             <Button
               asChild
               size="lg"
-              className="rounded-full bg-gold px-7 text-gold-foreground hover:bg-gold/90"
+              className="w-full sm:w-auto rounded-full bg-white px-10 text-lg font-semibold text-primary shadow-xl transition-all hover:scale-105 active:scale-95 hover:bg-blue-50"
             >
-              <a href="#pricing">
-                Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
+              <a href={dashboardUrl}>
+                Começar Agora <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full border-primary-foreground/25 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              className="w-full sm:w-auto rounded-full border-white/30 bg-white/5 px-10 text-lg text-white backdrop-blur-md transition-all hover:bg-white/10"
             >
-              <a href="#how">Ver Como Funciona</a>
+              <a href="#how">
+                <Play className="mr-2 h-5 w-5 fill-current" />
+                Ver Demonstração
+              </a>
             </Button>
           </div>
         </div>
 
         {/* Mockups */}
-        <div className="relative mx-auto mt-20 max-w-6xl">
+        <div className="relative mx-auto mt-16 max-w-6xl">
           <div className="relative">
             <img
               src={dashboardImg}
@@ -245,7 +255,7 @@ function Hero() {
               width={800}
               height={1408}
               loading="lazy"
-              className="absolute -bottom-10 -right-4 hidden w-48 rounded-[2rem] border border-gold/20 shadow-soft md:block md:w-60 lg:-right-8 lg:w-72"
+              className="absolute -bottom-10 -right-4 hidden w-48 rounded-2xl border border-gold/20 shadow-soft md:block md:w-60 lg:-right-8 lg:w-72"
             />
           </div>
         </div>
@@ -306,44 +316,110 @@ function SectionHeader({
 /* ------------------------------------------------------------------ */
 function Problem() {
   return (
-    <section className="relative bg-background py-24 md:py-32">
+    <section className="relative bg-background py-16 md:py-16 font-sans">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Porquê o Hosanna" title="Preparar um culto não devia parecer arqueologia.">
-          Muitas igrejas dependem de uma mistura de cancioneiros em papel, pastas na cloud,
-          aplicações de mensagens e software demasiado complicado para preparar o louvor.
-          Tornando difícil manter toda a gente na mesma versão de uma canção ou preparar um
-          culto com rapidez.
+        <SectionHeader
+          eyebrow="A Nossa Missão"
+          title="Preparar o louvor deve ser sobre adoração, não sobre gerir ficheiros."
+        >
+          Sabemos que o tempo da equipa de louvor é precioso. Muitas igrejas ainda lutam com pastas
+          desorganizadas na cloud, cancioneiros antigos e mensagens perdidas no WhatsApp. O Hosanna
+          foi criado para eliminar essa confusão e trazer paz à sua preparação.
         </SectionHeader>
-        <div className="reveal mt-14 grid gap-6 md:grid-cols-3">
+        <div className="reveal mt-16 grid gap-8 md:grid-cols-3">
           {[
             {
-              title: "Uma única biblioteca",
-              body: "Tudo num só lugar — cria, edita e organiza as canções que a tua igreja realmente canta.",
+              title: "Biblioteca Unificada",
+              body: "Chega de procurar a 'versão final'. Centralize todas as suas canções, tons e letras num único lugar seguro e acessível.",
             },
             {
-              title: "Um plano partilhado",
-              body: "Prepara cultos com antecedência e partilha a mesma ordem de canções, versículos, anúncios e mensagens com toda a equipa.",
+              title: "Planeamento com Intenção",
+              body: "Desenhe o fluxo do culto com clareza. Partilhe a ordem das músicas, notas ministeriais e escalas de forma imediata com toda a equipa.",
             },
             {
-              title: "Vista pessoal para cada músico",
-              body: "Cada um ajusta o seu tom, acordes e tamanho de texto — funciona sem Wi-Fi quando é preciso.",
+              title: "Foco no Altar",
+              body: "No momento do louvor, a tecnologia deve desaparecer. Oferecemos uma vista limpa, pessoal e adaptável a cada músico, mesmo sem internet.",
             },
           ].map((c) => (
             <div
               key={c.title}
-              className="rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:shadow-soft"
+              className="rounded-3xl border border-blue-50 bg-white p-8 transition-all hover:shadow-lg group shadow-sm"
             >
-              <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-primary/5 text-primary">
-                <Check className="h-5 w-5" />
+              <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <Check className="h-6 w-6" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+              <h3 className="font-display text-2xl font-bold text-primary mb-3">{c.title}</h3>
+              <p className="text-base leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
           ))}
         </div>
-        <p className="reveal mt-14 text-center font-display text-2xl italic text-foreground md:text-3xl">
-          «Passa menos tempo a gerir ficheiros. Passa mais tempo a preparar-te para o louvor.»
-        </p>
+        <div className="reveal mt-16 text-center">
+          <p className="font-display text-3xl md:text-4xl italic text-primary max-w-3xl mx-auto leading-tight">
+            «O nosso objetivo é simples: queremos que a sua equipa passe menos tempo a configurar
+            tecnologia e mais tempo a servir ao Senhor.»
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MigrationSection() {
+  useReveal();
+  return (
+    <section className="py-12 md:py-16 bg-white overflow-hidden relative font-sans">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 md:p-12 border border-blue-100 relative overflow-hidden shadow-sm reveal">
+          <div className="absolute -top-24 -right-24 opacity-5 pointer-events-none">
+            <Zap className="w-96 h-96 text-primary" />
+          </div>
+
+          <div className="relative z-10 max-w-3xl">
+            <div className="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200/50">
+              Transição Suave
+            </div>
+            <h2 className="reveal text-3xl md:text-5xl font-display font-bold text-primary mb-8 tracking-tight">
+              Mude para o Hosanna <span className="text-blue-400">sem perder nada</span>
+            </h2>
+            <p className="reveal text-lg text-muted-foreground mb-8 leading-relaxed">
+              Já utiliza outras ferramentas? O Hosanna foi desenhado para ser o novo lar da sua
+              biblioteca, respeitando os padrões que já conhece.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="reveal bg-white p-6 md:p-8 rounded-2xl shadow-soft border border-blue-50/50 transition-all hover:shadow-lg">
+                <div className="font-display font-bold text-2xl mb-4 flex items-center gap-3 text-primary">
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  Songbook Pro
+                </div>
+                <p className="text-muted-foreground leading-relaxed text-base">
+                  Importe toda a sua biblioteca do Songbook Pro em segundos. Preservamos todas as
+                  suas cifras, tons e metadados com precisão cirúrgica.
+                </p>
+              </div>
+
+              <div className="reveal bg-blue-50/30 p-6 md:p-8 rounded-2xl border border-dashed border-blue-200">
+                <div className="font-display font-bold text-2xl mb-4 flex items-center gap-3 text-blue-400">
+                  <div className="w-3 h-3 rounded-full bg-blue-300" />
+                  Em Breve
+                </div>
+                <p className="text-muted-foreground leading-relaxed text-base">
+                  Estamos a finalizar os importadores para OnSong, Planning Center e Chord1. O
+                  futuro do louvor é livre de barreiras.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 reveal">
+              <button className="inline-flex items-center gap-3 text-primary font-bold text-lg group transition-colors hover:text-blue-700">
+                Explorar formatos suportados
+                <div className="p-2 rounded-full bg-blue-100 group-hover:bg-primary group-hover:text-white transition-all">
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -374,11 +450,11 @@ const MOBILE_FEATURES = [
 
 function TwoApps() {
   return (
-    <section id="features" className="relative bg-secondary py-24 md:py-32">
+    <section id="features" className="relative bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader eyebrow="Duas apps, um fluxo" title="Feito para toda a equipa de louvor.">
-          Um painel poderoso para os líderes que planeiam o culto. Uma app móvel calma e
-          focada para os músicos que o tocam.
+          Um painel poderoso para os líderes que planeiam o culto. Uma app móvel calma e focada para
+          os músicos que o tocam.
         </SectionHeader>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
@@ -433,7 +509,7 @@ function TwoApps() {
                 loading="lazy"
                 width={800}
                 height={1408}
-                className="w-52 rounded-[2rem] border border-border shadow-soft"
+                className="w-52 rounded-2xl border border-border shadow-soft"
               />
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -473,11 +549,14 @@ function Organize() {
     },
   ];
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Organiza a tua música" title="Uma biblioteca que finalmente parece tua.">
-          Põe ordem em anos de canções espalhadas — sem obrigar a tua equipa a aprender um
-          sistema novo.
+        <SectionHeader
+          eyebrow="Organiza a tua música"
+          title="Uma biblioteca que finalmente parece tua."
+        >
+          Põe ordem em anos de canções espalhadas — sem obrigar a tua equipa a aprender um sistema
+          novo.
         </SectionHeader>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {cards.map(({ icon: Icon, title, body }) => (
@@ -504,29 +583,29 @@ function Organize() {
 const STEPS = [
   {
     n: "01",
-    title: "Cria um culto",
-    body: "Começa um novo culto com título e data. Domingo de manhã, oração a meio da semana, noite de jovens — como quer que a tua igreja se reúna.",
+    title: "Agende o Encontro",
+    body: "Crie um novo culto com título e data. Seja para o domingo de manhã ou para uma noite de oração — a preparação começa aqui.",
   },
   {
     n: "02",
-    title: "Monta a estrutura",
-    body: "Puxa canções da tua biblioteca, insere versículos bíblicos, anúncios ou momentos da palavra, e arrasta tudo para a ordem perfeita.",
+    title: "Desenhe o Fluxo",
+    body: "Selecione as músicas da sua biblioteca, adicione momentos de palavra ou avisos e organize tudo de forma intuitiva.",
   },
   {
     n: "03",
-    title: "Deixa notas para a equipa",
-    body: "Escreve notas em canções individuais ou em todo o culto — mudanças de tom, transições, orações.",
+    title: "Comunique a Visão",
+    body: "Adicione notas para a equipa — detalhes sobre transições, arranjos ou momentos específicos de oração durante as músicas.",
   },
   {
     n: "04",
-    title: "Todos com o mesmo plano",
-    body: "Cada músico vê o mesmo culto e personaliza a sua própria vista sem afetar ninguém.",
+    title: "Sirvam em Unidade",
+    body: "Toda a equipa acede ao mesmo plano. Cada músico ajusta a sua vista pessoal, garantindo que todos estão em sintonia.",
   },
 ];
 
 function HowItWorks() {
   return (
-    <section id="how" className="relative bg-primary py-24 text-primary-foreground md:py-32">
+    <section id="how" className="relative bg-primary py-16 text-primary-foreground md:py-16">
       <div className="absolute inset-0 text-gold/25">
         <StaffLines className="top-16" />
       </div>
@@ -551,9 +630,7 @@ function HowItWorks() {
               <h3 className="mt-3 font-display text-xl font-semibold text-primary-foreground">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">
-                {s.body}
-              </p>
+              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">{s.body}</p>
             </div>
           ))}
         </div>
@@ -573,7 +650,7 @@ function LiveWorship() {
     { icon: WifiOff, label: "Funciona sem ligação" },
   ];
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-16 md:py-16">
       <div className="mx-auto grid max-w-6xl gap-14 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
         <div className="reveal">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
@@ -583,10 +660,9 @@ function LiveWorship() {
             Cada músico, ao seu ritmo.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Guitarristas, pianistas e vocalistas trabalham a partir da mesma canção, no
-            mesmo culto — mas cada um controla o seu tom, a visibilidade dos acordes e o
-            tamanho do texto. Acabou o amontoado à volta de um ecrã. Acabaram as cifras
-            desalinhadas.
+            Guitarristas, pianistas e vocalistas trabalham a partir da mesma canção, no mesmo culto
+            — mas cada um controla o seu tom, a visibilidade dos acordes e o tamanho do texto.
+            Acabou o amontoado à volta de um ecrã. Acabaram as cifras desalinhadas.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {items.map(({ icon: Icon, label }) => (
@@ -603,14 +679,14 @@ function LiveWorship() {
           </div>
         </div>
         <div className="reveal relative">
-          <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-gold/20 via-transparent to-primary/10 blur-2xl" />
+          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-gold/20 via-transparent to-primary/10 blur-2xl" />
           <img
             src={mobileImg}
             alt="Músico a usar o Hosanna durante um culto de louvor ao vivo"
             loading="lazy"
             width={800}
             height={1408}
-            className="relative mx-auto w-64 rounded-[2.5rem] border border-border shadow-soft md:w-80"
+            className="relative mx-auto w-64 rounded-3xl border border-border shadow-soft md:w-80"
           />
         </div>
       </div>
@@ -623,11 +699,14 @@ function LiveWorship() {
 /* ------------------------------------------------------------------ */
 function AnySize() {
   return (
-    <section className="bg-secondary py-24 md:py-32">
+    <section className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Qualquer igreja, qualquer tamanho" title="Do grupo em casa ao ministério multi-campus.">
-          Cada igreja tem a sua biblioteca e os seus cultos, independentes e seguros — com
-          espaço para tantas equipas de louvor quantas forem necessárias, sob a mesma igreja.
+        <SectionHeader
+          eyebrow="Qualquer igreja, qualquer tamanho"
+          title="Do grupo em casa ao ministério multi-campus."
+        >
+          Cada igreja tem a sua biblioteca e os seus cultos, independentes e seguros — com espaço
+          para tantas equipas de louvor quantas forem necessárias, sob a mesma igreja.
         </SectionHeader>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <div className="reveal rounded-2xl border border-border bg-card p-8">
@@ -636,8 +715,8 @@ function AnySize() {
               A tua biblioteca, segura e separada
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Cada igreja tem o seu espaço privado. Canções, cultos e membros da equipa
-              ficam dentro das tuas portas.
+              Cada igreja tem o seu espaço privado. Canções, cultos e membros da equipa ficam dentro
+              das tuas portas.
             </p>
           </div>
           <div className="reveal rounded-2xl border border-border bg-card p-8">
@@ -646,8 +725,8 @@ function AnySize() {
               Várias equipas, uma biblioteca partilhada
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Domingo, meio da semana, jovens, campus A, campus B — todas as equipas bebem
-              da mesma fonte.
+              Domingo, meio da semana, jovens, campus A, campus B — todas as equipas bebem da mesma
+              fonte.
             </p>
           </div>
         </div>
@@ -661,7 +740,7 @@ function AnySize() {
 /* ------------------------------------------------------------------ */
 function ExportSection() {
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-16 md:py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 md:px-8 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="reveal">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
@@ -671,29 +750,30 @@ function ExportSection() {
             A tua música, nas tuas condições.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Importa e exporta no formato aberto ChordPro, para migração ou cópias de
-            segurança fáceis. Exporta um culto completo — ordem, versículos, anúncios, mensagens, acordes e letras de todas as
-            canções — como PDF pronto a imprimir, direto da app móvel.
+            Importa e exporta no formato aberto ChordPro, para migração ou cópias de segurança
+            fáceis. Exporta um culto completo — ordem, versículos, anúncios, mensagens, acordes e
+            letras de todas as canções — como PDF pronto a imprimir, direto da app móvel.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-foreground">
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Importação e
-              exportação em ChordPro
+              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Importação e exportação
+              em ChordPro
             </li>
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> PDF imprimível
-              de um culto inteiro
+              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> PDF imprimível de um
+              culto inteiro
             </li>
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Sem lock-in — a
-              tua biblioteca é sempre tua
+              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Sem lock-in — a tua
+              biblioteca é sempre tua
             </li>
           </ul>
         </div>
         <div className="reveal">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
             <div className="mb-4 flex items-center gap-2 text-sm font-medium text-muted-foreground">
-              <FileDown className="h-4 w-4 text-[color:var(--gold)]" /> Culto de Domingo — 18 de maio
+              <FileDown className="h-4 w-4 text-[color:var(--gold)]" /> Culto de Domingo — 18 de
+              maio
             </div>
             <div className="space-y-2 text-sm">
               {[
@@ -739,48 +819,42 @@ function Pricing() {
   const price = annual ? 120 : 12;
   const unit = annual ? "/ano por igreja" : "/mês por igreja";
   return (
-    <section id="pricing" className="bg-secondary py-24 md:py-32">
+    <section id="pricing" className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Preços" title="Um preço. Toda a tua equipa de louvor.">
-          Sem taxas por músico, sem funcionalidades bloqueadas. Todos os planos incluem o
-          painel completo, a app móvel completa e músicos ilimitados.
+        <SectionHeader eyebrow="Preços" title="Um investimento na vossa adoração" centered>
+          Preços simples e transparentes para que se possa focar no que é mais importante.
         </SectionHeader>
 
-        <div className="reveal mt-10 flex items-center justify-center gap-3">
-          <span
-            className={cn(
-              "text-sm font-medium",
-              annual ? "text-muted-foreground" : "text-foreground",
-            )}
-          >
-            Mensal
-          </span>
-          <button
-            onClick={() => setAnnual((v) => !v)}
-            className={cn(
-              "relative h-7 w-14 rounded-full transition-colors",
-              annual ? "bg-primary" : "bg-muted-foreground/30",
-            )}
-            aria-label="Alternar período de faturação"
-          >
-            <span
+        <div className="reveal mt-10 flex items-center justify-center">
+          <div className="relative flex w-full max-w-[280px] items-center rounded-2xl bg-secondary p-1.5 shadow-inner">
+            <div
               className={cn(
-                "absolute top-1 h-5 w-5 rounded-full transition-transform",
-                annual ? "translate-x-1 bg-white/80" : "-translate-x-5 bg-gold",
+                "absolute inset-y-1.5 h-[calc(100%-12px)] w-[calc(50%-6px)] rounded-xl bg-white shadow-sm transition-all duration-300 ease-out",
+                annual ? "translate-x-[calc(100%+6px)]" : "translate-x-0",
               )}
             />
-          </button>
-          <span
-            className={cn(
-              "text-sm font-medium",
-              annual ? "text-foreground" : "text-muted-foreground",
-            )}
-          >
-            Anual{" "}
-            <span className="ml-1 rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
-              Poupa ~2 meses
-            </span>
-          </span>
+            <button
+              onClick={() => setAnnual(false)}
+              className={cn(
+                "relative z-10 flex-1 py-2 text-sm font-semibold transition-colors duration-200",
+                !annual ? "text-primary" : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Mensal
+            </button>
+            <button
+              onClick={() => setAnnual(true)}
+              className={cn(
+                "relative z-10 flex-1 py-2 text-sm font-semibold transition-colors duration-200",
+                annual ? "text-primary" : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              Anual
+              <span className="ml-1.5 inline-flex items-center rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-700 uppercase tracking-wider">
+                -20%
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="reveal mx-auto mt-12 max-w-2xl">
@@ -794,20 +868,16 @@ function Pricing() {
               </span>
               <div className="mt-5 font-display text-4xl font-semibold md:text-5xl">Hosanna</div>
               <p className="mt-2 text-primary-foreground/75">
-                Tudo o que a tua igreja precisa para planear e conduzir o louvor — sem
-                surpresas na fatura.
+                Acesso total a todas as ferramentas, sem limites de utilizadores ou funcionalidades
+                escondidas.
               </p>
 
               <div className="mt-8 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-semibold md:text-7xl">
-                  {price}€
-                </span>
+                <span className="font-display text-6xl font-semibold md:text-7xl">{price}€</span>
                 <span className="text-primary-foreground/70">{unit}</span>
               </div>
               <p className="mt-1 text-xs text-primary-foreground/60">
-                {annual
-                  ? "Faturado anualmente · equivalente a 10€/mês"
-                  : "Faturado mensalmente"}
+                {annual ? "Faturado anualmente · equivalente a 10€/mês" : "Faturado mensalmente"}
                 {" · "}Músicos ilimitados
               </p>
 
@@ -823,29 +893,87 @@ function Pricing() {
               <Button
                 asChild
                 size="lg"
-                className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
+                className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
               >
-                <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new?plan=base&payment==${annual ? 'yearly' : 'montly'}`}>
+                <a href={`${dashboardUrl}/new?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
-              <p className="mt-3 text-center text-xs text-primary-foreground/60">
-                14 dias grátis
-              </p>
+              <p className="mt-3 text-center text-xs text-primary-foreground/60">14 dias grátis</p>
             </div>
           </div>
 
           <p className="reveal mt-6 text-center text-sm text-muted-foreground">
-            Músicos ilimitados em qualquer plano — o preço é por igreja, não por pessoa.
+            Músicos e utilizadores ilimitados — o valor é por igreja, independentemente do tamanho
+            da equipa.
           </p>
 
           <div className="reveal mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm text-muted-foreground">
             <Users className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--primary-dark)]" />
             <p>
-              <span className="font-medium text-foreground">Igrejas multi-campus:</span>{" "}
-              +12€/mês por cada campus adicional. Acesso ilimitado de utilizadores em
-              todos os locais.
+              <span className="font-medium text-foreground">Igrejas multi-campus:</span> +12€/mês
+              por cada campus adicional. Acesso ilimitado de utilizadores em todos os locais.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Mobile App                                                        */
+/* ------------------------------------------------------------------ */
+function MobileApp() {
+  return (
+    <section id="mobile" className="py-16 bg-primary overflow-hidden relative font-sans">
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8 reveal">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium">
+              Sempre Consigo
+            </div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-[1.1] tracking-tight">
+              Leve o seu louvor no <span className="text-blue-200">bolso</span>.
+            </h2>
+            <p className="text-xl text-blue-50/80 leading-relaxed max-w-xl">
+              Aceda às suas cifras, consulte as escalas e prepare-se para o culto diretamente do seu
+              telemóvel. O Hosanna App é o companheiro perfeito para músicos que buscam excelência
+              em cada detalhe.
+            </p>
+            <div className="flex flex-wrap gap-5 pt-4">
+              <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-4 transition-all hover:scale-105 active:scale-95 shadow-xl border border-white/10">
+                <div className="p-1.5 rounded-xl bg-white/10">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] uppercase font-bold opacity-60 text-white/70 tracking-widest">
+                    Download na
+                  </div>
+                  <div className="text-xl font-bold leading-none text-white">App Store</div>
+                </div>
+              </button>
+              <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-4 transition-all hover:scale-105 active:scale-95 shadow-xl border border-white/10">
+                <div className="p-1.5 rounded-xl bg-white/10 text-white">
+                  <Play className="w-8 h-8 fill-current" />
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] uppercase font-bold opacity-60 text-white/70 tracking-widest">
+                    Disponível no
+                  </div>
+                  <div className="text-xl font-bold leading-none text-white">Google Play</div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div className="relative reveal">
+            <div className="absolute -inset-10 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none" />
+            <img
+              src={mobileImg}
+              alt="Hosanna Mobile App"
+              className="relative z-10 w-full max-w-[320px] mx-auto drop-shadow-2xl rounded-3xl border-8 border-slate-900 transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
+            />
           </div>
         </div>
       </div>
@@ -858,7 +986,7 @@ function Pricing() {
 /* ------------------------------------------------------------------ */
 function Vision() {
   return (
-    <section className="relative overflow-hidden bg-background py-24 md:py-32">
+    <section className="relative overflow-hidden bg-background py-16 md:py-16">
       <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
         <div className="reveal text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
           A nossa visão
@@ -867,13 +995,13 @@ function Vision() {
           «Acreditamos que a tecnologia deve apoiar o louvor, não complicá-lo.»
         </p>
         <p className="reveal mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-          O Hosanna remove barreiras desnecessárias entre a preparação e o louvor — para que
-          as igrejas passem menos tempo à procura de canções e a gerir ficheiros, e mais
-          tempo a conduzir pessoas em louvor.
+          O Hosanna remove barreiras desnecessárias entre a preparação e o louvor — para que as
+          igrejas passem menos tempo à procura de canções e a gerir ficheiros, e mais tempo a
+          conduzir pessoas em louvor.
         </p>
         <p className="reveal mt-8 font-display text-lg italic text-[color:var(--primary-dark)] md:text-xl">
-          «Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os
-          que servem através da música.»
+          «Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os que
+          servem através da música.»
         </p>
       </div>
     </section>
@@ -905,11 +1033,11 @@ const ROADMAP = [
 
 function Roadmap() {
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader eyebrow="Roadmap" title="O que aí vem a seguir.">
-          O Hosanna continua a crescer com as igrejas que o usam. Estas são algumas das
-          melhorias que já estão a caminho.
+          O Hosanna continua a crescer com as igrejas que o usam. Estas são algumas das melhorias
+          que já estão a caminho.
         </SectionHeader>
         <div className="reveal mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ROADMAP.map((item) => (
@@ -956,9 +1084,11 @@ const FAQS = [
 
 function FAQ() {
   return (
-    <section id="faq" className="bg-secondary py-24 md:py-32">
+    <section id="faq" className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <SectionHeader eyebrow="Perguntas frequentes" title="Respostas às dúvidas mais comuns das equipas." />
+        <SectionHeader eyebrow="Perguntas frequentes" title="Esclareça as suas dúvidas" centered>
+          Tudo o que precisa de saber para começar a usar o Hosanna na sua igreja.
+        </SectionHeader>
         <div className="reveal mt-12">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((f, i) => (
@@ -983,36 +1113,36 @@ function FAQ() {
 /* ------------------------------------------------------------------ */
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-hero-gradient py-24 text-primary-foreground md:py-32">
+    <section className="relative overflow-hidden bg-hero-gradient py-16 text-primary-foreground md:py-16">
       <div className="absolute inset-0 text-gold/30">
         <StaffLines className="top-10" />
         <StaffLines className="bottom-10" />
       </div>
       <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
-        <h2 className="font-display text-3xl leading-tight tracking-tight md:text-5xl">
-          Pronto para simplificar como a tua igreja prepara o louvor?
+        <h2 className="reveal font-display text-4xl leading-tight tracking-tight md:text-6xl text-white">
+          Pronto para elevar o nível do seu louvor?
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-primary-foreground/70 md:text-lg">
-          Experimenta o Hosanna gratuitamente durante 14 dias. Traz a tua equipa, planeia um
-          culto, conduz o louvor — vê a diferença já neste domingo.
+        <p className="reveal mx-auto mt-6 max-w-xl text-blue-50/70 md:text-xl">
+          Junte-se a centenas de igrejas que já escolheram a excelência e a organização com o
+          Hosanna.
         </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row reveal">
           <Button
             asChild
             size="lg"
-            className="rounded-full bg-gold px-8 text-gold-foreground hover:bg-gold/90"
+            className="rounded-full bg-white px-10 text-lg font-medium text-primary shadow-xl transition-all hover:scale-105 active:scale-95 hover:bg-blue-50"
           >
-            <a href="#pricing">
-              Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
+            <a href={dashboardUrl}>
+              Começar Agora <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="rounded-full border-primary-foreground/25 bg-transparent px-8 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            className="rounded-full border-white/30 bg-white/5 px-10 text-lg font-medium text-white backdrop-blur-md transition-all hover:bg-white/10"
           >
-            <a href="mailto:ola@hosanna.app">Fala connosco</a>
+            <a href="/contact">Fala connosco</a>
           </Button>
         </div>
       </div>
@@ -1022,28 +1152,51 @@ function FinalCTA() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:px-8">
-        <div>
+    <footer className="bg-secondary py-20">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-10 px-5 md:grid-cols-4 md:px-8">
+        <div className="col-span-2 md:col-span-1">
           <Logo />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-            Planeia o teu louvor. Organiza a tua música. Serve com confiança.
+          <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+            A ferramenta definitiva para equipas de louvor que buscam excelência e organização.
           </p>
         </div>
         {[
-          { title: "Produto", links: [["Funcionalidades", "/#features"], ["Como Funciona", "/#how"], ["Preços", "/#pricing"], ["Perguntas Frequentes", "/#faq"]] },
-          { title: "Suporte", links: [["Centro de Ajuda", "#"], ["Guia ChordPro", "#"], ["Estado do serviço", "#"]] },
+          {
+            title: "Produto",
+            links: [
+              ["Funcionalidades", "/#features"],
+              ["Guia ChordPro", "/chordpro"],
+              ["Preços", "/#pricing"],
+              ["Download App", "/#mobile"],
+            ],
+          },
+          {
+            title: "Suporte",
+            links: [
+              ["Contacto", "/contact"],
+              ["Centro de Ajuda", "#"],
+              ["Estado do serviço", "#"],
+            ],
+          },
+          {
+            title: "Legal",
+            links: [
+              ["Termos de Serviço", "/legal"],
+              ["Política de Privacidade", "/legal"],
+              ["Cookies", "/legal"],
+            ],
+          },
         ].map((col) => (
           <div key={col.title}>
-            <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            <div className="text-xs font-bold uppercase tracking-widest text-primary/40 font-sans">
               {col.title}
             </div>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-6 space-y-3 text-sm font-sans">
               {col.links.map(([label, href]) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-foreground/80 transition-colors hover:text-foreground"
+                    className="text-muted-foreground transition-colors hover:text-primary"
                   >
                     {label}
                   </a>
@@ -1053,17 +1206,32 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-border px-5 pt-6 text-xs text-muted-foreground md:flex-row md:px-8">
-        <div>© {new Date().getFullYear()} Hosanna. Feito para equipas de louvor em todo o lado.</div>
-        <div className="flex gap-5">
-          <a href="legal" className="hover:text-foreground">Documentos Legais</a>
-          <a href="mailto:hosanna.contact@gmail.com" className="hover:text-foreground">hosanna.contact@gmail.com</a>
+      <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-border px-5 pt-8 text-xs text-muted-foreground md:flex-row md:px-8">
+        <div>© {new Date().getFullYear()} Hosanna Studio. Todos os direitos reservados.</div>
+        <div className="flex gap-8">
+          <a
+            href="mailto:hosanna.contact@gmail.com"
+            className="hover:text-primary transition-colors flex items-center gap-2"
+          >
+            <Mail className="w-3 h-3" />
+            hosanna.contact@gmail.com
+          </a>
         </div>
       </div>
     </footer>
   );
 }
 
+export function EarlyAccessBanner() {
+  return (
+    <div className="bg-blue-600 py-2 text-center text-white px-4">
+      <div className="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">
+        <Zap className="h-4 w-4 fill-current text-blue-200" />
+        <span>Estamos em desenvolvimento inicial. Junte-se a nós nesta jornada!</span>
+      </div>
+    </div>
+  );
+}
 /* ------------------------------------------------------------------ */
 /*  Root                                                              */
 /* ------------------------------------------------------------------ */
@@ -1078,11 +1246,13 @@ export function HosannaLanding() {
         <Problem />
         <TwoApps />
         <Organize />
+        <MigrationSection />
         <HowItWorks />
         <LiveWorship />
         <AnySize />
         <ExportSection />
         <Pricing />
+        <MobileApp />
         <Vision />
         <Roadmap />
         <FAQ />

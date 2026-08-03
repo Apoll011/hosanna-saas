@@ -4,17 +4,16 @@ import ReactMarkdown from "react-markdown";
 import legalContent from "@/content/legal.md?raw";
 
 import { Footer, Nav, StaffLines } from "@/components/hosanna/HosannaLanding";
+import { getSEOMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/legal")({
   head: () => ({
-    meta: [
-      { title: "Hosanna - Documentos Legais" },
-      {
-        name: "description",
-        content:
-          "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
-      },
-    ],
+    meta: getSEOMeta({
+      title: "Documentos Legais | Hosanna Studio",
+      description:
+        "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
+      url: "https://hosanna.studio/legal",
+    }),
   }),
   component: LegalPage,
 });
