@@ -1,0 +1,48 @@
+/* StoreButton.module.css */
+.store-button {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  /* Updated to fully rounded / pill style */
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem; /* Increased side padding slightly to complement rounded corners */
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.store-button:hover .button-content {
+  background-color: #f3f4f6;
+  border-color: #9ca3af; /* Subtle border enhancement on hover */
+}
+
+.logo {
+  margin-right: 0.625rem;
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15; /* Prevents awkward line spacing inside small badges */
+}
+
+.text-top {
+  font-size: 0.6875rem;
+  font-weight: 400; /* Replaced 'lighter' for more consistent cross-browser rendering */
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.text-bottom {
+  font-size: 1rem;
+  font-weight: 700;
+}

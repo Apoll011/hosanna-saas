@@ -1,5 +1,3 @@
-import { RouteMeta } from "@tanstack/react-router";
-
 interface SEOConfig {
   title: string;
   description: string;
@@ -20,7 +18,7 @@ const defaultSEO: SEOConfig = {
   type: "website",
 };
 
-export function getSEOMeta(config?: Partial<SEOConfig>): RouteMeta[] {
+export function getSEOMeta(config?: Partial<SEOConfig>) {
   const seo = { ...defaultSEO, ...config };
 
   return [

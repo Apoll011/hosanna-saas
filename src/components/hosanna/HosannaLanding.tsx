@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { useReveal } from "@/hooks/useReveal";
 import { cn } from "@/lib/utils";
 import {
   ArrowRight,
@@ -31,28 +32,8 @@ import {
   Zap,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-/* ------------------------------------------------------------------ */
-/*  Scroll reveal                                                     */
-/* ------------------------------------------------------------------ */
-function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>(".reveal");
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            e.target.classList.add("in-view");
-            io.unobserve(e.target);
-          }
-        }
-      },
-      { rootMargin: "-40px" },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
+import { MigrationSection } from "../ui/MigrationSection";
+import { PlayStoreButton } from "../ui/StoreButton";
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -79,7 +60,7 @@ const NAV = [
   { label: "Contacto", href: "/contact" },
 ];
 
-const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL || "/login";
+const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL + "/new";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -358,67 +339,6 @@ function Problem() {
             «O nosso objetivo é simples: queremos que a sua equipa passe menos tempo a configurar
             tecnologia e mais tempo a servir ao Senhor.»
           </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function MigrationSection() {
-  useReveal();
-  return (
-    <section className="py-12 md:py-16 bg-white overflow-hidden relative font-sans">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 md:p-12 border border-blue-100 relative overflow-hidden shadow-sm reveal">
-          <div className="absolute -top-24 -right-24 opacity-5 pointer-events-none">
-            <Zap className="w-96 h-96 text-primary" />
-          </div>
-
-          <div className="relative z-10 max-w-3xl">
-            <div className="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200/50">
-              Transição Suave
-            </div>
-            <h2 className="reveal text-3xl md:text-5xl font-display font-bold text-primary mb-8 tracking-tight">
-              Mude para o Hosanna <span className="text-blue-400">sem perder nada</span>
-            </h2>
-            <p className="reveal text-lg text-muted-foreground mb-8 leading-relaxed">
-              Já utiliza outras ferramentas? O Hosanna foi desenhado para ser o novo lar da sua
-              biblioteca, respeitando os padrões que já conhece.
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="reveal bg-white p-6 md:p-8 rounded-2xl shadow-soft border border-blue-50/50 transition-all hover:shadow-lg">
-                <div className="font-display font-bold text-2xl mb-4 flex items-center gap-3 text-primary">
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  Songbook Pro
-                </div>
-                <p className="text-muted-foreground leading-relaxed text-base">
-                  Importe toda a sua biblioteca do Songbook Pro em segundos. Preservamos todas as
-                  suas cifras, tons e metadados com precisão cirúrgica.
-                </p>
-              </div>
-
-              <div className="reveal bg-blue-50/30 p-6 md:p-8 rounded-2xl border border-dashed border-blue-200">
-                <div className="font-display font-bold text-2xl mb-4 flex items-center gap-3 text-blue-400">
-                  <div className="w-3 h-3 rounded-full bg-blue-300" />
-                  Em Breve
-                </div>
-                <p className="text-muted-foreground leading-relaxed text-base">
-                  Estamos a finalizar os importadores para OnSong, Planning Center e Chord1. O
-                  futuro do louvor é livre de barreiras.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 reveal">
-              <button className="inline-flex items-center gap-3 text-primary font-bold text-lg group transition-colors hover:text-blue-700">
-                Explorar formatos suportados
-                <div className="p-2 rounded-full bg-blue-100 group-hover:bg-primary group-hover:text-white transition-all">
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </div>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -821,12 +741,12 @@ function Pricing() {
   return (
     <section id="pricing" className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Preços" title="Um investimento na vossa adoração" centered>
+        <SectionHeader eyebrow="Preços" title="Um investimento na vossa adoração">
           Preços simples e transparentes para que se possa focar no que é mais importante.
         </SectionHeader>
 
         <div className="reveal mt-10 flex items-center justify-center">
-          <div className="relative flex w-full max-w-[280px] items-center rounded-2xl bg-secondary p-1.5 shadow-inner">
+          <div className="relative flex w-full max-w-70 items-center rounded-2xl bg-secondary p-1.5 shadow-inner">
             <div
               className={cn(
                 "absolute inset-y-1.5 h-[calc(100%-12px)] w-[calc(50%-6px)] rounded-xl bg-white shadow-sm transition-all duration-300 ease-out",
@@ -943,28 +863,7 @@ function MobileApp() {
               em cada detalhe.
             </p>
             <div className="flex flex-wrap gap-5 pt-4">
-              <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-4 transition-all hover:scale-105 active:scale-95 shadow-xl border border-white/10">
-                <div className="p-1.5 rounded-xl bg-white/10">
-                  <Smartphone className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[10px] uppercase font-bold opacity-60 text-white/70 tracking-widest">
-                    Download na
-                  </div>
-                  <div className="text-xl font-bold leading-none text-white">App Store</div>
-                </div>
-              </button>
-              <button className="bg-black text-white px-8 py-4 rounded-2xl flex items-center space-x-4 transition-all hover:scale-105 active:scale-95 shadow-xl border border-white/10">
-                <div className="p-1.5 rounded-xl bg-white/10 text-white">
-                  <Play className="w-8 h-8 fill-current" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[10px] uppercase font-bold opacity-60 text-white/70 tracking-widest">
-                    Disponível no
-                  </div>
-                  <div className="text-xl font-bold leading-none text-white">Google Play</div>
-                </div>
-              </button>
+              <PlayStoreButton href="https://github.com/Apoll011/Hosanna/releases/latest" />
             </div>
           </div>
           <div className="relative reveal">
@@ -972,7 +871,7 @@ function MobileApp() {
             <img
               src={mobileImg}
               alt="Hosanna Mobile App"
-              className="relative z-10 w-full max-w-[320px] mx-auto drop-shadow-2xl rounded-3xl border-8 border-slate-900 transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
+              className="relative z-10 w-full max-w-[320px] mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
             />
           </div>
         </div>
@@ -1013,13 +912,9 @@ function Vision() {
 /* ------------------------------------------------------------------ */
 const ROADMAP = [
   "Editor de cultos completamente renovado e mais intuitivo",
-  "Exportação profissional em PDF para canções, cultos e pastas",
-  "Assistente de configuração inicial com QR Code, token ou URL",
   "Experiência unificada entre as páginas de Canções e Cultos",
   "Modelos de cultos reutilizáveis e duplicação de serviços",
-  "Editor de canções com uma experiência ChordPro melhorada",
   "Importação inteligente com deteção automática de duplicados",
-  "Operações em massa para gerir grandes bibliotecas musicais",
   "Sincronização offline mais rápida e resolução de conflitos",
   "Sincronização em segundo plano na aplicação móvel",
   "Personalização da identidade visual de cada igreja",
@@ -1086,7 +981,7 @@ function FAQ() {
   return (
     <section id="faq" className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <SectionHeader eyebrow="Perguntas frequentes" title="Esclareça as suas dúvidas" centered>
+        <SectionHeader eyebrow="Perguntas frequentes" title="Esclareça as suas dúvidas">
           Tudo o que precisa de saber para começar a usar o Hosanna na sua igreja.
         </SectionHeader>
         <div className="reveal mt-12">
@@ -1222,7 +1117,7 @@ export function Footer() {
   );
 }
 
-export function EarlyAccessBanner() {
+function EarlyAccessBanner() {
   return (
     <div className="bg-blue-600 py-2 text-center text-white px-4">
       <div className="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">

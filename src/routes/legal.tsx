@@ -20,12 +20,10 @@ export const Route = createFileRoute("/legal")({
 
 function LegalPage() {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground antialiased">
+    <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/10">
       <Nav />
-
-      <main>
-        {/* Hero Section styled like the main landing page */}
-        <section className="relative overflow-hidden bg-hero-gradient text-primary-foreground pt-36 pb-24 md:pt-44 md:pb-32">
+      <div className="bg-[#f8fafc] min-h-screen selection:bg-primary/10 font-sans">
+        <section className="bg-hero-gradient pt-[160px] pb-12 text-white overflow-hidden relative -mt-[120px]">
           <div className="absolute inset-0 text-gold/40">
             <StaffLines className="top-24" />
             <StaffLines className="bottom-24" />
@@ -49,8 +47,7 @@ function LegalPage() {
             </div>
           </div>
         </section>
-      </main>
-
+      </div>
       <Footer />
     </div>
   );
