@@ -499,7 +499,7 @@ export function ChordProGuide() {
                   ].map((text, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-3 bg-secondary p-4 rounded-2xl border border-blue-50/50 shadow-sm transition-transform hover:-translate-y-1"
+                      className="flex items-center gap-3 bg-secondary p-4 rounded-2xl border border-blue-50/50 shadow-sm transition-transform hover:-translate-y-1"
                     >
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                       <span className="font-medium text-primary text-sm sm:text-base leading-snug">
@@ -650,7 +650,7 @@ export function ChordProGuide() {
               <div id="notas" className="scroll-mt-28">
                 <SectionHeader
                   icon={Grid3x3}
-                  eyebrow="Para Instrumentistas"
+                  eyebrow="Para Músicos"
                   title="Grelhas de Acordes & Tempos"
                   lede="Precisa de escrever uma introdução ou instrumental? Use as barras verticais para desenhar compassos ou anote quanto tempo dura cada acorde."
                 />
