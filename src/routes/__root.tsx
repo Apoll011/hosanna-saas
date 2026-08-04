@@ -11,6 +11,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
+import { Analytics } from "@vercel/analytics/react";
 import { getSEOMeta } from "../lib/seo";
 
 function NotFoundComponent() {
@@ -104,6 +105,7 @@ function RootShell({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
+        <Analytics />
         {children}
         <Scripts />
       </body>
