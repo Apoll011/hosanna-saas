@@ -177,7 +177,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-[120px] pt-[120px]"
+      className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-30 pt-30"
     >
       <div className="absolute inset-0 text-gold/40">
         <StaffLines className="top-24" />
@@ -268,7 +268,7 @@ function SectionHeader({
       {eyebrow && (
         <div
           className={cn(
-            "text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--primary-dark)]",
+            "text-xs font-semibold uppercase tracking-[0.2em] text-primary-dark",
             eyebrowClassName,
           )}
         >
@@ -385,7 +385,7 @@ function TwoApps() {
                 <Monitor className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-[color:var(--gold)]">
+                <div className="text-xs font-semibold uppercase tracking-widest text-gold">
                   Painel
                 </div>
                 <h3 className="font-display text-2xl text-foreground">Para líderes e equipa</h3>
@@ -402,7 +402,7 @@ function TwoApps() {
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {DASHBOARD_FEATURES.map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm text-foreground">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -416,7 +416,7 @@ function TwoApps() {
                 <Smartphone className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-[color:var(--gold)]">
+                <div className="text-xs font-semibold uppercase tracking-widest text-gold">
                   App móvel
                 </div>
                 <h3 className="font-display text-2xl text-foreground">Para os músicos, ao vivo</h3>
@@ -435,7 +435,7 @@ function TwoApps() {
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {MOBILE_FEATURES.map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm text-foreground">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -484,7 +484,7 @@ function Organize() {
               key={title}
               className="reveal rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-soft"
             >
-              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-[color:var(--primary-dark)]">
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary-dark">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground">{title}</h3>
@@ -573,7 +573,7 @@ function LiveWorship() {
     <section className="bg-background py-16 md:py-16">
       <div className="mx-auto grid max-w-6xl gap-14 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
         <div className="reveal">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Feito para o louvor ao vivo
           </div>
           <h2 className="mt-3 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
@@ -590,7 +590,7 @@ function LiveWorship() {
                 key={label}
                 className="flex items-center gap-3 rounded-xl border border-border bg-card p-4"
               >
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-[color:var(--primary-dark)]">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary-dark">
                   <Icon className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium text-foreground">{label}</span>
@@ -599,7 +599,7 @@ function LiveWorship() {
           </div>
         </div>
         <div className="reveal relative">
-          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-gold/20 via-transparent to-primary/10 blur-2xl" />
+          <div className="absolute -inset-6 rounded-3xl bg-linear-to-br from-gold/20 via-transparent to-primary/10 blur-2xl" />
           <img
             src={mobileImg}
             alt="Músico a usar o Hosanna durante um culto de louvor ao vivo"
@@ -630,7 +630,7 @@ function AnySize() {
         </SectionHeader>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <div className="reveal rounded-2xl border border-border bg-card p-8">
-            <ShieldCheck className="h-8 w-8 text-[color:var(--gold)]" />
+            <ShieldCheck className="h-8 w-8 text-gold" />
             <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
               A tua biblioteca, segura e separada
             </h3>
@@ -640,7 +640,7 @@ function AnySize() {
             </p>
           </div>
           <div className="reveal rounded-2xl border border-border bg-card p-8">
-            <Users className="h-8 w-8 text-[color:var(--gold)]" />
+            <Users className="h-8 w-8 text-gold" />
             <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
               Várias equipas, uma biblioteca partilhada
             </h3>
@@ -663,7 +663,7 @@ function ExportSection() {
     <section className="bg-background py-16 md:py-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 md:px-8 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="reveal">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Exportar e portabilidade
           </div>
           <h2 className="mt-3 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
@@ -676,24 +676,21 @@ function ExportSection() {
           </p>
           <ul className="mt-6 space-y-3 text-sm text-foreground">
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Importação e exportação
-              em ChordPro
+              <Check className="mt-0.5 h-4 w-4 text-gold" /> Importação e exportação em ChordPro
             </li>
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> PDF imprimível de um
-              culto inteiro
+              <Check className="mt-0.5 h-4 w-4 text-gold" /> PDF imprimível de um culto inteiro
             </li>
             <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Sem lock-in — a tua
-              biblioteca é sempre tua
+              <Check className="mt-0.5 h-4 w-4 text-gold" /> Sem lock-in — a tua biblioteca é sempre
+              tua
             </li>
           </ul>
         </div>
         <div className="reveal">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
             <div className="mb-4 flex items-center gap-2 text-sm font-medium text-muted-foreground">
-              <FileDown className="h-4 w-4 text-[color:var(--gold)]" /> Culto de Domingo — 18 de
-              maio
+              <FileDown className="h-4 w-4 text-gold" /> Culto de Domingo — 18 de maio
             </div>
             <div className="space-y-2 text-sm">
               {[
@@ -829,7 +826,7 @@ function Pricing() {
           </p>
 
           <div className="reveal mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm text-muted-foreground">
-            <Users className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--primary-dark)]" />
+            <Users className="mt-0.5 h-4 w-4 shrink-0 text-primary-dark" />
             <p>
               <span className="font-medium text-foreground">Igrejas multi-campus:</span> +12€/mês
               por cada campus adicional. Acesso ilimitado de utilizadores em todos os locais.
@@ -887,7 +884,7 @@ function Vision() {
   return (
     <section className="relative overflow-hidden bg-background py-16 md:py-16">
       <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
-        <div className="reveal text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">
+        <div className="reveal text-xs font-semibold uppercase tracking-[0.2em] text-gold">
           A nossa visão
         </div>
         <p className="reveal mt-6 font-display text-3xl leading-snug text-foreground md:text-4xl lg:text-5xl">
@@ -898,7 +895,7 @@ function Vision() {
           igrejas passem menos tempo à procura de canções e a gerir ficheiros, e mais tempo a
           conduzir pessoas em louvor.
         </p>
-        <p className="reveal mt-8 font-display text-lg italic text-[color:var(--primary-dark)] md:text-xl">
+        <p className="reveal mt-8 font-display text-lg italic text-primary-dark md:text-xl">
           «Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os que
           servem através da música.»
         </p>
@@ -940,7 +937,7 @@ function Roadmap() {
               key={item}
               className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-soft"
             >
-              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--primary-dark)]" />
+              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-primary-dark" />
               <span className="text-sm leading-relaxed text-foreground">{item}</span>
             </div>
           ))}
