@@ -13,8 +13,8 @@ const defaultSEO: SEOConfig = {
     "Organize a sua biblioteca de música, planeie cultos e equipe os seus músicos com as ferramentas certas. O Hosanna é o software de gestão de louvor mais intuitivo para igrejas modernas.",
   keywords:
     "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
-  image: "https://hosanna.studio/og-image.jpg",
-  url: "https://hosanna.studio",
+  image: "https://hosanna.duckdns.org/og-image.png",
+  url: "https://hosanna.duckdns.org",
   type: "website",
 };
 
