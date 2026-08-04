@@ -815,7 +815,7 @@ function Pricing() {
                 size="lg"
                 className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
               >
-                <a href={`${dashboardUrl}/new?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
+                <a href={`${dashboardUrl}/?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
