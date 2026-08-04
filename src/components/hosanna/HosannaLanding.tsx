@@ -1119,7 +1119,10 @@ function EarlyAccessBanner() {
     <div className="bg-blue-600 py-2 text-center text-white px-4">
       <div className="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">
         <Zap className="h-4 w-4 fill-current text-blue-200" />
-        <span>Estamos na fase de desenvolvimento inicial. Junte-se a nós nesta jornada!</span>
+        <span>
+          Estamos na fase de desenvolvimento inicial. A versão Alpha será lançada a 1 de setembro.
+          Junte-se a nós nesta jornada!
+        </span>
       </div>
     </div>
   );
