@@ -399,7 +399,7 @@ export function ChordProGuide() {
   return (
     <div className="bg-white min-h-screen selection:bg-primary/10 font-sans">
       {/* ============================= HERO ============================= */}
-      <section className="bg-hero-gradient pt-[160px] pb-16 text-white relative overflow-hidden -mt-[120px]">
+      <section className="bg-hero-gradient pt-40 pb-16 text-white relative overflow-hidden -mt-30">
         <div className="absolute inset-0 text-white/10">
           <StaffLines className="top-24 opacity-40" />
           <StaffLines className="bottom-12 opacity-20" />
@@ -409,7 +409,7 @@ export function ChordProGuide() {
             <BookMarked className="w-3.5 h-3.5" />
             Guia Oficial · Equipa de Louvor
           </div>
-          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight">
+          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
             Domine o <span className="text-blue-300">ChordPro</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-3xl mx-auto mb-14">
@@ -508,7 +508,7 @@ export function ChordProGuide() {
                     , logo antes da sílaba onde devem ser tocados.
                   </p>
                 </div>
-                <ul className="grid sm:grid-cols-2 gap-6 mt-10 list-none p-0 reveal">
+                <ul className="grid sm:grid-cols-2 gap-4 mt-10 list-none p-0 reveal">
                   {[
                     "Transposição instantânea para qualquer tom",
                     "Ajuste dinâmico a qualquer tamanho de ecrã",
@@ -519,7 +519,7 @@ export function ChordProGuide() {
                   ].map((text, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-4 bg-secondary p-6 rounded-2xl border border-blue-50/50 shadow-sm transition-transform hover:-translate-y-1"
+                      className="flex items-center gap-4 bg-secondary p-4 rounded-2xl border border-blue-50/50 shadow-sm transition-transform hover:-translate-y-1"
                     >
                       <CheckCircle2 className="w-6 h-6 text-green-500 mt-1 shrink-0" />
                       <span className="font-semibold text-primary">{text}</span>
