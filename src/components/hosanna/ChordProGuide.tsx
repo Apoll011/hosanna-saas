@@ -306,7 +306,7 @@ function HosannaBadge() {
 
 function Key({ children }: { children: React.ReactNode }) {
   return (
-    <kbd className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 shadow-[0_2px_0_0_rgba(15,23,42,0.12)] text-sm font-mono font-bold text-slate-700">
+    <kbd className="inline-flex items-center justify-center min-w-9 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 shadow-[0_2px_0_0_rgba(15,23,42,0.12)] text-sm font-mono font-bold text-slate-700">
       {children}
     </kbd>
   );
@@ -905,7 +905,7 @@ export function ChordProGuide() {
                           </span>
                         </div>
                         <div className="rounded-2xl border border-border overflow-hidden shadow-sm overflow-x-auto">
-                          <table className="w-full text-sm min-w-[600px]">
+                          <table className="w-full text-sm min-w-150">
                             <tbody>
                               {entries.map((entry, idx) => (
                                 <tr
