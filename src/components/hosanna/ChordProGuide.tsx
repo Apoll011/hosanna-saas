@@ -69,7 +69,7 @@ const DIRECTIVES: DirectiveEntry[] = [
   {
     directive: "duration",
     category: "metadata",
-    description: "Duração em mm:ss — o Hosanna converte para segundos",
+    description: "Duração em mm:ss (Hosanna converte para segundos) ou Segundos",
   },
   { directive: "album", category: "metadata", description: "Álbum ou coletânea de origem" },
   { directive: "composer", category: "metadata", description: "Compositor da melodia" },
@@ -243,16 +243,7 @@ const CATEGORY_META: Record<
   },
 };
 
-const ESSENTIAL_DIRECTIVES = [
-  "title",
-  "artist",
-  "key",
-  "tempo",
-  "time",
-  "capo",
-  "youtube",
-  "song_number",
-];
+const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "duration", "youtube", "song_number"];
 
 const TOC = [
   { id: "fundamentos", label: "Fundamentos" },
@@ -561,6 +552,10 @@ export function ChordProGuide() {
                     </div>
                     <div>
                       <span className="text-blue-400">{"{"}song_number:</span> 147
+                      <span className="text-blue-400">{"}"}</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-400">{"{"}duration:</span> 2:40
                       <span className="text-blue-400">{"}"}</span>
                     </div>
                     <br />
