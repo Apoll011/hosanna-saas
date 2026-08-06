@@ -3,7 +3,7 @@
 **Última atualização:** 28 de julho de 2026
 
 **1.1. Aceitação dos Termos**
-Bem-vindo ao Hosanna, operado por Tiago Inês, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Dashboard e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
+Bem-vindo ao Hosanna, operado por Tiago Inês, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Studio e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
 
 **1.2. Descrição da Plataforma e Serviço**
 O Hosanna é uma plataforma de Software as a Service (SaaS) destinada a igrejas, ministérios e equipas de louvor ("Clientes"). A plataforma fornece ferramentas para a organização de bibliotecas musicais, planeamento de cultos, e partilha de alinhamentos com músicos através de tokens de acesso, permitindo a visualização offline na App Mobile. O Hosanna não fornece, nem vende, partituras, letras ou obras musicais de terceiros.
@@ -19,7 +19,7 @@ O serviço organiza-se por instâncias isoladas chamadas "Workspaces" (Igrejas).
 O Cliente reconhece que é o único responsável pelo conteúdo (letras, cifras, notas, ficheiros ChordPro) que introduz, armazena e reproduz na plataforma. É exigido que o Cliente possua as devidas licenças ativas, como a CCLI (Christian Copyright Licensing International), ou autorização expressa dos autores, para qualquer material protegido por direitos de autor. O Hosanna atua apenas como prestador de infraestrutura tecnológica.
 
 **1.5. Alterações aos Termos**
-Reservamo-nos o direito de modificar estes Termos a qualquer momento. Os Administradores serão notificados de alterações substanciais por e-mail ou através de um aviso no Dashboard com 30 dias de antecedência. O uso continuado após as alterações constitui aceitação dos novos termos.
+Reservamo-nos o direito de modificar estes Termos a qualquer momento. Os Administradores serão notificados de alterações substanciais por e-mail ou através de um aviso no Studio com 30 dias de antecedência. O uso continuado após as alterações constitui aceitação dos novos termos.
 
 **1.6. Resolução de Litígios**
 Estes Termos são regidos e interpretados de acordo com as leis de Portugal. Para a resolução de qualquer litígio emergente da interpretação ou execução destes Termos, será exclusivamente competente o Tribunal da Comarca de Lisboa, com renúncia expressa a qualquer outro.
@@ -51,7 +51,7 @@ Os seus dados não são vendidos. Partilhamos dados apenas com fornecedores de i
 - **Stripe:** Para processamento de pagamentos encriptados.
 
 **2.5. Retenção e Eliminação de Dados (Direito ao Esquecimento)**
-Se um Administrador decidir apagar o seu Workspace através do Dashboard, o Hosanna executa uma eliminação em cascata ("Cascade Delete") instantânea. Todos os perfis de Admin, músicas, cultos, pastas e tokens associados a esse Workspace são permanentemente erradicados da base de dados de produção.
+Se um Administrador decidir apagar o seu Workspace através do Studio, o Hosanna executa uma eliminação em cascata ("Cascade Delete") instantânea. Todos os perfis de Admin, músicas, cultos, pastas e tokens associados a esse Workspace são permanentemente erradicados da base de dados de produção.
 
 **2.6. Contacto do Encarregado da Proteção de Dados (DPO)**
 Para exercer os seus direitos (acesso, retificação, portabilidade ou eliminação), contacte-nos através do e-mail: hosanna.songbook@gmail.com.
@@ -61,18 +61,18 @@ Para exercer os seus direitos (acesso, retificação, portabilidade ou eliminaç
 # 3. Política de Cookies e Armazenamento Local
 
 **3.1. O Que São Cookies e Armazenamento Local?**
-Cookies são pequenos ficheiros de texto guardados no seu navegador. O Armazenamento Local (Local Storage) cumpre uma função semelhante, permitindo guardar informações de estado na App Mobile ou Dashboard, inclusive para permitir o funcionamento offline.
+Cookies são pequenos ficheiros de texto guardados no seu navegador. O Armazenamento Local (Local Storage) cumpre uma função semelhante, permitindo guardar informações de estado na App Mobile ou Studio, inclusive para permitir o funcionamento offline.
 
 **3.2. Os Nossos Cookies (Estritamente Necessários)**
 Em conformidade com a Diretiva e-Privacy da UE, o Hosanna está isento da obrigatoriedade do "Banner de Cookies", uma vez que **não utilizamos cookies de rastreio, marketing ou de análise (analytics) de terceiros**. Utilizamos exclusivamente:
 
-- **Tokens de Sessão (Dashboard):** Essenciais para manter o Administrador autenticado enquanto navega pelas páginas.
+- **Tokens de Sessão (Studio):** Essenciais para manter o Administrador autenticado enquanto navega pelas páginas.
 - **Validação de MusicianTokens (App Mobile):** A app guarda o token no armazenamento local do dispositivo para permitir que o músico aceda aos cultos offline sem precisar de inserir o token repetidamente.
 
 **3.3. Gestão de Armazenamento**
 Se desejar limpar as sessões ativas:
 
-- No Dashboard: Basta clicar em "Terminar Sessão" e os cookies de autenticação serão destruídos.
+- No Studio: Basta clicar em "Terminar Sessão" e os cookies de autenticação serão destruídos.
 - Na App Mobile: Eliminar os dados da aplicação nas definições do seu smartphone irá remover permanentemente o token guardado, exigindo um novo token para o próximo acesso.
 
 ---
@@ -209,7 +209,7 @@ Temos perfeita noção de que músicos têm diferentes idades, capacidades visua
 - **Bloqueio de Suspensão de Ecrã (Keep-Awake):** Para evitar interrupções catastróficas enquanto se toca com as duas mãos num instrumento, a aplicação impede ativamente que o ecrã adormeça.
 
 **11.3. Feedback Contínuo**
-Se encontrar barreiras de acessibilidade no nosso Dashboard ou na leitura de partituras/cifras, encorajamo-lo a reportar a situação para podermos melhorar o contraste, botões e navegação do sistema.
+Se encontrar barreiras de acessibilidade no nosso Studio ou na leitura de partituras/cifras, encorajamo-lo a reportar a situação para podermos melhorar o contraste, botões e navegação do sistema.
 
 ---
 

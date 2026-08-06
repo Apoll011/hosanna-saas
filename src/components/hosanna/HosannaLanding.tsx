@@ -2,34 +2,34 @@ import dashboardImg from "@/assets/dashboard-preview.jpg";
 import logo from "@/assets/hosanna_logo.png";
 import mobileImg from "@/assets/mobile-preview.jpg";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useReveal } from "@/hooks/useReveal";
 import { cn } from "@/lib/utils";
 import {
-  ArrowRight,
-  Check,
-  FileDown,
-  FolderTree,
-  Mail,
-  Menu,
-  Monitor,
-  Music,
-  Play,
-  Search,
-  ShieldCheck,
-  Sliders,
-  Smartphone,
-  Sparkles,
-  Sun,
-  Users,
-  WifiOff,
-  X,
-  Zap,
+    ArrowRight,
+    Check,
+    FileDown,
+    FolderTree,
+    Mail,
+    Menu,
+    Monitor,
+    Music,
+    Play,
+    Search,
+    ShieldCheck,
+    Sliders,
+    Smartphone,
+    Sparkles,
+    Sun,
+    Users,
+    WifiOff,
+    X,
+    Zap,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
@@ -378,7 +378,7 @@ function TwoApps() {
         </SectionHeader>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          {/* Dashboard */}
+          {/* Studio */}
           <div className="reveal group relative overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-10">
             <div className="flex items-center gap-3">
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
