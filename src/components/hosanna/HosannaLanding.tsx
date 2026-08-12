@@ -803,7 +803,7 @@ function MobileApp() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium">
               Sempre Consigo
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-[1.1] tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-display text-white leading-[1.1] tracking-tight">
               Leve o seu louvor no <span className="text-blue-200">bolso</span>.
             </h2>
             <p className="text-xl text-blue-50/80 leading-relaxed max-w-xl">
