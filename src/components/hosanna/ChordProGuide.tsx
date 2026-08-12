@@ -15,7 +15,6 @@ import {
   MousePointerClick,
   Music2,
   Repeat,
-  Sparkles,
   Tags,
 } from "lucide-react";
 import { StaffLines } from "./HosannaLanding";
@@ -298,7 +297,6 @@ function SectionHeader({
 function HosannaBadge() {
   return (
     <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider bg-primary text-white px-2.5 py-1 rounded-full shrink-0">
-      <Sparkles className="w-3 h-3" />
       Exclusivo Hosanna
     </span>
   );
@@ -776,7 +774,7 @@ export function ChordProGuide() {
 
                 <div className="mt-10 reveal">
                   <div className="flex items-center gap-3 mb-2">
-                    <Sparkles className="w-6 h-6 text-primary" />
+                    <Code2 className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-display font-bold text-primary">
                       1. Autocompletar Acordes
                     </h3>

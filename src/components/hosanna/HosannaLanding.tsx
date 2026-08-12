@@ -2,34 +2,33 @@ import dashboardImg from "@/assets/dashboard-preview.jpg";
 import logo from "@/assets/hosanna_logo.png";
 import mobileImg from "@/assets/mobile-preview.jpg";
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useReveal } from "@/hooks/useReveal";
 import { cn } from "@/lib/utils";
 import {
-    ArrowRight,
-    Check,
-    FileDown,
-    FolderTree,
-    Mail,
-    Menu,
-    Monitor,
-    Music,
-    Play,
-    Search,
-    ShieldCheck,
-    Sliders,
-    Smartphone,
-    Sparkles,
-    Sun,
-    Users,
-    WifiOff,
-    X,
-    Zap,
+  ArrowRight,
+  Check,
+  FileDown,
+  FolderTree,
+  Mail,
+  Menu,
+  Monitor,
+  Music,
+  Play,
+  Search,
+  ShieldCheck,
+  Sliders,
+  Smartphone,
+  Sun,
+  Users,
+  WifiOff,
+  X,
+  Zap,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
@@ -186,7 +185,6 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-36 md:px-8 md:pb-32 md:pt-44">
         <div className="mx-auto max-w-4xl text-center">
           <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
-            <Sparkles className="h-3 w-3 text-blue-300" />
             Desenvolvido para Líderes de Louvor
           </div>
           <h1 className="mt-8 font-display text-5xl leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl reveal">
@@ -937,7 +935,6 @@ function Roadmap() {
               key={item}
               className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-soft"
             >
-              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-primary-dark" />
               <span className="text-sm leading-relaxed text-foreground">{item}</span>
             </div>
           ))}
