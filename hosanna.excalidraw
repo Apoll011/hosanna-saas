@@ -4,249 +4,6 @@
   "source": "https://excalidraw.com",
   "elements": [
     {
-      "id": "TPyBkAWzgzWcmqO4CaMiW",
-      "type": "rectangle",
-      "x": 348.89453125,
-      "y": 2075.94140625,
-      "width": 165.00390625,
-      "height": 419.5546875,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a0",
-      "roundness": {
-        "type": 3
-      },
-      "seed": 1482574822,
-      "version": 3,
-      "versionNonce": 896756218,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326370485,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "dCRdbcThHLIrEQcSKq3uH",
-      "type": "text",
-      "x": 439.21875,
-      "y": 2007.3125,
-      "width": 8,
-      "height": 25,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a0V",
-      "roundness": null,
-      "seed": 2050909882,
-      "version": 4,
-      "versionNonce": 505641722,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326456131,
-      "link": null,
-      "locked": false,
-      "text": "",
-      "fontSize": 20,
-      "fontFamily": 5,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "",
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "-OwgjGHC1FH87n6I5B1qo",
-      "type": "text",
-      "x": 437.21875,
-      "y": 2004.3125,
-      "width": 8,
-      "height": 25,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a0l",
-      "roundness": null,
-      "seed": 305976678,
-      "version": 9,
-      "versionNonce": 1679903142,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326456132,
-      "link": null,
-      "locked": false,
-      "text": "",
-      "fontSize": 20,
-      "fontFamily": 5,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "",
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "jsbZ1LHoVOABJL4UbNx8F",
-      "type": "text",
-      "x": 559.21875,
-      "y": 2038.3125,
-      "width": 8,
-      "height": 25,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a0t",
-      "roundness": null,
-      "seed": 1973432230,
-      "version": 4,
-      "versionNonce": 1622019002,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326456132,
-      "link": null,
-      "locked": false,
-      "text": "",
-      "fontSize": 20,
-      "fontFamily": 5,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "",
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "McB6RN_b9ECxDUFreQgOI",
-      "type": "text",
-      "x": 481.21875,
-      "y": 2023.3125,
-      "width": 417.0796203613281,
-      "height": 50,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a0x",
-      "roundness": null,
-      "seed": 1924323514,
-      "version": 47,
-      "versionNonce": 1372923110,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326456132,
-      "link": null,
-      "locked": false,
-      "text": "Server ,and redis and a prisma postgrss db\n",
-      "fontSize": 20,
-      "fontFamily": 5,
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "originalText": "Server ,and redis and a prisma postgrss db\n",
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "l4eRVXKSaUdqW1IZoNXcj",
-      "type": "magicframe",
-      "x": 360.56640625,
-      "y": 1993.44921875,
-      "width": 266.890625,
-      "height": 151.3046875,
-      "angle": 0,
-      "strokeColor": "#bbb",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 0,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a1",
-      "roundness": null,
-      "seed": 1593416954,
-      "version": 15,
-      "versionNonce": 1026065530,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326456132,
-      "link": null,
-      "locked": false,
-      "name": null
-    },
-    {
-      "id": "c_ehCLLVOP9RWGG1D2MpC",
-      "type": "iframe",
-      "x": 46.3671875,
-      "y": 1861.32421875,
-      "width": 770.84765625,
-      "height": 581.1523437499999,
-      "angle": 0,
-      "strokeColor": "transparent",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "a2",
-      "roundness": {
-        "type": 3
-      },
-      "seed": 1330727930,
-      "version": 121,
-      "versionNonce": 1617223418,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786326504947,
-      "link": null,
-      "locked": false,
-      "customData": {
-        "generationData": {
-          "status": "done",
-          "html": "<!DOCTYPE html>\n<html lang=\"en\" class=\"dark\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Modern Backend Stack | Server, Redis, Prisma, PostgreSQL</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"https://unpkg.com/lucide@latest\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            font-family: 'Inter', sans-serif;\n            background-color: #09090b;\n            color: #fafafa;\n        }\n        .glass {\n            background: rgba(24, 24, 27, 0.8);\n            backdrop-filter: blur(12px);\n            border: 1px solid rgba(63, 63, 70, 0.4);\n        }\n        .glow {\n            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);\n        }\n        .gradient-text {\n            background: linear-gradient(to right, #60a5fa, #a78bfa);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n        }\n    </style>\n</head>\n<body class=\"antialiased selection:bg-indigo-500/30\">\n\n    <!-- Navigation -->\n    <header class=\"fixed top-0 w-full z-50 glass border-b border-zinc-800\">\n        <nav class=\"max-w-7xl mx-auto px-4 h-16 flex items-center justify-between\">\n            <div class=\"flex items-center gap-2\">\n                <div class=\"w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center\">\n                    <i data-lucide=\"layers\" class=\"w-5 h-5 text-white\"></i>\n                </div>\n                <span class=\"font-bold text-xl tracking-tight\">StackCore</span>\n            </div>\n            <div class=\"hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400\">\n                <a href=\"#\" class=\"hover:text-white transition-colors\">Architecture</a>\n                <a href=\"#\" class=\"hover:text-white transition-colors\">Documentation</a>\n                <a href=\"#\" class=\"hover:text-white transition-colors\">Benchmarks</a>\n            </div>\n            <div class=\"flex items-center gap-4\">\n                <button class=\"text-sm font-medium hover:text-white transition-colors\">Log in</button>\n                <button class=\"bg-white text-black px-4 py-2 rounded-md text-sm font-semibold hover:bg-zinc-200 transition-all\">\n                    Get Started\n                </button>\n            </div>\n        </nav>\n    </header>\n\n    <main class=\"pt-32 pb-20\">\n        <!-- Hero Section -->\n        <section class=\"max-w-7xl mx-auto px-4 text-center mb-24\">\n            <div class=\"inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-indigo-400 mb-6\">\n                <span class=\"relative flex h-2 w-2\">\n                    <span class=\"animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75\"></span>\n                    <span class=\"relative inline-flex rounded-full h-2 w-2 bg-indigo-500\"></span>\n                </span>\n                Production Ready Architecture\n            </div>\n            <h1 class=\"text-5xl md:text-7xl font-extrabold mb-6 tracking-tight\">\n                Modern <span class=\"gradient-text\">Backend</span> Infrastructure.\n            </h1>\n            <p class=\"text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed\">\n                A high-performance foundation built with Node.js, Redis caching, Prisma ORM, and PostgreSQL. Scalable by design, type-safe by default.\n            </p>\n            <div class=\"flex flex-col sm:flex-row items-center justify-center gap-4\">\n                <button class=\"w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all transform hover:-translate-y-1 glow\">\n                    Deploy to Cloud\n                </button>\n                <button class=\"w-full sm:w-auto px-8 py-4 bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 rounded-xl font-bold transition-all\">\n                    View Templates\n                </button>\n            </div>\n        </section>\n\n        <!-- Tech Stack Grid -->\n        <section class=\"max-w-7xl mx-auto px-4\">\n            <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6\">\n                \n                <!-- Server Card -->\n                <div class=\"glass p-8 rounded-2xl group hover:border-indigo-500/50 transition-all\">\n                    <div class=\"w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform\">\n                        <i data-lucide=\"server\" class=\"text-blue-500\"></i>\n                    </div>\n                    <h3 class=\"text-xl font-bold mb-3\">Core Server</h3>\n                    <p class=\"text-zinc-400 text-sm leading-relaxed mb-4\">\n                        Optimized Node.js runtime with Express/Fastify for low-latency request handling and middleware support.\n                    </p>\n                    <div class=\"text-xs font-mono text-zinc-500 bg-black/40 p-2 rounded\">v20.x LTS</div>\n                </div>\n\n                <!-- Redis Card -->\n                <div class=\"glass p-8 rounded-2xl group hover:border-red-500/50 transition-all\">\n                    <div class=\"w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform\">\n                        <i data-lucide=\"zap\" class=\"text-red-500\"></i>\n                    </div>\n                    <h3 class=\"text-xl font-bold mb-3\">Redis Cache</h3>\n                    <p class=\"text-zinc-400 text-sm leading-relaxed mb-4\">\n                        Blazing fast in-memory data store for session management, rate limiting, and real-time pub/sub.\n                    </p>\n                    <div class=\"text-xs font-mono text-zinc-500 bg-black/40 p-2 rounded\">Sub-ms Latency</div>\n                </div>\n\n                <!-- Prisma Card -->\n                <div class=\"glass p-8 rounded-2xl group hover:border-emerald-500/50 transition-all\">\n                    <div class=\"w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform\">\n                        <i data-lucide=\"database\" class=\"text-emerald-500\"></i>\n                    </div>\n                    <h3 class=\"text-xl font-bold mb-3\">Prisma ORM</h3>\n                    <p class=\"text-zinc-400 text-sm leading-relaxed mb-4\">\n                        Next-generation Node.js and TypeScript ORM. Automated migrations and type-safe database access.\n                    </p>\n                    <div class=\"text-xs font-mono text-zinc-500 bg-black/40 p-2 rounded\">Auto-generated Types</div>\n                </div>\n\n                <!-- PostgreSQL Card -->\n                <div class=\"glass p-8 rounded-2xl group hover:border-sky-500/50 transition-all\">\n                    <div class=\"w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform\">\n                        <i data-lucide=\"hard-drive\" class=\"text-sky-500\"></i>\n                    </div>\n                    <h3 class=\"text-xl font-bold mb-3\">PostgreSQL</h3>\n                    <p class=\"text-zinc-400 text-sm leading-relaxed mb-4\">\n                        The world's most advanced open source relational database for reliable and complex data persistence.\n                    </p>\n                    <div class=\"text-xs font-mono text-zinc-500 bg-black/40 p-2 rounded\">ACID Compliant</div>\n                </div>\n\n            </div>\n        </section>\n\n        <!-- Code Preview Section -->\n        <section class=\"max-w-5xl mx-auto px-4 mt-32\">\n            <div class=\"glass rounded-2xl overflow-hidden shadow-2xl\">\n                <div class=\"bg-zinc-800/50 px-4 py-3 flex items-center gap-2 border-b border-zinc-700\">\n                    <div class=\"flex gap-1.5\">\n                        <div class=\"w-3 h-3 rounded-full bg-red-500/50\"></div>\n                        <div class=\"w-3 h-3 rounded-full bg-yellow-500/50\"></div>\n                        <div class=\"w-3 h-3 rounded-full bg-green-500/50\"></div>\n                    </div>\n                    <span class=\"text-xs text-zinc-500 font-mono ml-4\">schema.prisma</span>\n                </div>\n                <div class=\"p-6 font-mono text-sm overflow-x-auto\">\n                    <pre class=\"text-indigo-300\">\n<span class=\"text-zinc-500\">// Define your database schema</span>\ndatasource db {\n  provider = <span class=\"text-emerald-400\">\"postgresql\"</span>\n  url      = env(<span class=\"text-emerald-400\">\"DATABASE_URL\"</span>)\n}\n\ngenerator client {\n  provider = <span class=\"text-emerald-400\">\"prisma-client-js\"</span>\n}\n\nmodel User {\n  id    Int     @id @default(autoincrement())\n  email String  @unique\n  name  String?\n  posts Post[]\n}</pre>\n                </div>\n            </div>\n        </section>\n    </main>\n\n    <footer class=\"border-t border-zinc-800 py-12 bg-zinc-950\">\n        <div class=\"max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8\">\n            <div class=\"flex items-center gap-2 opacity-50\">\n                <i data-lucide=\"layers\" class=\"w-5 h-5\"></i>\n                <span class=\"font-bold\">StackCore</span>\n            </div>\n            <p class=\"text-zinc-500 text-sm\">\n                &copy; 2023 StackCore Systems. Built for developers.\n            </p>\n            <div class=\"flex gap-6\">\n                <a href=\"#\" class=\"text-zinc-500 hover:text-white transition-colors\"><i data-lucide=\"github\"></i></a>\n                <a href=\"#\" class=\"text-zinc-500 hover:text-white transition-colors\"><i data-lucide=\"twitter\"></i></a>\n            </div>\n        </div>\n    </footer>\n\n    <script>\n        // Initialize Lucide icons\n        lucide.createIcons();\n    </script>\n</body>\n</html>"
-        }
-      }
-    },
-    {
       "type": "diamond",
       "version": 1226,
       "versionNonce": 1426658534,
@@ -411,7 +168,7 @@
       "y": 3199.2506623812865,
       "strokeColor": "#571f1e",
       "backgroundColor": "#571f1e",
-      "width": 12.839783341864635,
+      "width": 12.839783341864637,
       "height": 10.611436314893135,
       "seed": 1421865402,
       "groupIds": [
@@ -741,7 +498,7 @@
       "strokeColor": "#922b1c",
       "backgroundColor": "#922b1c",
       "width": 103.82243040065906,
-      "height": 35.072041857154886,
+      "height": 35.07204185715488,
       "seed": 940695098,
       "groupIds": [
         "SCSoIUvhEgDhFjLg29Sl7"
@@ -807,7 +564,7 @@
       "strokeColor": "#922b1c",
       "backgroundColor": "#922b1c",
       "width": 103.82243040065906,
-      "height": 35.072041857154886,
+      "height": 35.07204185715488,
       "seed": 1299056378,
       "groupIds": [
         "SCSoIUvhEgDhFjLg29Sl7"
@@ -873,7 +630,7 @@
       "strokeColor": "#922b1c",
       "backgroundColor": "#922b1c",
       "width": 103.82243040065906,
-      "height": 34.4699284073683,
+      "height": 34.46992840736829,
       "seed": 1590106042,
       "groupIds": [
         "SCSoIUvhEgDhFjLg29Sl7"
@@ -1114,7 +871,7 @@
       "y": 2855.4839166244847,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 32.99087053652169,
+      "width": 32.9908705365217,
       "height": 100.81474143647736,
       "seed": 1342829286,
       "groupIds": [
@@ -1347,7 +1104,7 @@
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 24.366353619613754,
-      "height": 51.747101501447766,
+      "height": 51.74710150144776,
       "seed": 584307878,
       "groupIds": [
         "7W4piQrbZ15ZcMoWLkQGD"
@@ -1414,7 +1171,7 @@
       "y": 2887.7423823333684,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 7.945399133293816,
+      "width": 7.945399133293817,
       "height": 4.956902934515751,
       "seed": 1342066662,
       "groupIds": [
@@ -1474,7 +1231,7 @@
       "y": 2892.0770578518413,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 8.440675315403945,
+      "width": 8.440675315403947,
       "height": 4.661145273825177,
       "seed": 1085760294,
       "groupIds": [
@@ -1574,7 +1331,7 @@
       "strokeColor": "#495057",
       "backgroundColor": "#ced4da",
       "width": 131.03379734780088,
-      "height": 107.27913233153286,
+      "height": 107.27913233153288,
       "seed": 1690455802,
       "groupIds": [
         "Fm6XWGIXXpbOp7NlJ4mGD",
@@ -1790,7 +1547,7 @@
       "strokeColor": "#495057",
       "backgroundColor": "#ced4da",
       "width": 16.01723223447131,
-      "height": 16.20133835210909,
+      "height": 16.201338352109094,
       "seed": 1630405114,
       "groupIds": [
         "Fm6XWGIXXpbOp7NlJ4mGD",
@@ -2066,7 +1823,7 @@
       "strokeColor": "#495057",
       "backgroundColor": "#ced4da",
       "width": 13.55240258878531,
-      "height": 15.46188945840277,
+      "height": 15.461889458402771,
       "seed": 848004538,
       "groupIds": [
         "UNOznLqs5QVJUKPA8-e9E",
@@ -2342,7 +2099,7 @@
       "strokeColor": "#495057",
       "backgroundColor": "#ced4da",
       "width": 14.784817411628136,
-      "height": 15.215406493834372,
+      "height": 15.215406493834374,
       "seed": 1044296058,
       "groupIds": [
         "0iAxAPdPwOpfWhoPYBXVe",
@@ -4153,152 +3910,6 @@
       "lineHeight": 1.25
     },
     {
-      "id": "cN_2rHC2vfgO2UeUMWorl",
-      "type": "arrow",
-      "x": 429.3872898134786,
-      "y": 2748.464072217952,
-      "width": 123.32910013513828,
-      "height": 427.15004271335647,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0A",
-      "roundness": {
-        "type": 2
-      },
-      "seed": 1053144998,
-      "version": 116,
-      "versionNonce": 1265687034,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327774167,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          111.67911643652138,
-          35.22733403204802
-        ],
-        [
-          123.32910013513828,
-          427.15004271335647
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": {
-        "elementId": "d0_qNhtxdRvBwFKCoDGlm",
-        "mode": "orbit",
-        "fixedPoint": [
-          0.5017443879765029,
-          0.0012812454901397086
-        ]
-      },
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": false
-    },
-    {
-      "id": "ShmCUJfYYY5wKwPY99IOc",
-      "type": "line",
-      "x": 429.3061538603272,
-      "y": 3061.2527453231082,
-      "width": 124.92822113967281,
-      "height": 0.7178507124012867,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0B",
-      "roundness": {
-        "type": 2
-      },
-      "seed": 1080167098,
-      "version": 82,
-      "versionNonce": 1757140134,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327778128,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          124.92822113967281,
-          -0.7178507124012867
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": null,
-      "polygon": false
-    },
-    {
-      "id": "YfxVS45SqnTg9FQvQuHpL",
-      "type": "line",
-      "x": 395.64469881857127,
-      "y": 2903.5749562859114,
-      "width": 158.08641683813806,
-      "height": 0.9592157732927262,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0C",
-      "roundness": {
-        "type": 2
-      },
-      "seed": 2011344166,
-      "version": 123,
-      "versionNonce": 190024058,
-      "isDeleted": true,
-      "boundElements": [],
-      "updated": 1786327779641,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          158.08641683813806,
-          -0.9592157732927262
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": null,
-      "polygon": false
-    },
-    {
       "id": "q1IPq345HXO2y05qqxroR",
       "type": "text",
       "x": 514.5312376327863,
@@ -4321,7 +3932,7 @@
       "version": 90,
       "versionNonce": 136333690,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786328207519,
       "link": null,
       "locked": false,
@@ -4395,7 +4006,7 @@
       "version": 275,
       "versionNonce": 1947257126,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327218497,
       "link": null,
       "locked": false,
@@ -5108,7 +4719,7 @@
       "version": 38,
       "versionNonce": 276963238,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327705146,
       "link": null,
       "locked": false,
@@ -5336,58 +4947,6 @@
       "polygon": false
     },
     {
-      "id": "ZNp6Yd2udDu3j9k5ynRx3",
-      "type": "arrow",
-      "x": 103.19906984251816,
-      "y": 2890.4337720325157,
-      "width": 180.64410909400317,
-      "height": 129.34292606086774,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "dashed",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0T",
-      "roundness": {
-        "type": 2
-      },
-      "seed": 1467143270,
-      "version": 21,
-      "versionNonce": 693140666,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327348765,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          180.64410909400317,
-          -129.34292606086774
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": {
-        "elementId": "BpDtYLb9xT8sStEt2pYbr",
-        "mode": "orbit",
-        "fixedPoint": [
-          0.33306554914555886,
-          0.3330655491455624
-        ]
-      },
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": false
-    },
-    {
       "id": "ccSXErozQhZ7H5TcaBa7X",
       "type": "arrow",
       "x": 88.14580230857041,
@@ -5410,7 +4969,7 @@
       "version": 46,
       "versionNonce": 893034362,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327371016,
       "link": null,
       "locked": false,
@@ -5471,7 +5030,7 @@
       "version": 44,
       "versionNonce": 80604410,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327396603,
       "link": null,
       "locked": false,
@@ -5532,7 +5091,7 @@
       "version": 51,
       "versionNonce": 2122796454,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327422143,
       "link": null,
       "locked": false,
@@ -6344,77 +5903,12 @@
       "polygon": false
     },
     {
-      "id": "x09SbNo7TuJFvyS5B0bB7",
-      "type": "arrow",
-      "x": 294.6950242632427,
-      "y": 3614.0197880144174,
-      "width": 1156.3674491069885,
-      "height": 423.5267073648456,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0p",
-      "roundness": null,
-      "seed": 2118776038,
-      "version": 52,
-      "versionNonce": 1994976358,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327534722,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          -452.32563051945203,
-          0
-        ],
-        [
-          -452.32563051945203,
-          -423.5267073648456
-        ],
-        [
-          -1156.3674491069885,
-          -423.5267073648456
-        ],
-        [
-          -1156.3674491069885,
-          -386.0267073648456
-        ]
-      ],
-      "startBinding": {
-        "elementId": "aMf6KDAUvpblgwukBjsTI",
-        "mode": "inside",
-        "fixedPoint": [
-          -0.04233470100847673,
-          0.49944040337747775
-        ]
-      },
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": true,
-      "fixedSegments": null,
-      "startIsSpecial": null,
-      "endIsSpecial": null
-    },
-    {
       "id": "hoy6Lmw421q3HWxnKMQJo",
       "type": "arrow",
       "x": 294.6950242632427,
       "y": 3614.0197880144174,
       "width": 909.5171570354917,
-      "height": 217.48959514528588,
+      "height": 214.74045257450234,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -6428,11 +5922,11 @@
       "index": "b0q",
       "roundness": null,
       "seed": 801260986,
-      "version": 189,
-      "versionNonce": 125261414,
+      "version": 241,
+      "versionNonce": 1529757892,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1786327724686,
+      "boundElements": [],
+      "updated": 1786553674084,
       "link": null,
       "locked": false,
       "points": [
@@ -6441,19 +5935,11 @@
           0
         ],
         [
-          -456.2111577077809,
+          -454.50857851774583,
           0
         ],
         [
-          -456.2111577077809,
-          -217.48959514528588
-        ],
-        [
-          -872.9223154155618,
-          -217.48959514528588
-        ],
-        [
-          -872.9223154155618,
+          -454.50857851774583,
           -214.74045257450234
         ],
         [
@@ -6480,21 +5966,9 @@
       "startArrowhead": "triangle_outline",
       "endArrowhead": "triangle",
       "elbowed": true,
-      "fixedSegments": [
-        {
-          "index": 3,
-          "start": [
-            -456.2111577077809,
-            -217.48959514528588
-          ],
-          "end": [
-            -872.9223154155618,
-            -217.48959514528588
-          ]
-        }
-      ],
-      "startIsSpecial": false,
-      "endIsSpecial": false
+      "fixedSegments": null,
+      "startIsSpecial": null,
+      "endIsSpecial": null
     },
     {
       "id": "MFfj95y59BV-vW20GEtdD",
@@ -6519,7 +5993,7 @@
       "version": 31,
       "versionNonce": 1489512954,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327600131,
       "link": null,
       "locked": false,
@@ -6532,71 +6006,6 @@
       "originalText": "Dahsboard Page",
       "autoResize": true,
       "lineHeight": 1.25
-    },
-    {
-      "id": "OoURDUkjCoHfnw27yp7LT",
-      "type": "arrow",
-      "x": -614.8221327722489,
-      "y": 3399.279335439915,
-      "width": 71.35947840565325,
-      "height": 173.45263878717333,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0s",
-      "roundness": null,
-      "seed": 1513620710,
-      "version": 23,
-      "versionNonce": 569875770,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327635946,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          42,
-          0
-        ],
-        [
-          42,
-          -131.45263878717333
-        ],
-        [
-          -29.35947840565325,
-          -131.45263878717333
-        ],
-        [
-          -29.35947840565325,
-          -173.45263878717333
-        ]
-      ],
-      "startBinding": {
-        "elementId": "eTApqBw5k6xINsoBHcS31",
-        "mode": "orbit",
-        "fixedPoint": [
-          1.0111963304276903,
-          0.49965986051974043
-        ]
-      },
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": true,
-      "fixedSegments": null,
-      "startIsSpecial": null,
-      "endIsSpecial": null
     },
     {
       "id": "SU4s4tL12TB9t2YHqfj1z",
@@ -6621,7 +6030,7 @@
       "version": 88,
       "versionNonce": 21346534,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327766692,
       "link": null,
       "locked": false,
@@ -6671,7 +6080,7 @@
       "version": 65,
       "versionNonce": 2001857466,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327762368,
       "link": null,
       "locked": false,
@@ -6721,7 +6130,7 @@
       "version": 44,
       "versionNonce": 1804945850,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327672892,
       "link": null,
       "locked": false,
@@ -6734,45 +6143,6 @@
       "originalText": "Mobile App",
       "autoResize": true,
       "lineHeight": 1.25
-    },
-    {
-      "id": "WO4-8sQkO8wUv-XS18IkS",
-      "type": "arrow",
-      "x": 1135.6894349286467,
-      "y": 2923.027618117448,
-      "width": 0,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "strokeStyle": "solid",
-      "roughness": 1,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "index": "b0w",
-      "roundness": null,
-      "seed": 1241883450,
-      "version": 14,
-      "versionNonce": 706731066,
-      "isDeleted": true,
-      "boundElements": null,
-      "updated": 1786327700004,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow",
-      "elbowed": false
     },
     {
       "id": "_wDdEnqWwe_OYk5IsJwns",
@@ -6797,7 +6167,7 @@
       "version": 32,
       "versionNonce": 991115686,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327806984,
       "link": null,
       "locked": false,
@@ -6863,7 +6233,7 @@
       "version": 54,
       "versionNonce": 1963986022,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327819269,
       "link": null,
       "locked": false,
@@ -6908,7 +6278,7 @@
       "version": 35,
       "versionNonce": 1963585510,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327836151,
       "link": null,
       "locked": false,
@@ -6951,7 +6321,7 @@
       "version": 33,
       "versionNonce": 871274086,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786327872482,
       "link": null,
       "locked": false,
@@ -6997,7 +6367,7 @@
       "version": 25,
       "versionNonce": 206996794,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786328200218,
       "link": null,
       "locked": false,
@@ -7034,7 +6404,7 @@
       "version": 36,
       "versionNonce": 1818292326,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786328237786,
       "link": null,
       "locked": false,
@@ -7108,7 +6478,7 @@
       "version": 112,
       "versionNonce": 1522933350,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1786328733015,
       "link": null,
       "locked": false,
