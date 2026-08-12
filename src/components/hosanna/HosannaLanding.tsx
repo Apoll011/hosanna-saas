@@ -183,7 +183,7 @@ function Hero() {
         <StaffLines className="top-24" />
         <StaffLines className="bottom-24" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-36 md:px-8 md:pb-32 md:pt-44">
+      <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-26 md:px-8 md:pb-32 md:pt-18">
         <div className="mx-auto max-w-4xl text-center">
           <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
             Desenvolvido para Líderes de Louvor
@@ -276,11 +276,8 @@ function Problem() {
           ].map((c) => (
             <div
               key={c.title}
-              className="rounded-3xl border border-blue-50 bg-white p-8 transition-all hover:shadow-lg group shadow-sm"
+              className="rounded-3xl border border-blue-50 bg-white p-8 text-center transition-all hover:shadow-lg group shadow-sm"
             >
-              <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <Check className="h-6 w-6" />
-              </div>
               <h3 className="font-display text-2xl font-bold text-primary mb-3">{c.title}</h3>
               <p className="text-base leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
@@ -301,13 +298,26 @@ function Problem() {
 /*  Two Apps section                                                  */
 /* ------------------------------------------------------------------ */
 const DASHBOARD_FEATURES = [
+  // Library
   "Construir e organizar uma biblioteca completa de canções",
   "Importar e exportar canções (ChordPro)",
   "Editar letras e acordes",
   "Organizar canções em pastas",
+  "Pesquisar e filtrar canções rapidamente",
+
+  // Services
   "Criar e agendar cultos",
   "Definir a ordem das canções num culto",
   "Adicionar notas para toda a equipa de louvor",
+
+  // Team
+  "Gerir a equipa de louvor e as suas permissões",
+  "Atribuir funções aos membros da equipa",
+  "Partilhar cultos e alterações com toda a equipa",
+
+  // Data
+  "Sincronizar automaticamente todos os dispositivos",
+  "Criar e descarregar cópias de segurança da biblioteca",
 ];
 
 const MOBILE_FEATURES = [
@@ -762,7 +772,7 @@ function Pricing() {
               <Button
                 asChild
                 size="lg"
-                className="mt-10 w-full rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
+                className="mt-10 w-full rounded-full bg-secondary text-muted-foreground hover:bg-secondary/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
               >
                 <a href={`${dashboardUrl}/?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
                   Experimentar Grátis <ArrowRight className="ml-1 h-4 w-4" />
@@ -860,19 +870,13 @@ function Vision() {
 /*  FAQ                                                               */
 /* ------------------------------------------------------------------ */
 const ROADMAP = [
-  "Editor de cultos completamente renovado e mais intuitivo",
-  "Experiência unificada entre as páginas de Canções e Cultos",
   "Modelos de cultos reutilizáveis e duplicação de serviços",
   "Importação inteligente com deteção automática de duplicados",
   "Sincronização offline mais rápida e resolução de conflitos",
   "Sincronização em segundo plano na aplicação móvel",
   "Personalização da identidade visual de cada igreja",
-  "Registo simplificado de igrejas e gestão de organizações",
-  "Subscrições acessíveis por igreja, e não por utilizador",
   "Estatísticas de utilização e histórico de cultos",
-  "Melhor acessibilidade, animações e atalhos de teclado",
   "Pesquisa avançada e filtros inteligentes",
-  "Otimizações de desempenho para bibliotecas de grande dimensão",
 ];
 
 function Roadmap() {
