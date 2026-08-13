@@ -214,6 +214,38 @@ const DIRECTIVES: DirectiveEntry[] = [
     category: "notation",
     description: "Termina a secção de grelha",
   },
+  {
+    directive: "barlines", // Ou "compassos"
+    category: "notation",
+    description:
+      "Sintaxe para criar compassos. O sistema reconhece automaticamente: | (normal), || (duplo), |: (início repetição), :| (fim repetição) e |] (fim do cântico).",
+    example: "|: C | F :| G ||",
+  },
+  {
+    directive: "chord_timing", // Ou "duração"
+    category: "notation",
+    description:
+      "Permite definir a duração visual/tempo de um acorde específico na grelha adicionando @Nx.",
+    example: "[Em@2x] [C@0.5x]",
+  },
+  {
+    directive: "translator",
+    category: "metadata",
+    description: "Nome do tradutor do cântico, útil para versões adaptadas",
+  },
+  {
+    directive: "ccli",
+    alias: "ccli_number",
+    category: "metadata",
+    description: "Número CCLI (Christian Copyright Licensing International)",
+  },
+  {
+    directive: "time_signature",
+    alias: "timesignature",
+    category: "metadata",
+    description: "Alternativa à diretiva {time} para definir o compasso (ex: 4/4)",
+    example: "{time_signature: 4/4}",
+  },
 ];
 
 const CATEGORY_META: Record<
