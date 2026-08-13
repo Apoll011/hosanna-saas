@@ -72,7 +72,9 @@ const DIRECTIVES: DirectiveEntry[] = [
   {
     directive: "duration",
     category: "metadata",
-    description: "Duração em mm:ss (O Hosanna converte automaticamente)",
+    alias: "duration",
+    description:
+      "Duração em mm:ss ou segundos, Assim o nos cultos é possivel ter uma estimativa da sua duração.",
   },
   { directive: "album", category: "metadata", description: "Álbum ou coletânea de origem" },
   { directive: "composer", category: "metadata", description: "Compositor da melodia" },
@@ -244,7 +246,7 @@ const CATEGORY_META: Record<
   },
 };
 
-const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "tempo", "youtube", "song_number"];
+const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "duration", "youtube", "song_number"];
 
 const TOC = [
   { id: "fundamentos", label: "Fundamentos" },

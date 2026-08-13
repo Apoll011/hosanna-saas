@@ -56,7 +56,7 @@ function Logo({ className }: { className?: string }) {
 const NAV = [
   { label: "Funcionalidades", href: "#features" },
   { label: "ChordPro", href: "/chordpro" },
-  { label: "Preços", href: "#pricing" },
+  { label: "Preço", href: "#pricing" },
   { label: "Contacto", href: "/contact" },
 ];
 
@@ -700,8 +700,8 @@ function Pricing() {
   return (
     <section id="pricing" className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Preços" title="Um investimento na vossa adoração">
-          Preços simples e transparentes para que se possa focar no que é mais importante.
+        <SectionHeader eyebrow="Preço" title="Um investimento na vossa adoração">
+          Preço simples e transparente para que se possa focar no que é mais importante.
         </SectionHeader>
 
         <div className="reveal mt-10 flex items-center justify-center">
@@ -1013,7 +1013,7 @@ export function Footer() {
             links: [
               ["Funcionalidades", "/#features"],
               ["Guia ChordPro", "/chordpro"],
-              ["Preços", "/#pricing"],
+              ["Preço", "/#pricing"],
               ["Download App", "/#mobile"],
             ],
           },
