@@ -74,7 +74,7 @@ const DIRECTIVES: DirectiveEntry[] = [
     category: "metadata",
     alias: "duration",
     description:
-      "Duração em mm:ss ou segundos, Assim o nos cultos é possivel ter uma estimativa da sua duração.",
+      "Duração em mm:ss ou segundos, Nos cultos é usada para ter uma estimativa da sua duração.",
   },
   { directive: "album", category: "metadata", description: "Álbum ou coletânea de origem" },
   { directive: "composer", category: "metadata", description: "Compositor da melodia" },
