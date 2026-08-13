@@ -215,20 +215,6 @@ const DIRECTIVES: DirectiveEntry[] = [
     description: "Termina a secção de grelha",
   },
   {
-    directive: "barlines", // Ou "compassos"
-    category: "notation",
-    description:
-      "Sintaxe para criar compassos. O sistema reconhece automaticamente: | (normal), || (duplo), |: (início repetição), :| (fim repetição) e |] (fim do cântico).",
-    example: "|: C | F :| G ||",
-  },
-  {
-    directive: "chord_timing", // Ou "duração"
-    category: "notation",
-    description:
-      "Permite definir a duração visual/tempo de um acorde específico na grelha adicionando @Nx.",
-    example: "[Em@2x] [C@0.5x]",
-  },
-  {
     directive: "translator",
     category: "metadata",
     description: "Nome do tradutor do cântico, útil para versões adaptadas",
