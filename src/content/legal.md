@@ -1,230 +1,202 @@
-# 1. Termos de Serviço (Termos e Condições)
+# Centro Legal do Hosanna
 
-**Última atualização:** 28 de julho de 2026
+**Última atualização:** 14 de agosto de 2026
+
+---
+
+## 1. Termos de Serviço
 
 **1.1. Aceitação dos Termos**
-Bem-vindo ao Hosanna, operado por Tiago Inês da Embrace, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Studio e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
+Ao criar uma conta, aceder ou utilizar as aplicações do Hosanna (incluindo o Hosanna Studio e a App Mobile), o utilizador concorda em ficar vinculado a estes Termos de Serviço. Se não concordar com alguma destas condições, não deverá utilizar a plataforma.
 
-**1.2. Descrição da Plataforma e Serviço**
-O Hosanna é uma plataforma de Software as a Service (SaaS) destinada a igrejas, ministérios e equipas de louvor ("Clientes"). A plataforma fornece ferramentas para a organização de bibliotecas musicais, planeamento de cultos, e partilha de alinhamentos com músicos através de tokens de acesso, permitindo a visualização offline na App Mobile. O Hosanna não fornece, nem vende, partituras, letras ou obras musicais de terceiros.
+**1.2. Descrição do Serviço**
+O Hosanna é uma plataforma tecnológica de software desenvolvida para auxiliar igrejas, ministérios e equipas de louvor na organização das suas bibliotecas musicais, gestão de equipas e planeamento de cultos/serviços.
+**O Hosanna não fornece música.** A plataforma não comercializa, distribui, aloja ou fornece bibliotecas de música comercial, partituras, letras, cifras ou gravações áudio. O Hosanna atua exclusivamente como a infraestrutura tecnológica que permite aos utilizadores gerir o seu próprio conteúdo.
 
-**1.3. Contas, Workspaces e Administradores**
-O serviço organiza-se por instâncias isoladas chamadas "Workspaces" (Igrejas). A pessoa que cria o Workspace torna-se o Administrador principal. O Administrador:
+**1.3. Contas de Utilizador e Organizações**
+O Hosanna utiliza um modelo de autenticação baseado em contas pessoais.
 
-- É responsável por manter a confidencialidade das credenciais de acesso;
-- É o único responsável por todas as atividades que ocorram sob a sua conta;
-- Tem autoridade para convidar outros administradores e gerar `MusicianTokens` temporários para a sua equipa.
+- **Conta Pessoal:** O utilizador cria uma conta individual e pessoal.
+- **Organizações:** Para usufruir da experiência completa em nuvem (Hosanna Studio), o utilizador deve criar ou juntar-se a uma "Organização". A organização é o contentor principal onde residem as músicas, cultos (Services), pastas, definições e equipas da igreja.
+- **Membros e Equipas:** Os utilizadores podem ser convidados por e-mail para participar numa organização. As organizações podem ser subdivididas em equipas para fins de colaboração. A remoção de um membro de uma organização revoga o seu acesso aos dados dessa organização, mas não elimina a sua conta pessoal do Hosanna.
 
-**1.4. Direitos de Autor e Licenciamento CCLI**
-O Cliente reconhece que é o único responsável pelo conteúdo (letras, cifras, notas, ficheiros ChordPro) que introduz, armazena e reproduz na plataforma. É exigido que o Cliente possua as devidas licenças ativas, como a CCLI (Christian Copyright Licensing International), ou autorização expressa dos autores, para qualquer material protegido por direitos de autor. O Hosanna atua apenas como prestador de infraestrutura tecnológica.
+**1.4. Papéis e Responsabilidades (Roles)**
+Cada organização possui permissões geridas através de papéis (ex: Owner, Admin, Team Leader, Editor, Musician, Viewer). Existe sempre apenas **um Proprietário (Owner)** por organização. O Owner é o responsável final pelas decisões, faturação e utilização da organização.
 
-**1.5. Alterações aos Termos**
-Reservamo-nos o direito de modificar estes Termos a qualquer momento. Os Administradores serão notificados de alterações substanciais por e-mail ou através de um aviso no Studio com 30 dias de antecedência. O uso continuado após as alterações constitui aceitação dos novos termos.
+**1.5. App Mobile e Modo Offline/Local**
+A App Mobile do Hosanna oferece dois modos distintos de funcionamento:
 
-**1.6. Resolução de Litígios**
-Estes Termos são regidos e interpretados de acordo com as leis de Portugal. Para a resolução de qualquer litígio emergente da interpretação ou execução destes Termos, será exclusivamente competente o Tribunal da Comarca de Lisboa, com renúncia expressa a qualquer outro.
+- **Modo Local/Não Autenticado:** Um utilizador pode abrir a App Mobile sem criar conta ou iniciar sessão. Neste modo limitado, a aplicação funciona offline, permitindo criar e visualizar músicas guardadas localmente no dispositivo. Nenhuns dados de organizações em nuvem são acedidos neste modo.
+- **Modo Organização/Autenticado:** Quando um utilizador inicia sessão na sua conta e pertence a uma organização, a App sincroniza as músicas, cultos e conteúdos permitidos pelo seu papel, permitindo também o acesso offline (em cache) aos dados previamente sincronizados.
 
----
+**1.6. Alterações ao Serviço e aos Termos**
+O Hosanna está em contínua evolução. Funcionalidades podem ser adicionadas, alteradas, descontinuadas ou substituídas. O Hosanna reserva-se o direito de atualizar estes Termos. Alterações materiais serão comunicadas de forma apropriada. A continuação do uso do serviço após as alterações constitui a sua aceitação.
 
-# 2. Política de Privacidade
-
-**2.1. O Nosso Compromisso com o RGPD**
-No Hosanna, a privacidade é fundamental. Cumprimos integralmente o Regulamento Geral sobre a Proteção de Dados (RGPD - Regulamento UE 2016/679). Para efeitos de processamento, a Igreja (Workspace) atua como Responsável pelo Tratamento (Data Controller) e o Hosanna atua como Subcontratante (Data Processor).
-
-**2.2. Dados Recolhidos**
-
-- **Dados de Administradores:** Quando regista a sua igreja, recolhemos o seu Nome, E-mail e Palavra-passe (guardada sob a forma de hash seguro). Recolhemos também dados de faturação processados externamente.
-- **Dados de Músicos:** O Hosanna desenhou um sistema focado na privacidade chamado `MusicianToken`. Os músicos não necessitam de criar contas, não fornecem nome, e-mail, idade ou localização. A app valida apenas a string do token gerada pelo Administrador, garantindo total anonimato dos membros da equipa por parte do Hosanna.
-- **Dados da Igreja:** Armazenamos os dados operacionais: letras de músicas em formato ChordPro, estruturas de pastas (`Folder`), alinhamentos de serviços (`Service`) e metadados.
-
-**2.3. Finalidade e Base Legal para o Tratamento**
-O processamento destes dados tem como bases legais:
-
-1. **Execução de Contrato:** Para lhe fornecer o serviço, permitir login e criar cultos.
-2. **Obrigação Legal:** Para emissão de faturas e cumprimento de normas fiscais portuguesas/europeias.
-3. **Interesse Legítimo:** Para manter a segurança da plataforma e prevenir fraudes.
-
-**2.4. Partilha de Dados com Terceiros**
-Os seus dados não são vendidos. Partilhamos dados apenas com fornecedores de infraestrutura estritamente necessários para o funcionamento do Hosanna:
-
-- **Vercel & AWS:** Para alojamento de servidores e bases de dados (PostgreSQL), localizados na União Europeia.
-- **Stripe:** Para processamento de pagamentos encriptados.
-
-**2.5. Retenção e Eliminação de Dados (Direito ao Esquecimento)**
-Se um Administrador decidir apagar o seu Workspace através do Studio, o Hosanna executa uma eliminação em cascata ("Cascade Delete") instantânea. Todos os perfis de Admin, músicas, cultos, pastas e tokens associados a esse Workspace são permanentemente erradicados da base de dados de produção.
-
-**2.6. Contacto do Encarregado da Proteção de Dados (DPO)**
-Para exercer os seus direitos (acesso, retificação, portabilidade ou eliminação), contacte-nos através do e-mail: hosanna.songbook@gmail.com.
+**1.7. Funcionalidades Beta**
+O Hosanna pode disponibilizar funcionalidades em fase "Beta" ou experimentais. Estas funcionalidades são fornecidas "tal como estão", podem conter erros, sofrer alterações ou ser removidas, e não beneficiam das mesmas garantias de estabilidade.
 
 ---
 
-# 3. Política de Cookies e Armazenamento Local
+## 2. Política de Privacidade
 
-**3.1. O Que São Cookies e Armazenamento Local?**
-Cookies são pequenos ficheiros de texto guardados no seu navegador. O Armazenamento Local (Local Storage) cumpre uma função semelhante, permitindo guardar informações de estado na App Mobile ou Studio, inclusive para permitir o funcionamento offline.
+**2.1. Princípio Absoluto de Privacidade do Conteúdo**
+O Hosanna respeita a natureza privada do conteúdo da sua igreja. O Hosanna **nunca** vende, licencia a anunciantes, usa para publicidade ou partilha com terceiros não relacionados o conteúdo dos seus clientes (músicas, letras, cifras, cultos e notas). O Hosanna **não utiliza** o conteúdo gerado pelos utilizadores ou organizações para treinar modelos de Inteligência Artificial (IA).
 
-**3.2. Os Nossos Cookies (Estritamente Necessários)**
-Em conformidade com a Diretiva e-Privacy da UE, o Hosanna está isento da obrigatoriedade do "Banner de Cookies", uma vez que **não utilizamos cookies de rastreio, marketing ou de análise (analytics) de terceiros**. Utilizamos exclusivamente:
+**2.2. O Nosso Papel no RGPD**
+Para efeitos do Regulamento Geral sobre a Proteção de Dados (RGPD):
 
-- **Tokens de Sessão (Studio):** Essenciais para manter o Administrador autenticado enquanto navega pelas páginas.
-- **Validação de MusicianTokens (App Mobile):** A app guarda o token no armazenamento local do dispositivo para permitir que o músico aceda aos cultos offline sem precisar de inserir o token repetidamente.
+- **O Hosanna atua como Responsável pelo Tratamento (Controller):** Em relação aos dados da sua conta pessoal, informações de autenticação, dados de faturação, definições de segurança e dados necessários para cumprirmos as nossas próprias obrigações legais.
+- **O Hosanna atua como Subcontratante (Processor):** Em relação aos dados operacionais e de membros geridos pela organização (conteúdo dos cultos, repertório, informações da equipa), onde a Organização atua como Responsável pelo Tratamento.
 
-**3.3. Gestão de Armazenamento**
-Se desejar limpar as sessões ativas:
+**2.3. Categorias de Dados Tratados**
 
-- No Studio: Basta clicar em "Terminar Sessão" e os cookies de autenticação serão destruídos.
-- Na App Mobile: Eliminar os dados da aplicação nas definições do seu smartphone irá remover permanentemente o token guardado, exigindo um novo token para o próximo acesso.
+- **Dados de Conta e Segurança:** Nome, endereço de e-mail, estado de verificação, imagem de perfil, informações de sessão, e dados necessários para a segurança da conta (ex: autenticação de dois fatores - 2FA).
+- **Dados da Organização:** Conteúdo criado ou submetido pelas igrejas, incluindo pastas, músicas, letras em formato ChordPro, cultos, notas e convites.
+- **Dados Técnicos e de Diagnóstico:** Antes do lançamento da versão final (pré-1.0), o Hosanna poderá utilizar ferramentas de diagnóstico e métricas de desempenho (analytics) para identificar erros e melhorar a fiabilidade técnica da infraestrutura. Estes dados não são usados para analisar o conteúdo musical ou perfil do utilizador para fins de marketing.
 
----
-
-# 4. Política de Uso Aceitável (AUP)
-
-**4.1. Objetivo da AUP**
-A Política de Uso Aceitável estabelece as regras de conduta para garantir que a infraestrutura do Hosanna permanece rápida, segura e fiável para todas as congregações em todo o mundo.
-
-**4.2. Usos Proibidos**
-É estritamente proibido utilizar o Hosanna para:
-
-1. **Infração de Propriedade Intelectual:** Fazer upload, partilhar ou distribuir conteúdo para o qual a Igreja não detém direitos ou licença (ex: CCLI).
-2. **Conteúdo Ilegal e Ofensivo:** Armazenar material que promova discriminação, ódio, violência ou contenha material sexualmente explícito.
-3. **Engenharia Reversa e Hacking:** Tentar descompilar, extrair código-fonte ou descobrir vulnerabilidades da plataforma, bases de dados ou App Mobile.
-4. **Scraping e Bots:** Utilizar scripts automatizados, spiders ou crawlers para extrair dados em massa ("scraping") da nossa plataforma.
-5. **Abuso de Recursos:** Sobrecarregar intencionalmente os nossos servidores com pedidos excessivos que prejudiquem a experiência de outras igrejas.
-
-**4.3. Consequências da Violação**
-O Hosanna reserva-se o direito de, a seu exclusivo critério, investigar denúncias. A violação desta AUP resultará num aviso formal ou na suspensão imediata (e sem direito a reembolso) do Workspace.
+**2.4. Direitos dos Titulares dos Dados**
+Mediante a base legal aplicável, os utilizadores têm o direito de solicitar o acesso, a retificação, a eliminação (direito ao esquecimento), a restrição de tratamento e a portabilidade dos seus dados pessoais. Se o tratamento se basear no consentimento, este pode ser retirado a qualquer momento.
 
 ---
 
-# 5. Acordo de Processamento de Dados (DPA)
+## 3. Política de Cookies e Armazenamento Local
 
-**5.1. Enquadramento Legal**
-Este Acordo de Processamento de Dados (DPA) complementa os Termos de Serviço e é celebrado para cumprir os requisitos do Artigo 28.º do Regulamento (UE) 2016/679 (RGPD). A Igreja atua como Responsável pelo Tratamento e o Hosanna como Subcontratante.
+O Hosanna utiliza tecnologias de armazenamento estritamente necessárias para garantir a autenticação e o funcionamento da plataforma. Não utilizamos cookies de publicidade, marketing ou de rastreio (tracking) de terceiros.
 
-**5.2. Instruções de Processamento**
-O Hosanna processará os dados pessoais exclusivamente mediante as instruções documentadas do Responsável pelo Tratamento, que se consubstanciam na utilização normal das funcionalidades do software (criar músicas, agendar cultos).
-
-**5.3. Subcontratantes Posteriores (Sub-processors)**
-A Igreja autoriza, de forma geral, o Hosanna a recorrer a fornecedores externos estritamente para infraestrutura (Vercel, provedores de base de dados, Stripe). O Hosanna compromete-se a celebrar acordos com estes parceiros que imponham obrigações de proteção de dados iguais ou superiores a este DPA.
-
-**5.4. Notificação de Violação de Dados (Data Breach)**
-No caso remoto de ocorrer uma quebra de segurança que resulte no acesso não autorizado, destruição ou perda de dados da Igreja, o Hosanna compromete-se a notificar o Administrador afetado no prazo máximo de 72 horas após ter conhecimento do incidente, fornecendo detalhes sobre o impacto e as medidas de mitigação adotadas.
+- **Cookies de Sessão:** Utilizados para manter o utilizador autenticado de forma segura e gerir a segurança das sessões.
+- **Armazenamento Local (Local Storage / IndexedDB):** Utilizado na App Mobile e no Studio para armazenar preferências locais, estado da aplicação e manter uma cache dos dados da organização. Esta tecnologia é o que permite à plataforma continuar a funcionar em modo offline.
 
 ---
 
-# 6. Política de Segurança
+## 4. Política de Uso Aceitável (AUP)
 
-**6.1. Proteção de Infraestrutura**
-Os servidores e bases de dados do Hosanna (PostgreSQL) são geridos em ambientes isolados e protegidos por firewalls de última geração através dos nossos parceiros de alojamento (Vercel). A base de dados não está exposta publicamente na internet, comunicando apenas com a nossa API autorizada.
+Para proteger a segurança e a integridade da plataforma, os utilizadores e organizações concordam em não utilizar o Hosanna para:
 
-**6.2. Proteção e Encriptação de Dados**
+- Atividades ilícitas, fraudulentas ou que violem leis aplicáveis;
+- Fazer upload, partilhar ou distribuir conteúdo que infrinja direitos de autor ou propriedade intelectual de terceiros;
+- Transmitir software malicioso (malware) ou tentar aceder sem autorização a contas, dados de outras organizações ou sistemas do Hosanna;
+- Contornar os mecanismos de autenticação, de segurança ou as restrições de subscrição;
+- Efetuar pedidos automatizados abusivos, extração de dados em massa (scraping), ataques de negação de serviço ou uso indevido de APIs internas;
+- Assediar, partilhar conteúdo que promova o ódio, extremismo, fraude ou partilhar material sexualmente explícito inapropriado para o contexto do serviço.
 
-- **Em Trânsito:** Toda a troca de dados entre o navegador/app do utilizador e os nossos servidores é cifrada usando protocolos robustos TLS/HTTPS.
-- **Em Repouso (Passwords):** As palavras-passe dos Administradores e as strings dos Tokens nunca são armazenadas em texto simples. Utilizamos criptografia standard da indústria (algoritmo `bcrypt`) para gerar hashes irreversíveis, impedindo que, mesmo em caso de falha do sistema, as senhas sejam decifradas.
-
-**6.3. Sistema de Backups (Cópias de Segurança Manuais)**
-Apesar de tomarmos medidas de redundância na nossa base de dados, a responsabilidade de longo prazo pelos conteúdos organizados pertence à Igreja. Para tal, o Hosanna disponibiliza aos Administradores uma funcionalidade de **Backup e Restauro**. O Administrador pode exportar um ficheiro comprimido contendo toda a sua biblioteca (em formato ChordPro) e metadados. Posteriormente, pode efetuar o upload desse mesmo ficheiro para restaurar a conta em caso de eliminação acidental por parte de outro membro da equipa.
-
----
-
-# 7. Política de Reembolsos e Devoluções
-
-**7.1. Garantia de 14 Dias (Direito de Livre Resolução)**
-Em estrito cumprimento com a legislação da União Europeia, qualquer novo Cliente que adquira uma subscrição pela primeira vez tem um período de reflexão de 14 dias consecutivos. Durante este prazo, poderá cancelar o serviço por qualquer motivo e obter a devolução integral (100%) do valor pago.
-
-**7.2. Planos Mensais - Período de Graça de 3 Dias**
-Sabemos que os esquecimentos acontecem. Se o seu plano mensal for renovado automaticamente e decidir que afinal queria cancelar o serviço, tem um período de **3 dias (72 horas) após a data da cobrança** para pedir o cancelamento retroativo e o respetivo reembolso. Após os 3 dias, o mês é considerado ativo e não será reembolsável.
-
-**7.3. Planos Anuais - Reembolso Proporcional (Pro-Rata)**
-Não queremos que as Igrejas fiquem presas a contratos que já não lhes servem. Se pagar anualmente com desconto e, ao fim de alguns meses, necessitar de cancelar o serviço:
-
-- Calcularemos o valor proporcional (pro-rata) aos meses que já utilizou (contabilizados ao preço mensal sem desconto).
-- Devolveremos a diferença correspondente aos meses restantes não utilizados do seu contrato.
-
-**7.4. Processamento de Reembolsos**
-Todos os pedidos devem ser enviados para hosanna.songbook@gmail.com. O Hosanna emite o reembolso imediatamente através do Stripe, contudo, dependendo do seu banco, o valor pode demorar entre 5 a 10 dias úteis a surgir na sua conta bancária.
+**Aplicação da Política:** O Hosanna investigará denúncias credíveis de violação desta política. Consoante a gravidade, poderemos emitir um aviso, restringir o acesso, suspender contas, remover membros de uma organização ou terminar uma organização, incluindo a invalidação imediata de sessões ativas (Account Ban).
 
 ---
 
-# 8. Política de Subscrição e Faturação
+## 5. Política de Direitos de Autor e Conteúdo
 
-**8.1. Processamento de Pagamentos e Impostos**
-Todos os pagamentos são processados pela plataforma externa Stripe. Os preços apresentados estão em Euros (EUR) e, quando aplicável, o IVA (Imposto sobre o Valor Acrescentado) será calculado no checkout com base na localização e no estatuto fiscal da Igreja.
+**5.1. Propriedade do Conteúdo**
+Os clientes e utilizadores mantêm todos os direitos de propriedade sobre o conteúdo que criam ou fazem upload (sujeito aos direitos de terceiros). O Hosanna recebe apenas a licença estritamente necessária para operar o serviço (armazenar, sincronizar, processar, exibir aos utilizadores autorizados e criar cópias técnicas de segurança).
 
-**8.2. Renovação Automática**
-Para evitar a interrupção no planeamento dos cultos, todas as subscrições (mensais ou anuais) renovam automaticamente no final de cada ciclo de faturação, utilizando o método de pagamento associado.
+**5.2. Responsabilidade pelo Licenciamento**
+As organizações são inteiramente responsáveis por garantir que possuem os direitos, autorizações ou licenças necessárias (por exemplo, através da CCLI) para todo o conteúdo musical que armazenam, reproduzem ou partilham na plataforma. O Hosanna atua como fornecedor de infraestrutura e não verifica automaticamente o licenciamento de cada música.
 
-**8.3. Falha de Pagamento e Estado "Read-Only" (Apenas Leitura)**
-Se a cobrança do seu cartão falhar, o Hosanna fará novas tentativas automáticas durante um breve período de carência. Se a situação não for regularizada:
+**5.3. Integração com Áudio/YouTube**
+O Hosanna não aloja ficheiros de áudio ou gravações. Qualquer metadado que ligue uma música a vídeos no YouTube apenas referencia conteúdo externo. O Hosanna não controla esse conteúdo externo, estando este sujeito aos termos das plataformas de terceiros.
 
-- A conta entrará em modo **Read-Only (Apenas Leitura)**.
-- **O que acontece aos Cultos?** O sistema bloqueará o acesso aos Cultos (Services). Não poderá criar, editar ou visualizar cultos na App Mobile.
-- **O que acontece à Biblioteca?** As suas músicas e pastas não serão apagadas. Continuará a poder abrir e ler as músicas individualmente para que não perca o trabalho de organização, mas perderá as ferramentas avançadas de planeamento até efetuar o pagamento.
-
----
-
-# 9. Política de Direitos de Autor e DMCA
-
-**9.1. Responsabilidade do Conteúdo**
-O Hosanna é fornecido como uma ferramenta de organização de ficheiros de texto (ChordPro). O Hosanna não efetua uma curadoria prévia, moderação ou revisão do conteúdo submetido. A responsabilidade legal pelas obras submetidas pertence ao Workspace.
-
-**9.2. Procedimento de Notificação (Takedown Notice)**
-Se for titular de direitos de autor, editor ou representante legal, e acreditar que uma Igreja alojou ou está a distribuir uma obra sua sem licenciamento válido na nossa infraestrutura, deve enviar uma notificação formal para hosanna.songbook@gmail.com contendo:
-
-1. Identificação clara da obra protegida.
-2. Evidência ou link de onde a obra se encontra no nosso sistema.
-3. Declaração sob compromisso de honra de que o uso não foi autorizado.
-
-**9.3. Ação por parte do Hosanna**
-Uma vez recebida a queixa:
-
-- Iremos imediatamente notificar o Administrador do Workspace alvo da reclamação.
-- Bloquearemos ou removeremos preventivamente o acesso a essa música em específico.
-- Permitiremos ao Administrador apresentar uma contra-notificação, caso possua uma licença ativa da CCLI que o autorize a utilizar a obra em contexto eclesiástico e privado.
+**5.4. Procedimento de Denúncia de Direitos de Autor**
+Se é titular de direitos de autor e acredita que o seu trabalho está a ser utilizado indevidamente numa organização pública ou através da nossa infraestrutura, envie uma queixa formal para o nosso contacto legal. Investigaremos a denúncia, reservando-nos o direito de remover ou restringir o acesso ao material em causa, permitindo sempre o direito de resposta ou contra-notificação por parte do utilizador.
 
 ---
 
-# 10. Diretrizes da Comunidade
+## 6. Subscrições, Faturação e Reembolsos
 
-**10.1. Objetivo**
-O Hosanna foi desenhado para facilitar a colaboração pacífica, organizada e edificante dentro das equipas de louvor.
+**6.1. Planos e Processamento de Pagamentos**
+O Hosanna Cloud (Beta) opera num modelo de subscrição (mensal ou anual) de 12€ por mês por organização (ou por campus). Os pagamentos são geridos de forma segura pelo nosso parceiro de faturação (Stripe). O Hosanna não armazena os dados completos dos cartões de crédito.
 
-**10.2. Boas Práticas Internas**
+**6.2. Período de Reflexão e Reembolsos**
 
-- **Manutenção da Biblioteca:** Recomendamos vivamente o uso padronizado de Tags e Pastas. Evite duplicar músicas na base de dados do seu Workspace para facilitar a pesquisa aos restantes músicos.
-- **Uso Adequado das Notas:** A funcionalidade de "Notas de Serviço" e "Notas de Música" deve ser usada estritamente para logística e dinâmicas do culto (ex: "Entrar em Acústico", "Atenção ao andamento").
-- **Respeito pelas Configurações Pessoais:** O design da App Mobile garante que a transposição de tons ou ocultação de acordes feita no ecrã de um músico não afeta o ecrã do colega. Encorajamos as equipas a respeitarem a autonomia visual de cada instrumentista/vocalista.
+- **Período Inicial de 14 Dias:** Novas subscrições beneficiam de um período de 14 dias para cancelamento com direito a reembolso total, sujeito aos seus direitos legais de consumidor e aos nossos termos voluntários.
+- **Período de Graça (Mensal):** Oferecemos um período de cortesia de 3 dias (72 horas) após a renovação automática de um plano mensal para solicitar o cancelamento e reembolso desse ciclo.
+- **Planos Anuais:** O cancelamento de planos anuais a meio do ciclo poderá resultar num reembolso proporcional (pro-rata), consoante a política em vigor. Adicionalmente, aplicam-se quaisquer direitos de consumidor obrigatórios exigidos pela lei do país do utilizador.
 
----
-
-# 11. Declaração de Acessibilidade
-
-**11.1. O Nosso Compromisso com a Inclusão**
-Temos perfeita noção de que músicos têm diferentes idades, capacidades visuais e operam sob condições de iluminação extremas e desafiantes (palcos escuros ou encandeados por luzes brilhantes). O Hosanna está empenhado em aproximar a sua plataforma das diretrizes Web Content Accessibility Guidelines (WCAG 2.1).
-
-**11.2. Funcionalidades Adaptativas na App Mobile**
-
-- **Controlo de Tipografia:** Cada utilizador tem a capacidade de ajustar dinamicamente o tamanho da fonte (font-size) no seu dispositivo para prevenir fadiga visual.
-- **Ocultação de Complexidade:** Vocalistas podem optar por ocultar os acordes do ficheiro ChordPro, lendo apenas a letra, evitando confusão visual e poluição no ecrã.
-- **Bloqueio de Suspensão de Ecrã (Keep-Awake):** Para evitar interrupções catastróficas enquanto se toca com as duas mãos num instrumento, a aplicação impede ativamente que o ecrã adormeça.
-
-**11.3. Feedback Contínuo**
-Se encontrar barreiras de acessibilidade no nosso Studio ou na leitura de partituras/cifras, encorajamo-lo a reportar a situação para podermos melhorar o contraste, botões e navegação do sistema.
+**6.3. Falha de Pagamento**
+Se a cobrança falhar, o serviço de faturação tentará novamente. Findo o período de regularização, a organização poderá entrar num modo de restrição (apenas leitura / read-only). As músicas e o conteúdo não são eliminados instantaneamente, permitindo à organização aceder aos dados para exportação.
 
 ---
 
-# 12. Isenção de Responsabilidade (Disclaimer)
+## 7. Acordo de Tratamento de Dados (DPA)
 
-**12.1. Prestação "Tal Como Está" (As Is)**
-O serviço Hosanna é fornecido "tal como está" e "conforme disponível". Embora envidemos os maiores esforços técnicos para garantir 99% de tempo de atividade (uptime), não oferecemos garantias absolutas, expressas ou implícitas, de que a plataforma estará isenta de falhas, erros (bugs) ou que o serviço não sofrerá interrupções.
+Onde o Hosanna atua como Subcontratante para os dados pessoais inseridos na Organização, comprometemo-nos a:
 
-**12.2. Utilização em Ambientes ao Vivo (Live Worship)**
-A execução musical ao vivo é um ambiente crítico. O Hosanna disponibiliza tecnologia offline na App Mobile para mitigar riscos, mas **não se responsabiliza em qualquer circunstância** por falhas durante um culto derivadas de:
+- Tratar os dados apenas de acordo com as instruções documentadas da organização (através da utilização da aplicação);
+- Garantir obrigações de confidencialidade;
+- Implementar medidas de segurança técnicas e organizativas adequadas;
+- Auxiliar a organização na resposta a pedidos de direitos dos titulares dos dados;
+- Excluir ou devolver os dados da organização (quando exequível e solicitado) após o término da prestação do serviço, salvo obrigações legais de retenção.
 
-- Dispositivos (Tablets/Smartphones) que fiquem sem bateria;
-- Quebras de sincronização devido à ausência de Wi-Fi ou rede de dados 4G/5G na igreja no momento de atualizar o repertório;
-- Encerramento inesperado do navegador ou aplicação gerido pelo sistema operativo do utilizador devido a falta de memória (RAM).
-  É responsabilidade da Igreja e dos seus líderes musicais testar e confirmar a sincronização de todos os dispositivos antes do início do evento.
+---
 
-**12.3. Eventos de Força Maior**
-O Hosanna não será responsabilizado por incumprimentos ou atrasos no serviço causados por catástrofes naturais, greves, ataques cibernéticos em grande escala aos nossos fornecedores (Vercel, AWS, Stripe), ou regulamentações governamentais que afetem o funcionamento da internet na sua região.
+## 8. Segurança e Gestão de Dados
+
+**8.1. Segurança**
+O Hosanna emprega medidas técnicas razoáveis para proteger os dados, incluindo comunicação encriptada (HTTPS/TLS), gestão segura de sessões, controlo de acessos baseado em papéis (RBAC) e proteção contra acessos não autorizados. Disponibilizamos também Autenticação de Dois Fatores (2FA) via aplicações autenticadoras e códigos de recuperação. Nenhuma plataforma na internet é 100% impenetrável; a segurança das contas depende também das boas práticas dos utilizadores (proteção de palavras-passe).
+
+**8.2. Violação de Dados (Security Incidents)**
+Caso o Hosanna tenha conhecimento de uma violação de dados pessoais que afete os nossos utilizadores, atuaremos em conformidade com as leis de proteção de dados aplicáveis, notificando as autoridades competentes e os utilizadores afetados dentro dos prazos legalmente exigidos.
+
+**8.3. Exportação, Backups e Eliminação de Organizações**
+
+- **Exportação:** Recomendamos que as organizações efetuem e mantenham as suas próprias cópias de segurança. A plataforma permite exportar os dados para o dispositivo local, mas o Hosanna não armazena esse ficheiro gerado como um backup em nuvem de recuperação automática.
+- **Eliminação da Conta:** Apagar a sua conta pessoal não apaga o conteúdo das organizações das quais é membro.
+- **Eliminação da Organização:** Esta é uma ação destrutiva gerida pelo Owner. Eliminar a organização removerá permanentemente pastas, músicas, serviços, equipas e convites associados, não garantindo o Hosanna a sua recuperação posterior.
+
+---
+
+## 9. Subcontratantes (Subprocessors)
+
+Para operar o Hosanna, utilizamos prestadores de serviços tecnológicos externos fidedignos para infraestrutura de alojamento, bases de dados, gestão de identidade, e-mails e pagamentos (incluindo Vercel, fornecedores PostgreSQL, Stripe, Resend). Os dados podem ser tratados através de fornecedores localizados no Espaço Económico Europeu (EEE) ou noutras jurisdições, com recurso às salvaguardas adequadas exigidas por lei (ex: Cláusulas Contratuais Tipo).
+
+---
+
+## 10. Open Source e Self-Hosting
+
+**10.1. Licença Open Source**
+O código-fonte do servidor, do Studio, da App Mobile e dos pacotes partilhados do Hosanna é disponibilizado ao abrigo da Apache License 2.0. Os utilizadores e a comunidade são livres de inspecionar, modificar e redistribuir o código fonte sujeito aos termos dessa licença.
+
+**10.2. Distinção do Serviço na Nuvem (Hosanna Cloud)**
+A licença Apache 2.0 regula o uso do código fonte. No entanto, a utilização da nossa plataforma gerida na nuvem ("Hosanna Cloud") rege-se pelos presentes Termos de Serviço. A subscrição da Hosanna Cloud não confere a titularidade do software, sendo apenas a prestação de um serviço.
+
+**10.3. Instalações Próprias (Self-Hosting)**
+Quem optar por alojar o Hosanna nos seus próprios servidores (Self-Hosting) fá-lo sob a sua total responsabilidade. O Hosanna não é responsável pela infraestrutura, disponibilidade, segurança, atualizações, backups ou conformidade legal em matéria de proteção de dados de instalações geridas por terceiros.
+
+---
+
+## 11. Acessibilidade
+
+O Hosanna procura seguir boas práticas de acessibilidade e melhorar continuamente a experiência para pessoas com diferentes necessidades, especialmente tendo em conta os desafios dos músicos em ambientes ao vivo. Incluímos funcionalidades práticas (como ajuste de tamanho de letra, ocultação de cifras e bloqueio de suspensão de ecrã/keep-awake), ainda que não possuamos, de momento, uma certificação formal de conformidade integral com as normas WCAG.
+
+---
+
+## 12. Disponibilidade do Serviço e Disclaimer
+
+**12.1. Nível de Serviço**
+O Hosanna procura fornecer uma disponibilidade fiável da plataforma. No entanto, o serviço é fornecido "tal como está". Podem ocorrer períodos de manutenção, falhas de infraestrutura de terceiros, bugs ou interrupções.
+
+**12.2. Uso em Contexto de Culto ao Vivo (Live Worship)**
+A execução ao vivo requer preparação. Apesar de a aplicação oferecer funcionalidades offline para mitigar falhas de rede, **o utilizador e a organização assumem a responsabilidade** por garantir que os seus dispositivos têm bateria, estão a funcionar corretamente e que a sincronização do repertório foi efetuada atempadamente antes do início dos eventos. O Hosanna não é responsável por falhas técnicas locais que ocorram durante o culto.
+
+**12.3. Força Maior**
+O Hosanna não será responsabilizado pelo incumprimento de obrigações resultantes de eventos fora do seu controlo razoável (ex: catástrofes naturais, pandemias, interrupções generalizadas de telecomunicações ou ações governamentais).
+
+---
+
+## 13. Diretrizes da Comunidade
+
+Pretendemos que o uso colaborativo dentro do Hosanna seja construtivo. Pedimos aos membros de todas as organizações que:
+
+- Colaborem respeitosamente e organizem os recursos partilhados de forma responsável;
+- Usem as ferramentas de anotação ("notas") para fins logísticos e de planeamento pertinentes à equipa;
+- Respeitem as configurações e o trabalho dos outros utilizadores dentro do seu Workspace.
+
+---
+
+## 14. Informações Legais e Contacto
+
+**Lei Aplicável e Jurisdição:** Sem prejuízo dos direitos imperativos de defesa do consumidor que lhe assistam na sua jurisdição de residência, os presentes Termos são regidos pela lei de Portugal.
+
+**Operador do Serviço:**
+Tiago Rodrigo dos Reis Inês
+Operado a partir de Camarate, Portugal.
+
+**Contacto:** Para questões legais, relacionadas com privacidade, RGPD, suporte ou direitos de autor, por favor, contacte-nos através de: **[hosanna.contact@example.com]**.
