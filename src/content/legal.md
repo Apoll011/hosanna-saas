@@ -3,7 +3,7 @@
 **Última atualização:** 28 de julho de 2026
 
 **1.1. Aceitação dos Termos**
-Bem-vindo ao Hosanna, operado por Tiago Inês, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Studio e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
+Bem-vindo ao Hosanna, operado por Tiago Inês da Embrace, com sede em Camarate, Portugal. Ao aceder, registar uma conta (Workspace), ou usar o Studio e a App Mobile do Hosanna, o utilizador concorda expressamente em cumprir e ficar vinculado a estes Termos de Serviço. Se não concordar com qualquer parte destes termos, não deverá utilizar os nossos serviços.
 
 **1.2. Descrição da Plataforma e Serviço**
 O Hosanna é uma plataforma de Software as a Service (SaaS) destinada a igrejas, ministérios e equipas de louvor ("Clientes"). A plataforma fornece ferramentas para a organização de bibliotecas musicais, planeamento de cultos, e partilha de alinhamentos com músicos através de tokens de acesso, permitindo a visualização offline na App Mobile. O Hosanna não fornece, nem vende, partituras, letras ou obras musicais de terceiros.
