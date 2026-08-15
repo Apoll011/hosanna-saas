@@ -867,6 +867,40 @@ function Vision() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Support                                                           */
+/* ------------------------------------------------------------------ */
+function SupportTheMission() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = "https://www.gofundme.com/static/js/embed.js";
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
+  return (
+    <section className="bg-secondary py-16 md:py-16">
+      <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <SectionHeader eyebrow="Apoie o projeto" title="Ajude-nos a levar o Hosanna a igrejas de todo o mundo">
+          A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a
+          mais equipas de louvor.
+        </SectionHeader>
+
+        <div className="reveal mx-auto mt-12 max-w-3xl rounded-3xl border border-border bg-card p-4 shadow-soft md:p-6">
+          <div
+            className="gfm-embed"
+            data-url="https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo/widget/medium?attribution_id=sl%3A6ae5cf26-7689-4639-ba2f-533a305c601d"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  FAQ                                                               */
 /* ------------------------------------------------------------------ */
 const ROADMAP = [
@@ -1104,6 +1138,7 @@ export function HosannaLanding() {
         <Pricing />
         <MobileApp />
         <Vision />
+        <SupportTheMission />
         <Roadmap />
         <FAQ />
         <FinalCTA />
