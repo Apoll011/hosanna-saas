@@ -884,10 +884,10 @@ function SupportTheMission() {
           mais equipas de louvor.
         </SectionHeader>
 
-        <div className="reveal mx-auto mt-12 w-full max-w-2xl overflow-hidden">
-          <div className="relative left-1/2 w-195 -translate-x-1/2 sm:w-195">
+        <div className="reveal mx-auto mt-12 w-140 max-w-full overflow-hidden">
+          <div className="w-195 -translate-x-27.5">
             <iframe
-              className="gfm-embed-iframe block"
+              className="block"
               src={goFundMeUrl}
               width="780"
               height="200"
