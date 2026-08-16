@@ -870,21 +870,13 @@ function Vision() {
 /*  Support                                                           */
 /* ------------------------------------------------------------------ */
 function SupportTheMission() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.defer = true;
-    script.src = "https://www.gofundme.com/static/js/embed.js";
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   return (
     <section className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow="Apoie o projeto" title="Ajude-nos a levar o Hosanna a igrejas de todo o mundo">
+        <SectionHeader
+          eyebrow="Apoie o projeto"
+          title="Ajude-nos a levar o Hosanna a igrejas de todo o mundo"
+        >
           A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a
           mais equipas de louvor.
         </SectionHeader>
