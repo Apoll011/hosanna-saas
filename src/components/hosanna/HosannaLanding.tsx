@@ -884,13 +884,13 @@ function SupportTheMission() {
           mais equipas de louvor.
         </SectionHeader>
 
-        <div className="reveal mx-auto mt-12 w-140 max-w-full overflow-hidden">
-          <div className="w-195 -translate-x-27.5">
+        <div className="reveal mx-auto mt-12 w-[550px] max-w-full overflow-hidden">
+          <div className="w-[780px] -translate-x-[115px]">
             <iframe
               className="block"
               src={goFundMeUrl}
               width="780"
-              height="200"
+              height="202"
               frameBorder="0"
               scrolling="no"
               title="Apoie o Hosanna no GoFundMe"
