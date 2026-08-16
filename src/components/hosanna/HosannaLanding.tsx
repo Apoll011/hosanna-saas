@@ -884,16 +884,18 @@ function SupportTheMission() {
           mais equipas de louvor.
         </SectionHeader>
 
-        <div className="reveal mx-auto mt-12 max-w-2xl in-view">
-          <iframe
-            className="gfm-embed-iframe block w-full"
-            src={goFundMeUrl}
-            width="100%"
-            height="200"
-            frameBorder="0"
-            scrolling="no"
-            title="Apoie o Hosanna no GoFundMe"
-          />
+        <div className="reveal mx-auto mt-12 w-full max-w-2xl overflow-hidden">
+          <div className="relative left-1/2 w-195 -translate-x-1/2 sm:w-195">
+            <iframe
+              className="gfm-embed-iframe block"
+              src={goFundMeUrl}
+              width="780"
+              height="200"
+              frameBorder="0"
+              scrolling="no"
+              title="Apoie o Hosanna no GoFundMe"
+            />
+          </div>
         </div>
       </div>
     </section>
