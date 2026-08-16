@@ -107,7 +107,6 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         <Analytics />
         {children}
-        <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
         <Scripts />
       </body>
     </html>

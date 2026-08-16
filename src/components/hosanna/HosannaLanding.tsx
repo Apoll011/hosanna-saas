@@ -870,6 +870,9 @@ function Vision() {
 /*  Support                                                           */
 /* ------------------------------------------------------------------ */
 function SupportTheMission() {
+  const goFundMeUrl =
+    "https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo/widget/medium?attribution_id=sl%3A6ae5cf26-7689-4639-ba2f-533a305c601d";
+
   return (
     <section className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -882,9 +885,14 @@ function SupportTheMission() {
         </SectionHeader>
 
         <div className="reveal mx-auto mt-12 max-w-3xl rounded-3xl border border-border bg-card p-4 shadow-soft md:p-6">
-          <div
-            className="gfm-embed"
-            data-url="https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo/widget/medium?attribution_id=sl%3A6ae5cf26-7689-4639-ba2f-533a305c601d"
+          <iframe
+            src={`${goFundMeUrl}&utm_content=${encodeURIComponent(window.location.hostname)}#:~:tcm-regime=GDPR&tcm-prompt=Hidden`}
+            className="gfm-embed-iframe"
+            width="100%"
+            height="200"
+            frameBorder="0"
+            scrolling="no"
+            title="Apoie o Hosanna no GoFundMe"
           />
         </div>
       </div>
