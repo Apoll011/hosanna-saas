@@ -885,15 +885,17 @@ function SupportTheMission() {
         </SectionHeader>
 
         <div className="reveal mx-auto mt-12 w-[558px] max-w-full overflow-hidden">
-          <iframe
-            className="block"
-            src={goFundMeUrl}
-            width="780"
-            height="202"
-            frameBorder="0"
-            scrolling="no"
-            title="Apoie o Hosanna no GoFundMe"
-          />
+          <div className="w-[780px] -translate-x-[175px]">
+            <iframe
+              className="block"
+              src={goFundMeUrl}
+              width="780"
+              height="202"
+              frameBorder="0"
+              scrolling="no"
+              title="Apoie o Hosanna no GoFundMe"
+            />
+          </div>
         </div>
       </div>
     </section>
