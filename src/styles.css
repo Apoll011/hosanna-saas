@@ -67,28 +67,28 @@
 :root {
   --radius: 0.625rem;
   /* Hosanna — Material 3 sky-blue brand palette */
-  --background: #f8fafc;                /* m3-bg */
-  --foreground: #1D1B20;                /* m3-text */
-  --card: #FFFFFF;                      /* m3-card */
-  --card-foreground: #1D1B20;
-  --popover: #FFFFFF;
-  --popover-foreground: #1D1B20;
-  --primary: #0284c7;                   /* m3-primary */
-  --primary-foreground: #FFFFFF;
-  --primary-dark: #075985;              /* m3-primary-dark */
-  --primary-light: #e0f2fe;             /* m3-primary-light */
-  --secondary: #f1f5f9;                 /* m3-sidebar / toolbar */
-  --secondary-foreground: #1D1B20;
+  --background: #f8fafc; /* m3-bg */
+  --foreground: #1d1b20; /* m3-text */
+  --card: #ffffff; /* m3-card */
+  --card-foreground: #1d1b20;
+  --popover: #ffffff;
+  --popover-foreground: #1d1b20;
+  --primary: #0284c7; /* m3-primary */
+  --primary-foreground: #ffffff;
+  --primary-dark: #075985; /* m3-primary-dark */
+  --primary-light: #e0f2fe; /* m3-primary-light */
+  --secondary: #f1f5f9; /* m3-sidebar / toolbar */
+  --secondary-foreground: #1d1b20;
   --muted: #f1f5f9;
-  --muted-foreground: #49454F;          /* m3-secondary */
-  --accent: #e0f2fe;                    /* m3-primary-light */
+  --muted-foreground: #49454f; /* m3-secondary */
+  --accent: #e0f2fe; /* m3-primary-light */
   --accent-foreground: #075985;
-  --gold: #0284c7;                      /* legacy token → primary */
-  --gold-foreground: #FFFFFF;
+  --gold: #0284c7; /* legacy token → primary */
+  --gold-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #FFFFFF;
-  --border: #cbd5e1;                    /* m3-border */
-  --input: #79747E;                     /* m3-input */
+  --destructive-foreground: #ffffff;
+  --border: #cbd5e1; /* m3-border */
+  --input: #79747e; /* m3-input */
   --ring: #0284c7;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -136,13 +136,19 @@
 
 @utility shadow-soft {
   box-shadow:
-    0 30px 80px -30px rgb(2 132 199 / 0.30),
+    0 30px 80px -30px rgb(2 132 199 / 0.3),
     0 8px 30px -12px rgb(15 23 42 / 0.15);
 }
 
 @keyframes hosanna-fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .reveal {
@@ -152,7 +158,9 @@
   animation: hosanna-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
