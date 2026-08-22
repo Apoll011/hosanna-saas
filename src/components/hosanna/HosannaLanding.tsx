@@ -12,6 +12,7 @@ import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
@@ -32,7 +33,6 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -78,24 +78,31 @@ export function Nav() {
   }, []);
 
   return (
-    <div className="sticky -top-10 z-50">
+    <div>
+      {/* Banner sits in normal flow — scrolls fully away regardless of its height */}
       <EarlyAccessBanner />
+
       <header
         className={cn(
-          "transition-all duration-300",
+          "sticky top-0 z-50 transition-all duration-300",
           scrolled ? "bg-background/85 backdrop-blur-md shadow-sm" : "bg-transparent",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Logo />
-          <nav className="hidden items-center gap-8 md:flex">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-4 md:px-8">
+          {/* Left: logo */}
+          <div className="flex items-center">
+            <Logo />
+          </div>
+
+          {/* Center: nav — always centered, its own grid column */}
+          <nav className="hidden items-center justify-center gap-8 md:flex">
             {NAV.map((n) =>
               n.isInternal ? (
                 <Link
                   key={n.href}
                   to={n.href}
                   className={cn(
-                    "text-sm font-medium transition-colors",
+                    "text-sm font-medium whitespace-nowrap transition-colors",
                     scrolled
                       ? "text-foreground hover:text-foreground/80"
                       : "text-white/90 hover:text-white",
@@ -108,7 +115,7 @@ export function Nav() {
                   key={n.href}
                   href={n.href}
                   className={cn(
-                    "text-sm font-medium transition-colors",
+                    "text-sm font-medium whitespace-nowrap transition-colors",
                     scrolled
                       ? "text-foreground hover:text-foreground/80"
                       : "text-white/90 hover:text-white",
@@ -119,31 +126,35 @@ export function Nav() {
               ),
             )}
           </nav>
-          <div className="hidden items-center gap-4 md:flex">
+
+          {/* Right: desktop controls */}
+          <div className="hidden items-center justify-end gap-4 md:flex">
             <LanguageSelector />
             <Button
               asChild
-              className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
+              className="rounded-full bg-gold text-gold-foreground shadow-lg transition-all hover:scale-105 hover:bg-gold/90 active:scale-95"
             >
               <a href={dashboardUrl}>{t("landing.nav.tryFree")}</a>
             </Button>
           </div>
-          <div className="flex items-center gap-2 md:hidden">
+
+          {/* Right: mobile controls */}
+          <div className="flex items-center justify-end gap-2 md:hidden">
             <LanguageSelector />
             <button
-              className={cn(
-                "transition-colors p-1.5",
-                scrolled ? "text-foreground" : "text-white",
-              )}
+              type="button"
+              className={cn("p-1.5 transition-colors", scrolled ? "text-foreground" : "text-white")}
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
+              aria-expanded={open}
             >
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
+
         {open && (
-          <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
+          <div className="border-t border-border/60 bg-background/95 backdrop-blur-md md:hidden">
             <div className="flex flex-col gap-1 px-5 py-4">
               {NAV.map((n) =>
                 n.isInternal ? (
@@ -291,10 +302,7 @@ function Problem() {
   return (
     <section className="relative bg-background py-16 md:py-16 font-sans">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader
-          eyebrow={t("landing.problem.eyebrow")}
-          title={t("landing.problem.title")}
-        >
+        <SectionHeader eyebrow={t("landing.problem.eyebrow")} title={t("landing.problem.title")}>
           {t("landing.problem.description")}
         </SectionHeader>
         <div className="reveal mt-16 grid gap-8 md:grid-cols-3">
@@ -415,10 +423,7 @@ function Organize() {
   return (
     <section className="bg-background py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader
-          eyebrow={t("landing.organize.eyebrow")}
-          title={t("landing.organize.title")}
-        >
+        <SectionHeader eyebrow={t("landing.organize.eyebrow")} title={t("landing.organize.title")}>
           {t("landing.organize.description")}
         </SectionHeader>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -461,9 +466,7 @@ function HowItWorks() {
           eyebrowClassName="!text-[color:var(--primary-light)]"
           titleClassName="!text-primary-foreground"
         >
-          <span className="text-primary-foreground/70">
-            {t("landing.howItWorks.description")}
-          </span>
+          <span className="text-primary-foreground/70">{t("landing.howItWorks.description")}</span>
         </SectionHeader>
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {dict.landing.howItWorks.steps.map((s: { n: string; title: string; body: string }) => (
@@ -549,10 +552,7 @@ function AnySize() {
   return (
     <section className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader
-          eyebrow={t("landing.anySize.eyebrow")}
-          title={t("landing.anySize.title")}
-        >
+        <SectionHeader eyebrow={t("landing.anySize.eyebrow")} title={t("landing.anySize.title")}>
           {t("landing.anySize.description")}
         </SectionHeader>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -700,8 +700,11 @@ function Pricing() {
                 <span className="text-primary-foreground/70">{unit}</span>
               </div>
               <p className="mt-1 text-xs text-primary-foreground/60">
-                {annual ? t("landing.pricing.annualBilledNote") : t("landing.pricing.monthlyBilledNote")}
-                {" · "}{t("landing.pricing.unlimitedMusicians")}
+                {annual
+                  ? t("landing.pricing.annualBilledNote")
+                  : t("landing.pricing.monthlyBilledNote")}
+                {" · "}
+                {t("landing.pricing.unlimitedMusicians")}
               </p>
 
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -735,7 +738,9 @@ function Pricing() {
           <div className="reveal mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm text-muted-foreground">
             <Users className="mt-0.5 h-4 w-4 shrink-0 text-primary-dark" />
             <p>
-              <span className="font-medium text-foreground">{t("landing.pricing.multiCampusLabel")}</span>{" "}
+              <span className="font-medium text-foreground">
+                {t("landing.pricing.multiCampusLabel")}
+              </span>{" "}
               {t("landing.pricing.multiCampusText")}
             </p>
           </div>
@@ -822,10 +827,7 @@ function SupportTheMission() {
   return (
     <section className="bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader
-          eyebrow={t("landing.support.eyebrow")}
-          title={t("landing.support.title")}
-        >
+        <SectionHeader eyebrow={t("landing.support.eyebrow")} title={t("landing.support.title")}>
           {t("landing.support.description")}
         </SectionHeader>
 
@@ -1015,7 +1017,9 @@ export function Footer() {
         ))}
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-border px-5 pt-8 text-xs text-muted-foreground md:flex-row md:px-8">
-        <div>© {new Date().getFullYear()} Hosanna Studio. {t("landing.footer.copyright")}</div>
+        <div>
+          © {new Date().getFullYear()} Hosanna Studio. {t("landing.footer.copyright")}
+        </div>
         <div className="flex gap-8">
           <a
             href="mailto:hosanna.songbook@gmail.com"
