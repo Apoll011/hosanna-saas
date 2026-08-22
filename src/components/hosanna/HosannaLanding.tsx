@@ -78,31 +78,24 @@ export function Nav() {
   }, []);
 
   return (
-    <div>
-      {/* Banner sits in normal flow — scrolls fully away regardless of its height */}
+    <div className="sticky -top-10 z-50">
       <EarlyAccessBanner />
-
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300",
+          "transition-all duration-300",
           scrolled ? "bg-background/85 backdrop-blur-md shadow-sm" : "bg-transparent",
         )}
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-4 md:px-8">
-          {/* Left: logo */}
-          <div className="flex items-center">
-            <Logo />
-          </div>
-
-          {/* Center: nav — always centered, its own grid column */}
-          <nav className="hidden items-center justify-center gap-8 md:flex">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+          <Logo />
+          <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) =>
               n.isInternal ? (
                 <Link
                   key={n.href}
                   to={n.href}
                   className={cn(
-                    "text-sm font-medium whitespace-nowrap transition-colors",
+                    "text-sm font-medium transition-colors",
                     scrolled
                       ? "text-foreground hover:text-foreground/80"
                       : "text-white/90 hover:text-white",
@@ -115,7 +108,7 @@ export function Nav() {
                   key={n.href}
                   href={n.href}
                   className={cn(
-                    "text-sm font-medium whitespace-nowrap transition-colors",
+                    "text-sm font-medium transition-colors",
                     scrolled
                       ? "text-foreground hover:text-foreground/80"
                       : "text-white/90 hover:text-white",
@@ -126,35 +119,28 @@ export function Nav() {
               ),
             )}
           </nav>
-
-          {/* Right: desktop controls */}
-          <div className="hidden items-center justify-end gap-4 md:flex">
+          <div className="hidden items-center gap-4 md:flex">
             <LanguageSelector />
             <Button
               asChild
-              className="rounded-full bg-gold text-gold-foreground shadow-lg transition-all hover:scale-105 hover:bg-gold/90 active:scale-95"
+              className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
             >
               <a href={dashboardUrl}>{t("landing.nav.tryFree")}</a>
             </Button>
           </div>
-
-          {/* Right: mobile controls */}
-          <div className="flex items-center justify-end gap-2 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <LanguageSelector />
             <button
-              type="button"
-              className={cn("p-1.5 transition-colors", scrolled ? "text-foreground" : "text-white")}
+              className={cn("transition-colors p-1.5", scrolled ? "text-foreground" : "text-white")}
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
-              aria-expanded={open}
             >
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
-
         {open && (
-          <div className="border-t border-border/60 bg-background/95 backdrop-blur-md md:hidden">
+          <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
             <div className="flex flex-col gap-1 px-5 py-4">
               {NAV.map((n) =>
                 n.isInternal ? (
