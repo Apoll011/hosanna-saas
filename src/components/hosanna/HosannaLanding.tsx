@@ -32,6 +32,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -42,13 +43,13 @@ import { PlayStoreButton } from "../ui/StoreButton";
 /* ------------------------------------------------------------------ */
 function Logo({ className }: { className?: string }) {
   return (
-    <a href="/#top" className={cn("flex items-center", className)}>
+    <Link to="/" hash="top" className={cn("flex items-center", className)}>
       <img
         src={logo}
         alt="Hosanna Studio"
         className="w-14 h-14 rounded-xl object-contain transition-transform hover:scale-105 hover:rotate-2"
       />
-    </a>
+    </Link>
   );
 }
 
@@ -63,10 +64,10 @@ export function Nav() {
   const { t } = useI18n();
 
   const NAV = [
-    { label: t("landing.nav.features"), href: "#features" },
-    { label: t("landing.nav.chordpro"), href: "/chordpro" },
-    { label: t("landing.nav.pricing"), href: "#pricing" },
-    { label: t("landing.nav.contact"), href: "/contact" },
+    { label: t("landing.nav.features"), href: "/#features", isInternal: false },
+    { label: t("landing.nav.chordpro"), href: "/chordpro", isInternal: true },
+    { label: t("landing.nav.pricing"), href: "/#pricing", isInternal: false },
+    { label: t("landing.nav.contact"), href: "/contact", isInternal: true },
   ];
 
   useEffect(() => {
@@ -88,20 +89,35 @@ export function Nav() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <Logo />
           <nav className="hidden items-center gap-8 md:flex">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href.startsWith("/") ? n.href : `/${n.href}`}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  scrolled
-                    ? "text-foreground hover:text-foreground/80"
-                    : "text-white/90 hover:text-white",
-                )}
-              >
-                {n.label}
-              </a>
-            ))}
+            {NAV.map((n) =>
+              n.isInternal ? (
+                <Link
+                  key={n.href}
+                  to={n.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    scrolled
+                      ? "text-foreground hover:text-foreground/80"
+                      : "text-white/90 hover:text-white",
+                  )}
+                >
+                  {n.label}
+                </Link>
+              ) : (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors",
+                    scrolled
+                      ? "text-foreground hover:text-foreground/80"
+                      : "text-white/90 hover:text-white",
+                  )}
+                >
+                  {n.label}
+                </a>
+              ),
+            )}
           </nav>
           <div className="hidden items-center gap-4 md:flex">
             <LanguageSelector />
@@ -129,16 +145,27 @@ export function Nav() {
         {open && (
           <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
             <div className="flex flex-col gap-1 px-5 py-4">
-              {NAV.map((n) => (
-                <a
-                  key={n.href}
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
-                >
-                  {n.label}
-                </a>
-              ))}
+              {NAV.map((n) =>
+                n.isInternal ? (
+                  <Link
+                    key={n.href}
+                    to={n.href}
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
+                  >
+                    {n.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={n.href}
+                    href={n.href}
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
+                  >
+                    {n.label}
+                  </a>
+                ),
+              )}
               <Button
                 asChild
                 className="mt-2 rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
@@ -910,7 +937,7 @@ function FinalCTA() {
             variant="outline"
             className="rounded-full border-white/30 bg-white/5 px-10 text-lg font-medium text-white backdrop-blur-md transition-all hover:bg-white/10"
           >
-            <a href="/contact">{t("landing.finalCta.ctaContact")}</a>
+            <Link to="/contact">{t("landing.finalCta.ctaContact")}</Link>
           </Button>
         </div>
       </div>
@@ -925,26 +952,26 @@ export function Footer() {
     {
       title: t("landing.footer.colProduct"),
       links: [
-        [t("landing.footer.features"), "/#features"],
-        [t("landing.footer.chordproGuide"), "/chordpro"],
-        [t("landing.footer.pricing"), "/#pricing"],
-        [t("landing.footer.downloadApp"), "/#mobile"],
+        { label: t("landing.footer.features"), href: "/#features", isInternal: false },
+        { label: t("landing.footer.chordproGuide"), href: "/chordpro", isInternal: true },
+        { label: t("landing.footer.pricing"), href: "/#pricing", isInternal: false },
+        { label: t("landing.footer.downloadApp"), href: "/#mobile", isInternal: false },
       ],
     },
     {
       title: t("landing.footer.colSupport"),
       links: [
-        [t("landing.footer.contact"), "/contact"],
-        [t("landing.footer.helpCenter"), "#"],
-        [t("landing.footer.serviceStatus"), "#"],
+        { label: t("landing.footer.contact"), href: "/contact", isInternal: true },
+        { label: t("landing.footer.helpCenter"), href: "#", isInternal: false },
+        { label: t("landing.footer.serviceStatus"), href: "#", isInternal: false },
       ],
     },
     {
       title: t("landing.footer.colLegal"),
       links: [
-        [t("landing.footer.termsOfService"), "/legal"],
-        [t("landing.footer.privacyPolicy"), "/legal"],
-        [t("landing.footer.cookies"), "/legal"],
+        { label: t("landing.footer.termsOfService"), href: "/legal", isInternal: true },
+        { label: t("landing.footer.privacyPolicy"), href: "/legal", isInternal: true },
+        { label: t("landing.footer.cookies"), href: "/legal", isInternal: true },
       ],
     },
   ];
@@ -964,14 +991,23 @@ export function Footer() {
               {col.title}
             </div>
             <ul className="mt-6 space-y-3 text-sm font-sans">
-              {col.links.map(([label, href]) => (
+              {col.links.map(({ label, href, isInternal }) => (
                 <li key={label}>
-                  <a
-                    href={href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {label}
-                  </a>
+                  {isInternal ? (
+                    <Link
+                      to={href}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={href}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

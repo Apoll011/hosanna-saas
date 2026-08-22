@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { Link } from "@tanstack/react-router";
 import {
   AlertTriangle,
   ArrowRight,
@@ -965,7 +966,7 @@ export function ChordProGuide() {
               className="rounded-full px-10 text-lg font-medium py-6"
               asChild
             >
-              <a href="/">{t("chordproGuide.ctaBackHome")}</a>
+              <Link to="/">{t("chordproGuide.ctaBackHome")}</Link>
             </Button>
           </div>
         </div>

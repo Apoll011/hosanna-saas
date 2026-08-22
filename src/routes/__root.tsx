@@ -63,12 +63,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             {t("common.tryAgain")}
           </button>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             {t("common.backToHome")}
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -106,6 +106,23 @@ function RootShell({ children }: { children: ReactNode }) {
         <meta
           name="google-site-verification"
           content="aQkTNsrEhDcXm1wc0mMHp5bBaADpJoQjoQISyLK80qA"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var lang = localStorage.getItem('hosanna_lang');
+                if (!lang) {
+                  var userLangs = navigator.languages || [navigator.language];
+                  for (var i = 0; i < userLangs.length; i++) {
+                    var c = (userLangs[i] || '').toLowerCase().split('-')[0];
+                    if (c === 'pt' || c === 'es' || c === 'en') { lang = c; break; }
+                  }
+                }
+                if (lang) { document.documentElement.lang = lang; }
+              } catch(e) {}
+            `,
+          }}
         />
       </head>
       <body>
