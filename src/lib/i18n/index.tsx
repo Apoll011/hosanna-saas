@@ -42,22 +42,48 @@ function getNestedValue(obj: any, path: string): string | undefined {
   return path.split(".").reduce((acc, part) => (acc ? acc[part] : undefined), obj);
 }
 
+/**
+ * Robustly detect the user's preferred language from localStorage or browser preferences.
+ * Evaluates navigator.languages hierarchy (e.g. ['es-ES', 'en-US', 'pt-PT']).
+ */
+export function detectUserLanguage(): Language {
+  if (typeof window === "undefined") return "pt";
+
+  // 1. Check if the user previously explicitly chose a language
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY) as Language;
+    if (saved && (saved === "pt" || saved === "en" || saved === "es")) {
+      return saved;
+    }
+  } catch {
+    // localStorage might be unavailable or disabled
+  }
+
+  // 2. Check browser languages in order of user priority
+  try {
+    const userLangs = navigator.languages?.length ? navigator.languages : [navigator.language];
+    for (const rawLang of userLangs) {
+      if (!rawLang) continue;
+      const code = rawLang.toLowerCase().split("-")[0];
+      if (code === "pt") return "pt";
+      if (code === "es") return "es";
+      if (code === "en") return "en";
+    }
+  } catch {
+    // Fallback if navigator API is restricted
+  }
+
+  return "pt";
+}
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("pt");
+  const [language, setLanguageState] = useState<Language>(() => detectUserLanguage());
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY) as Language;
-      if (saved && (saved === "pt" || saved === "en" || saved === "es")) {
-        setLanguageState(saved);
-      } else {
-        const browserLang = navigator.language.slice(0, 2);
-        if (browserLang === "en" || browserLang === "es" || browserLang === "pt") {
-          setLanguageState(browserLang as Language);
-        }
-      }
-    } catch {
-      // Ignore localStorage errors (e.g. SSR)
+    // Re-verify in client after hydration
+    const detected = detectUserLanguage();
+    if (detected !== language) {
+      setLanguageState(detected);
     }
   }, []);
 
@@ -69,7 +95,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
         document.documentElement.lang = lang;
       }
     } catch {
-      // Ignore
+      // Ignore storage errors
     }
   };
 
