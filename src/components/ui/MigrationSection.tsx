@@ -1,63 +1,60 @@
 import { useReveal } from "@/hooks/useReveal";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Check, ListMusic, Music2 } from "lucide-react";
 import { useState } from "react";
 
-type SourceApp = {
-  id: string;
-  name: string;
-  description: string;
-  available: boolean;
-};
-
-const SOURCE_APPS: SourceApp[] = [
-  {
-    id: "songbookpro",
-    name: "Songbook Pro",
-    description: "Um ficheiro de backup. Cifras, tons e os seus sets tornam-se setlists.",
-    available: true,
-  },
-  {
-    id: "onsong",
-    name: "OnSong",
-    description: "Exporte em ChordPro. Cifras, tons e anotações preservadas.",
-    available: false,
-  },
-  {
-    id: "planningcenter",
-    name: "Planning Center",
-    description: "Ligamos à sua biblioteca de planos e serviços.",
-    available: false,
-  },
-  {
-    id: "chord1",
-    name: "Chord1",
-    description: "Importação direta de cifras, tons e letras.",
-    available: false,
-  },
-];
-
 export function MigrationSection() {
   useReveal();
+  const { t } = useI18n();
+
+  const SOURCE_APPS = [
+    {
+      id: "songbookpro",
+      name: "Songbook Pro",
+      description: t("migration.songbookProDesc"),
+      available: true,
+    },
+    {
+      id: "onsong",
+      name: "OnSong",
+      description: t("migration.onSongDesc"),
+      available: false,
+    },
+    {
+      id: "planningcenter",
+      name: "Planning Center",
+      description: t("migration.planningCenterDesc"),
+      available: false,
+    },
+    {
+      id: "chord1",
+      name: "Chord1",
+      description: t("migration.chord1Desc"),
+      available: false,
+    },
+  ];
+
   const [selectedId, setSelectedId] = useState(SOURCE_APPS[0].id);
-  const current = SOURCE_APPS.find((a) => a.id === selectedId)!;
+  const current = SOURCE_APPS.find((a) => a.id === selectedId) || SOURCE_APPS[0];
 
   return (
     <section id="features" className="relative bg-secondary py-16 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className={cn("reveal max-w-2xl", "mx-auto text-center")}>
           <div className={cn("text-xs font-semibold uppercase tracking-[0.2em] text-primary-dark")}>
-            Transição Suave
+            {t("migration.eyebrow")}
           </div>
           <h2
             className={cn(
               "mt-3 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl",
             )}
           >
-            Mude para o Hosanna <span className="text-blue-400">sem perder nada</span>
+            {t("migration.titleStart")}{" "}
+            <span className="text-blue-400">{t("migration.titleHighlight")}</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Já utiliza outra ferramenta? Consegues facilmente importar as tuas músicas
+            {t("migration.subtitle")}
           </p>
         </div>
         <div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center mt-6">
@@ -65,11 +62,11 @@ export function MigrationSection() {
           <div className="min-w-0">
             <div className="reveal mb-8">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground/70 mb-3">
-                De onde vêm as suas músicas?
+                {t("migration.whereFrom")}
               </p>
               <div
                 role="radiogroup"
-                aria-label="De onde vêm as suas músicas?"
+                aria-label={t("migration.whereFrom")}
                 className="flex flex-col gap-2"
               >
                 {SOURCE_APPS.map((app) => {
@@ -102,7 +99,7 @@ export function MigrationSection() {
                           </span>
                           {!app.available && (
                             <span className="text-[10px] font-bold uppercase tracking-wide text-blue-500 bg-blue-100 rounded-full px-2 py-0.5">
-                              Em breve
+                              {t("common.comingSoon")}
                             </span>
                           )}
                         </span>
@@ -133,7 +130,7 @@ export function MigrationSection() {
                       {current.name.toLowerCase().replace(/\s+/g, "")}.backup
                     </span>
                     <span className="block text-xs text-muted-foreground">
-                      {current.name} · 128 músicas
+                      {current.name} · {t("migration.songsCount", { count: 128 })}
                     </span>
                   </span>
                 </div>
@@ -212,7 +209,7 @@ export function MigrationSection() {
                     >
                       <ListMusic className="h-3.5 w-3.5 text-primary" />
                       <span className="text-xs font-semibold text-primary">
-                        Culto de sexta · 12 músicas
+                        {t("migration.serviceSetlist")}
                       </span>
                     </div>
                   </div>
@@ -222,14 +219,14 @@ export function MigrationSection() {
                   className="hm-pop absolute -right-2 -top-3 z-10 flex items-center gap-1.5 rounded-xl border border-blue-100 bg-white px-3 py-2 text-xs font-medium text-primary shadow-xl shadow-blue-900/10 sm:-right-5"
                   style={{ ["--hm-delay" as any]: "1800ms", ["--hm-rot" as any]: "2deg" }}
                 >
-                  Cifras &amp; tons
+                  {t("migration.chordsAndKeys")}
                   <Check className="h-3.5 w-3.5 text-emerald-500" />
                 </div>
                 <div
                   className="hm-pop absolute -bottom-3 -left-2 z-10 flex items-center gap-1.5 rounded-xl border border-blue-100 bg-white px-3 py-2 text-xs font-medium text-primary shadow-xl shadow-blue-900/10 sm:-left-5"
                   style={{ ["--hm-delay" as any]: "1950ms", ["--hm-rot" as any]: "-2deg" }}
                 >
-                  Setlists
+                  {t("migration.setlists")}
                   <Check className="h-3.5 w-3.5 text-emerald-500" />
                 </div>
               </div>

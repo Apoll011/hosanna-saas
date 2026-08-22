@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 import {
   AlertTriangle,
   ArrowRight,
@@ -25,7 +27,7 @@ interface DirectiveEntry {
   directive: string;
   alias?: string;
   category: DirectiveCategory;
-  description: string;
+  descriptionKey: string;
   example?: string;
   hosanna?: boolean;
 }
@@ -36,60 +38,59 @@ const DIRECTIVES: DirectiveEntry[] = [
     directive: "title",
     alias: "t",
     category: "metadata",
-    description: "Nome oficial do cântico",
+    descriptionKey: "title",
     example: "{title: Grandioso és Tu}",
   },
   {
     directive: "subtitle",
     alias: "st",
     category: "metadata",
-    description: "Subtítulo ou versão (ex: acústico, ao vivo)",
+    descriptionKey: "subtitle",
   },
-  { directive: "artist", alias: "a", category: "metadata", description: "Autor ou banda original" },
+  { directive: "artist", alias: "a", category: "metadata", descriptionKey: "artist" },
   {
     directive: "key",
     alias: "k",
     category: "metadata",
-    description: "Tom base, usado nas transposições automáticas",
+    descriptionKey: "key",
     example: "{key: A}",
   },
   {
     directive: "original_key",
     category: "metadata",
-    description: "Tom original, quando diferente do tom em que a equipa toca",
+    descriptionKey: "original_key",
   },
   {
     directive: "tempo",
     category: "metadata",
-    description: "Batidas por minuto (BPM), útil para o metrónomo ou guias",
+    descriptionKey: "tempo",
   },
-  { directive: "time", category: "metadata", description: "Compasso rítmico, ex: 4/4 ou 6/8" },
+  { directive: "time", category: "metadata", descriptionKey: "time" },
   {
     directive: "capo",
     category: "metadata",
-    description: "Casa do capotraste sugerida para a guitarra",
+    descriptionKey: "capo",
   },
   {
     directive: "duration",
     category: "metadata",
     alias: "duration",
-    description:
-      "Duração em mm:ss ou segundos, Nos cultos é usada para ter uma estimativa da sua duração.",
+    descriptionKey: "duration",
   },
-  { directive: "album", category: "metadata", description: "Álbum ou coletânea de origem" },
-  { directive: "composer", category: "metadata", description: "Compositor da melodia" },
-  { directive: "arranger", category: "metadata", description: "Responsável pelo arranjo musical" },
-  { directive: "lyricist", category: "metadata", description: "Autor da letra" },
+  { directive: "album", category: "metadata", descriptionKey: "album" },
+  { directive: "composer", category: "metadata", descriptionKey: "composer" },
+  { directive: "arranger", category: "metadata", descriptionKey: "arranger" },
+  { directive: "lyricist", category: "metadata", descriptionKey: "lyricist" },
   {
     directive: "copyright",
     category: "metadata",
-    description: "Informação de direitos de autor / CCLI",
+    descriptionKey: "copyright",
   },
-  { directive: "year", category: "metadata", description: "Ano de lançamento ou composição" },
+  { directive: "year", category: "metadata", descriptionKey: "year" },
   {
     directive: "youtube",
     category: "metadata",
-    description: "Link do vídeo. Cria um mini-player de áudio na app para ouvir durante o ensaio!",
+    descriptionKey: "youtube",
     example: "{youtube: https://youtu.be/...}",
     hosanna: true,
   },
@@ -97,7 +98,7 @@ const DIRECTIVES: DirectiveEntry[] = [
     directive: "song_number",
     alias: "number",
     category: "metadata",
-    description: "Número do hinário ou pasta da igreja, para pesquisa rápida",
+    descriptionKey: "song_number",
     example: "{song_number: 147}",
     hosanna: true,
   },
@@ -106,80 +107,80 @@ const DIRECTIVES: DirectiveEntry[] = [
     directive: "comment",
     alias: "c",
     category: "comment",
-    description: "Instrução para a banda (ex: Solo de guitarra, Apenas Bateria)",
+    descriptionKey: "comment",
   },
   {
     directive: "comment_italic",
     alias: "ci",
     category: "comment",
-    description: "Comentário em itálico, para notas mais discretas (dinâmica)",
+    descriptionKey: "comment_italic",
   },
   {
     directive: "comment_box",
     alias: "cb",
     category: "comment",
-    description: "Comentário em caixa, ideal para avisos importantes no ecrã",
+    descriptionKey: "comment_box",
   },
   {
     directive: "repeat",
     alias: "re",
     category: "comment",
-    description: "Marca um trecho a repetir (ex: 2x, ou até sinal do líder)",
+    descriptionKey: "repeat",
   },
   // Estrutura
   {
     directive: "start_of_verse",
     alias: "sov",
     category: "structure",
-    description: "Inicia um verso",
+    descriptionKey: "start_of_verse",
   },
   {
     directive: "end_of_verse",
     alias: "eov",
     category: "structure",
-    description: "Termina o verso atual",
+    descriptionKey: "end_of_verse",
   },
   {
     directive: "start_of_chorus",
     alias: "soc",
     category: "structure",
-    description: "Inicia um refrão",
+    descriptionKey: "start_of_chorus",
   },
   {
     directive: "end_of_chorus",
     alias: "eoc",
     category: "structure",
-    description: "Termina o refrão atual",
+    descriptionKey: "end_of_chorus",
   },
   {
     directive: "start_of_bridge",
     alias: "sob",
     category: "structure",
-    description: "Inicia uma ponte",
+    descriptionKey: "start_of_bridge",
   },
   {
     directive: "end_of_bridge",
     alias: "eob",
     category: "structure",
-    description: "Termina a ponte atual",
+    descriptionKey: "end_of_bridge",
   },
   {
     directive: "verse",
     alias: "v",
     category: "structure",
-    description: "Atalho rápido para abrir um novo verso",
+    descriptionKey: "verse",
   },
   {
     directive: "bridge",
     alias: "b",
     category: "structure",
-    description: "Atalho rápido para abrir uma nova ponte",
+    descriptionKey: "bridge",
   },
   {
     directive: "chorus",
     alias: "ch",
     category: "structure",
-    description: "Copia e repete automaticamente a letra do último refrão definido",
+    descriptionKey: "chorus",
     example: "{chorus}",
     hosanna: true,
   },
@@ -187,95 +188,54 @@ const DIRECTIVES: DirectiveEntry[] = [
     directive: "new_song",
     alias: "ns",
     category: "structure",
-    description: "Separa dois cânticos dentro do mesmo ficheiro",
+    descriptionKey: "new_song",
   },
   // Notação
   {
     directive: "start_of_tab",
     alias: "sot",
     category: "notation",
-    description: "Inicia um bloco de tablatura (para dedilhados ou riffs)",
+    descriptionKey: "start_of_tab",
   },
   {
     directive: "end_of_tab",
     alias: "eot",
     category: "notation",
-    description: "Termina o bloco de tablatura",
+    descriptionKey: "end_of_tab",
   },
   {
     directive: "start_of_grid",
     alias: "sog",
     category: "notation",
-    description: "Inicia uma secção de compassos (ideal para introduções)",
+    descriptionKey: "start_of_grid",
   },
   {
     directive: "end_of_grid",
     alias: "eog",
     category: "notation",
-    description: "Termina a secção de grelha",
+    descriptionKey: "end_of_grid",
   },
   {
     directive: "translator",
     category: "metadata",
-    description: "Nome do tradutor do cântico, útil para versões adaptadas",
+    descriptionKey: "translator",
   },
   {
     directive: "ccli",
     alias: "ccli_number",
     category: "metadata",
-    description: "Número CCLI (Christian Copyright Licensing International)",
+    descriptionKey: "ccli",
   },
   {
     directive: "time_signature",
     alias: "timesignature",
     category: "metadata",
-    description: "Alternativa à diretiva {time} para definir o compasso (ex: 4/4)",
+    descriptionKey: "time_signature",
     example: "{time_signature: 4/4}",
   },
 ];
 
-const CATEGORY_META: Record<
-  DirectiveCategory,
-  { label: string; icon: React.ElementType; chip: string; dot: string }
-> = {
-  metadata: {
-    label: "Metadados",
-    icon: Tags,
-    chip: "bg-blue-50 text-primary border-blue-100",
-    dot: "bg-primary",
-  },
-  comment: {
-    label: "Comentários",
-    icon: ClipboardList,
-    chip: "bg-amber-50 text-amber-700 border-amber-100",
-    dot: "bg-amber-500",
-  },
-  structure: {
-    label: "Estrutura",
-    icon: Layers,
-    chip: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    dot: "bg-emerald-500",
-  },
-  notation: {
-    label: "Notação",
-    icon: Grid3x3,
-    chip: "bg-violet-50 text-violet-700 border-violet-100",
-    dot: "bg-violet-500",
-  },
-};
-
 const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "duration", "youtube", "song_number"];
-
-const TOC = [
-  { id: "fundamentos", label: "Fundamentos" },
-  { id: "sintaxe", label: "Sintaxe de Acordes" },
-  { id: "diretivas", label: "Diretivas Essenciais" },
-  { id: "estrutura", label: "Estrutura do Cântico" },
-  { id: "notas", label: "Grelhas & Tempos" },
-  { id: "tablatura", label: "Tablatura" },
-  { id: "atalhos", label: "Atalhos do Editor" },
-  { id: "referencia", label: "Referência Rápida" },
-];
 
 function EyebrowIcon({ icon: Icon }: { icon: React.ElementType }) {
   return (
@@ -315,9 +275,10 @@ function SectionHeader({
 }
 
 function HosannaBadge() {
+  const { t } = useI18n();
   return (
     <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider bg-primary text-white px-2.5 py-1 rounded-full shrink-0">
-      Exclusivo Hosanna
+      {t("common.exclusiveHosanna")}
     </span>
   );
 }
@@ -376,6 +337,9 @@ function Callout({
 }
 
 function DirectiveCard({ entry }: { entry: DirectiveEntry }) {
+  const { t } = useI18n();
+  const desc = t(`directives.${entry.descriptionKey}` as TranslationKey);
+
   return (
     <div className="p-6 border border-border rounded-2xl hover:border-primary/30 transition-all hover:bg-blue-50/10 group shadow-sm relative">
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -386,17 +350,59 @@ function DirectiveCard({ entry }: { entry: DirectiveEntry }) {
       </div>
       {entry.alias && (
         <div className="text-xs text-muted-foreground mb-2">
-          atalho:{" "}
+          {t("chordproGuide.shortcutLabel")}{" "}
           <code className="font-mono font-semibold text-slate-500">{`${entry.alias} → Tab`}</code>
         </div>
       )}
-      <p className="text-muted-foreground leading-relaxed">{entry.description}</p>
+      <p className="text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
 }
 
 export function ChordProGuide() {
   useReveal();
+  const { t, dict } = useI18n();
+
+  const TOC = [
+    { id: "fundamentos", label: t("chordproGuide.toc.fundamentals") },
+    { id: "sintaxe", label: t("chordproGuide.toc.syntax") },
+    { id: "diretivas", label: t("chordproGuide.toc.directives") },
+    { id: "estrutura", label: t("chordproGuide.toc.structure") },
+    { id: "notas", label: t("chordproGuide.toc.grids") },
+    { id: "tablatura", label: t("chordproGuide.toc.tablature") },
+    { id: "atalhos", label: t("chordproGuide.toc.shortcuts") },
+    { id: "referencia", label: t("chordproGuide.toc.reference") },
+  ];
+
+  const CATEGORY_META: Record<
+    DirectiveCategory,
+    { label: string; icon: React.ElementType; chip: string; dot: string }
+  > = {
+    metadata: {
+      label: t("chordproGuide.categories.metadata"),
+      icon: Tags,
+      chip: "bg-blue-50 text-primary border-blue-100",
+      dot: "bg-primary",
+    },
+    comment: {
+      label: t("chordproGuide.categories.comment"),
+      icon: ClipboardList,
+      chip: "bg-amber-50 text-amber-700 border-amber-100",
+      dot: "bg-amber-500",
+    },
+    structure: {
+      label: t("chordproGuide.categories.structure"),
+      icon: Layers,
+      chip: "bg-emerald-50 text-emerald-700 border-emerald-100",
+      dot: "bg-emerald-500",
+    },
+    notation: {
+      label: t("chordproGuide.categories.notation"),
+      icon: Grid3x3,
+      chip: "bg-violet-50 text-violet-700 border-violet-100",
+      dot: "bg-violet-500",
+    },
+  };
 
   return (
     <div className="bg-white min-h-screen selection:bg-primary/10 font-sans">
@@ -407,42 +413,45 @@ export function ChordProGuide() {
           <StaffLines className="bottom-12 opacity-20" />
         </div>
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-          <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 mb-8 border border-white/10">
-            <BookMarked className="w-3.5 h-3.5" />
-            Guia de Formação · Equipa de Louvor
+          <div className="flex justify-center items-center gap-3 mb-8">
+            <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 border border-white/10">
+              <BookMarked className="w-3.5 h-3.5" />
+              {t("chordproGuide.heroBadge")}
+            </div>
+            <LanguageSelector />
           </div>
           <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
-            Domine o <span className="text-blue-300">ChordPro</span>
+            {t("chordproGuide.heroTitleStart")}{" "}
+            <span className="text-blue-300">{t("chordproGuide.heroTitleHighlight")}</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-3xl mx-auto mb-14">
-            A forma padrão e inteligente de escrever cifras. Tudo o que a sua equipa precisa de
-            saber para organizar o repertório no Hosanna — do primeiro acorde ao dia do culto.
+            {t("chordproGuide.heroSubtitle")}
           </p>
 
           <div className="reveal grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
             <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
               <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200/70 mb-4">
-                Documento Tradicional (Word)
+                {t("chordproGuide.traditionalDoc")}
               </div>
               <div className="font-mono text-sm text-blue-50/50 leading-loose whitespace-pre">
-                {"  A            D\nSenhor meu Deus, ao contemplar"}
+                {"  A            D\nLord my God, when I in awesome wonder"}
               </div>
               <div className="mt-5 flex items-center gap-2 text-xs font-medium text-amber-200/80">
                 <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
-                Desalinha em telemóveis e obriga a criar ficheiros por tom.
+                {t("chordproGuide.traditionalWarning")}
               </div>
             </div>
             <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-blue-300/30 p-6">
               <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200 mb-4">
-                ChordPro no Hosanna
+                {t("chordproGuide.chordproInHosanna")}
               </div>
               <div className="font-mono text-sm leading-loose">
-                Senhor meu <span className="text-blue-300 font-bold">[A]</span>Deus, ao contemplar a{" "}
-                <span className="text-blue-300 font-bold">[D]</span>terra
+                Lord my <span className="text-blue-300 font-bold">[A]</span>God, when I in{" "}
+                <span className="text-blue-300 font-bold">[D]</span>awesome wonder
               </div>
               <div className="mt-5 flex items-center gap-2 text-xs font-medium text-blue-100">
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                Alinhamento perfeito, muda de tom num clique e gera diagramas.
+                {t("chordproGuide.chordproSuccess")}
               </div>
             </div>
           </div>
@@ -471,7 +480,7 @@ export function ChordProGuide() {
             {/* TOC desktop */}
             <nav className="hidden lg:block sticky top-28 space-y-1">
               <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-4 pl-3">
-                Neste guia
+                {t("chordproGuide.tocTitle")}
               </div>
               {TOC.map((item, idx) => (
                 <a
@@ -492,29 +501,14 @@ export function ChordProGuide() {
               <div id="fundamentos" className="scroll-mt-28">
                 <SectionHeader
                   icon={BookOpen}
-                  title="O que é o ChordPro?"
-                  lede="Um formato de texto simples que o Hosanna lê para transformar os seus cânticos em ferramentas interativas para a banda."
+                  title={t("chordproGuide.whatIsTitle")}
+                  lede={t("chordproGuide.whatIsLede")}
                 />
                 <div className="prose prose-blue max-w-none text-muted-foreground text-lg leading-relaxed mt-8">
-                  <p>
-                    Em vez de colocar os acordes "a flutuar" sobre o texto, o ChordPro coloca-os{" "}
-                    <span className="italic text-primary font-medium">dentro</span> da letra usando
-                    parênteses retos{" "}
-                    <code className="bg-blue-50 text-primary px-2 py-1 rounded-lg font-mono font-bold text-base">
-                      [ ]
-                    </code>
-                    , imediatamente antes da sílaba onde a mudança de acorde acontece.
-                  </p>
+                  <p>{t("chordproGuide.whatIsParagraph")}</p>
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-4 mt-10 list-none p-0 reveal">
-                  {[
-                    "Muda de tom ou de capo num único clique",
-                    "Ajusta o tamanho da letra perfeitamente a qualquer ecrã",
-                    "Gera Dicionários Visuais (clique num acorde para ver as notas no Piano/Guitarra)",
-                    "Player de Youtube integrado para a equipa ensaiar ouvindo o original",
-                    "Pesquisa por número, tom ou andamento automático",
-                    "Sempre legível, independentemente do tipo de letra usado",
-                  ].map((text, idx) => (
+                  {dict.chordproGuide.benefits.map((text: string, idx: number) => (
                     <li
                       key={idx}
                       className="flex items-center gap-3 bg-secondary p-4 rounded-2xl border border-blue-50/50 shadow-sm transition-transform hover:-translate-y-1"
@@ -532,18 +526,18 @@ export function ChordProGuide() {
               <div id="sintaxe" className="scroll-mt-28">
                 <SectionHeader
                   icon={Code2}
-                  title="A Anatomia de um Cântico"
-                  lede="A receita é sempre a mesma: Informações no topo (Tom, Título), seguidas dos versos, refrões e pontes."
+                  title={t("chordproGuide.anatomyTitle")}
+                  lede={t("chordproGuide.anatomyLede")}
                 />
                 <div className="mt-8">
-                  <CodeWindow filename="grandioso-es-tu.chordpro">
-                    <div className="text-slate-500 italic mb-2"># 1. Informação (Metadados)</div>
+                  <CodeWindow filename="song-sample.chordpro">
+                    <div className="text-slate-500 italic mb-2"># 1. Metadata</div>
                     <div>
-                      <span className="text-blue-400">{"{"}title:</span> Grandioso és Tu
+                      <span className="text-blue-400">{"{"}title:</span> How Great Thou Art
                       <span className="text-blue-400">{"}"}</span>
                     </div>
                     <div>
-                      <span className="text-blue-400">{"{"}artist:</span> Hino Clássico
+                      <span className="text-blue-400">{"{"}artist:</span> Classic Hymn
                       <span className="text-blue-400">{"}"}</span>
                     </div>
                     <div>
@@ -556,20 +550,20 @@ export function ChordProGuide() {
                     </div>
                     <br />
                     <div className="text-slate-500 italic mb-2">
-                      # 2. Partes do Cântico (Secções)
+                      # 2. Sections
                     </div>
                     <div>
-                      <span className="text-blue-400">{"{"}start_of_verse:</span> Verso 1
+                      <span className="text-blue-400">{"{"}start_of_verse:</span> Verse 1
                       <span className="text-blue-400">{"}"}</span>
                     </div>
                     <div>
-                      Senhor meu <span className="text-amber-400 font-bold">[A]</span>Deus, ao
-                      contemplar a <span className="text-amber-400 font-bold">[D]</span>terra
+                      O Lord my <span className="text-amber-400 font-bold">[A]</span>God, when I in
+                      awesome <span className="text-amber-400 font-bold">[D]</span>wonder
                     </div>
                     <div>
-                      E o <span className="text-amber-400 font-bold">[A]</span>vasto mar que{" "}
-                      <span className="text-amber-400 font-bold">[E]</span>Tu, Senhor, cri
-                      <span className="text-amber-400 font-bold">[A]</span>aste
+                      Consider <span className="text-amber-400 font-bold">[A]</span>all the worlds Thy
+                      <span className="text-amber-400 font-bold">[E]</span>hands have
+                      <span className="text-amber-400 font-bold">[A]</span>made
                     </div>
                     <div>
                       <span className="text-blue-400">
@@ -579,9 +573,8 @@ export function ChordProGuide() {
                   </CodeWindow>
                 </div>
                 <div className="mt-6">
-                  <Callout title="Uma diretiva, duas formas de a escrever">
-                    Pode usar a forma completa (<code>{"{start_of_verse}"}</code>) ou a abreviatura
-                    (<code>{"{sov}"}</code>). O Hosanna entende ambas da mesma forma!
+                  <Callout title={t("chordproGuide.oneDirectiveTwoWaysTitle")}>
+                    {t("chordproGuide.oneDirectiveTwoWaysDesc")}
                   </Callout>
                 </div>
               </div>
@@ -590,8 +583,8 @@ export function ChordProGuide() {
               <div id="diretivas" className="scroll-mt-28">
                 <SectionHeader
                   icon={Music2}
-                  title="Diretivas Essenciais"
-                  lede="As instruções mais usadas no dia-a-dia. Incluem opções exclusivas do Hosanna para otimizar os seus ensaios."
+                  title={t("chordproGuide.essentialDirectivesTitle")}
+                  lede={t("chordproGuide.essentialDirectivesLede")}
                 />
                 <div className="grid sm:grid-cols-2 gap-6 mt-8 reveal">
                   {ESSENTIAL_DIRECTIVES.map((key) => {
@@ -605,14 +598,14 @@ export function ChordProGuide() {
               <div id="estrutura" className="scroll-mt-28">
                 <SectionHeader
                   icon={Layers}
-                  title="Estrutura do Cântico"
-                  lede="Separe a letra em blocos para que o Hosanna crie os cabeçalhos coloridos automaticamente (Verso, Refrão, Ponte)."
+                  title={t("chordproGuide.structureTitle")}
+                  lede={t("chordproGuide.structureLede")}
                 />
                 <div className="grid sm:grid-cols-3 gap-4 mt-8 reveal">
                   {[
-                    { tag: "verse", label: "Verso", desc: "A narrativa principal da música." },
-                    { tag: "chorus", label: "Refrão", desc: "A parte mais forte e que se repete." },
-                    { tag: "bridge", label: "Ponte", desc: "A transição que liga as secções." },
+                    { tag: "verse", label: dict.chordproGuide.sections.verse.label, desc: dict.chordproGuide.sections.verse.desc },
+                    { tag: "chorus", label: dict.chordproGuide.sections.chorus.label, desc: dict.chordproGuide.sections.chorus.desc },
+                    { tag: "bridge", label: dict.chordproGuide.sections.bridge.label, desc: dict.chordproGuide.sections.bridge.desc },
                   ].map((item, idx) => (
                     <div key={idx} className="p-6 border border-border rounded-2xl shadow-sm">
                       <div className="font-bold text-primary text-lg mb-1">{item.label}</div>
@@ -637,9 +630,7 @@ export function ChordProGuide() {
                       <HosannaBadge />
                     </div>
                     <p className="text-muted-foreground leading-relaxed">
-                      Se usar <code>{"{chorus}"}</code> sem mais nada, o Hosanna{" "}
-                      <strong>copia e renderiza a letra do último refrão</strong> introduzido. Poupe
-                      tempo e evite reescrever o refrão depois de cada verso!
+                      {t("chordproGuide.chorusMagicDesc")}
                     </p>
                   </div>
                   <div className="p-8 bg-slate-900 font-mono text-sm text-blue-100 leading-relaxed">
@@ -647,18 +638,18 @@ export function ChordProGuide() {
                       <span className="text-blue-400">{"{start_of_chorus}"}</span>
                     </div>
                     <div>
-                      Grandioso <span className="text-amber-400 font-bold">[E]</span>és Tu...
+                      Then sings my <span className="text-amber-400 font-bold">[E]</span>soul...
                     </div>
                     <div>
                       <span className="text-blue-400">{"{end_of_chorus}"}</span>
                     </div>
-                    <div className="text-slate-500 mt-5"># Verso 2 ...</div>
+                    <div className="text-slate-500 mt-5"># Verse 2 ...</div>
                     <div className="text-slate-500 mt-5">
-                      # Em vez de escrever o refrão de novo:
+                      # Instead of retyping the whole chorus:
                     </div>
                     <div className="text-green-400 font-bold mt-1">{"{chorus}"}</div>
                     <div className="text-slate-500/80 text-xs mt-1">
-                      (O Hosanna renderiza o refrão automaticamente)
+                      {t("chordproGuide.chorusMagicAutoNote")}
                     </div>
                   </div>
                 </div>
@@ -668,15 +659,15 @@ export function ChordProGuide() {
               <div id="notas" className="scroll-mt-28">
                 <SectionHeader
                   icon={Grid3x3}
-                  eyebrow="Para Músicos"
-                  title="Grelhas de Acordes & Tempos"
-                  lede="Precisa de escrever uma introdução ou instrumental? Use as barras verticais para desenhar compassos ou anote quanto tempo dura cada acorde."
+                  eyebrow={t("chordproGuide.gridsEyebrow")}
+                  title={t("chordproGuide.gridsTitle")}
+                  lede={t("chordproGuide.gridsLede")}
                 />
 
                 <div className="mt-8">
                   <CodeWindow filename="instrumental.chordpro">
                     <div className="text-slate-500 italic mb-2">
-                      # Introdução (Separar por compassos)
+                      # Intro
                     </div>
                     <div>
                       <span className="text-blue-400">
@@ -697,7 +688,7 @@ export function ChordProGuide() {
                     <br />
 
                     <div className="text-slate-500 italic mb-2">
-                      # Notas com durações específicas (Exclusivo)
+                      # Custom durations
                     </div>
                     <div>
                       <span className="text-amber-400 font-bold">||</span> [Em
@@ -712,17 +703,17 @@ export function ChordProGuide() {
                 <div className="grid sm:grid-cols-2 gap-4 mt-6 reveal">
                   <div className="p-6 border border-border rounded-2xl shadow-sm bg-secondary/30">
                     <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
-                      <Grid3x3 className="w-4 h-4" /> Barlines (Compassos)
+                      <Grid3x3 className="w-4 h-4" /> {t("chordproGuide.barlinesTitle")}
                     </h4>
                     <ul className="space-y-2 text-sm text-muted-foreground mt-4">
                       <li>
-                        <code>|</code> → Separação normal de compasso
+                        <code>|</code> → {t("chordproGuide.barlinesNormal")}
                       </li>
                       <li>
-                        <code>||</code> → Início ou fim de secção
+                        <code>||</code> → {t("chordproGuide.barlinesSection")}
                       </li>
                       <li>
-                        <code>|:</code> e <code>:|</code> → Marcas de repetição
+                        <code>|:</code> {t("chordproGuide.barlinesRepeat")} <code>:|</code>
                       </li>
                     </ul>
                   </div>
@@ -730,20 +721,19 @@ export function ChordProGuide() {
                   <div className="p-6 border border-border rounded-2xl shadow-sm bg-secondary/30">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-primary flex items-center gap-2">
-                        <Repeat className="w-4 h-4" /> Durações (Tempos)
+                        <Repeat className="w-4 h-4" /> {t("chordproGuide.durationsTitle")}
                       </h4>
                       <HosannaBadge />
                     </div>
                     <p className="text-sm text-muted-foreground mt-3">
-                      Adicione <code>@X</code> dentro do parêntesis do acorde para ditar a sua
-                      duração visual na grelha.
+                      {t("chordproGuide.durationsDesc")}
                     </p>
                     <ul className="space-y-2 text-sm text-muted-foreground mt-3">
                       <li>
-                        <code>[Am@2x]</code> → Dura o dobro do tempo
+                        <code>[Am@2x]</code> → {t("chordproGuide.durationsDouble")}
                       </li>
                       <li>
-                        <code>[C@0.5x]</code> → Dura metade do tempo
+                        <code>[C@0.5x]</code> → {t("chordproGuide.durationsHalf")}
                       </li>
                     </ul>
                   </div>
@@ -754,14 +744,14 @@ export function ChordProGuide() {
               <div id="tablatura" className="scroll-mt-28">
                 <SectionHeader
                   icon={Music2}
-                  eyebrow="Para Guitarristas"
-                  title="Tablatura"
-                  lede="Ideal para descrever dedilhados, riffs ou solos com precisão cirúrgica."
+                  eyebrow={t("chordproGuide.tabEyebrow")}
+                  title={t("chordproGuide.tabTitle")}
+                  lede={t("chordproGuide.tabLede")}
                 />
                 <div className="mt-8">
                   <CodeWindow filename="riff-intro.chordpro">
                     <div>
-                      <span className="text-blue-400">{"{start_of_tab: Riff de Guitarra}"}</span>
+                      <span className="text-blue-400">{"{start_of_tab: Guitar Riff}"}</span>
                     </div>
                     <div className="text-blue-50/80">e|-----------------0--2--3-------|</div>
                     <div className="text-blue-50/80">B|-------0--1--3-----------------|</div>
@@ -775,10 +765,8 @@ export function ChordProGuide() {
                   </CodeWindow>
                 </div>
                 <div className="mt-6">
-                  <Callout variant="warning" title="Sem formatação automática">
-                    No bloco de tablatura, o Hosanna respeita 100% os espaços introduzidos e usa um
-                    tipo de letra mono-espaçado para garantir que os traços ficam perfeitamente
-                    alinhados.
+                  <Callout variant="warning" title={t("chordproGuide.tabWarningTitle")}>
+                    {t("chordproGuide.tabWarningDesc")}
                   </Callout>
                 </div>
               </div>
@@ -787,21 +775,20 @@ export function ChordProGuide() {
               <div id="atalhos" className="scroll-mt-28">
                 <SectionHeader
                   icon={Keyboard}
-                  eyebrow="Ferramentas Práticas"
-                  title="Atalhos do Editor Hosanna"
-                  lede="Não precisa de memorizar ou escrever as diretivas por extenso. O nosso editor foi pensado para ser rápido."
+                  eyebrow={t("chordproGuide.shortcutsEyebrow")}
+                  title={t("chordproGuide.shortcutsTitle")}
+                  lede={t("chordproGuide.shortcutsLede")}
                 />
 
                 <div className="mt-10 reveal">
                   <div className="flex items-center gap-3 mb-2">
                     <Code2 className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-display font-bold text-primary">
-                      1. Autocompletar Acordes
+                      {t("chordproGuide.autocompleteTitle")}
                     </h3>
                   </div>
                   <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl">
-                    À medida que adiciona acordes na música, o Hosanna memoriza-os. Basta abrir um
-                    parêntesis reto <code>[</code> e o editor sugere os acordes que já utilizou!
+                    {t("chordproGuide.autocompleteDesc")}
                   </p>
                 </div>
 
@@ -809,29 +796,28 @@ export function ChordProGuide() {
                   <div className="flex items-center gap-3 mb-2">
                     <MousePointerClick className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-display font-bold text-primary">
-                      2. Selecionar e Envolver (Atalhos e Botão Direito)
+                      {t("chordproGuide.selectAndWrapTitle")}
                     </h3>
                   </div>
                   <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl">
-                    Escreveu o texto todo e esqueceu-se das secções? Selecione as linhas da letra
-                    com o rato e use um dos atalhos abaixo (ou clique com o botão direito do rato).
+                    {t("chordproGuide.selectAndWrapDesc")}
                   </p>
                   <div className="grid sm:grid-cols-3 gap-4">
                     {[
                       {
                         keys: ["Alt", "V"],
-                        label: "Criar Verso",
-                        desc: "Envolve a seleção num Verso",
+                        label: t("chordproGuide.createVerse"),
+                        desc: t("chordproGuide.createVerseDesc"),
                       },
                       {
                         keys: ["Alt", "R"],
-                        label: "Criar Refrão",
-                        desc: "Envolve a seleção num Refrão",
+                        label: t("chordproGuide.createChorus"),
+                        desc: t("chordproGuide.createChorusDesc"),
                       },
                       {
                         keys: ["Alt", "B"],
-                        label: "Criar Ponte",
-                        desc: "Envolve a seleção numa Ponte",
+                        label: t("chordproGuide.createBridge"),
+                        desc: t("chordproGuide.createBridgeDesc"),
                       },
                     ].map((item, idx) => (
                       <div
@@ -859,28 +845,27 @@ export function ChordProGuide() {
                   <div className="flex items-center gap-3 mb-2">
                     <Lightbulb className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-display font-bold text-primary">
-                      3. Escreva a sigla e prima "Tab"
+                      {t("chordproGuide.typeAndTabTitle")}
                     </h3>
                   </div>
                   <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl">
-                    Numa linha vazia do editor, comece a escrever uma destas palavras-chave e
-                    carregue na tecla <Key>Tab</Key>. O editor preenche o resto por si!
+                    {t("chordproGuide.typeAndTabDesc")}
                   </p>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {[
-                      { trigger: "!", result: "Estrutura inteira (nova música)" },
+                      { trigger: "!", result: "{title, key, bpm, verse, chorus}" },
                       { trigger: "t / title", result: "{title: ...}" },
                       { trigger: "a / artist", result: "{artist: ...}" },
                       { trigger: "k / key", result: "{key: ...}" },
                       { trigger: "tempo", result: "{tempo: 120}" },
                       { trigger: "youtube", result: "{youtube: url}" },
                       { trigger: "c / comment", result: "{comment: ...}" },
-                      { trigger: "verse", result: "Bloco de Verso" },
-                      { trigger: "chorus", result: "Bloco de Refrão" },
-                      { trigger: "bridge", result: "Bloco de Ponte" },
-                      { trigger: "tab", result: "Bloco de Tablatura (Grelha Vazia)" },
-                      { trigger: "grid", result: "Bloco de Grelha Musical" },
-                      { trigger: "||", result: "Grelha vazia de 4 compassos" },
+                      { trigger: "verse", result: "{start_of_verse} ... {end_of_verse}" },
+                      { trigger: "chorus", result: "{start_of_chorus} ... {end_of_chorus}" },
+                      { trigger: "bridge", result: "{start_of_bridge} ... {end_of_bridge}" },
+                      { trigger: "tab", result: "{start_of_tab} ... {end_of_tab}" },
+                      { trigger: "grid", result: "{start_of_grid} ... {end_of_grid}" },
+                      { trigger: "||", result: "|| [ ] | [ ] | [ ] | [ ] ||" },
                     ].map((item, idx) => (
                       <div
                         key={idx}
@@ -902,9 +887,9 @@ export function ChordProGuide() {
               <div id="referencia" className="scroll-mt-28">
                 <SectionHeader
                   icon={BookMarked}
-                  eyebrow="Folha de Consulta"
-                  title="Referência Rápida"
-                  lede="Todas as instruções reconhecidas pelo Hosanna organizadas por categoria."
+                  eyebrow={t("chordproGuide.quickRefEyebrow")}
+                  title={t("chordproGuide.quickRefTitle")}
+                  lede={t("chordproGuide.quickRefLede")}
                 />
 
                 <div className="mt-10 grid gap-10 reveal">
@@ -919,7 +904,7 @@ export function ChordProGuide() {
                             {meta.label}
                           </h3>
                           <span className="text-xs text-muted-foreground">
-                            {entries.length} diretivas
+                            {t("chordproGuide.directivesCount", { count: entries.length })}
                           </span>
                         </div>
                         <div className="rounded-2xl border border-border overflow-hidden shadow-sm overflow-x-auto">
@@ -937,7 +922,7 @@ export function ChordProGuide() {
                                     {entry.alias ? `{${entry.alias}}` : "—"}
                                   </td>
                                   <td className="px-5 py-3.5 text-muted-foreground leading-relaxed w-full">
-                                    {entry.description}
+                                    {t(`directives.${entry.descriptionKey}` as TranslationKey)}
                                   </td>
                                   <td className="px-5 py-3.5 text-right">
                                     {entry.hosanna && <HosannaBadge />}
@@ -961,18 +946,17 @@ export function ChordProGuide() {
       <section className="bg-secondary py-16 font-sans">
         <div className="container mx-auto px-6 text-center max-w-3xl reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-8 tracking-tight">
-            Pronto para transformar o repertório da sua igreja?
+            {t("chordproGuide.ctaTitle")}
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            O editor inteligente do Hosanna guia-o passo a passo para que os cânticos fiquem
-            perfeitos, organizados e prontos para o próximo ensaio.
+            {t("chordproGuide.ctaDesc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Button
               size="lg"
               className="rounded-full bg-primary px-10 text-white font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all py-6"
             >
-              Criar o Primeiro Cântico
+              {t("chordproGuide.ctaCreateSong")}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
@@ -981,7 +965,7 @@ export function ChordProGuide() {
               className="rounded-full px-10 text-lg font-medium py-6"
               asChild
             >
-              <a href="/">Voltar ao Início</a>
+              <a href="/">{t("chordproGuide.ctaBackHome")}</a>
             </Button>
           </div>
         </div>

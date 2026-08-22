@@ -1,4 +1,6 @@
-interface SEOConfig {
+import { translations, type Language } from "./i18n";
+
+export interface SEOConfig {
   title: string;
   description: string;
   keywords?: string;
@@ -7,19 +9,21 @@ interface SEOConfig {
   type?: string;
 }
 
-const defaultSEO: SEOConfig = {
-  title: "Hosanna | O Futuro do Planeamento de Louvor para Igrejas",
-  description:
-    "Organize a sua biblioteca de música, planeie cultos e equipe os seus músicos com as ferramentas certas. O Hosanna é o software de gestão de louvor mais intuitivo para igrejas modernas.",
-  keywords:
-    "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
-  image: "https://hosanna.duckdns.org/og-image.png",
-  url: "https://hosanna.duckdns.org",
-  type: "website",
-};
+export function getDefaultSEO(lang: Language = "pt"): SEOConfig {
+  const dict = translations[lang] || translations.pt;
+  return {
+    title: dict.seo.defaultTitle,
+    description: dict.seo.defaultDescription,
+    keywords: dict.seo.defaultKeywords,
+    image: "https://hosanna.duckdns.org/og-image.png",
+    url: "https://hosanna.duckdns.org",
+    type: "website",
+  };
+}
 
-export function getSEOMeta(config?: Partial<SEOConfig>) {
-  const seo = { ...defaultSEO, ...config };
+export function getSEOMeta(config?: Partial<SEOConfig>, lang: Language = "pt") {
+  const defaults = getDefaultSEO(lang);
+  const seo = { ...defaults, ...config };
 
   return [
     { charSet: "utf-8" },

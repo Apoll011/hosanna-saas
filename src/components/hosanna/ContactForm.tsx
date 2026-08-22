@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/ui/LanguageSelector";
+import { useI18n } from "@/lib/i18n";
 import { Mail, MessageSquare, Send } from "lucide-react";
 import { useEffect } from "react";
 import { StaffLines } from "./HosannaLanding";
@@ -27,6 +29,8 @@ function useReveal() {
 
 export function ContactForm() {
   useReveal();
+  const { t } = useI18n();
+
   return (
     <div className="bg-[#f8fafc] min-h-screen selection:bg-primary/10 font-sans">
       {/* Hero Header */}
@@ -37,15 +41,17 @@ export function ContactForm() {
           <StaffLines className="bottom-12 opacity-20" />
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center">
-          <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 mb-8 border border-white/10">
-            Apoio à Equipa
+          <div className="flex justify-center items-center gap-3 mb-8">
+            <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 border border-white/10">
+              {t("contact.eyebrow")}
+            </div>
+            <LanguageSelector />
           </div>
           <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
-            Vamos <span className="text-blue-300">falar?</span>
+            {t("contact.heroTitle")} <span className="text-blue-300">{t("contact.heroTitleHighlight")}</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-2xl mx-auto">
-            Dúvidas, sugestões ou apenas um "olá". Estamos aqui para servir a sua igreja com
-            excelência.
+            {t("contact.heroSubtitle")}
           </p>
         </div>
       </section>
@@ -57,11 +63,10 @@ export function ContactForm() {
             <div className="space-y-10 reveal">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-primary tracking-tight">
-                  Sempre prontos a ajudar
+                  {t("contact.alwaysReadyTitle")}
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  A nossa equipa técnica e ministerial está disponível para garantir que a sua
-                  experiência com o Hosanna seja impecável.
+                  {t("contact.alwaysReadyDesc")}
                 </p>
               </div>
 
@@ -71,11 +76,11 @@ export function ContactForm() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-1 text-primary">E-mail</h3>
+                    <h3 className="font-bold text-xl mb-1 text-primary">{t("contact.emailTitle")}</h3>
                     <p className="text-muted-foreground text-lg break-all">
                       hosanna.songbook@gmail.com
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">Resposta em menos de 24h</p>
+                    <p className="text-sm text-muted-foreground mt-1">{t("contact.emailResponseTime")}</p>
                   </div>
                 </div>
 
@@ -84,7 +89,7 @@ export function ContactForm() {
                     <MessageSquare className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-1 text-primary">Redes Sociais</h3>
+                    <h3 className="font-bold text-xl mb-1 text-primary">{t("contact.socialTitle")}</h3>
                     <p className="text-muted-foreground text-lg">@hosanna.studio</p>
                     <div className="flex gap-6 mt-3 text-base font-semibold text-primary">
                       <span className="cursor-pointer hover:underline">Instagram</span>
@@ -96,12 +101,10 @@ export function ContactForm() {
 
               <div className="p-8 border border-border rounded-lg">
                 <h4 className="font-display font-bold text-xl mb-4 text-primary">
-                  Desenvolvimento Ativo
+                  {t("common.activeDevelopment")}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  Como estamos em fase inicial, o seu feedback é a nossa bússola. Se sente falta de
-                  alguma funcionalidade ou encontrou algo que pode ser melhorado, por favor,
-                  partilhe connosco.
+                  {t("common.activeDevDesc")}
                 </p>
               </div>
             </div>
@@ -111,21 +114,21 @@ export function ContactForm() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-3">
                     <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                      Nome
+                      {t("contact.nameLabel")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Como o devemos chamar?"
+                      placeholder={t("contact.namePlaceholder")}
                       className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                     />
                   </div>
                   <div className="space-y-3">
                     <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                      Igreja
+                      {t("contact.churchLabel")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Nome da sua igreja"
+                      placeholder={t("contact.churchPlaceholder")}
                       className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                     />
                   </div>
@@ -133,26 +136,26 @@ export function ContactForm() {
 
                 <div className="space-y-3">
                   <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                    E-mail
+                    {t("contact.emailLabel")}
                   </label>
                   <input
                     type="email"
-                    placeholder="exemplo@igreja.com"
+                    placeholder={t("contact.emailPlaceholder")}
                     className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none text-lg"
                   />
                 </div>
 
                 <div className="space-y-3">
                   <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                    Assunto
+                    {t("contact.subjectLabel")}
                   </label>
                   <div className="relative">
                     <select className="w-full px-6 py-3 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none appearance-none text-lg">
-                      <option>Suporte Técnico</option>
-                      <option>Sugestão de Funcionalidade</option>
-                      <option>Dúvida sobre Planos</option>
-                      <option>Parcerias</option>
-                      <option>Outro</option>
+                      <option>{t("contact.subjectTechnical")}</option>
+                      <option>{t("contact.subjectFeature")}</option>
+                      <option>{t("contact.subjectPricing")}</option>
+                      <option>{t("contact.subjectPartnership")}</option>
+                      <option>{t("contact.subjectOther")}</option>
                     </select>
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
                       <Send className="w-4 h-4 rotate-90" />
@@ -162,24 +165,23 @@ export function ContactForm() {
 
                 <div className="space-y-3">
                   <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
-                    Sua Mensagem
+                    {t("contact.messageLabel")}
                   </label>
                   <textarea
                     rows={5}
-                    placeholder="Descreva como o podemos ajudar..."
+                    placeholder={t("contact.messagePlaceholder")}
                     className="w-full px-6 py-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-primary transition-all outline-none resize-none text-lg"
                   ></textarea>
                 </div>
 
                 <Button className="w-full py-6 rounded-2xl bg-primary text-white font-bold text-xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group">
-                  Enviar Mensagem
+                  {t("contact.sendButton")}
                   <Send className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
                 <p className="text-center text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Ao submeter este formulário, concorda com o processamento dos seus dados de acordo
-                  com a nossa{" "}
-                  <span className="underline cursor-pointer">Política de Privacidade</span>.
+                  {t("contact.termsConsent")}{" "}
+                  <span className="underline cursor-pointer">{t("common.privacyPolicy")}</span>.
                 </p>
               </form>
             </div>

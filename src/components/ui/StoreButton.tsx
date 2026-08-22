@@ -1,4 +1,5 @@
 import logo from "@/assets/playstore.svg";
+import { useI18n } from "@/lib/i18n";
 import React from "react";
 
 interface PlayStoreButtonProps {
@@ -12,6 +13,8 @@ export const PlayStoreButton: React.FC<PlayStoreButtonProps> = ({
   onClick,
   className = "",
 }) => {
+  const { t } = useI18n();
+
   return (
     <a
       href={href}
@@ -34,10 +37,10 @@ export const PlayStoreButton: React.FC<PlayStoreButtonProps> = ({
       {/* Label Text */}
       <div className="flex flex-col text-left">
         <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-600 transition-colors group-hover:text-slate-400">
-          Get it on
+          {t("common.getItOn")}
         </span>
         <span className="-mt-0.5 text-base font-bold leading-tight tracking-tight text-black">
-          Google Play
+          {t("common.googlePlay")}
         </span>
       </div>
     </a>
