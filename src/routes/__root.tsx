@@ -22,10 +22,10 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">{t("errors.notFoundTitle")}</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">{t("errors.notFoundHeading")}</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {t("errors.notFoundDesc")}
-        </p>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">
+          {t("errors.notFoundHeading")}
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">{t("errors.notFoundDesc")}</p>
         <div className="mt-6">
           <Link
             to="/"
@@ -50,9 +50,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           {t("errors.errorHeading")}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {t("errors.errorDesc")}
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">{t("errors.errorDesc")}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -129,6 +127,11 @@ function RootShell({ children }: { children: ReactNode }) {
         <Analytics />
         <I18nProvider>{children}</I18nProvider>
         <Scripts />
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "24b72d21355d4ff5839ecefa8e094911"}'
+        ></script>
       </body>
     </html>
   );
