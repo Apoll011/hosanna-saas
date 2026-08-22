@@ -15,12 +15,17 @@ const legalDocuments: Record<Language, string> = {
   es: legalContentEs,
 };
 
-const legalMeta: Record<Language, { title: string; description: string; heading: string; subtitle: string }> = {
+const legalMeta: Record<
+  Language,
+  { title: string; description: string; heading: string; subtitle: string }
+> = {
   pt: {
     title: "Documentos Legais | Hosanna Studio",
-    description: "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
+    description:
+      "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
     heading: "Documentos Legais",
-    subtitle: "Termos de serviço, política de privacidade e os nossos compromissos contigo e com a tua igreja.",
+    subtitle:
+      "Termos de serviço, política de privacidade e os nossos compromissos contigo e com a tua igreja.",
   },
   en: {
     title: "Legal Documents | Hosanna Studio",
@@ -30,9 +35,11 @@ const legalMeta: Record<Language, { title: string; description: string; heading:
   },
   es: {
     title: "Documentos Legales | Hosanna Studio",
-    description: "Términos de Servicio, Política de Privacidad y otros documentos legales de Hosanna.",
+    description:
+      "Términos de Servicio, Política de Privacidad y otros documentos legales de Hosanna.",
     heading: "Documentos Legales",
-    subtitle: "Términos de servicio, política de privacidad y nuestros compromisos contigo y con tu iglesia.",
+    subtitle:
+      "Términos de servicio, política de privacidad y nuestros compromisos contigo y con tu iglesia.",
   },
 };
 
@@ -58,7 +65,7 @@ function LegalPage() {
     <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/10">
       <Nav />
       <div className="bg-[#f8fafc] min-h-screen selection:bg-primary/10 font-sans">
-        <section className="bg-hero-gradient pt-[160px] pb-12 text-white overflow-hidden relative -mt-[120px]">
+        <section className="bg-hero-gradient pt-40 pb-12 text-white overflow-hidden relative -mt-30">
           <div className="absolute inset-0 text-gold/40">
             <StaffLines className="top-24" />
             <StaffLines className="bottom-24" />
