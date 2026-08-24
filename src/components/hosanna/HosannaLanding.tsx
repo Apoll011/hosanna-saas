@@ -88,9 +88,11 @@ export function Nav() {
           scrolled ? "bg-background/85 backdrop-blur-md shadow-sm" : "bg-transparent",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Logo />
-          <nav className="hidden items-center gap-8 md:flex">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 md:grid md:grid-cols-3">
+          <div className="flex justify-start">
+            <Logo />
+          </div>
+          <nav className="hidden items-center justify-center gap-8 md:flex">
             {NAV.map((n) =>
               n.isInternal ? (
                 <Link
@@ -121,7 +123,7 @@ export function Nav() {
               ),
             )}
           </nav>
-          <div className="hidden items-center gap-4 md:flex">
+          <div className="hidden items-center justify-end gap-4 md:flex">
             <LanguageSelector />
             <Button
               asChild
@@ -130,7 +132,7 @@ export function Nav() {
               <a href={dashboardUrl}>{t("landing.nav.tryFree")}</a>
             </Button>
           </div>
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center justify-end gap-2 md:hidden">
             <LanguageSelector />
             <button
               className={cn("transition-colors p-1.5", scrolled ? "text-foreground" : "text-white")}
