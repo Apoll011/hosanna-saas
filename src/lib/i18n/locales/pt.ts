@@ -306,7 +306,7 @@ export const pt = {
       colProduct: "Produto",
       colSupport: "Suporte",
       colLegal: "Legal",
-      blog: "Blogue",
+      blog: "Blog",
       features: "Funcionalidades",
       chordproGuide: "Guia ChordPro",
       pricing: "Preço",
