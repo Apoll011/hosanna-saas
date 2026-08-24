@@ -207,3 +207,15 @@ html {
     color: var(--color-foreground);
   }
 }
+
+/* Hide scrollbar on mobile and tablet viewports */
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
