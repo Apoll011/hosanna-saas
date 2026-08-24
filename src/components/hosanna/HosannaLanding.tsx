@@ -262,7 +262,7 @@ function Hero() {
               alt={t("landing.hero.dashboardAlt")}
               width={1600}
               height={1104}
-              className="w-full rounded-2xl border border-gold/20 shadow-soft"
+              className="w-full rounded-2xl shadow-soft"
             />
             <img
               src={mobileImg}
@@ -270,7 +270,7 @@ function Hero() {
               width={800}
               height={1408}
               loading="lazy"
-              className="absolute -bottom-10 -right-4 hidden w-48 rounded-2xl border border-gold/20 shadow-soft md:block md:w-60 lg:-right-8 lg:w-72"
+              className="absolute -bottom-10 -right-4 hidden w-48 rounded-2xl shadow-soft md:block md:w-60 lg:-right-8 lg:w-72"
             />
           </div>
         </div>
@@ -347,7 +347,7 @@ function TwoApps() {
               loading="lazy"
               width={1600}
               height={1104}
-              className="mt-8 w-full rounded-xl border border-border shadow-soft"
+              className="mt-8 w-full rounded-xl shadow-soft"
             />
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {dict.landing.twoApps.dashboardFeatures.map((f: string) => (
@@ -381,7 +381,7 @@ function TwoApps() {
                 loading="lazy"
                 width={800}
                 height={1408}
-                className="w-52 rounded-2xl border border-border shadow-soft"
+                className="w-52 rounded-2xl shadow-soft"
               />
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -521,7 +521,7 @@ function LiveWorship() {
             loading="lazy"
             width={800}
             height={1408}
-            className="relative mx-auto w-64 rounded-3xl border border-border shadow-soft md:w-80"
+            className="relative mx-auto w-64 rounded-3xl shadow-soft md:w-80"
           />
         </div>
       </div>
