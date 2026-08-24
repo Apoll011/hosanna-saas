@@ -8,7 +8,8 @@ export const en: typeof import("./pt").pt = {
     tryAgain: "Try Again",
     privacyPolicy: "Privacy Policy",
     activeDevelopment: "Active Development",
-    activeDevDesc: "As we are in an early stage, your feedback is our compass. If you miss any feature or found something that can be improved, please share it with us.",
+    activeDevDesc:
+      "As we are in an early stage, your feedback is our compass. If you miss any feature or found something that can be improved, please share it with us.",
   },
   errors: {
     notFoundTitle: "404",
@@ -19,11 +20,14 @@ export const en: typeof import("./pt").pt = {
   },
   seo: {
     defaultTitle: "Hosanna | The Future of Worship Planning for Churches",
-    defaultDescription: "Organize your music library, plan services, and equip your musicians with the right tools. Hosanna is the most intuitive worship management software for modern churches.",
-    defaultKeywords: "worship planning, chord charts, chordpro, church management, worship team, christian repertoire, church software, worship ministry",
+    defaultDescription:
+      "Organize your music library, plan services, and equip your musicians with the right tools. Hosanna is the most intuitive worship management software for modern churches.",
+    defaultKeywords:
+      "worship planning, chord charts, chordpro, church management, worship team, christian repertoire, church software, worship ministry",
   },
   landing: {
-    banner: "We are in early development. The Beta version will launch on September 1st. Join us on this journey!",
+    banner:
+      "We are in early development. The Beta version will launch on September 1st. Join us on this journey!",
     nav: {
       features: "Features",
       chordpro: "ChordPro",
@@ -35,7 +39,8 @@ export const en: typeof import("./pt").pt = {
       badge: "Built for Worship Leaders",
       titleStart: "Organize your worship with",
       titleHighlight: "excellence",
-      subtitle: "Give your team the clarity and focus they deserve. Service plans, dynamic chords, and smart schedules in one place.",
+      subtitle:
+        "Give your team the clarity and focus they deserve. Service plans, dynamic chords, and smart schedules in one place.",
       ctaStart: "Get Started",
       ctaDemo: "Watch Demo",
       dashboardAlt: "Hosanna dashboard preview showing the song library and Sunday service plan",
@@ -44,7 +49,8 @@ export const en: typeof import("./pt").pt = {
     problem: {
       eyebrow: "Our Mission",
       title: "Worship prep should be about worship, not managing files.",
-      description: "We know your worship team's time is precious. Many churches still struggle with cluttered cloud folders, old binders, and lost messages in chat apps. Hosanna was created to remove that chaos and bring peace to your preparation.",
+      description:
+        "We know your worship team's time is precious. Many churches still struggle with cluttered cloud folders, old binders, and lost messages in chat apps. Hosanna was created to remove that chaos and bring peace to your preparation.",
       cards: [
         {
           title: "Unified Library",
@@ -59,12 +65,14 @@ export const en: typeof import("./pt").pt = {
           body: "During worship, technology should get out of the way. We offer a clean, personal view adaptable for each musician, even offline.",
         },
       ],
-      quote: "«Our goal is simple: we want your team to spend less time configuring tech and more time serving the Lord.»",
+      quote:
+        "«Our goal is simple: we want your team to spend less time configuring tech and more time serving the Lord.»",
     },
     twoApps: {
       eyebrow: "Two apps, one seamless flow",
       title: "Built for the entire worship team.",
-      description: "A powerful dashboard for leaders planning the service. A calm, focused mobile app for the musicians playing it.",
+      description:
+        "A powerful dashboard for leaders planning the service. A calm, focused mobile app for the musicians playing it.",
       dashboardBadge: "Dashboard",
       dashboardTitle: "For leaders and team",
       mobileBadge: "Mobile App",
@@ -97,7 +105,8 @@ export const en: typeof import("./pt").pt = {
     organize: {
       eyebrow: "Organize your music",
       title: "A library that finally feels like yours.",
-      description: "Bring order to years of scattered songs — without forcing your team to learn a complicated new system.",
+      description:
+        "Bring order to years of scattered songs — without forcing your team to learn a complicated new system.",
       cards: [
         {
           title: "Familiar Folders",
@@ -143,7 +152,8 @@ export const en: typeof import("./pt").pt = {
     liveWorship: {
       eyebrow: "Built for live worship",
       title: "Each musician, at their own pace.",
-      description: "Guitarists, pianists, and vocalists work from the same song in the same service — but each controls their own key, chord visibility, and text size. No more crowding around one tablet. No more misaligned chords.",
+      description:
+        "Guitarists, pianists, and vocalists work from the same song in the same service — but each controls their own key, chord visibility, and text size. No more crowding around one tablet. No more misaligned chords.",
       items: {
         transpose: "Independent transposition",
         textSize: "Adjustable text size",
@@ -154,16 +164,20 @@ export const en: typeof import("./pt").pt = {
     anySize: {
       eyebrow: "Any church, any size",
       title: "From house church to multi-campus ministry.",
-      description: "Each church gets its own private, secure library and services — with room for as many worship teams as you need under one church.",
+      description:
+        "Each church gets its own private, secure library and services — with room for as many worship teams as you need under one church.",
       privateLibTitle: "Your library, safe and separate",
-      privateLibBody: "Each church has its own private workspace. Songs, services, and members stay within your doors.",
+      privateLibBody:
+        "Each church has its own private workspace. Songs, services, and members stay within your doors.",
       multiTeamTitle: "Multiple teams, one shared library",
-      multiTeamBody: "Sunday, mid-week, youth, campus A, campus B — every team draws from the same source.",
+      multiTeamBody:
+        "Sunday, mid-week, youth, campus A, campus B — every team draws from the same source.",
     },
     export: {
       eyebrow: "Export & Portability",
       title: "Your music, on your terms.",
-      description: "Import and export in open ChordPro format for effortless migration or backups. Export a full service — order of worship, scriptures, notices, chords and lyrics — as a print-ready PDF straight from the mobile app.",
+      description:
+        "Import and export in open ChordPro format for effortless migration or backups. Export a full service — order of worship, scriptures, notices, chords and lyrics — as a print-ready PDF straight from the mobile app.",
       bullets: [
         "ChordPro import and export",
         "Print-ready PDF for full service",
@@ -194,7 +208,8 @@ export const en: typeof import("./pt").pt = {
       unlimitedMusicians: "Unlimited musicians",
       freeTrialDays: "14-day free trial",
       ctaTry: "Try for Free",
-      pricingClarification: "Unlimited musicians and dashboard users — the price is per church, regardless of team size.",
+      pricingClarification:
+        "Unlimited musicians and dashboard users — the price is per church, regardless of team size.",
       multiCampusLabel: "Multi-campus churches:",
       multiCampusText: "+12€/mo for each additional campus. Unlimited users across all locations.",
       features: [
@@ -210,24 +225,28 @@ export const en: typeof import("./pt").pt = {
       badge: "Always With You",
       titleStart: "Keep your worship in your",
       titleHighlight: "pocket",
-      description: "Access your chord charts, view team rosters, and prepare for worship directly from your phone. Hosanna App is the companion for musicians seeking excellence in every detail.",
+      description:
+        "Access your chord charts, view team rosters, and prepare for worship directly from your phone. Hosanna App is the companion for musicians seeking excellence in every detail.",
     },
     vision: {
       eyebrow: "Our vision",
       quote1: "«We believe technology should support worship, not complicate it.»",
       body: "Hosanna removes unnecessary barriers between preparation and worship — so churches spend less time looking for songs and managing files, and more time leading people in praise.",
-      quote2: "«May it be a blessing to your church, your worship team, and everyone serving through music.»",
+      quote2:
+        "«May it be a blessing to your church, your worship team, and everyone serving through music.»",
     },
     support: {
       eyebrow: "Support the mission",
       title: "Help us bring Hosanna to churches worldwide",
-      description: "Your support helps us build, refine, and deliver this tool to more worship ministries.",
+      description:
+        "Your support helps us build, refine, and deliver this tool to more worship ministries.",
       iframeTitle: "Support Hosanna on GoFundMe",
     },
     roadmap: {
       eyebrow: "Roadmap",
       title: "What's coming next.",
-      description: "Hosanna continues to grow alongside the churches that use it. Here are some of the improvements already on the way.",
+      description:
+        "Hosanna continues to grow alongside the churches that use it. Here are some of the improvements already on the way.",
       items: [
         "Reusable service templates and service duplication",
         "Smart import with automated duplicate detection",
@@ -280,6 +299,7 @@ export const en: typeof import("./pt").pt = {
       colProduct: "Product",
       colSupport: "Support",
       colLegal: "Legal",
+      blog: "Blog",
       features: "Features",
       chordproGuide: "ChordPro Guide",
       pricing: "Pricing",
@@ -312,9 +332,11 @@ export const en: typeof import("./pt").pt = {
     eyebrow: "Team Support",
     heroTitle: "Let's",
     heroTitleHighlight: "talk?",
-    heroSubtitle: "Questions, suggestions, or just a \"hello\". We are here to serve your church with excellence.",
+    heroSubtitle:
+      'Questions, suggestions, or just a "hello". We are here to serve your church with excellence.',
     alwaysReadyTitle: "Always ready to help",
-    alwaysReadyDesc: "Our technical and ministerial team is available to ensure your experience with Hosanna is seamless.",
+    alwaysReadyDesc:
+      "Our technical and ministerial team is available to ensure your experience with Hosanna is seamless.",
     emailTitle: "Email",
     emailResponseTime: "Response in less than 24h",
     socialTitle: "Social Media",
@@ -333,13 +355,15 @@ export const en: typeof import("./pt").pt = {
     messageLabel: "Your Message",
     messagePlaceholder: "Describe how we can help you...",
     sendButton: "Send Message",
-    termsConsent: "By submitting this form, you agree to the processing of your data in accordance with our",
+    termsConsent:
+      "By submitting this form, you agree to the processing of your data in accordance with our",
   },
   chordproGuide: {
     heroBadge: "Training Guide · Worship Team",
     heroTitleStart: "Master",
     heroTitleHighlight: "ChordPro",
-    heroSubtitle: "The standard and smart way to write chord charts. Everything your team needs to know to organize your repertoire in Hosanna — from the first chord to Sunday service.",
+    heroSubtitle:
+      "The standard and smart way to write chord charts. Everything your team needs to know to organize your repertoire in Hosanna — from the first chord to Sunday service.",
     traditionalDoc: "Traditional Document (Word)",
     traditionalWarning: "Misaligns on mobile and requires separate files per key.",
     chordproInHosanna: "ChordPro in Hosanna",
@@ -356,8 +380,10 @@ export const en: typeof import("./pt").pt = {
       reference: "Quick Reference",
     },
     whatIsTitle: "What is ChordPro?",
-    whatIsLede: "A simple text format that Hosanna reads to transform your songs into interactive tools for the band.",
-    whatIsParagraph: "Instead of having chords \"floating\" above the lyrics, ChordPro embeds them inline within brackets [ ] right before the syllable where the chord change happens.",
+    whatIsLede:
+      "A simple text format that Hosanna reads to transform your songs into interactive tools for the band.",
+    whatIsParagraph:
+      'Instead of having chords "floating" above the lyrics, ChordPro embeds them inline within brackets [ ] right before the syllable where the chord change happens.',
     benefits: [
       "Change key or capo in a single click",
       "Perfect text scaling on any screen size",
@@ -367,24 +393,30 @@ export const en: typeof import("./pt").pt = {
       "Always clear and readable, regardless of font family",
     ],
     anatomyTitle: "The Anatomy of a Song",
-    anatomyLede: "The formula is always the same: Metadata on top (Key, Title), followed by verses, choruses, and bridges.",
+    anatomyLede:
+      "The formula is always the same: Metadata on top (Key, Title), followed by verses, choruses, and bridges.",
     oneDirectiveTwoWaysTitle: "One directive, two ways to write it",
-    oneDirectiveTwoWaysDesc: "You can use full tags ({start_of_verse}) or abbreviations ({sov}). Hosanna understands both seamlessly!",
+    oneDirectiveTwoWaysDesc:
+      "You can use full tags ({start_of_verse}) or abbreviations ({sov}). Hosanna understands both seamlessly!",
     essentialDirectivesTitle: "Essential Directives",
-    essentialDirectivesLede: "The most common daily directives, including Hosanna-exclusive features to optimize rehearsals.",
+    essentialDirectivesLede:
+      "The most common daily directives, including Hosanna-exclusive features to optimize rehearsals.",
     shortcutLabel: "shortcut:",
     structureTitle: "Song Structure",
-    structureLede: "Divide lyrics into sections so Hosanna generates colored headers automatically (Verse, Chorus, Bridge).",
+    structureLede:
+      "Divide lyrics into sections so Hosanna generates colored headers automatically (Verse, Chorus, Bridge).",
     sections: {
       verse: { label: "Verse", desc: "The main narrative of the song." },
       chorus: { label: "Chorus", desc: "The central repeating climax." },
       bridge: { label: "Bridge", desc: "The transition connecting sections." },
     },
-    chorusMagicDesc: "Using {chorus} alone makes Hosanna automatically copy and render the lyrics from the latest chorus. Save time and avoid retyping!",
+    chorusMagicDesc:
+      "Using {chorus} alone makes Hosanna automatically copy and render the lyrics from the latest chorus. Save time and avoid retyping!",
     chorusMagicAutoNote: "(Hosanna renders the chorus automatically)",
     gridsEyebrow: "For Musicians",
     gridsTitle: "Chord Grids & Timings",
-    gridsLede: "Need to write an intro or instrumental? Use barline pipes to map measures or specify how long each chord lasts.",
+    gridsLede:
+      "Need to write an intro or instrumental? Use barline pipes to map measures or specify how long each chord lasts.",
     barlinesTitle: "Barlines (Measures)",
     barlinesNormal: "Standard barline separator",
     barlinesSection: "Section start or end",
@@ -397,14 +429,18 @@ export const en: typeof import("./pt").pt = {
     tabTitle: "Tablature",
     tabLede: "Ideal for fingerpicking, riffs, and solos with surgical accuracy.",
     tabWarningTitle: "No auto-reformatting",
-    tabWarningDesc: "Inside tab blocks, Hosanna preserves exact spacing with monospace fonts to keep all dashes and frets aligned.",
+    tabWarningDesc:
+      "Inside tab blocks, Hosanna preserves exact spacing with monospace fonts to keep all dashes and frets aligned.",
     shortcutsEyebrow: "Productivity Tools",
     shortcutsTitle: "Hosanna Editor Shortcuts",
-    shortcutsLede: "No need to memorize or type long directive names. Our editor is built for speed.",
+    shortcutsLede:
+      "No need to memorize or type long directive names. Our editor is built for speed.",
     autocompleteTitle: "1. Chord Autocomplete",
-    autocompleteDesc: "As you type chords in your song, Hosanna remembers them. Just type [ and the editor suggests your chords!",
+    autocompleteDesc:
+      "As you type chords in your song, Hosanna remembers them. Just type [ and the editor suggests your chords!",
     selectAndWrapTitle: "2. Select and Wrap (Shortcuts & Right-Click)",
-    selectAndWrapDesc: "Typed lyrics without section headers? Select lines with your mouse and use shortcuts or right-click context menu.",
+    selectAndWrapDesc:
+      "Typed lyrics without section headers? Select lines with your mouse and use shortcuts or right-click context menu.",
     createVerse: "Create Verse",
     createVerseDesc: "Wraps selection in Verse block",
     createChorus: "Create Chorus",
@@ -412,13 +448,15 @@ export const en: typeof import("./pt").pt = {
     createBridge: "Create Bridge",
     createBridgeDesc: "Wraps selection in Bridge block",
     typeAndTabTitle: "3. Type keyword and press Tab",
-    typeAndTabDesc: "On an empty line, start typing one of these triggers and hit Tab. The editor completes it for you!",
+    typeAndTabDesc:
+      "On an empty line, start typing one of these triggers and hit Tab. The editor completes it for you!",
     quickRefEyebrow: "Cheatsheet",
     quickRefTitle: "Quick Reference",
     quickRefLede: "All directives recognized by Hosanna organized by category.",
     directivesCount: "{count} directives",
     ctaTitle: "Ready to transform your church repertoire?",
-    ctaDesc: "Hosanna's smart editor guides you step by step to keep songs clean, organized, and ready for your next rehearsal.",
+    ctaDesc:
+      "Hosanna's smart editor guides you step by step to keep songs clean, organized, and ready for your next rehearsal.",
     ctaCreateSong: "Create First Song",
     ctaBackHome: "Back to Home",
     categories: {

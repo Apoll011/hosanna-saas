@@ -944,6 +944,11 @@ export function Footer() {
         { label: t("landing.footer.chordproGuide"), href: "/chordpro", isInternal: true },
         { label: t("landing.footer.pricing"), href: "/#pricing", isInternal: false },
         { label: t("landing.footer.downloadApp"), href: "/#mobile", isInternal: false },
+        {
+          label: t("landing.footer.blog"),
+          href: "https://blog.hosanna.live",
+          isInternal: false,
+        },
       ],
     },
     {

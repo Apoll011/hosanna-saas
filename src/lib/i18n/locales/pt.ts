@@ -8,22 +8,27 @@ export const pt = {
     tryAgain: "Tente Novamente",
     privacyPolicy: "Política de Privacidade",
     activeDevelopment: "Desenvolvimento Ativo",
-    activeDevDesc: "Como estamos em fase inicial, o seu feedback é a nossa bússola. Se sente falta de alguma funcionalidade ou encontrou algo que pode ser melhorado, por favor, partilhe connosco.",
+    activeDevDesc:
+      "Como estamos em fase inicial, o seu feedback é a nossa bússola. Se sente falta de alguma funcionalidade ou encontrou algo que pode ser melhorado, por favor, partilhe connosco.",
   },
   errors: {
     notFoundTitle: "404",
     notFoundHeading: "Página não Encontrada",
     notFoundDesc: "A página que procura não existe ou foi movida",
     errorHeading: "Essa página não carregou",
-    errorDesc: "Ocorreu um erro do nosso lado. Pode tentar atualizar a página ou voltar à página inicial.",
+    errorDesc:
+      "Ocorreu um erro do nosso lado. Pode tentar atualizar a página ou voltar à página inicial.",
   },
   seo: {
     defaultTitle: "Hosanna | O Futuro do Planeamento de Louvor para Igrejas",
-    defaultDescription: "Organize a sua biblioteca de música, planeie cultos e equipe os seus músicos com as ferramentas certas. O Hosanna é o software de gestão de louvor mais intuitivo para igrejas modernas.",
-    defaultKeywords: "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
+    defaultDescription:
+      "Organize a sua biblioteca de música, planeie cultos e equipe os seus músicos com as ferramentas certas. O Hosanna é o software de gestão de louvor mais intuitivo para igrejas modernas.",
+    defaultKeywords:
+      "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
   },
   landing: {
-    banner: "Estamos na fase de desenvolvimento inicial. A versão Beta será lançada a 1 de setembro. Junte-se a nós nesta jornada!",
+    banner:
+      "Estamos na fase de desenvolvimento inicial. A versão Beta será lançada a 1 de setembro. Junte-se a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",
       chordpro: "ChordPro",
@@ -35,16 +40,20 @@ export const pt = {
       badge: "Desenvolvido para Líderes de Louvor",
       titleStart: "Organize o seu louvor com",
       titleHighlight: "excelência",
-      subtitle: "Dê à sua equipa a clareza e o foco que eles merecem. Planos de culto, cifras dinâmicas e escalas inteligentes num só lugar.",
+      subtitle:
+        "Dê à sua equipa a clareza e o foco que eles merecem. Planos de culto, cifras dinâmicas e escalas inteligentes num só lugar.",
       ctaStart: "Começar Agora",
       ctaDemo: "Ver Demonstração",
-      dashboardAlt: "Pré-visualização do painel do Hosanna a mostrar a biblioteca de canções e o plano de culto de domingo",
-      mobileAlt: "Pré-visualização da app móvel do Hosanna a mostrar uma cifra com controlos de transposição",
+      dashboardAlt:
+        "Pré-visualização do painel do Hosanna a mostrar a biblioteca de canções e o plano de culto de domingo",
+      mobileAlt:
+        "Pré-visualização da app móvel do Hosanna a mostrar uma cifra com controlos de transposição",
     },
     problem: {
       eyebrow: "A Nossa Missão",
       title: "Preparar o louvor deve ser sobre adoração, não sobre gerir ficheiros.",
-      description: "Sabemos que o tempo da equipa de louvor é precioso. Muitas igrejas ainda lutam com pastas desorganizadas na cloud, cancioneiros antigos e mensagens perdidas no WhatsApp. O Hosanna foi criado para eliminar essa confusão e trazer paz à sua preparação.",
+      description:
+        "Sabemos que o tempo da equipa de louvor é precioso. Muitas igrejas ainda lutam com pastas desorganizadas na cloud, cancioneiros antigos e mensagens perdidas no WhatsApp. O Hosanna foi criado para eliminar essa confusão e trazer paz à sua preparação.",
       cards: [
         {
           title: "Biblioteca Unificada",
@@ -59,12 +68,14 @@ export const pt = {
           body: "No momento do louvor, a tecnologia deve desaparecer. Oferecemos uma vista limpa, pessoal e adaptável a cada músico, mesmo sem internet.",
         },
       ],
-      quote: "«O nosso objetivo é simples: queremos que a sua equipa passe menos tempo a configurar tecnologia e mais tempo a servir ao Senhor.»",
+      quote:
+        "«O nosso objetivo é simples: queremos que a sua equipa passe menos tempo a configurar tecnologia e mais tempo a servir ao Senhor.»",
     },
     twoApps: {
       eyebrow: "Duas apps, um fluxo",
       title: "Feito para toda a equipa de louvor.",
-      description: "Um painel poderoso para os líderes que planeiam o culto. Uma app móvel calma e focada para os músicos que o tocam.",
+      description:
+        "Um painel poderoso para os líderes que planeiam o culto. Uma app móvel calma e focada para os músicos que o tocam.",
       dashboardBadge: "Painel",
       dashboardTitle: "Para líderes e equipa",
       mobileBadge: "App móvel",
@@ -97,7 +108,8 @@ export const pt = {
     organize: {
       eyebrow: "Organiza a tua música",
       title: "Uma biblioteca que finalmente parece tua.",
-      description: "Põe ordem em anos de canções espalhadas — sem obrigar a tua equipa a aprender um sistema novo.",
+      description:
+        "Põe ordem em anos de canções espalhadas — sem obrigar a tua equipa a aprender um sistema novo.",
       cards: [
         {
           title: "Pastas familiares",
@@ -143,7 +155,8 @@ export const pt = {
     liveWorship: {
       eyebrow: "Feito para o louvor ao vivo",
       title: "Cada músico, ao seu ritmo.",
-      description: "Guitarristas, pianistas e vocalistas trabalham a partir da mesma canção, no mesmo culto — mas cada um controla o seu tom, a visibilidade dos acordes e o tamanho do texto. Acabou o amontoado à volta de um ecrã. Acabaram as cifras desalinhadas.",
+      description:
+        "Guitarristas, pianistas e vocalistas trabalham a partir da mesma canção, no mesmo culto — mas cada um controla o seu tom, a visibilidade dos acordes e o tamanho do texto. Acabou o amontoado à volta de um ecrã. Acabaram as cifras desalinhadas.",
       items: {
         transpose: "Transposição independente",
         textSize: "Tamanho de texto ajustável",
@@ -154,16 +167,20 @@ export const pt = {
     anySize: {
       eyebrow: "Qualquer igreja, qualquer tamanho",
       title: "Do grupo em casa ao ministério multi-campus.",
-      description: "Cada igreja tem a sua biblioteca e os seus cultos, independentes e seguros — com espaço para tantas equipas de louvor quantas forem necessárias, sob a mesma igreja.",
+      description:
+        "Cada igreja tem a sua biblioteca e os seus cultos, independentes e seguros — com espaço para tantas equipas de louvor quantas forem necessárias, sob a mesma igreja.",
       privateLibTitle: "A tua biblioteca, segura e separada",
-      privateLibBody: "Cada igreja tem o seu espaço privado. Canções, cultos e membros da equipa ficam dentro das tuas portas.",
+      privateLibBody:
+        "Cada igreja tem o seu espaço privado. Canções, cultos e membros da equipa ficam dentro das tuas portas.",
       multiTeamTitle: "Várias equipas, uma biblioteca partilhada",
-      multiTeamBody: "Domingo, meio da semana, jovens, campus A, campus B — todas as equipas bebem da mesma fonte.",
+      multiTeamBody:
+        "Domingo, meio da semana, jovens, campus A, campus B — todas as equipas bebem da mesma fonte.",
     },
     export: {
       eyebrow: "Exportar e portabilidade",
       title: "A tua música, nas tuas condições.",
-      description: "Importa e exporta no formato aberto ChordPro, para migração ou cópias de segurança fáceis. Exporta um culto completo — ordem, versículos, anúncios, mensagens, acordes e letras de todas as canções — como PDF pronto a imprimir, direto da app móvel.",
+      description:
+        "Importa e exporta no formato aberto ChordPro, para migração ou cópias de segurança fáceis. Exporta um culto completo — ordem, versículos, anúncios, mensagens, acordes e letras de todas as canções — como PDF pronto a imprimir, direto da app móvel.",
       bullets: [
         "Importação e exportação em ChordPro",
         "PDF imprimível de um culto inteiro",
@@ -186,7 +203,8 @@ export const pt = {
       annual: "Anual",
       discountBadge: "-20%",
       singlePlan: "Plano único",
-      singlePlanDesc: "Acesso total a todas as ferramentas, sem limites de utilizadores ou funcionalidades escondidas.",
+      singlePlanDesc:
+        "Acesso total a todas as ferramentas, sem limites de utilizadores ou funcionalidades escondidas.",
       perYearUnit: "/ano por igreja",
       perMonthUnit: "/mês por igreja",
       annualBilledNote: "Faturado anualmente · equivalente a 10€/mês",
@@ -194,9 +212,11 @@ export const pt = {
       unlimitedMusicians: "Músicos ilimitados",
       freeTrialDays: "14 dias grátis",
       ctaTry: "Experimentar Grátis",
-      pricingClarification: "Músicos e utilizadores ilimitados — o valor é por igreja, independentemente do tamanho da equipa.",
+      pricingClarification:
+        "Músicos e utilizadores ilimitados — o valor é por igreja, independentemente do tamanho da equipa.",
       multiCampusLabel: "Igrejas multi-campus:",
-      multiCampusText: "+12€/mês por cada campus adicional. Acesso ilimitado de utilizadores em todos os locais.",
+      multiCampusText:
+        "+12€/mês por cada campus adicional. Acesso ilimitado de utilizadores em todos os locais.",
       features: [
         "Músicos e utilizadores do painel ilimitados",
         "Canções, pastas e cultos ilimitados",
@@ -210,24 +230,28 @@ export const pt = {
       badge: "Sempre Consigo",
       titleStart: "Leve o seu louvor no",
       titleHighlight: "bolso",
-      description: "Aceda às suas cifras, consulte as escalas e prepare-se para o culto diretamente do seu telemóvel. O Hosanna App é o companheiro perfeito para músicos que buscam excelência em cada detalhe.",
+      description:
+        "Aceda às suas cifras, consulte as escalas e prepare-se para o culto diretamente do seu telemóvel. O Hosanna App é o companheiro perfeito para músicos que buscam excelência em cada detalhe.",
     },
     vision: {
       eyebrow: "A nossa visão",
       quote1: "«Acreditamos que a tecnologia deve apoiar o louvor, não complicá-lo.»",
       body: "O Hosanna remove barreiras desnecessárias entre a preparação e o louvor — para que as igrejas passem menos tempo à procura de canções e a gerir ficheiros, e mais tempo a conduzir pessoas em louvor.",
-      quote2: "«Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os que servem através da música.»",
+      quote2:
+        "«Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os que servem através da música.»",
     },
     support: {
       eyebrow: "Apoie o projeto",
       title: "Ajude-nos a levar o Hosanna a igrejas de todo o mundo",
-      description: "A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a mais equipas de louvor.",
+      description:
+        "A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a mais equipas de louvor.",
       iframeTitle: "Apoie o Hosanna no GoFundMe",
     },
     roadmap: {
       eyebrow: "Roadmap",
       title: "O que aí vem a seguir.",
-      description: "O Hosanna continua a crescer com as igrejas que o usam. Estas são algumas das melhorias que já estão a caminho.",
+      description:
+        "O Hosanna continua a crescer com as igrejas que o usam. Estas são algumas das melhorias que já estão a caminho.",
       items: [
         "Modelos de cultos reutilizáveis e duplicação de serviços",
         "Importação inteligente com deteção automática de duplicados",
@@ -271,15 +295,18 @@ export const pt = {
     },
     finalCta: {
       title: "Pronto para elevar o nível do seu louvor?",
-      subtitle: "Junte-se a centenas de igrejas que já escolheram a excelência e a organização com o Hosanna.",
+      subtitle:
+        "Junte-se a centenas de igrejas que já escolheram a excelência e a organização com o Hosanna.",
       ctaStart: "Começar Agora",
       ctaContact: "Fala connosco",
     },
     footer: {
-      tagline: "A ferramenta definitiva para equipas de louvor que buscam excelência e organização.",
+      tagline:
+        "A ferramenta definitiva para equipas de louvor que buscam excelência e organização.",
       colProduct: "Produto",
       colSupport: "Suporte",
       colLegal: "Legal",
+      blog: "Blogue",
       features: "Funcionalidades",
       chordproGuide: "Guia ChordPro",
       pricing: "Preço",
@@ -312,9 +339,11 @@ export const pt = {
     eyebrow: "Apoio à Equipa",
     heroTitle: "Vamos",
     heroTitleHighlight: "falar?",
-    heroSubtitle: "Dúvidas, sugestões ou apenas um \"olá\". Estamos aqui para servir a sua igreja com excelência.",
+    heroSubtitle:
+      'Dúvidas, sugestões ou apenas um "olá". Estamos aqui para servir a sua igreja com excelência.',
     alwaysReadyTitle: "Sempre prontos a ajudar",
-    alwaysReadyDesc: "A nossa equipa técnica e ministerial está disponível para garantir que a sua experiência com o Hosanna seja impecável.",
+    alwaysReadyDesc:
+      "A nossa equipa técnica e ministerial está disponível para garantir que a sua experiência com o Hosanna seja impecável.",
     emailTitle: "E-mail",
     emailResponseTime: "Resposta em menos de 24h",
     socialTitle: "Redes Sociais",
@@ -333,13 +362,15 @@ export const pt = {
     messageLabel: "Sua Mensagem",
     messagePlaceholder: "Descreva como o podemos ajudar...",
     sendButton: "Enviar Mensagem",
-    termsConsent: "Ao submeter este formulário, concorda com o processamento dos seus dados de acordo com a nossa",
+    termsConsent:
+      "Ao submeter este formulário, concorda com o processamento dos seus dados de acordo com a nossa",
   },
   chordproGuide: {
     heroBadge: "Guia de Formação · Equipa de Louvor",
     heroTitleStart: "Domine o",
     heroTitleHighlight: "ChordPro",
-    heroSubtitle: "A forma padrão e inteligente de escrever cifras. Tudo o que a sua equipa precisa de saber para organizar o repertório no Hosanna — do primeiro acorde ao dia do culto.",
+    heroSubtitle:
+      "A forma padrão e inteligente de escrever cifras. Tudo o que a sua equipa precisa de saber para organizar o repertório no Hosanna — do primeiro acorde ao dia do culto.",
     traditionalDoc: "Documento Tradicional (Word)",
     traditionalWarning: "Desalinha em telemóveis e obriga a criar ficheiros por tom.",
     chordproInHosanna: "ChordPro no Hosanna",
@@ -356,8 +387,10 @@ export const pt = {
       reference: "Referência Rápida",
     },
     whatIsTitle: "O que é o ChordPro?",
-    whatIsLede: "Um formato de texto simples que o Hosanna lê para transformar os seus cânticos em ferramentas interativas para a banda.",
-    whatIsParagraph: "Em vez de colocar os acordes \"a flutuar\" sobre o texto, o ChordPro coloca-os dentro da letra usando parênteses retos [ ], imediatamente antes da sílaba onde a mudança de acorde acontece.",
+    whatIsLede:
+      "Um formato de texto simples que o Hosanna lê para transformar os seus cânticos em ferramentas interativas para a banda.",
+    whatIsParagraph:
+      'Em vez de colocar os acordes "a flutuar" sobre o texto, o ChordPro coloca-os dentro da letra usando parênteses retos [ ], imediatamente antes da sílaba onde a mudança de acorde acontece.',
     benefits: [
       "Muda de tom ou de capo num único clique",
       "Ajusta o tamanho da letra perfeitamente a qualquer ecrã",
@@ -367,58 +400,71 @@ export const pt = {
       "Sempre legível, independentemente do tipo de letra usado",
     ],
     anatomyTitle: "A Anatomia de um Cântico",
-    anatomyLede: "A receita é sempre a mesma: Informações no topo (Tom, Título), seguidas dos versos, refrões e pontes.",
+    anatomyLede:
+      "A receita é sempre a mesma: Informações no topo (Tom, Título), seguidas dos versos, refrões e pontes.",
     oneDirectiveTwoWaysTitle: "Uma diretiva, duas formas de a escrever",
-    oneDirectiveTwoWaysDesc: "Pode usar a forma completa ({start_of_verse}) ou a abreviatura ({sov}). O Hosanna entende ambas da mesma forma!",
+    oneDirectiveTwoWaysDesc:
+      "Pode usar a forma completa ({start_of_verse}) ou a abreviatura ({sov}). O Hosanna entende ambas da mesma forma!",
     essentialDirectivesTitle: "Diretivas Essenciais",
-    essentialDirectivesLede: "As instruções mais usadas no dia-a-dia. Incluem opções exclusivas do Hosanna para otimizar os seus ensaios.",
+    essentialDirectivesLede:
+      "As instruções mais usadas no dia-a-dia. Incluem opções exclusivas do Hosanna para otimizar os seus ensaios.",
     shortcutLabel: "atalho:",
     structureTitle: "Estrutura do Cântico",
-    structureLede: "Separe a letra em blocos para que o Hosanna crie os cabeçalhos coloridos automaticamente (Verso, Refrão, Ponte).",
+    structureLede:
+      "Separe a letra em blocos para que o Hosanna crie os cabeçalhos coloridos automaticamente (Verso, Refrão, Ponte).",
     sections: {
       verse: { label: "Verso", desc: "A narrativa principal da música." },
       chorus: { label: "Refrão", desc: "A parte mais forte e que se repete." },
       bridge: { label: "Ponte", desc: "A transição que liga as secções." },
     },
-    chorusMagicDesc: "Se usar {chorus} sem mais nada, o Hosanna copia e renderiza a letra do último refrão introduzido. Poupe tempo e evite reescrever o refrão depois de cada verso!",
+    chorusMagicDesc:
+      "Se usar {chorus} sem mais nada, o Hosanna copia e renderiza a letra do último refrão introduzido. Poupe tempo e evite reescrever o refrão depois de cada verso!",
     chorusMagicAutoNote: "(O Hosanna renderiza o refrão automaticamente)",
     gridsEyebrow: "Para Músicos",
     gridsTitle: "Grelhas de Acordes & Tempos",
-    gridsLede: "Precisa de escrever uma introdução ou instrumental? Use as barras verticais para desenhar compassos ou anote quanto tempo dura cada acorde.",
+    gridsLede:
+      "Precisa de escrever uma introdução ou instrumental? Use as barras verticais para desenhar compassos ou anote quanto tempo dura cada acorde.",
     barlinesTitle: "Barlines (Compassos)",
     barlinesNormal: "Separação normal de compasso",
     barlinesSection: "Início ou fim de secção",
     barlinesRepeat: "Marcas de repetição",
     durationsTitle: "Durações (Tempos)",
-    durationsDesc: "Adicione @X dentro do parêntesis do acorde para ditar a sua duração visual na grelha.",
+    durationsDesc:
+      "Adicione @X dentro do parêntesis do acorde para ditar a sua duração visual na grelha.",
     durationsDouble: "Dura o dobro do tempo",
     durationsHalf: "Dura metade do tempo",
     tabEyebrow: "Para Guitarristas",
     tabTitle: "Tablatura",
     tabLede: "Ideal para descrever dedilhados, riffs ou solos com precisão cirúrgica.",
     tabWarningTitle: "Sem formatação automática",
-    tabWarningDesc: "No bloco de tablatura, o Hosanna respeita 100% os espaços introduzidos e usa um tipo de letra mono-espaçado para garantir que os traços ficam perfeitamente alinhados.",
+    tabWarningDesc:
+      "No bloco de tablatura, o Hosanna respeita 100% os espaços introduzidos e usa um tipo de letra mono-espaçado para garantir que os traços ficam perfeitamente alinhados.",
     shortcutsEyebrow: "Ferramentas Práticas",
     shortcutsTitle: "Atalhos do Editor Hosanna",
-    shortcutsLede: "Não precisa de memorizar ou escrever as diretivas por extenso. O nosso editor foi pensado para ser rápido.",
+    shortcutsLede:
+      "Não precisa de memorizar ou escrever as diretivas por extenso. O nosso editor foi pensado para ser rápido.",
     autocompleteTitle: "1. Autocompletar Acordes",
-    autocompleteDesc: "À medida que adiciona acordes na música, o Hosanna memoriza-os. Basta abrir um parêntesis reto [ e o editor sugere os acordes que já utilizou!",
+    autocompleteDesc:
+      "À medida que adiciona acordes na música, o Hosanna memoriza-os. Basta abrir um parêntesis reto [ e o editor sugere os acordes que já utilizou!",
     selectAndWrapTitle: "2. Selecionar e Envolver (Atalhos e Botão Direito)",
-    selectAndWrapDesc: "Escreveu o texto todo e esqueceu-se das secções? Selecione as linhas da letra com o rato e use um dos atalhos abaixo (ou clique com o botão direito do rato).",
+    selectAndWrapDesc:
+      "Escreveu o texto todo e esqueceu-se das secções? Selecione as linhas da letra com o rato e use um dos atalhos abaixo (ou clique com o botão direito do rato).",
     createVerse: "Criar Verso",
     createVerseDesc: "Envolve a seleção num Verso",
     createChorus: "Criar Refrão",
     createChorusDesc: "Envolve a seleção num Refrão",
     createBridge: "Criar Ponte",
     createBridgeDesc: "Envolve a seleção numa Ponte",
-    typeAndTabTitle: "3. Escreva a sigla e prima \"Tab\"",
-    typeAndTabDesc: "Numa linha vazia do editor, comece a escrever uma destas palavras-chave e carregue na tecla Tab. O editor preenche o resto por si!",
+    typeAndTabTitle: '3. Escreva a sigla e prima "Tab"',
+    typeAndTabDesc:
+      "Numa linha vazia do editor, comece a escrever uma destas palavras-chave e carregue na tecla Tab. O editor preenche o resto por si!",
     quickRefEyebrow: "Folha de Consulta",
     quickRefTitle: "Referência Rápida",
     quickRefLede: "Todas as instruções reconhecidas pelo Hosanna organizadas por categoria.",
     directivesCount: "{count} diretivas",
     ctaTitle: "Pronto para transformar o repertório da sua igreja?",
-    ctaDesc: "O editor inteligente do Hosanna guia-o passo a passo para que os cânticos fiquem perfeitos, organizados e prontos para o próximo ensaio.",
+    ctaDesc:
+      "O editor inteligente do Hosanna guia-o passo a passo para que os cânticos fiquem perfeitos, organizados e prontos para o próximo ensaio.",
     ctaCreateSong: "Criar o Primeiro Cântico",
     ctaBackHome: "Voltar ao Início",
     categories: {
@@ -437,7 +483,8 @@ export const pt = {
     tempo: "Batidas por minuto (BPM), útil para o metrónomo ou guias",
     time: "Compasso rítmico, ex: 4/4 ou 6/8",
     capo: "Casa do capotraste sugerida para a guitarra",
-    duration: "Duração em mm:ss ou segundos, Nos cultos é usada para ter uma estimativa da sua duração.",
+    duration:
+      "Duração em mm:ss ou segundos, Nos cultos é usada para ter uma estimativa da sua duração.",
     album: "Álbum ou coletânea de origem",
     composer: "Compositor da melodia",
     arranger: "Responsável pelo arranjo musical",
