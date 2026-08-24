@@ -1,3 +1,4 @@
+import Scanner from "@/components/ui/Scanner";
 import dashboardImg from "@/assets/dashboard-preview.jpg";
 import logo from "@/assets/hosanna_logo.png";
 import mobileImg from "@/assets/mobile-preview.jpg";
@@ -37,6 +38,7 @@ import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
 import { PlayStoreButton } from "../ui/StoreButton";
+import LightRays from "@/components/ui/Scanner";
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -214,11 +216,29 @@ function Hero() {
       id="top"
       className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-30 pt-30"
     >
-      <div className="absolute inset-0 text-gold/40">
+
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={1}
+          lightSpread={1.5}
+          rayLength={4.5}
+          followMouse={true}
+          mouseInfluence={0.5}
+          noiseAmount={0}
+          distortion={0}
+          className="custom-rays"
+          pulsating={false}
+          fadeDistance={1}
+          saturation={1}
+        />
+      </div>
+      <div className="absolute inset-0 text-gold/40 z-0">
         <StaffLines className="top-24" />
         <StaffLines className="bottom-24" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-26 md:px-8 md:pb-32 md:pt-18">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-24 pt-26 md:px-8 md:pb-32 md:pt-18">
         <div className="mx-auto max-w-4xl text-center">
           <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
             {t("landing.hero.badge")}
