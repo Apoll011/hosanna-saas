@@ -763,12 +763,9 @@ function MobileApp() {
   const { t } = useI18n();
 
   return (
-    <section
-      id="mobile"
-      className=" mx-auto max-w-6xl px-5 md:px-8 py-16 bg-primary overflow-hidden relative font-sans"
-    >
+    <section id="mobile" className="py-16 bg-primary overflow-hidden relative font-sans">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-5 md:px-8 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8 reveal">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium">
