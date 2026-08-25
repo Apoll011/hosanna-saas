@@ -181,8 +181,8 @@ export function MigrationSection() {
                       style={{ ["--hm-delay" as any]: "1050ms" }}
                     >
                       <Music2 className="h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-sm font-semibold text-primary">Wonderwall</span>
-                      <span className="text-xs text-muted-foreground">Oasis</span>
+                      <span className="text-sm font-semibold text-primary">Praise You Anywere</span>
+                      <span className="text-xs text-muted-foreground">Elevation Worship</span>
                       <span className="ml-auto rounded bg-blue-100 px-1.5 py-0.5 font-display text-[10px] font-bold text-primary">
                         F#m
                       </span>

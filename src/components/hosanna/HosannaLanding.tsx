@@ -1,4 +1,3 @@
-import Scanner from "@/components/ui/Scanner";
 import dashboardImg from "@/assets/dashboard-preview.jpg";
 import logo from "@/assets/hosanna_logo.png";
 import mobileImg from "@/assets/mobile-preview.jpg";
@@ -10,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
+import LightRays from "@/components/ui/Scanner";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -38,7 +38,6 @@ import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
 import { PlayStoreButton } from "../ui/StoreButton";
-import LightRays from "@/components/ui/Scanner";
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -218,7 +217,6 @@ function Hero() {
       id="top"
       className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-30 pt-30"
     >
-
       <div className="absolute inset-0 pointer-events-none z-0">
         <LightRays
           raysOrigin="top-center"
@@ -765,7 +763,10 @@ function MobileApp() {
   const { t } = useI18n();
 
   return (
-    <section id="mobile" className="py-16 bg-primary overflow-hidden relative font-sans">
+    <section
+      id="mobile"
+      className=" mx-auto max-w-6xl px-5 md:px-8 py-16 bg-primary overflow-hidden relative font-sans"
+    >
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
