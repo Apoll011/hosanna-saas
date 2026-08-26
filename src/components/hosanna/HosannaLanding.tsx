@@ -317,7 +317,7 @@ function Problem() {
               key={c.title}
               className="rounded-3xl border border-blue-50 bg-white p-8 text-center transition-all hover:shadow-lg group shadow-sm"
             >
-              <h3 className="font-display text-2xl font-bold text-primary mb-3">{c.title}</h3>
+              <h3 className="font-display text-2xl text-primary mb-3">{c.title}</h3>
               <p className="text-base leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
           ))}
