@@ -68,8 +68,9 @@ export const es: typeof import("./pt").pt = {
           body: "En el momento de alabar, la tecnología no debe estorbar. Ofrecemos una vista limpia, personal y adaptable a cada músico, incluso sin internet.",
         },
       ],
-      quote:
-        "«Nuestro objetivo es simple: queremos que tu equipo pase menos tiempo configurando tecnología y más tiempo sirviendo al Señor.»",
+      verse: "«¡Todo lo que respira alabe al Señor!»",
+      s1506: "Salmos 150:6",
+      verseEyebrow: "Más que organizar música. Se trata de preparar la adoración.",
     },
     twoApps: {
       eyebrow: "Dos apps, un solo flujo",

@@ -68,8 +68,9 @@ export const pt = {
           body: "No momento do louvor, a tecnologia deve desaparecer. Oferecemos uma vista limpa, pessoal e adaptável a cada músico, mesmo sem internet.",
         },
       ],
-      quote:
-        "«O nosso objetivo é simples: queremos que a sua equipa passe menos tempo a configurar tecnologia e mais tempo a servir ao Senhor.»",
+      verse: "«Tudo o ser que respira louve ao Senhor!»",
+      s1506: "Salmos 150:6",
+      verseEyebrow: "Mais do que organizar música. É sobre preparar o louvor.",
     },
     twoApps: {
       eyebrow: "Duas apps, um fluxo",
