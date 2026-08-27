@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Countdown } from "@/components/ui/countdown";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import LightRays from "@/components/ui/Scanner";
 import { useReveal } from "@/hooks/useReveal";
@@ -209,6 +210,7 @@ export function StaffLines({ className }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 /*  Hero                                                              */
 /* ------------------------------------------------------------------ */
+
 function Hero() {
   const { t } = useI18n();
 
@@ -243,6 +245,7 @@ function Hero() {
           <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
             {t("landing.hero.badge")}
           </div>
+          <Countdown />
           <h1 className="mt-8 font-display text-5xl leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl reveal">
             {t("landing.hero.titleStart")}{" "}
             <span className="text-blue-300">{t("landing.hero.titleHighlight")}</span>.
