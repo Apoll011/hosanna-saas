@@ -325,11 +325,21 @@ function Problem() {
             </div>
           ))}
         </div>
-        <div className="reveal mt-16 text-center">
-          <p className="font-display text-3xl md:text-4xl italic text-primary max-w-3xl mx-auto leading-tight">
-            {t("landing.problem.quote")}
+      </div>
+      <div className="reveal mt-20 text-center">
+        <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          {t("landing.problem.verseEyebrow")}
+        </p>
+
+        <blockquote className="mx-auto max-w-4xl">
+          <p className="font-display text-3xl leading-tight italic text-primary md:text-5xl">
+            {t("landing.problem.verse")}
           </p>
-        </div>
+
+          <footer className="mt-4 text-base font-medium text-muted-foreground">
+            — {t("landing.problem.s1506")}
+          </footer>
+        </blockquote>
       </div>
     </section>
   );

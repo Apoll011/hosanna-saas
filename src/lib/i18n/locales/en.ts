@@ -72,8 +72,9 @@ export const en: typeof import("./pt").pt = {
           body: "During worship, technology should get out of the way. We offer a clean, personal view adaptable for each musician, even offline.",
         },
       ],
-      quote:
-        "«Our goal is simple: we want your team to spend less time configuring tech and more time serving the Lord.»",
+      verse: "«Let everything that has breath praise the Lord!»",
+      s1506: "Psalm 150:6",
+      verseEyebrow: "More than organizing music. It's about preparing for worship.",
     },
     twoApps: {
       eyebrow: "Two apps, one seamless flow",
