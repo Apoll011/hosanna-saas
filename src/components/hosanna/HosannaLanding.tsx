@@ -1,6 +1,6 @@
-import dashboardImg from "@/assets/dashboard-preview.jpg";
+import dashboardImg from "@/assets/main_mockup.png";
 import logo from "@/assets/hosanna_logo.png";
-import mobileImg from "@/assets/mobile-preview.jpg";
+import mobileImg from "@/assets/mobile-view.png";
 import {
   Accordion,
   AccordionContent,
@@ -287,14 +287,7 @@ function Hero() {
               height={1104}
               className="w-full rounded-2xl"
             />
-            <img
-              src={mobileImg}
-              alt={t("landing.hero.mobileAlt")}
-              width={800}
-              height={1408}
-              loading="lazy"
-              className="absolute -bottom-10 -right-4 hidden w-48 rounded-2xl md:block md:w-60 lg:-right-8 lg:w-72"
-            />
+            
           </div>
         </div>
       </div>
