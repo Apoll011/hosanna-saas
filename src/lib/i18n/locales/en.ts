@@ -39,6 +39,7 @@ export const en: typeof import("./pt").pt = {
       features: "Features",
       chordpro: "ChordPro",
       pricing: "Pricing",
+      about: "About",
       contact: "Contact",
       tryFree: "Try for Free",
     },
@@ -514,4 +515,39 @@ export const en: typeof import("./pt").pt = {
     ccli: "CCLI number (Christian Copyright Licensing International)",
     time_signature: "Alternative to {time} directive for meter (e.g. 4/4)",
   },
+  about: {
+    eyebrow: "The Story Behind Hosanna",
+    heroTitleStart: "Built by cousins,",
+    heroTitleHighlight: "for the church.",
+    heroSubtitle:
+      "Two 18-year-olds, self-taught, three months in — building the tool we wished our own worship team had.",
+    storyEyebrow: "Where it started",
+    storyTitle: "It started with one church, not a business plan.",
+    storyP1:
+      "Tiago and Éber are cousins. They grew up together in Cabo Verde before moving to Portugal, where they joined Igreja Baptista Arruda dos Vinhos — and found themselves serving on the same worship team.",
+    storyP2:
+      "Music runs in the family on both sides. Tiago's father is a church pianist, and Tiago followed him onto the keys. Éber's father plays guitar too — he's the one who first put an instrument in Éber's hands.",
+    storyP3:
+      "When they saw their own church struggling with scattered chord sheets, outdated versions, and messy group chats before every rehearsal, they didn't wait for someone else to fix it. Three months ago, still full-time students, they started building Hosanna in the evenings — for their church first, and for every church like it.",
+    churchLinkLabel: "Igreja Baptista Arruda dos Vinhos",
+    founderIntroEyebrow: "Meet the founders",
+    founderIntroTitle: "Still students. Still building.",
+    tiagoName: "Tiago Inês",
+    tiagoRole: "Co-founder & Lead Developer",
+    tiagoBio:
+      "18, studying computer engineering, writing code since he was 8. A self-taught pianist who followed his father onto the church stage — and the hands behind every line of Hosanna.",
+    tiagoQuote: "I wanted our own worship team to stop losing chord sheets in group chats.",
+    eberName: "Éber Rodrigues",
+    eberRole: "Co-founder, Design & Product",
+    eberBio:
+      "18, studying information management, a self-taught guitarist introduced to music by his own father. Shaped Hosanna's look and feel — the logo, the brand, and the small details that come from real Sunday-morning testing.",
+    eberQuote: "Every screen has been tested on an actual Sunday, with an actual band.",
+    pullQuote:
+      "«We didn't set out to build a company. We just wanted our own church's worship team to stop losing chord sheets between rehearsals.»",
+    ctaTitle: "Still early. Still growing.",
+    ctaSubtitle:
+      "Hosanna is three months old and built by two people who use it every Sunday. Come be part of the story.",
+    ctaStart: "Get Started",
+    ctaContact: "Talk with us",
+},
 };

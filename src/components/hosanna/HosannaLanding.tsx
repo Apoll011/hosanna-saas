@@ -69,6 +69,7 @@ export function Nav() {
     { label: t("landing.nav.features"), href: "/#features", isInternal: false },
     { label: t("landing.nav.chordpro"), href: "/chordpro", isInternal: true },
     { label: t("landing.nav.pricing"), href: "/#pricing", isInternal: false },
+    { label: t("landing.nav.about"), href: "/about", isInternal: true },
     { label: t("landing.nav.contact"), href: "/contact", isInternal: true },
   ];
 
@@ -407,7 +408,7 @@ function TwoApps() {
                 loading="lazy"
                 width={800}
                 height={1408}
-                className="w-52 rounded-2xl"
+                className="w-[600px] rounded-2xl"
               />
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -547,7 +548,7 @@ function LiveWorship() {
             loading="lazy"
             width={800}
             height={1408}
-            className="relative mx-auto w-64 rounded-3xl md:w-80"
+            className="relative mx-auto w-[220px] rounded-3xl md:w-[800px]"
           />
         </div>
       </div>
@@ -793,7 +794,7 @@ function MobileApp() {
             <img
               src={mobileImg}
               alt="Hosanna Mobile App"
-              className="relative z-10 w-full max-w-[320px] mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
+              className="relative z-10 w-full max-w-[600px] mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
             />
           </div>
         </div>
@@ -969,6 +970,7 @@ export function Footer() {
         { label: t("landing.footer.features"), href: "/#features", isInternal: false },
         { label: t("landing.footer.chordproGuide"), href: "/chordpro", isInternal: true },
         { label: t("landing.footer.pricing"), href: "/#pricing", isInternal: false },
+        { label: t("landing.nav.about"), href: "/about", isInternal: true },
         { label: t("landing.footer.downloadApp"), href: "/#mobile", isInternal: false },
         {
           label: t("landing.footer.blog"),

@@ -39,6 +39,7 @@ export const es: typeof import("./pt").pt = {
       features: "Funciones",
       chordpro: "ChordPro",
       pricing: "Precios",
+      about: "Sobre Nosotros",
       contact: "Contacto",
       tryFree: "Probar Gratis",
     },
@@ -522,4 +523,40 @@ export const es: typeof import("./pt").pt = {
     ccli: "Número CCLI (Christian Copyright Licensing International)",
     time_signature: "Alternativa a {time} para definir compás (ej: 4/4)",
   },
+  about: {
+    eyebrow: "La Historia detrás de Hosanna",
+    heroTitleStart: "Creado por primos,",
+    heroTitleHighlight: "para la iglesia.",
+    heroSubtitle:
+      "Dos jóvenes de 18 años, autodidactas, con tres meses construyendo la herramienta que nos hubiera gustado tener en nuestro propio equipo de alabanza.",
+    storyEyebrow: "Dónde empezó todo",
+    storyTitle: "Empezó en una iglesia, no en un plan de negocio.",
+    storyP1:
+      "Tiago y Éber son primos. Crecieron juntos en Cabo Verde antes de mudarse a Portugal, donde se unieron a la Igreja Baptista Arruda dos Vinhos — y terminaron sirviendo en el mismo equipo de alabanza.",
+    storyP2:
+      "La música corre en la familia por ambos lados. El padre de Tiago es pianista de iglesia, y Tiago siguió sus pasos en el teclado. El padre de Éber también toca guitarra — fue él quien puso un instrumento en las manos de Éber por primera vez.",
+    storyP3:
+      "Cuando vieron a su propia iglesia luchar con cifrados dispersos, versiones desactualizadas y chats de grupo caóticos antes de cada ensayo, no esperaron a que alguien más lo resolviera. Hace tres meses, siendo todavía estudiantes a tiempo completo, empezaron a construir Hosanna por las tardes — primero para su iglesia, y luego para cada iglesia como la suya.",
+    churchLinkLabel: "Igreja Baptista Arruda dos Vinhos",
+    founderIntroEyebrow: "Conoce a los fundadores",
+    founderIntroTitle: "Todavía estudiantes. Todavía construyendo.",
+    tiagoName: "Tiago Inês",
+    tiagoRole: "Cofundador y Desarrollador Principal",
+    tiagoBio:
+      "18 años, estudiante de ingeniería informática, programando desde los 8 años. Pianista autodidacta que siguió a su padre hasta el escenario de la iglesia — y las manos detrás de cada línea de código de Hosanna.",
+    tiagoQuote:
+      "Solo quería que nuestro equipo de alabanza dejara de perder cifrados en chats de grupo.",
+    eberName: "Éber Rodrigues",
+    eberRole: "Cofundador, Diseño y Producto",
+    eberBio:
+      "18 años, estudiante de gestión de la información, guitarrista autodidacta al que su propio padre introdujo en la música. Dio forma a la identidad visual de Hosanna — el logo, la marca, y los pequeños detalles que solo surgen al probar en un domingo real.",
+    eberQuote: "Cada pantalla se ha probado en un domingo real, con una banda real.",
+    pullQuote:
+      "«No empezamos con la idea de crear una empresa. Solo queríamos que nuestra propia iglesia dejara de perder cifrados entre ensayos.»",
+    ctaTitle: "Todavía al principio. Todavía creciendo.",
+    ctaSubtitle:
+      "Hosanna tiene tres meses y está construido por dos personas que lo usan cada domingo. Ven a formar parte de la historia.",
+    ctaStart: "Empezar Ahora",
+    ctaContact: "Habla con nosotros",
+},
 };

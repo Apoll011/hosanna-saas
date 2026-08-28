@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as ChordproRouteImport } from './routes/chordpro'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LegalRouteImport } from './routes/legal'
@@ -17,6 +18,11 @@ import { Route as LegalRouteImport } from './routes/legal'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChordproRoute = ChordproRouteImport.update({
@@ -37,12 +43,14 @@ const LegalRoute = LegalRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/chordpro': typeof ChordproRoute
   '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/chordpro': typeof ChordproRoute
   '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/chordpro': typeof ChordproRoute
   '/contact': typeof ContactRoute
   '/legal': typeof LegalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chordpro' | '/contact' | '/legal'
+  fullPaths: '/' | '/about' | '/chordpro' | '/contact' | '/legal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chordpro' | '/contact' | '/legal'
-  id: '__root__' | '/' | '/chordpro' | '/contact' | '/legal'
+  to: '/' | '/about' | '/chordpro' | '/contact' | '/legal'
+  id: '__root__' | '/' | '/about' | '/chordpro' | '/contact' | '/legal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   ChordproRoute: typeof ChordproRoute
   ContactRoute: typeof ContactRoute
   LegalRoute: typeof LegalRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/chordpro': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   ChordproRoute: ChordproRoute,
   ContactRoute: ContactRoute,
   LegalRoute: LegalRoute,
