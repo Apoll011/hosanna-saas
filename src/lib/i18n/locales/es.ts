@@ -10,7 +10,13 @@ export const es: typeof import("./pt").pt = {
     activeDevelopment: "Desarrollo Activo",
     activeDevDesc:
       "Como estamos en fase inicial, tus comentarios son nuestra brújula. Si echas en falta alguna función o encuentras algo que mejorar, compártelo con nosotros.",
-  },
+  time: {
+      seconds: "segundos",
+      minutes: "minutos",
+      hours: "horas",
+      days: "días",
+    }
+    },
   errors: {
     notFoundTitle: "404",
     notFoundHeading: "Página no Encontrada",

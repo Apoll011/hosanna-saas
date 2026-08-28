@@ -10,6 +10,13 @@ export const en: typeof import("./pt").pt = {
     activeDevelopment: "Active Development",
     activeDevDesc:
       "As we are in an early stage, your feedback is our compass. If you miss any feature or found something that can be improved, please share it with us.",
+  
+    time: {
+      seconds: "seconds",
+      minutes: "minutes",
+      hours: "hours",
+      days: "days",
+    }
   },
   errors: {
     notFoundTitle: "404",

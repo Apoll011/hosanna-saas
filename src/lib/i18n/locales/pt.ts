@@ -10,6 +10,12 @@ export const pt = {
     activeDevelopment: "Desenvolvimento Ativo",
     activeDevDesc:
       "Como estamos em fase inicial, o seu feedback é a nossa bússola. Se sente falta de alguma funcionalidade ou encontrou algo que pode ser melhorado, por favor, partilhe connosco.",
+    time: {
+      seconds: "segundos",
+      minutes: "minutos",
+      hours: "horas",
+      days: "dias",
+    }
   },
   errors: {
     notFoundTitle: "404",

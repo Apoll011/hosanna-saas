@@ -1,3 +1,4 @@
+import { useI18n } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 
 // Change this date to configure when the countdown ends.
@@ -6,6 +7,7 @@ const TARGET_DATE = "2026-08-31T23:59:59";
 export function Countdown({ className = "" }: { className?: string }) {
   const getRemaining = () => Math.max(0, new Date(TARGET_DATE).getTime() - Date.now());
   const [remaining, setRemaining] = useState(getRemaining);
+  const {t} = useI18n();
 
   useEffect(() => {
     const interval = window.setInterval(() => setRemaining(getRemaining()), 1000);
@@ -19,7 +21,12 @@ export function Countdown({ className = "" }: { className?: string }) {
     Math.floor((totalSeconds % 3600) / 60),
     totalSeconds % 60,
   ];
-  const labels = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
+  const labels = [
+    t("common.time.days"),
+    t("common.time.hours"),
+    t("common.time.minutes"),
+    t("common.time.seconds"),
+  ];
 
   return (
     <div
