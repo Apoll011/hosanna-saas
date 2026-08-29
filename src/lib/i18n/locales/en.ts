@@ -10,13 +10,13 @@ export const en: typeof import("./pt").pt = {
     activeDevelopment: "Active Development",
     activeDevDesc:
       "As we are in an early stage, your feedback is our compass. If you miss any feature or found something that can be improved, please share it with us.",
-  
+
     time: {
       seconds: "seconds",
       minutes: "minutes",
       hours: "hours",
       days: "days",
-    }
+    },
   },
   errors: {
     notFoundTitle: "404",
@@ -112,11 +112,11 @@ export const en: typeof import("./pt").pt = {
       ],
     },
     gallery: {
-  eyebrow: "See it in action",
-  title: "A closer look at Hosanna",
-  description:
-    "Peek inside the tool your worship team will actually use — from the song library to the stage.",
-},
+      eyebrow: "See it in action",
+      title: "A closer look at Hosanna",
+      description:
+        "Peek inside the tool your worship team will actually use — from the song library to the stage.",
+    },
     organize: {
       eyebrow: "Organize your music",
       title: "A library that finally feels like yours.",
@@ -270,6 +270,16 @@ export const en: typeof import("./pt").pt = {
         "Custom church visual branding and themes",
         "Usage statistics and service history",
         "Advanced search and smart filters",
+        "High-contrast mode for accessibility",
+        "One-tap service sharing via WhatsApp or text",
+        "Multi-campus support for larger churches",
+        "Musician scheduling and rosters",
+        "Song collections for organizing repertoire",
+        "Automatic song metadata lookup",
+        "Optional two-factor authentication",
+        "Full data export and backup",
+        "Bluetooth pedal support for hands-free page turns",
+        "Visual sheet music editor",
       ],
     },
     faq: {
@@ -555,6 +565,5 @@ export const en: typeof import("./pt").pt = {
       "Hosanna is three months old and built by two people who use it every Sunday. Come be part of the story.",
     ctaStart: "Get Started",
     ctaContact: "Talk with us",
-},
-
+  },
 };
