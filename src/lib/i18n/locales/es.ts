@@ -113,6 +113,12 @@ export const es: typeof import("./pt").pt = {
         "Funciona sin conexión — sincroniza automáticamente",
       ],
     },
+    gallery: {
+      eyebrow: "Míralo en acción",
+      title: "Una mirada más de cerca a Hosanna",
+      description:
+        "Echa un vistazo a la herramienta que tu equipo de alabanza realmente usará — desde la biblioteca de canciones hasta el escenario.",
+    },
     organize: {
       eyebrow: "Organiza tu música",
       title: "Una biblioteca que al fin se siente tuya.",
@@ -559,4 +565,5 @@ export const es: typeof import("./pt").pt = {
     ctaStart: "Empezar Ahora",
     ctaContact: "Habla con nosotros",
 },
+
 };

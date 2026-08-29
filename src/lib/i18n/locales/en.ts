@@ -111,6 +111,12 @@ export const en: typeof import("./pt").pt = {
         "Works offline — syncs automatically",
       ],
     },
+    gallery: {
+  eyebrow: "See it in action",
+  title: "A closer look at Hosanna",
+  description:
+    "Peek inside the tool your worship team will actually use — from the song library to the stage.",
+},
     organize: {
       eyebrow: "Organize your music",
       title: "A library that finally feels like yours.",
@@ -550,4 +556,5 @@ export const en: typeof import("./pt").pt = {
     ctaStart: "Get Started",
     ctaContact: "Talk with us",
 },
+
 };

@@ -113,6 +113,12 @@ export const pt = {
         "Funciona sem ligação — sincroniza automaticamente",
       ],
     },
+    gallery: {
+      eyebrow: "Veja em ação",
+      title: "Um olhar mais próximo sobre o Hosanna",
+      description:
+        "Espreite por dentro da ferramenta que a sua equipa de louvor vai realmente usar — da biblioteca de músicas até ao palco.",
+    },
     organize: {
       eyebrow: "Organiza a tua música",
       title: "Uma biblioteca que finalmente parece tua.",
