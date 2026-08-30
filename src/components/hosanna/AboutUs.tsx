@@ -119,7 +119,7 @@ export function AboutUs() {
 
           <div className="reveal mt-8 flex justify-center">
             <a
-              href="https://ibav.pt"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-secondary"

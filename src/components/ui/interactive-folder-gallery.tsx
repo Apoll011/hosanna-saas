@@ -10,12 +10,14 @@ export interface GalleryPhoto {
 
 export interface InteractiveFolderGalleryProps {
   photos: GalleryPhoto[];
+  openHintText?: string;
   dragHintText?: string;
   className?: string;
 }
 
 export function InteractiveFolderGallery({
   photos,
+  openHintText = "Double click to open",
   dragHintText = "Drag any screenshot down to close",
   className,
 }: InteractiveFolderGalleryProps) {
@@ -102,7 +104,7 @@ export function InteractiveFolderGallery({
             }}
             onMouseEnter={() => setHoverFolder(true)}
             onMouseLeave={() => setHoverFolder(false)}
-            onClick={() => setIsFolderOpen(true)}
+            onDoubleClick={() => setIsFolderOpen(true)}
           >
             <div className="w-full h-full bg-primary rounded-2xl border border-white/20 shadow-[inset_0_2px_10px_rgba(255,255,255,0.15)] relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
@@ -110,6 +112,30 @@ export function InteractiveFolderGallery({
           </motion.div>
         </div>
 
+
+
+
+        {/* Open hint — visible only while the folder is closed */}
+{!isFolderOpen && (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+  >
+    {openHintText}
+  </motion.div>
+)}
+
+{/* Drag hint — visible only once the folder is open */}
+{isFolderOpen && (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+  >
+    {dragHintText}
+  </motion.div>
+)}
         {/* Drag hint — visible only once the folder is open */}
         {isFolderOpen && (
           <motion.div

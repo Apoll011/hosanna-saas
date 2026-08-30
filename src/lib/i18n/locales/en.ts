@@ -116,6 +116,8 @@ export const en: typeof import("./pt").pt = {
   title: "A closer look at Hosanna",
   description:
     "Peek inside the tool your worship team will actually use — from the song library to the stage.",
+  openHint: "Double-click to open",
+  dragHint: "Drag any screenshot down to close",
 },
     organize: {
       eyebrow: "Organize your music",
@@ -530,12 +532,12 @@ export const en: typeof import("./pt").pt = {
     storyEyebrow: "Where it started",
     storyTitle: "It started with one church, not a business plan.",
     storyP1:
-      "Tiago and Éber are cousins. They grew up together in Cabo Verde before moving to Portugal, where they joined Igreja Baptista Arruda dos Vinhos — and found themselves serving on the same worship team.",
+      "Tiago and Éber are cousins. They grew up together in Cabo Verde before moving to Portugal, where they joined Igreja Baptista xxxxxx xxx xxxxxx — and found themselves serving on the same worship team.",
     storyP2:
       "Music runs in the family on both sides. Tiago's father is a church pianist, and Tiago followed him onto the keys. Éber's father plays guitar too — he's the one who first put an instrument in Éber's hands.",
     storyP3:
       "When they saw their own church struggling with scattered chord sheets, outdated versions, and messy group chats before every rehearsal, they didn't wait for someone else to fix it. Three months ago, still full-time students, they started building Hosanna in the evenings — for their church first, and for every church like it.",
-    churchLinkLabel: "Igreja Baptista Arruda dos Vinhos",
+    churchLinkLabel: "Igreja Baptista xxxxxx xxx xxxxxx",
     founderIntroEyebrow: "Meet the founders",
     founderIntroTitle: "Still students. Still building.",
     tiagoName: "Tiago Inês",

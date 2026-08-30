@@ -118,6 +118,8 @@ export const pt = {
       title: "Um olhar mais próximo sobre o Hosanna",
       description:
         "Espreite por dentro da ferramenta que a sua equipa de louvor vai realmente usar — da biblioteca de músicas até ao palco.",
+      openHint: "Clique duas vezes para abrir",
+      dragHint: "Arraste qualquer captura para baixo para fechar",
     },
     organize: {
       eyebrow: "Organiza a tua música",
@@ -538,12 +540,12 @@ export const pt = {
     storyEyebrow: "Onde tudo começou",
     storyTitle: "Começou numa igreja, não num plano de negócios.",
     storyP1:
-      "Tiago e Éber são primos. Cresceram juntos em Cabo Verde antes de se mudarem para Portugal, onde se juntaram à Igreja Baptista Arruda dos Vinhos — e acabaram por servir na mesma equipa de louvor.",
+      "Tiago e Éber são primos. Cresceram juntos em Cabo Verde antes de se mudarem para Portugal, onde se juntaram à Igreja Baptista xxxxxx xxx xxxxxx — e acabaram por servir na mesma equipa de louvor.",
     storyP2:
       "A música corre em família dos dois lados. O pai do Tiago é pianista na igreja, e o Tiago seguiu-lhe os passos ao teclado. O pai do Éber também toca guitarra — foi ele quem colocou um instrumento nas mãos do Éber pela primeira vez.",
     storyP3:
       "Quando viram a própria igreja a lutar com cifras espalhadas, versões desatualizadas e conversas de grupo confusas antes de cada ensaio, não esperaram que outra pessoa resolvesse o problema. Há três meses, ainda estudantes a tempo inteiro, começaram a construir o Hosanna ao fim das aulas — primeiro para a sua igreja, depois para todas as igrejas como a sua.",
-    churchLinkLabel: "Igreja Baptista Arruda dos Vinhos",
+    churchLinkLabel: "Igreja Baptista xxxxxx xxx xxxxx",
     founderIntroEyebrow: "Conheça os fundadores",
     founderIntroTitle: "Ainda estudantes. Ainda a construir.",
     tiagoName: "Tiago Inês",

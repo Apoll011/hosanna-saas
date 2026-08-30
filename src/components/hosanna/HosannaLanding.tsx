@@ -494,7 +494,9 @@ function AppGallery() {
 
         {/* Desktop: interactive folder */}
         <div className="reveal mt-4 hidden overflow-hidden rounded-3xl border border-border bg-card md:block">
-          <InteractiveFolderGallery photos={galleryPhotos} />
+          <InteractiveFolderGallery photos={galleryPhotos}
+          openHintText={t("landing.gallery.openHint")}
+          dragHintText={t("landing.gallery.dragHint")} />
         </div>
 
         {/* Mobile: one-at-a-time carousel */}
