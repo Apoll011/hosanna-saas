@@ -15,7 +15,7 @@ export const pt = {
       minutes: "minutos",
       hours: "horas",
       days: "dias",
-    }
+    },
   },
   errors: {
     notFoundTitle: "404",
@@ -269,13 +269,23 @@ export const pt = {
       description:
         "O Hosanna continua a crescer com as igrejas que o usam. Estas são algumas das melhorias que já estão a caminho.",
       items: [
-        "Modelos de cultos reutilizáveis e duplicação de serviços",
+        "Modelos de culto reutilizáveis e duplicação de cultos",
         "Importação inteligente com deteção automática de duplicados",
-        "Sincronização offline mais rápida e resolução de conflitos",
+        "Sincronização offline mais rápida e resolução de conflitos sem esforço",
         "Sincronização em segundo plano na aplicação móvel",
-        "Personalização da identidade visual de cada igreja",
+        "Personalização visual e temas da igreja",
         "Estatísticas de utilização e histórico de cultos",
         "Pesquisa avançada e filtros inteligentes",
+        "Modo de alto contraste para acessibilidade",
+        "Partilha do culto num toque via WhatsApp ou SMS",
+        "Suporte multi-campus para igrejas maiores",
+        "Escalas e agendamento de músicos",
+        "Coleções de músicas para organizar o repertório",
+        "Preenchimento automático de metadados das músicas",
+        "Autenticação de dois fatores opcional",
+        "Exportação e cópia de segurança completas dos dados",
+        "Suporte a pedal Bluetooth para virar páginas sem usar as mãos",
+        "Editor visual de partituras",
       ],
     },
     faq: {
@@ -566,5 +576,5 @@ export const pt = {
       "O Hosanna tem três meses e é construído por duas pessoas que o usam todos os domingos. Venha fazer parte da história.",
     ctaStart: "Começar Agora",
     ctaContact: "Fale connosco",
-},
+  },
 };

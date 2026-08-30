@@ -10,13 +10,13 @@ export const es: typeof import("./pt").pt = {
     activeDevelopment: "Desarrollo Activo",
     activeDevDesc:
       "Como estamos en fase inicial, tus comentarios son nuestra brújula. Si echas en falta alguna función o encuentras algo que mejorar, compártelo con nosotros.",
-  time: {
+    time: {
       seconds: "segundos",
       minutes: "minutos",
       hours: "horas",
       days: "días",
-    }
     },
+  },
   errors: {
     notFoundTitle: "404",
     notFoundHeading: "Página no Encontrada",
@@ -270,13 +270,23 @@ export const es: typeof import("./pt").pt = {
       description:
         "Hosanna sigue creciendo junto a las iglesias que confían en él. Estas son algunas de las mejoras que ya están en camino.",
       items: [
-        "Plantillas de cultos reutilizables y duplicación de servicios",
+        "Plantillas de servicio reutilizables y duplicación de servicios",
         "Importación inteligente con detección automática de duplicados",
-        "Sincronización offline más rápida y resolución de conflictos",
-        "Sincronización en segundo plano en la app móvil",
-        "Personalización de la identidad visual de cada iglesia",
-        "Estadísticas de uso e historial de cultos",
+        "Sincronización offline más rápida y resolución de conflictos sin esfuerzo",
+        "Sincronización en segundo plano en la aplicación móvil",
+        "Personalización visual y temas de la iglesia",
+        "Estadísticas de uso e historial de servicios",
         "Búsqueda avanzada y filtros inteligentes",
+        "Modo de alto contraste para accesibilidad",
+        "Compartir el servicio con un toque vía WhatsApp o SMS",
+        "Soporte multi-sede para iglesias más grandes",
+        "Turnos y programación de músicos",
+        "Colecciones de canciones para organizar el repertorio",
+        "Autocompletado de metadatos de canciones",
+        "Autenticación de dos factores opcional",
+        "Exportación y copia de seguridad completas de datos",
+        "Soporte para pedal Bluetooth para pasar páginas sin usar las manos",
+        "Editor visual de partituras",
       ],
     },
     faq: {
@@ -566,6 +576,5 @@ export const es: typeof import("./pt").pt = {
       "Hosanna tiene tres meses y está construido por dos personas que lo usan cada domingo. Ven a formar parte de la historia.",
     ctaStart: "Empezar Ahora",
     ctaContact: "Habla con nosotros",
-},
-
+  },
 };
