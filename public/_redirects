@@ -1,2 +1,0 @@
-# SPA fallback: any unknown path serves the app shell (Cloudflare Pages / Netlify).
-/* /index.html 200
