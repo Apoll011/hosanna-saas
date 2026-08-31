@@ -13,7 +13,8 @@
     <meta name="theme-color" content="#0f172a" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href="https://hosanna.studio" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://hosanna.live" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Hosanna Studio" />
@@ -23,8 +24,11 @@
       content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://hosanna.studio/og-image.jpg" />
-    <meta property="og:url" content="https://hosanna.studio" />
+    <meta property="og:image" content="https://hosanna.live/og-image.jpg" />
+    <meta property="og:url" content="https://hosanna.live" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +37,7 @@
       name="twitter:description"
       content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
     />
-    <meta name="twitter:image" content="https://hosanna.studio/og-image.jpg" />
+    <meta name="twitter:image" content="https://hosanna.live/og-image.jpg" />
     <meta name="twitter:site" content="@hosannastudio" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,10 +52,32 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Hosanna Studio",
-        "url": "https://hosanna.studio",
-        "description": "Plataforma de planeamento de louvor para igrejas: biblioteca musical, preparação de cultos e acesso imediato às canções para cada músico."
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://hosanna.live/#website",
+            "url": "https://hosanna.live",
+            "name": "Hosanna Studio",
+            "description": "Plataforma de planeamento de louvor para igrejas: biblioteca musical, preparação de cultos e acesso imediato às canções para cada músico.",
+            "inLanguage": "pt-PT",
+            "publisher": { "@id": "https://hosanna.live/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://hosanna.live/#organization",
+            "name": "Hosanna Studio",
+            "url": "https://hosanna.live",
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://hosanna.live/#logo",
+              "url": "https://hosanna.live/apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            },
+            "email": "hosanna.songbook@gmail.com",
+            "sameAs": ["https://blog.hosanna.live", "https://github.com/Apoll011/Hosanna"]
+          }
+        ]
       }
     </script>
 

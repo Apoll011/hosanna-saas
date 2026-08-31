@@ -7,8 +7,8 @@
  * `applyRouteMeta` keeps them in sync on client-side navigation.
  */
 
-export const SITE_URL = "https://hosanna.studio";
-export const OG_IMAGE = "https://hosanna.studio/og-image.jpg";
+export const SITE_URL = "https://hosanna.live";
+export const OG_IMAGE = "https://hosanna.live/og-image.jpg";
 
 export interface RouteMeta {
   title: string;
