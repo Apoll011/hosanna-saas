@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hosanna - Planeia o teu louvor. Organiza a tua música.</title>
+    <meta
+      name="description"
+      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+    />
+    <meta name="author" content="Hosanna Studio" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://hosanna.studio" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Hosanna Studio" />
+    <meta property="og:title" content="Hosanna - Planeia o teu louvor. Organiza a tua música." />
+    <meta
+      property="og:description"
+      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://hosanna.studio/og-image.png" />
+    <meta property="og:url" content="https://hosanna.studio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hosanna - Planeia o teu louvor. Organiza a tua música." />
+    <meta
+      name="twitter:description"
+      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+    />
+    <meta name="twitter:image" content="https://hosanna.studio/og-image.png" />
+    <meta name="twitter:site" content="@hosannastudio" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <meta name="google-site-verification" content="aQkTNsrEhDcXm1wc0mMHp5bBaADpJoQjoQISyLK80qA" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hosanna Studio",
+        "url": "https://hosanna.studio",
+        "description": "Plataforma de planeamento de louvor para igrejas: biblioteca musical, preparação de cultos e acesso imediato às canções para cada músico."
+      }
+    </script>
+
+    <style>
+      /* Minimal boot splash so the first paint is never a blank white page.
+         React replaces #root (and this splash) as soon as it mounts. */
+      html,
+      body {
+        margin: 0;
+        background: #0f172a;
+      }
+      #boot-splash {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(60% 50% at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 60%), #0f172a;
+      }
+      #boot-splash .mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #0284c7, #0ea5e9);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        animation: hosanna-pulse 1.4s ease-in-out infinite;
+      }
+      @keyframes hosanna-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.85;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 1;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-splash .mark {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Restore the visitor's preferred language before first paint so the
+      // document never flashes the wrong language.
+      try {
+        var lang = localStorage.getItem("hosanna_lang");
+        if (!lang) {
+          var userLangs = navigator.languages || [navigator.language];
+          for (var i = 0; i < userLangs.length; i++) {
+            var c = (userLangs[i] || "").toLowerCase().split("-")[0];
+            if (c === "pt" || c === "es" || c === "en") {
+              lang = c;
+              break;
+            }
+          }
+        }
+        if (lang) {
+          document.documentElement.lang = lang;
+        }
+      } catch (e) {}
+    </script>
+
+    <div id="root">
+      <div id="boot-splash">
+        <div class="mark">H</div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "24b72d21355d4ff5839ecefa8e094911"}'
+    ></script>
+  </body>
+</html>

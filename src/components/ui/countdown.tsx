@@ -7,7 +7,7 @@ const TARGET_DATE = "2026-08-31T23:59:59";
 export function Countdown({ className = "" }: { className?: string }) {
   const getRemaining = () => Math.max(0, new Date(TARGET_DATE).getTime() - Date.now());
   const [remaining, setRemaining] = useState(getRemaining);
-  const {t} = useI18n();
+  const { t } = useI18n();
 
   useEffect(() => {
     const interval = window.setInterval(() => setRemaining(getRemaining()), 1000);
@@ -33,7 +33,10 @@ export function Countdown({ className = "" }: { className?: string }) {
       className={`-mt-28 origin-top scale-[0.714] ${className}`}
       style={{ transform: "scale(0.7143)" }}
     >
-      <div className="flex items-start justify-center gap-1.5 text-center sm:gap-3" aria-label="Countdown timer">
+      <div
+        className="flex items-start justify-center gap-1.5 text-center sm:gap-3"
+        aria-label="Countdown timer"
+      >
         {values.map((value, index) => (
           <div key={labels[index]} className="flex items-start gap-1.5 sm:gap-3">
             <div className="flex w-[4.2rem] flex-col items-center sm:w-20 md:w-24">
@@ -45,7 +48,9 @@ export function Countdown({ className = "" }: { className?: string }) {
               </span>
             </div>
             {index < values.length - 1 && (
-              <span className="pt-3 font-mono text-xl font-bold text-white/70 sm:pt-4 sm:text-2xl md:pt-5 md:text-3xl">:</span>
+              <span className="pt-3 font-mono text-xl font-bold text-white/70 sm:pt-4 sm:text-2xl md:pt-5 md:text-3xl">
+                :
+              </span>
             )}
           </div>
         ))}

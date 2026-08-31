@@ -550,9 +550,7 @@ export function ChordProGuide() {
                       <span className="text-blue-400">{"}"}</span>
                     </div>
                     <br />
-                    <div className="text-slate-500 italic mb-2">
-                      # 2. Sections
-                    </div>
+                    <div className="text-slate-500 italic mb-2"># 2. Sections</div>
                     <div>
                       <span className="text-blue-400">{"{"}start_of_verse:</span> Verse 1
                       <span className="text-blue-400">{"}"}</span>
@@ -562,7 +560,8 @@ export function ChordProGuide() {
                       awesome <span className="text-amber-400 font-bold">[D]</span>wonder
                     </div>
                     <div>
-                      Consider <span className="text-amber-400 font-bold">[A]</span>all the worlds Thy
+                      Consider <span className="text-amber-400 font-bold">[A]</span>all the worlds
+                      Thy
                       <span className="text-amber-400 font-bold">[E]</span>hands have
                       <span className="text-amber-400 font-bold">[A]</span>made
                     </div>
@@ -604,9 +603,21 @@ export function ChordProGuide() {
                 />
                 <div className="grid sm:grid-cols-3 gap-4 mt-8 reveal">
                   {[
-                    { tag: "verse", label: dict.chordproGuide.sections.verse.label, desc: dict.chordproGuide.sections.verse.desc },
-                    { tag: "chorus", label: dict.chordproGuide.sections.chorus.label, desc: dict.chordproGuide.sections.chorus.desc },
-                    { tag: "bridge", label: dict.chordproGuide.sections.bridge.label, desc: dict.chordproGuide.sections.bridge.desc },
+                    {
+                      tag: "verse",
+                      label: dict.chordproGuide.sections.verse.label,
+                      desc: dict.chordproGuide.sections.verse.desc,
+                    },
+                    {
+                      tag: "chorus",
+                      label: dict.chordproGuide.sections.chorus.label,
+                      desc: dict.chordproGuide.sections.chorus.desc,
+                    },
+                    {
+                      tag: "bridge",
+                      label: dict.chordproGuide.sections.bridge.label,
+                      desc: dict.chordproGuide.sections.bridge.desc,
+                    },
                   ].map((item, idx) => (
                     <div key={idx} className="p-6 border border-border rounded-2xl shadow-sm">
                       <div className="font-bold text-primary text-lg mb-1">{item.label}</div>
@@ -667,9 +678,7 @@ export function ChordProGuide() {
 
                 <div className="mt-8">
                   <CodeWindow filename="instrumental.chordpro">
-                    <div className="text-slate-500 italic mb-2">
-                      # Intro
-                    </div>
+                    <div className="text-slate-500 italic mb-2"># Intro</div>
                     <div>
                       <span className="text-blue-400">
                         {"{start_of_grid:"} Intro{"}"}
@@ -688,9 +697,7 @@ export function ChordProGuide() {
 
                     <br />
 
-                    <div className="text-slate-500 italic mb-2">
-                      # Custom durations
-                    </div>
+                    <div className="text-slate-500 italic mb-2"># Custom durations</div>
                     <div>
                       <span className="text-amber-400 font-bold">||</span> [Em
                       <span className="text-emerald-400 font-bold">@2x</span>]

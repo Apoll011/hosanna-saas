@@ -7,7 +7,8 @@ export function LanguageSelector({ className = "" }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLang = SUPPORTED_LANGUAGES.find((l) => l.code === language) || SUPPORTED_LANGUAGES[0];
+  const currentLang =
+    SUPPORTED_LANGUAGES.find((l) => l.code === language) || SUPPORTED_LANGUAGES[0];
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {

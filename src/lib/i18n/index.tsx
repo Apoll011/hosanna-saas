@@ -116,7 +116,8 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
     if (params) {
       return Object.entries(params).reduce(
-        (acc, [paramKey, paramVal]) => acc.replace(new RegExp(`{${paramKey}}`, "g"), String(paramVal)),
+        (acc, [paramKey, paramVal]) =>
+          acc.replace(new RegExp(`{${paramKey}}`, "g"), String(paramVal)),
         val,
       );
     }

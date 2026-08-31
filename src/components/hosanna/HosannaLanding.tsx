@@ -9,13 +9,8 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Countdown } from "@/components/ui/countdown";
-import {
-  InteractiveFolderGallery,
-  MobileFolderGallery,
-  type GalleryPhoto,
-} from "@/components/ui/interactive-folder-gallery";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
-import LightRays from "@/components/ui/Scanner";
+import { LazySection } from "@/components/ui/LazySection";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -40,10 +35,16 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
 import { PlayStoreButton } from "../ui/StoreButton";
+
+// The WebGL ray shader (ogl) and the interactive folder gallery (framer-motion)
+// are the two heaviest landing widgets. Both are split into their own chunks:
+// the scanner loads as soon as the hero renders, the gallery only when it
+// approaches the viewport.
+const LightRays = lazy(() => import("@/components/ui/Scanner"));
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -226,21 +227,23 @@ function Hero() {
       className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-30 pt-30"
     >
       <div className="absolute inset-0 pointer-events-none z-0">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ffffff"
-          raysSpeed={1}
-          lightSpread={1.5}
-          rayLength={4.5}
-          followMouse={true}
-          mouseInfluence={0.5}
-          noiseAmount={0}
-          distortion={0}
-          className="custom-rays"
-          pulsating={false}
-          fadeDistance={1}
-          saturation={1}
-        />
+        <Suspense fallback={null}>
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#ffffff"
+            raysSpeed={1}
+            lightSpread={1.5}
+            rayLength={4.5}
+            followMouse={true}
+            mouseInfluence={0.5}
+            noiseAmount={0}
+            distortion={0}
+            className="custom-rays"
+            pulsating={false}
+            fadeDistance={1}
+            saturation={1}
+          />
+        </Suspense>
       </div>
       <div className="absolute inset-0 text-gold/40 z-0">
         <StaffLines className="top-24" />
@@ -291,6 +294,7 @@ function Hero() {
               alt={t("landing.hero.dashboardAlt")}
               width={1600}
               height={1104}
+              decoding="async"
               className="w-full rounded-2xl"
             />
           </div>
@@ -466,50 +470,15 @@ function Organize() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  App Gallery                                                       */
+/*  App Gallery (lazy — pulls in framer-motion)                       */
 /* ------------------------------------------------------------------ */
-function placeholderShot(label: string) {
-  const safeLabel = label.replace(/&/g, "&amp;");
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800">
-    <rect width="100%" height="100%" fill="#1e293b"/>
-    <text x="50%" y="50%" fill="#94a3b8" font-family="sans-serif" font-size="28"
-      text-anchor="middle" dominant-baseline="middle">${safeLabel}</text>
-  </svg>`;
-  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
-}
-
-const galleryPhotos: GalleryPhoto[] = [
-  { id: 1, image: placeholderShot("Song Library"), caption: "Song Library" },
-  { id: 2, image: placeholderShot("Service Planner"), caption: "Service Planner" },
-  { id: 3, image: placeholderShot("Live Chord View"), caption: "Live Chord View" },
-  { id: 4, image: placeholderShot("Transpose & Chords"), caption: "Transpose & Chord Toggle" },
-];
-
 function AppGallery() {
-  const { t } = useI18n();
-
   return (
-    <section className="bg-secondary py-16 md:py-16">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader eyebrow={t("landing.gallery.eyebrow")} title={t("landing.gallery.title")}>
-          {t("landing.gallery.description")}
-        </SectionHeader>
-
-        {/* Desktop: interactive folder */}
-        <div className="reveal mt-4 hidden overflow-hidden rounded-3xl border border-border bg-card md:block">
-          <InteractiveFolderGallery
-            photos={galleryPhotos}
-            openHintText={t("landing.gallery.openHint")}
-            dragHintText={t("landing.gallery.dragHint")}
-          />
-        </div>
-
-        {/* Mobile: one-at-a-time carousel */}
-        <div className="reveal mt-8 max-w-sm mx-auto md:hidden">
-          <MobileFolderGallery photos={galleryPhotos} />
-        </div>
-      </div>
-    </section>
+    <LazySection
+      load={() => import("./AppGallery")}
+      fallback={<section className="bg-secondary py-16 md:py-16" aria-hidden />}
+      rootMargin="500px"
+    />
   );
 }
 
@@ -846,6 +815,8 @@ function MobileApp() {
             <img
               src={mobileImg}
               alt="Hosanna Mobile App"
+              loading="lazy"
+              decoding="async"
               className="relative z-10 w-full max-w-150 mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
             />
           </div>

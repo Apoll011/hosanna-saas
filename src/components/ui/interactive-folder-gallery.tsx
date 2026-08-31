@@ -64,11 +64,19 @@ export function InteractiveFolderGallery({
                     }
                   }}
                   className={`absolute bottom-0 w-56 h-72 rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden border border-white/20 origin-bottom ${
-                    isFolderOpen ? "cursor-grab active:cursor-grabbing pointer-events-auto" : "pointer-events-none"
+                    isFolderOpen
+                      ? "cursor-grab active:cursor-grabbing pointer-events-auto"
+                      : "pointer-events-none"
                   }`}
                   animate={
                     !isFolderOpen
-                      ? { y: stackY, x: stackX, rotate: stackRotate, scale: stackScale, zIndex: i + 10 }
+                      ? {
+                          y: stackY,
+                          x: stackX,
+                          rotate: stackRotate,
+                          scale: stackScale,
+                          zIndex: i + 10,
+                        }
                       : { y: openY, x: openX, rotate: openRotate, scale: openScale, zIndex: 50 }
                   }
                   whileHover={isFolderOpen ? { scale: openScale + 0.05, zIndex: 100 } : {}}
@@ -112,30 +120,27 @@ export function InteractiveFolderGallery({
           </motion.div>
         </div>
 
-
-
-
         {/* Open hint — visible only while the folder is closed */}
-{!isFolderOpen && (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
-  >
-    {openHintText}
-  </motion.div>
-)}
+        {!isFolderOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+          >
+            {openHintText}
+          </motion.div>
+        )}
 
-{/* Drag hint — visible only once the folder is open */}
-{isFolderOpen && (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
-  >
-    {dragHintText}
-  </motion.div>
-)}
+        {/* Drag hint — visible only once the folder is open */}
+        {isFolderOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+          >
+            {dragHintText}
+          </motion.div>
+        )}
         {/* Drag hint — visible only once the folder is open */}
         {isFolderOpen && (
           <motion.div
@@ -151,7 +156,6 @@ export function InteractiveFolderGallery({
   );
 }
 
-
 export function MobileFolderGallery({ photos }: { photos: GalleryPhoto[] }) {
   const [index, setIndex] = useState(0);
 
@@ -160,8 +164,8 @@ export function MobileFolderGallery({ photos }: { photos: GalleryPhoto[] }) {
   };
 
   const goNext = () => {
-  setIndex((current) => (current + 1) % photos.length);
-};
+    setIndex((current) => (current + 1) % photos.length);
+  };
 
   const photo = photos[index];
 

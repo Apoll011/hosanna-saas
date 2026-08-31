@@ -8,7 +8,6 @@ import { StaffLines } from "./HosannaLanding";
 import tiagoPhoto from "@/assets/tiago_headshot.png";
 import eberPhoto from "@/assets/eber_headshot.png";
 
-
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal hook (mirrors ContactForm's local copy)             */
 /* ------------------------------------------------------------------ */
@@ -51,11 +50,7 @@ function FounderCard({
 }) {
   return (
     <div className="reveal rounded-3xl border border-border bg-card p-8 md:p-10">
-      <img
-        src={photo}
-        alt={name}
-        className="h-20 w-20 rounded-full object-cover"
-      />
+      <img src={photo} alt={name} className="h-20 w-20 rounded-full object-cover" />
       <h3 className="mt-6 font-display text-2xl text-foreground">{name}</h3>
       <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-gold">{role}</div>
       <p className="mt-4 text-base leading-relaxed text-muted-foreground">{bio}</p>

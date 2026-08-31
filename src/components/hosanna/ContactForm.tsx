@@ -48,7 +48,8 @@ export function ContactForm() {
             <LanguageSelector />
           </div>
           <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
-            {t("contact.heroTitle")} <span className="text-blue-300">{t("contact.heroTitleHighlight")}</span>
+            {t("contact.heroTitle")}{" "}
+            <span className="text-blue-300">{t("contact.heroTitleHighlight")}</span>
           </h1>
           <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-2xl mx-auto">
             {t("contact.heroSubtitle")}
@@ -76,11 +77,15 @@ export function ContactForm() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-1 text-primary">{t("contact.emailTitle")}</h3>
+                    <h3 className="font-bold text-xl mb-1 text-primary">
+                      {t("contact.emailTitle")}
+                    </h3>
                     <p className="text-muted-foreground text-lg break-all">
                       hosanna.songbook@gmail.com
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">{t("contact.emailResponseTime")}</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {t("contact.emailResponseTime")}
+                    </p>
                   </div>
                 </div>
 
@@ -89,7 +94,9 @@ export function ContactForm() {
                     <MessageSquare className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-1 text-primary">{t("contact.socialTitle")}</h3>
+                    <h3 className="font-bold text-xl mb-1 text-primary">
+                      {t("contact.socialTitle")}
+                    </h3>
                     <p className="text-muted-foreground text-lg">@hosanna.studio</p>
                     <div className="flex gap-6 mt-3 text-base font-semibold text-primary">
                       <span className="cursor-pointer hover:underline">Instagram</span>
@@ -103,9 +110,7 @@ export function ContactForm() {
                 <h4 className="font-display font-bold text-xl mb-4 text-primary">
                   {t("common.activeDevelopment")}
                 </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("common.activeDevDesc")}
-                </p>
+                <p className="text-muted-foreground leading-relaxed">{t("common.activeDevDesc")}</p>
               </div>
             </div>
             {/* Right Side: Form */}

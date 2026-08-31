@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import ReactMarkdown from "react-markdown";
 
 import legalContentEn from "@/content/legal.en.md?raw";
@@ -7,7 +6,6 @@ import legalContentPt from "@/content/legal.pt.md?raw";
 
 import { Footer, Nav, StaffLines } from "@/components/hosanna/HosannaLanding";
 import { useI18n, type Language } from "@/lib/i18n";
-import { getSEOMeta } from "@/lib/seo";
 
 const legalDocuments: Record<Language, string> = {
   pt: legalContentPt,
@@ -15,47 +13,24 @@ const legalDocuments: Record<Language, string> = {
   es: legalContentEs,
 };
 
-const legalMeta: Record<
-  Language,
-  { title: string; description: string; heading: string; subtitle: string }
-> = {
+const legalMeta: Record<Language, { heading: string; subtitle: string }> = {
   pt: {
-    title: "Documentos Legais | Hosanna Studio",
-    description:
-      "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
     heading: "Documentos Legais",
     subtitle:
       "Termos de serviço, política de privacidade e os nossos compromissos contigo e com a tua igreja.",
   },
   en: {
-    title: "Legal Documents | Hosanna Studio",
-    description: "Terms of Service, Privacy Policy, and other legal documents for Hosanna.",
     heading: "Legal Documents",
     subtitle: "Terms of service, privacy policy, and our commitments to you and your church.",
   },
   es: {
-    title: "Documentos Legales | Hosanna Studio",
-    description:
-      "Términos de Servicio, Política de Privacidad y otros documentos legales de Hosanna.",
     heading: "Documentos Legales",
     subtitle:
       "Términos de servicio, política de privacidad y nuestros compromisos contigo y con tu iglesia.",
   },
 };
 
-export const Route = createFileRoute("/legal")({
-  head: () => ({
-    meta: getSEOMeta({
-      title: "Documentos Legais | Hosanna Studio",
-      description:
-        "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
-      url: "https://hosanna.studio/legal",
-    }),
-  }),
-  component: LegalPage,
-});
-
-function LegalPage() {
+export function Component() {
   const { language } = useI18n();
   const currentLang = (language in legalDocuments ? language : "pt") as Language;
   const content = legalDocuments[currentLang] || legalDocuments.pt;

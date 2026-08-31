@@ -1,1 +1,1 @@
-declare module 'ogl';
+declare module "ogl";
