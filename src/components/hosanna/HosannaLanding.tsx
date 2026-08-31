@@ -1,5 +1,5 @@
-import dashboardImg from "@/assets/main_mockup.png";
 import logo from "@/assets/hosanna_logo.png";
+import dashboardImg from "@/assets/main_mockup.png";
 import mobileImg from "@/assets/mobile-view.png";
 import {
   Accordion,
@@ -9,6 +9,11 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Countdown } from "@/components/ui/countdown";
+import {
+  InteractiveFolderGallery,
+  MobileFolderGallery,
+  type GalleryPhoto,
+} from "@/components/ui/interactive-folder-gallery";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import LightRays from "@/components/ui/Scanner";
 import { useReveal } from "@/hooks/useReveal";
@@ -39,7 +44,6 @@ import { useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
 import { PlayStoreButton } from "../ui/StoreButton";
-import { InteractiveFolderGallery, MobileFolderGallery, type GalleryPhoto } from "@/components/ui/interactive-folder-gallery";
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -289,7 +293,6 @@ function Hero() {
               height={1104}
               className="w-full rounded-2xl"
             />
-            
           </div>
         </div>
       </div>
@@ -409,7 +412,7 @@ function TwoApps() {
                 loading="lazy"
                 width={800}
                 height={1408}
-                className="w-[600px] rounded-2xl"
+                className="w-150 rounded-2xl"
               />
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -494,9 +497,11 @@ function AppGallery() {
 
         {/* Desktop: interactive folder */}
         <div className="reveal mt-4 hidden overflow-hidden rounded-3xl border border-border bg-card md:block">
-          <InteractiveFolderGallery photos={galleryPhotos}
-          openHintText={t("landing.gallery.openHint")}
-          dragHintText={t("landing.gallery.dragHint")} />
+          <InteractiveFolderGallery
+            photos={galleryPhotos}
+            openHintText={t("landing.gallery.openHint")}
+            dragHintText={t("landing.gallery.dragHint")}
+          />
         </div>
 
         {/* Mobile: one-at-a-time carousel */}
@@ -595,7 +600,7 @@ function LiveWorship() {
             loading="lazy"
             width={800}
             height={1408}
-            className="relative mx-auto w-[220px] rounded-3xl md:w-[800px]"
+            className="relative mx-auto w-55 rounded-3xl md:w-200"
           />
         </div>
       </div>
@@ -841,7 +846,7 @@ function MobileApp() {
             <img
               src={mobileImg}
               alt="Hosanna Mobile App"
-              className="relative z-10 w-full max-w-[600px] mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
+              className="relative z-10 w-full max-w-150 mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
             />
           </div>
         </div>

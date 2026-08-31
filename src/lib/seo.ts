@@ -15,8 +15,8 @@ export function getDefaultSEO(lang: Language = "pt"): SEOConfig {
     title: dict.seo.defaultTitle,
     description: dict.seo.defaultDescription,
     keywords: dict.seo.defaultKeywords,
-    image: "https://hosanna.duckdns.org/og-image.png",
-    url: "https://hosanna.duckdns.org",
+    image: "https://hosanna.live/og-image.png",
+    url: "https://hosanna.live",
     type: "website",
   };
 }
