@@ -2,7 +2,7 @@ import { useI18n } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 
 // Change this date to configure when the countdown ends.
-const TARGET_DATE = "2026-08-31T23:59:59";
+const TARGET_DATE = "2026-09-01T12:00:00";
 
 export function Countdown({ className = "" }: { className?: string }) {
   const getRemaining = () => Math.max(0, new Date(TARGET_DATE).getTime() - Date.now());
