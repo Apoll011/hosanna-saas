@@ -62,31 +62,35 @@ function shellFor(route, template) {
   const url = route.url;
 
   // Vite preserves the source formatting, so these tags can span multiple
-  // lines; `\s+` matches those newlines.
+  // lines; `\s` matches those newlines. Each pattern consumes the full
+  // self-closing tag so the replacement is a clean single-line tag.
   const replacements = [
     [/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`],
     [
-      /<meta\s+name="description"\s+content="[^"]*"/,
-      `<meta name="description" content="${description}"`,
+      /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
+      `<meta name="description" content="${description}" />`,
     ],
     [
-      /<meta\s+property="og:title"\s+content="[^"]*"/,
-      `<meta property="og:title" content="${title}"`,
+      /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
+      `<meta property="og:title" content="${title}" />`,
     ],
     [
-      /<meta\s+property="og:description"\s+content="[^"]*"/,
-      `<meta property="og:description" content="${description}"`,
-    ],
-    [/<meta\s+property="og:url"\s+content="[^"]*"/, `<meta property="og:url" content="${url}"`],
-    [
-      /<meta\s+name="twitter:title"\s+content="[^"]*"/,
-      `<meta name="twitter:title" content="${title}"`,
+      /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
+      `<meta property="og:description" content="${description}" />`,
     ],
     [
-      /<meta\s+name="twitter:description"\s+content="[^"]*"/,
-      `<meta name="twitter:description" content="${description}"`,
+      /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/,
+      `<meta property="og:url" content="${url}" />`,
     ],
-    [/<link\s+rel="canonical"\s+href="[^"]*"/, `<link rel="canonical" href="${url}"`],
+    [
+      /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
+      `<meta name="twitter:title" content="${title}" />`,
+    ],
+    [
+      /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
+      `<meta name="twitter:description" content="${description}" />`,
+    ],
+    [/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${url}" />`],
   ];
 
   let html = template;

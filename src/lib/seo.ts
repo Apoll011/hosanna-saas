@@ -8,7 +8,7 @@
  */
 
 export const SITE_URL = "https://hosanna.studio";
-export const OG_IMAGE = "https://hosanna.studio/og-image.png";
+export const OG_IMAGE = "https://hosanna.studio/og-image.jpg";
 
 export interface RouteMeta {
   title: string;

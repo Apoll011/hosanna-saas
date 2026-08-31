@@ -5,8 +5,8 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Code2, ExternalLink, Palette } from "lucide-react";
 import { useEffect } from "react";
 import { StaffLines } from "./HosannaLanding";
-import tiagoPhoto from "@/assets/tiago_headshot.png";
-import eberPhoto from "@/assets/eber_headshot.png";
+import tiagoPhoto from "@/assets/tiago_headshot.webp";
+import eberPhoto from "@/assets/eber_headshot.webp";
 
 /* ------------------------------------------------------------------ */
 /*  Scroll reveal hook (mirrors ContactForm's local copy)             */

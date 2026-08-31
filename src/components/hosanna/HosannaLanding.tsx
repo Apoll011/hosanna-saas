@@ -1,6 +1,6 @@
-import logo from "@/assets/hosanna_logo.png";
-import dashboardImg from "@/assets/main_mockup.png";
-import mobileImg from "@/assets/mobile-view.png";
+import logo from "@/assets/hosanna_logo.webp";
+import dashboardImg from "@/assets/main_mockup.webp";
+import mobileImg from "@/assets/mobile-view.webp";
 import {
   Accordion,
   AccordionContent,
