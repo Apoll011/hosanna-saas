@@ -33,6 +33,11 @@ export const pt = {
       "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
   },
   landing: {
+    betaPopup: {
+      title: "Estamos em Beta",
+      description: "Já podes experimentar o Hosanna Studio antes do lançamento oficial.",
+      cta: "Visitar o Studio",
+    },
     banner:
       "Estamos na fase de desenvolvimento inicial. A versão Beta será lançada a 1 de setembro. Junte-se a nós nesta jornada!",
     nav: {
@@ -577,4 +582,7 @@ export const pt = {
     ctaStart: "Começar Agora",
     ctaContact: "Fale connosco",
   },
+
+  
+
 };
