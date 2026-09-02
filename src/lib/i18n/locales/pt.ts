@@ -34,7 +34,7 @@ export const pt = {
   },
   landing: {
     betaPopup: {
-      title: "Estamos em Beta",
+      title: "HOSANNA está em Beta",
       description: "Já podes experimentar o Hosanna Studio antes do lançamento oficial.",
       cta: "Visitar o Studio",
     },

@@ -34,7 +34,7 @@ export const en: typeof import("./pt").pt = {
   },
   landing: {
      betaPopup: {
-      title: "We're in Beta",
+      title: "HOSANNA's in Beta",
       description: "Experience Hosanna Studio before the official launch and help shape the future.",
       cta: "Visit Studio",
     },
