@@ -39,7 +39,7 @@ export const pt = {
       cta: "Visitar o Studio",
     },
     banner:
-      "Estamos na fase de desenvolvimento inicial. A versão Beta será lançada a 1 de setembro. Junte-se a nós nesta jornada!",
+      "Já estamos live! A versão Beta foi lançada oficialmente. Junta-te a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",
       chordpro: "ChordPro",

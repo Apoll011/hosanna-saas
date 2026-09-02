@@ -39,7 +39,7 @@ export const en: typeof import("./pt").pt = {
       cta: "Visit Studio",
     },
     banner:
-      "We are in early development. The Beta version will launch on September 1st. Join us on this journey!",
+      "We're live! The Beta version has officially launched. Join us on this journey!",
     nav: {
       features: "Features",
       chordpro: "ChordPro",
