@@ -33,13 +33,13 @@ export const en: typeof import("./pt").pt = {
       "worship planning, chord charts, chordpro, church management, worship team, christian repertoire, church software, worship ministry",
   },
   landing: {
-     betaPopup: {
+    betaPopup: {
       title: "HOSANNA's in Beta",
-      description: "Experience Hosanna Studio before the official launch and help shape the future.",
+      description:
+        "Experience Hosanna Studio before the official launch and help shape the future.",
       cta: "Visit Studio",
     },
-    banner:
-      "We're live! The Beta version has officially launched. Join us on this journey!",
+    banner: "We're live! The Beta version has officially launched. Join us on this journey!",
     nav: {
       features: "Features",
       chordpro: "ChordPro",
@@ -563,5 +563,4 @@ export const en: typeof import("./pt").pt = {
     ctaStart: "Get Started",
     ctaContact: "Talk with us",
   },
-  
 };

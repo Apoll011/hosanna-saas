@@ -1,40 +1,38 @@
 import ReactMarkdown from "react-markdown";
 
-import legalContentEn from "@/content/legal.en.md?raw";
-import legalContentEs from "@/content/legal.es.md?raw";
-import legalContentPt from "@/content/legal.pt.md?raw";
+import tosContentEn from "@/content/tos.en.md?raw";
+import tosContentEs from "@/content/tos.es.md?raw";
+import tosContentPt from "@/content/tos.pt.md?raw";
 
 import { Footer, Nav, StaffLines } from "@/components/hosanna/HosannaLanding";
 import { useI18n, type Language } from "@/lib/i18n";
 
-const legalDocuments: Record<Language, string> = {
-  pt: legalContentPt,
-  en: legalContentEn,
-  es: legalContentEs,
+const tosDocuments: Record<Language, string> = {
+  pt: tosContentPt,
+  en: tosContentEn,
+  es: tosContentEs,
 };
 
-const legalMeta: Record<Language, { heading: string; subtitle: string }> = {
+const tosMeta: Record<Language, { heading: string; subtitle: string }> = {
   pt: {
-    heading: "Documentos Legais",
-    subtitle:
-      "Termos de serviço, política de privacidade e os nossos compromissos contigo e com a tua igreja.",
+    heading: "Termos de Serviço",
+    subtitle: "Os termos e condições de utilização da plataforma e aplicações Hosanna.",
   },
   en: {
-    heading: "Legal Documents",
-    subtitle: "Terms of service, privacy policy, and our commitments to you and your church.",
+    heading: "Terms of Service",
+    subtitle: "Terms and conditions for using Hosanna applications and services.",
   },
   es: {
-    heading: "Documentos Legales",
-    subtitle:
-      "Términos de servicio, política de privacidad y nuestros compromisos contigo y con tu iglesia.",
+    heading: "Términos de Servicio",
+    subtitle: "Los términos y condiciones de uso de la plataforma y aplicaciones Hosanna.",
   },
 };
 
 export function Component() {
   const { language } = useI18n();
-  const currentLang = (language in legalDocuments ? language : "pt") as Language;
-  const content = legalDocuments[currentLang] || legalDocuments.pt;
-  const meta = legalMeta[currentLang] || legalMeta.pt;
+  const currentLang = (language in tosDocuments ? language : "pt") as Language;
+  const content = tosDocuments[currentLang] || tosDocuments.pt;
+  const meta = tosMeta[currentLang] || tosMeta.pt;
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/10">

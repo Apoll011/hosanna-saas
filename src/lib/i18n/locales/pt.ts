@@ -582,7 +582,4 @@ export const pt = {
     ctaStart: "Começar Agora",
     ctaContact: "Fale connosco",
   },
-
-  
-
 };

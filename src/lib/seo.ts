@@ -41,11 +41,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description: "Fale com a equipa do Hosanna. Dúvidas, sugestões ou suporte para a sua igreja.",
     url: `${SITE_URL}/contact`,
   },
-  "/legal": {
-    title: "Documentos Legais | Hosanna Studio",
+  "/privacy": {
+    title: "Política de Privacidade | Hosanna Studio",
     description:
-      "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
-    url: `${SITE_URL}/legal`,
+      "Política de Privacidade do Hosanna: como protegemos os teus dados e os dados da conta Google.",
+    url: `${SITE_URL}/privacy`,
+  },
+  "/terms": {
+    title: "Termos de Serviço | Hosanna Studio",
+    description: "Termos de Serviço e Condições de Utilização da plataforma e aplicações Hosanna.",
+    url: `${SITE_URL}/terms`,
   },
 };
 

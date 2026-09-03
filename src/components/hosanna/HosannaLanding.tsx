@@ -1012,9 +1012,9 @@ export function Footer() {
     {
       title: t("landing.footer.colLegal"),
       links: [
-        { label: t("landing.footer.termsOfService"), href: "/legal", isInternal: true },
-        { label: t("landing.footer.privacyPolicy"), href: "/legal", isInternal: true },
-        { label: t("landing.footer.cookies"), href: "/legal", isInternal: true },
+        { label: t("landing.footer.termsOfService"), href: "/terms", isInternal: true },
+        { label: t("landing.footer.privacyPolicy"), href: "/privacy", isInternal: true },
+        { label: t("landing.footer.cookies"), href: "/privacy#cookies", isInternal: true },
       ],
     },
   ];

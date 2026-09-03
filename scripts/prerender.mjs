@@ -52,11 +52,19 @@ const ROUTES = [
     priority: "0.6",
   },
   {
-    path: "/legal",
-    title: "Documentos Legais | Hosanna Studio",
+    path: "/privacy",
+    title: "Política de Privacidade | Hosanna Studio",
     description:
-      "Termos de Serviço, Política de Privacidade e outros documentos legais do Hosanna.",
-    url: `${SITE_URL}/legal`,
+      "Política de Privacidade do Hosanna: como protegemos os teus dados e os dados da conta Google.",
+    url: `${SITE_URL}/privacy`,
+    changefreq: "yearly",
+    priority: "0.3",
+  },
+  {
+    path: "/terms",
+    title: "Termos de Serviço | Hosanna Studio",
+    description: "Termos de Serviço e Condições de Utilização da plataforma e aplicações Hosanna.",
+    url: `${SITE_URL}/terms`,
     changefreq: "yearly",
     priority: "0.3",
   },
@@ -79,9 +87,7 @@ function breadcrumbName(route) {
 }
 
 function breadcrumbJsonLd(route) {
-  const itemListElement = [
-    { "@type": "ListItem", position: 1, name: "Hosanna", item: SITE_URL },
-  ];
+  const itemListElement = [{ "@type": "ListItem", position: 1, name: "Hosanna", item: SITE_URL }];
   if (route.path !== "/") {
     itemListElement.push({
       "@type": "ListItem",

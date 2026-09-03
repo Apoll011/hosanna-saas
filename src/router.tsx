@@ -41,10 +41,16 @@ const contactRoute = createRoute({
   component: lazyRouteComponent(() => import("./routes/contact"), "Component"),
 });
 
-const legalRoute = createRoute({
+const privacyRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/legal",
-  component: lazyRouteComponent(() => import("./routes/legal"), "Component"),
+  path: "/privacy",
+  component: lazyRouteComponent(() => import("./routes/privacy"), "Component"),
+});
+
+const termsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/terms",
+  component: lazyRouteComponent(() => import("./routes/terms"), "Component"),
 });
 
 const routeTree = rootRoute.addChildren([
@@ -52,7 +58,8 @@ const routeTree = rootRoute.addChildren([
   aboutRoute,
   chordproRoute,
   contactRoute,
-  legalRoute,
+  privacyRoute,
+  termsRoute,
 ]);
 
 export const router = createRouter({

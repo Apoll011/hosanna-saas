@@ -582,5 +582,4 @@ export const es: typeof import("./pt").pt = {
     ctaStart: "Empezar Ahora",
     ctaContact: "Habla con nosotros",
   },
-  
 };
