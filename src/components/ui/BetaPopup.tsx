@@ -22,21 +22,21 @@ export function BetaPopup() {
 
   return (
     <div className="fixed bottom-5 right-5 z-50 max-w-sm w-full animate-in slide-in-from-bottom-5 slide-in-from-right-5 duration-300">
-      <div className="relative rounded-2xl border border-white/20 bg-white/10 p-6 shadow-xl backdrop-blur-lg">
+      <div className="relative rounded-2xl border border-primary/20 bg-white p-6 shadow-xl backdrop-blur-lg">
         <button
           onClick={handleClose}
-          className="absolute right-3 top-3 rounded-lg p-1 text-white/70 transition-colors hover:text-white"
+          className="absolute right-3 top-3 rounded-lg p-1 text-primary/70 transition-colors hover:text-primary"
           aria-label="Close popup"
         >
           <X className="h-5 w-5" />
         </button>
 
         <div className="space-y-3 pr-6 text-center">
-          <h3 className="font-display text-xl font-bold text-white">
+          <h3 className="font-display text-xl font-bold text-primary">
             {t("landing.betaPopup.title")}
           </h3>
 
-          <p className="text-sm leading-relaxed text-white/90">
+          <p className="text-sm leading-relaxed text-primary/90">
             {t("landing.betaPopup.description")}
           </p>
 
@@ -45,7 +45,7 @@ export function BetaPopup() {
               href="https://studio.hosanna.live"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-lg transition-all hover:bg-white hover:text-primary active:scale-95"
+              className="inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-white hover:text-primary active:scale-95"
             >
               {t("landing.betaPopup.cta")}
             </a>
