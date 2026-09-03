@@ -42,6 +42,8 @@ Hosanna may provide "Beta" or experimental features. These features are provided
 **2.1. Absolute Content Privacy Principle**
 Hosanna respects the private nature of your church's content. Hosanna **never** sells, licenses to advertisers, uses for marketing, or shares customer content (songs, lyrics, chord charts, services, and notes) with unrelated third parties. Hosanna **does not use** user or organization content to train Artificial Intelligence (AI) models.
 
+Hosanna allows users to sign in with Google. When you use Google sign-in, Hosanna collects only the name and email address provided by Google to create and manage your Hosanna account. We do not share this information with third parties, except where necessary for service providers described in Section 9 or where required by law.
+
 **2.2. Our Role under GDPR**
 For the purposes of the General Data Protection Regulation (GDPR):
 
@@ -51,6 +53,7 @@ For the purposes of the General Data Protection Regulation (GDPR):
 **2.3. Categories of Data Processed**
 
 - **Account and Security Data:** Name, email address, verification status, profile avatar, session information, and account security data (e.g., Two-Factor Authentication - 2FA).
+- **Google Sign-In Data:** If you sign in with Google, we collect only your name and email address from Google. We do not receive or collect your Google contacts, files, browsing history, or other unrelated Google account data.
 - **Organization Data:** Content created or submitted by churches, including folders, songs, lyrics in ChordPro format, services, notes, and invitations.
 - **Technical and Diagnostic Data:** Prior to final release (pre-1.0), Hosanna may utilize diagnostic tools and performance metrics (analytics) to detect errors and improve technical infrastructure reliability. This data is never used to profile musical content for marketing purposes.
 

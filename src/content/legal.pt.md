@@ -42,6 +42,8 @@ O Hosanna pode disponibilizar funcionalidades em fase "Beta" ou experimentais. E
 **2.1. Princípio Absoluto de Privacidade do Conteúdo**
 O Hosanna respeita a natureza privada do conteúdo da sua igreja. O Hosanna **nunca** vende, licencia a anunciantes, usa para publicidade ou partilha com terceiros não relacionados o conteúdo dos seus clientes (músicas, letras, cifras, cultos e notas). O Hosanna **não utiliza** o conteúdo gerado pelos utilizadores ou organizações para treinar modelos de Inteligência Artificial (IA).
 
+O Hosanna permite iniciar sessão com o Google. Quando utiliza o início de sessão com o Google, o Hosanna recolhe apenas o nome e o endereço de e-mail fornecidos pelo Google para criar e gerir a sua conta Hosanna. Não partilhamos estas informações com terceiros, exceto quando necessário para os prestadores de serviços descritos na Secção 9 ou quando exigido por lei.
+
 **2.2. O Nosso Papel no RGPD**
 Para efeitos do Regulamento Geral sobre a Proteção de Dados (RGPD):
 
@@ -51,6 +53,7 @@ Para efeitos do Regulamento Geral sobre a Proteção de Dados (RGPD):
 **2.3. Categorias de Dados Tratados**
 
 - **Dados de Conta e Segurança:** Nome, endereço de e-mail, estado de verificação, imagem de perfil, informações de sessão, e dados necessários para a segurança da conta (ex: autenticação de dois fatores - 2FA).
+- **Dados do Início de Sessão com o Google:** Se iniciar sessão com o Google, recolhemos apenas o seu nome e endereço de e-mail do Google. Não recebemos nem recolhemos os seus contactos, ficheiros, histórico de navegação ou outros dados não relacionados da sua conta Google.
 - **Dados da Organização:** Conteúdo criado ou submetido pelas igrejas, incluindo pastas, músicas, letras em formato ChordPro, cultos, notas e convites.
 - **Dados Técnicos e de Diagnóstico:** Antes do lançamento da versão final (pré-1.0), o Hosanna poderá utilizar ferramentas de diagnóstico e métricas de desempenho (analytics) para identificar erros e melhorar a fiabilidade técnica da infraestrutura. Estes dados não são usados para analisar o conteúdo musical ou perfil do utilizador para fins de marketing.
 

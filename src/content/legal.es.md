@@ -42,6 +42,8 @@ Hosanna puede poner a disposición funciones en fase "Beta" o experimentales. Es
 **2.1. Principio Absoluto de Privacidad del Contenido**
 Hosanna respeta la naturaleza privada del contenido de tu iglesia. Hosanna **nunca** vende, licencia a anunciantes, usa con fines publicitarios ni comparte con terceros ajenos el contenido de sus clientes (canciones, letras, acordes, cultos y notas). Hosanna **no utiliza** el contenido generado por usuarios u organizaciones para entrenar modelos de Inteligencia Artificial (IA).
 
+Hosanna permite iniciar sesión con Google. Cuando utilizas el inicio de sesión con Google, Hosanna recopila únicamente el nombre y la dirección de correo electrónico proporcionados por Google para crear y gestionar tu cuenta de Hosanna. No compartimos esta información con terceros, salvo cuando sea necesario para los proveedores de servicios descritos en la Sección 9 o cuando la ley lo exija.
+
 **2.2. Nuestro Rol bajo el RGPD**
 A los efectos del Reglamento General de Protección de Datos (RGPD):
 
@@ -51,6 +53,7 @@ A los efectos del Reglamento General de Protección de Datos (RGPD):
 **2.3. Categorías de Datos Tratados**
 
 - **Datos de Cuenta y Seguridad:** Nombre, correo electrónico, estado de verificación, foto de perfil, datos de sesión y medidas de seguridad (ej: Autenticación en Dos Pasos - 2FA).
+- **Datos del Inicio de Sesión con Google:** Si inicias sesión con Google, recopilamos únicamente tu nombre y dirección de correo electrónico de Google. No recibimos ni recopilamos tus contactos, archivos, historial de navegación ni otros datos ajenos de tu cuenta de Google.
 - **Datos de la Organización:** Contenido creado o subido por las iglesias, incluyendo carpetas, canciones en formato ChordPro, cultos, notas e invitaciones.
 - **Datos Técnicos y de Diagnóstico:** Antes del lanzamiento oficial (pre-1.0), Hosanna puede utilizar herramientas de diagnóstico y métricas de rendimiento (analytics) para identificar fallos y mejorar la infraestructura técnica. Estos datos nunca se usan con fines publicitarios ni para perfilar contenido musical.
 
