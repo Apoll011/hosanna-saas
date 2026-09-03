@@ -60,6 +60,15 @@ For the purposes of the General Data Protection Regulation (GDPR):
 **2.4. Data Subject Rights**
 Under applicable legal grounds, users have the right to request access, rectification, erasure (right to be forgotten), restriction of processing, and portability of their personal data. Where processing is based on consent, it may be withdrawn at any time.
 
+**2.5. Google User Data: Access, Use, Sharing, Protection, and Retention**
+
+- **Data accessed:** When you choose Google sign-in, the Hosanna application accesses only the basic profile information made available through Google OAuth: your name and email address. Hosanna does not access Google contacts, files, Drive data, calendar data, browsing history, or any other unrelated Google account data.
+- **How we use it:** We use your name and email address to authenticate you, create and manage your Hosanna account, identify you in organizations, provide collaboration features, synchronize permitted content, and protect account security. We use Google user data only to provide or improve user-facing Hosanna functionality that you request.
+- **Sharing and disclosure:** We do not sell, rent, or transfer Google user data for advertising, marketing, data brokerage, credit decisions, lending, or any other unrelated purpose. We may disclose the name and email address associated with your Hosanna account to authorized organization members or administrators when needed for collaboration, to service providers listed in Section 9 that process data on our behalf, or when required by law. These recipients may use the data only to provide or protect Hosanna services.
+- **Protection:** We protect Google user data using HTTPS/TLS encryption in transit, secure session tokens, role-based access controls, and appropriate account-security measures, including optional two-factor authentication. Access is limited to what is necessary to operate and secure the service.
+- **Retention and deletion:** We retain this data while your Hosanna account is active and for as long as necessary to provide the service, maintain security, resolve disputes, and meet legal obligations. You may request deletion through our legal contact in Section 14 or delete your personal account. We then delete the Google user data we control, except where retention is required by law or necessary for legitimate security, fraud-prevention, dispute-resolution, or backup-retention purposes. Data in backups is deleted according to the applicable backup lifecycle. Removing you from an organization does not delete your personal Hosanna account or the organization's content.
+- **Limited Use:** Hosanna does not use Google user data for targeted, personalized, retargeted, or interest-based advertising; sale to data brokers or information resellers; credit-worthiness or lending decisions; creating unrelated databases; or developing, improving, or training generalized, non-personalized AI or machine-learning models. Google user data is used only in accordance with the Google API Services User Data Policy, including its Limited Use requirements.
+
 ---
 
 ## 3. Cookie and Local Storage Policy
