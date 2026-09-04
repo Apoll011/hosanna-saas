@@ -6,22 +6,16 @@ import {
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
-
-function placeholderShot(label: string) {
-  const safeLabel = label.replace(/&/g, "&amp;");
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800">
-    <rect width="100%" height="100%" fill="#1e293b"/>
-    <text x="50%" y="50%" fill="#94a3b8" font-family="sans-serif" font-size="28"
-      text-anchor="middle" dominant-baseline="middle">${safeLabel}</text>
-  </svg>`;
-  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
-}
+import songLibraryImg from "@/assets/song_library.jpeg";
+import serviceImg from "@/assets/service.jpeg";
+import chordsImg from "@/assets/chords.jpeg";
+import transposeImg from "@/assets/transpose.jpeg";
 
 const galleryPhotos: GalleryPhoto[] = [
-  { id: 1, image: "src\\assets\\song_library.jpeg", caption: "Song Library" },
-  { id: 2, image: "src\\assets\\service.jpeg", caption: "Service Planner" },
-  { id: 3, image: "src\\assets\\chords.jpeg", caption: "Live Chord View" },
-  { id: 4, image: "src\\assets\\transpose.jpeg", caption: "Transpose & Chord Toggle" },
+  { id: 1, image: songLibraryImg, caption: "Song Library" },
+  { id: 2, image: serviceImg, caption: "Service Planner" },
+  { id: 3, image: chordsImg, caption: "Live Chord View" },
+  { id: 4, image: transposeImg, caption: "Transpose & Chord Toggle" },
 ];
 
 /**
