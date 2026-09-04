@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronUp, ChevronDown, X } from "lucide-react";
 
 export interface GalleryPhoto {
   id: string | number;
@@ -15,6 +15,63 @@ export interface InteractiveFolderGalleryProps {
   className?: string;
 }
 
+/* ------------------------------------------------------------------ */
+/*  Shared lightbox                                                   */
+/* ------------------------------------------------------------------ */
+function PhotoLightbox({
+  photo,
+  onClose,
+}: {
+  photo: GalleryPhoto | null;
+  onClose: () => void;
+}) {
+  return (
+    <AnimatePresence>
+      {photo && (
+        <motion.div
+          key="lightbox-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-primary/90 backdrop-blur-sm p-6"
+          onClick={onClose}
+        >
+          <motion.div
+            key="lightbox-image"
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.92 }}
+            transition={{ type: "spring", stiffness: 300, damping: 28 }}
+            className="relative max-h-[85vh] max-w-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={photo.image}
+              alt={photo.caption || "Hosanna screenshot"}
+              className="max-h-[85vh] w-auto rounded-2xl object-contain shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+            />
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="absolute -top-4 -right-4 grid h-10 w-10 place-items-center rounded-full bg-white text-black shadow-lg transition-transform hover:scale-105 active:scale-95"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            {photo.caption && (
+              <div className="absolute inset-x-0 bottom-0 rounded-b-2xl bg-linear-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
+                <span className="text-[11px] font-medium uppercase tracking-widest text-white/90">
+                  {photo.caption}
+                </span>
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export function InteractiveFolderGallery({
   photos,
   openHintText = "Double click to open",
@@ -23,6 +80,7 @@ export function InteractiveFolderGallery({
 }: InteractiveFolderGalleryProps) {
   const [isFolderOpen, setIsFolderOpen] = useState(false);
   const [hoverFolder, setHoverFolder] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
 
   return (
     <div className={`w-full py-32 relative ${className || ""}`}>
@@ -62,6 +120,9 @@ export function InteractiveFolderGallery({
                       setIsFolderOpen(false);
                       setHoverFolder(false);
                     }
+                  }}
+                  onTap={() => {
+                    if (isFolderOpen) setSelectedPhoto(photo);
                   }}
                   className={`absolute bottom-0 w-56 h-72 rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden border border-white/20 origin-bottom ${
                     isFolderOpen
@@ -141,7 +202,6 @@ export function InteractiveFolderGallery({
             {dragHintText}
           </motion.div>
         )}
-        {/* Drag hint — visible only once the folder is open */}
         {isFolderOpen && (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -152,6 +212,8 @@ export function InteractiveFolderGallery({
           </motion.div>
         )}
       </div>
+
+      <PhotoLightbox photo={selectedPhoto} onClose={() => setSelectedPhoto(null)} />
     </div>
   );
 }
