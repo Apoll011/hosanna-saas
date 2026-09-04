@@ -1097,7 +1097,7 @@ export function HosannaLanding() {
   return (
     <div ref={rootRef} className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
-      <BetaPopup dashboardUrl={`${dashboardUrl}/demo`} />
+      <BetaPopup />
       <main>
         <Hero />
         <Problem />

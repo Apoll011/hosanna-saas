@@ -2,7 +2,9 @@ import { useI18n } from "@/lib/i18n";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function BetaPopup({ dashboardUrl }: { dashboardUrl: string }) {
+const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL + "/demo";
+
+export function BetaPopup() {
   const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
 
