@@ -18,10 +18,10 @@ function placeholderShot(label: string) {
 }
 
 const galleryPhotos: GalleryPhoto[] = [
-  { id: 1, image: placeholderShot("Song Library"), caption: "Song Library" },
-  { id: 2, image: placeholderShot("Service Planner"), caption: "Service Planner" },
-  { id: 3, image: placeholderShot("Live Chord View"), caption: "Live Chord View" },
-  { id: 4, image: placeholderShot("Transpose & Chords"), caption: "Transpose & Chord Toggle" },
+  { id: 1, image: "src\\assets\\song_library.jpeg", caption: "Song Library" },
+  { id: 2, image: "src\\assets\\service.jpeg", caption: "Service Planner" },
+  { id: 3, image: "src\\assets\\chords.jpeg", caption: "Live Chord View" },
+  { id: 4, image: "src\\assets\\transpose.jpeg", caption: "Transpose & Chord Toggle" },
 ];
 
 /**
