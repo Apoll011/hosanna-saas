@@ -36,7 +36,7 @@ export const es: typeof import("./pt").pt = {
     betaPopup: {
       title: "HOSANNA está en Beta",
       description: "Experimenta Hosanna Studio antes del lanzamiento oficial.",
-      cta: "Visitar Studio",
+      cta: "Consulta la Demo",
     },
     banner:
       "¡Ya estamos en vivo! La versión Beta se ha lanzado oficialmente. Únete a nosotros en este viaje!",

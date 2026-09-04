@@ -7,8 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { BetaPopup } from "@/components/ui/BetaPopup";
+import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { LazySection } from "@/components/ui/LazySection";
 import { useReveal } from "@/hooks/useReveal";
@@ -1097,7 +1097,7 @@ export function HosannaLanding() {
   return (
     <div ref={rootRef} className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
-      <BetaPopup />
+      <BetaPopup dashboardUrl={`${dashboardUrl}/demo`} />
       <main>
         <Hero />
         <Problem />

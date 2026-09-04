@@ -37,7 +37,7 @@ export const en: typeof import("./pt").pt = {
       title: "HOSANNA's in Beta",
       description:
         "Experience Hosanna Studio before the official launch and help shape the future.",
-      cta: "Visit Studio",
+      cta: "Check the Demo",
     },
     banner: "We're live! The Beta version has officially launched. Join us on this journey!",
     nav: {

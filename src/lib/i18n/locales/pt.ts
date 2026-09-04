@@ -36,7 +36,7 @@ export const pt = {
     betaPopup: {
       title: "HOSANNA está em Beta",
       description: "Já podes experimentar o Hosanna Studio antes do lançamento oficial.",
-      cta: "Visitar o Studio",
+      cta: "Testar a Demo",
     },
     banner:
       "Já estamos live! A versão Beta foi lançada oficialmente. Junta-te a nós nesta jornada!",

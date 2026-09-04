@@ -2,7 +2,7 @@ import { useI18n } from "@/lib/i18n";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function BetaPopup() {
+export function BetaPopup({ dashboardUrl }: { dashboardUrl: string }) {
   const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +42,7 @@ export function BetaPopup() {
 
           <div className="pt-2 flex justify-center">
             <a
-              href="https://studio.hosanna.live"
+              href={dashboardUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-white hover:text-primary active:scale-95"
