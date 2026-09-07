@@ -2,7 +2,7 @@ import { useI18n } from "@/lib/i18n";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const dashboardUrl = "https://studio.hosanna.live/demo";
+const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL + "/demo";
 
 export function DemoPopup() {
   const { t } = useI18n();
