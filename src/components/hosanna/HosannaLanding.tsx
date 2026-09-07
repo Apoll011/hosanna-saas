@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DemoPopup } from "@/components/ui/DemoPopup";
+import { GoFundPopup } from "@/components/ui/GoFundPopup";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { LazySection } from "@/components/ui/LazySection";
@@ -1098,6 +1099,7 @@ export function HosannaLanding() {
     <div ref={rootRef} className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
       <DemoPopup />
+      <GoFundPopup />
       <main>
         <Hero />
         <Problem />

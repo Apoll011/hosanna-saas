@@ -38,6 +38,11 @@ export const pt = {
       description: "Já podes experimentar o Hosanna Studio sem necessidade de registo.",
       cta: "Testar a Demo",
     },
+    gofundPopup: {
+      title: "Ajuda o Hosanna",
+      description: "Apoia o desenvolvimento do Hosanna e ajuda-nos a levar a tecnologia às igrejas de todo o mundo.",
+      cta: "Doar Agora",
+    },
     banner: "Já estamos live! Experimenta a nossa Demo. Junta-te a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",

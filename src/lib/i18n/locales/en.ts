@@ -39,6 +39,11 @@ export const en: typeof import("./pt").pt = {
         "Experience Hosanna Studio without the need for registration.",
       cta: "Check the Demo",
     },
+    gofundPopup: {
+      title: "Support Hosanna",
+      description: "Support the development of Hosanna and help us bring this technology to churches worldwide.",
+      cta: "Donate Now",
+    },
     banner: "We're live! The Demo version is now available. Join us on this journey!",
     nav: {
       features: "Features",
