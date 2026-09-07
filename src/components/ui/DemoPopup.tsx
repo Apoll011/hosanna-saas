@@ -2,9 +2,9 @@ import { useI18n } from "@/lib/i18n";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL + "/demo";
+const dashboardUrl = "https://studio.hosanna.live/demo";
 
-export function BetaPopup() {
+export function DemoPopup() {
   const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,11 +35,11 @@ export function BetaPopup() {
 
         <div className="space-y-3 pr-6 text-center">
           <h3 className="font-display text-xl font-bold text-primary">
-            {t("landing.betaPopup.title")}
+            {t("landing.demoPopup.title")}
           </h3>
 
           <p className="text-sm leading-relaxed text-primary/90">
-            {t("landing.betaPopup.description")}
+            {t("landing.demoPopup.description")}
           </p>
 
           <div className="pt-2 flex justify-center">
@@ -49,7 +49,7 @@ export function BetaPopup() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-white hover:text-primary active:scale-95"
             >
-              {t("landing.betaPopup.cta")}
+              {t("landing.demoPopup.cta")}
             </a>
           </div>
         </div>
