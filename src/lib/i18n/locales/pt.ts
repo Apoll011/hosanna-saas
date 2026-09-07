@@ -34,7 +34,7 @@ export const pt = {
   },
   landing: {
     demoPopup: {
-      title: "HOSANNA está em Demo",
+      title: "Experimenta HOSANNA",
       description: "Já podes experimentar o Hosanna Studio sem necessidade de registo.",
       cta: "Testar a Demo",
     },
