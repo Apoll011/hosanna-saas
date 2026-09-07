@@ -38,8 +38,7 @@ export const es: typeof import("./pt").pt = {
       description: "Experimenta Hosanna Studio sin necesidad de registro.",
       cta: "Consulta la Demo",
     },
-    banner:
-      "¡Estamos en vivo! Experimenta nuestra versión Demo. Únete a nosotros en este viaje.",
+    banner: "¡Estamos en vivo! Experimenta nuestra Demo. Únete a nosotros en este viaje.",
     nav: {
       features: "Funciones",
       chordpro: "ChordPro",

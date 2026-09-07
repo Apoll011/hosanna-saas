@@ -35,11 +35,10 @@ export const en: typeof import("./pt").pt = {
   landing: {
     demoPopup: {
       title: "HOSANNA's in Demo",
-      description:
-        "Experience Hosanna Studio without the need for registration.",
+      description: "Experience Hosanna Studio without the need for registration.",
       cta: "Check the Demo",
     },
-    banner: "We're live! The Demo version is now available. Join us on this journey!",
+    banner: "We're live! The Demo is available, try it for free. Join us on this journey!",
     nav: {
       features: "Features",
       chordpro: "ChordPro",
