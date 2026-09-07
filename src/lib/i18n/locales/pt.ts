@@ -38,8 +38,7 @@ export const pt = {
       description: "Já podes experimentar o Hosanna Studio sem necessidade de registo.",
       cta: "Testar a Demo",
     },
-    banner:
-      "Já estamos live! Experimenta a nossa versão Demo. Junta-te a nós nesta jornada!",
+    banner: "Já estamos live! Experimenta a nossa Demo. Junta-te a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",
       chordpro: "ChordPro",
