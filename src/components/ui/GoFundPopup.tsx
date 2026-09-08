@@ -13,7 +13,7 @@ export function GoFundPopup() {
 
   return (
     <div className="absolute bottom-8 left-5 z-20 hidden w-full max-w-[300px] md:block animate-in slide-in-from-bottom-5 fade-in duration-500">
-      <div className="relative flex items-center gap-3 rounded-[28px] border border-white/25 bg-white/10 p-2.5 shadow-xl backdrop-blur-xl">
+      <div className="relative flex items-center gap-3 rounded-[28px] border border-white/25 bg-white/10 p-2.5 shadow-sm backdrop-blur-xl">
 
         <Heart className="h-4 w-4 shrink-0 fill-white/20 text-white" />
         <h3 className="font-display text-sm font-semibold text-white pr-4 whitespace-nowrap">
