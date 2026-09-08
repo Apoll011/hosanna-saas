@@ -1,9 +1,8 @@
 import { useI18n } from "@/lib/i18n";
-import { Heart, X } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState } from "react";
 
-const goFundMeLink =
-  "https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo/widget/medium?attribution_id=sl%3A6ae5cf26-7689-4639-ba2f-533a305c601d";
+const goFundMeLink = "https://gofund.me/e46a567a7";
 
 export function GoFundPopup() {
   const { t } = useI18n();
