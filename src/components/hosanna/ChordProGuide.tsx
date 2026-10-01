@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import { Link } from "@tanstack/react-router";
@@ -20,7 +19,8 @@ import {
   Repeat,
   Tags,
 } from "lucide-react";
-import { StaffLines } from "./HosannaLanding";
+import { useEffect, useState } from "react";
+import { PageHeader } from "./chrome";
 
 type DirectiveCategory = "metadata" | "comment" | "structure" | "notation";
 
@@ -238,17 +238,8 @@ const DIRECTIVES: DirectiveEntry[] = [
 
 const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "duration", "youtube", "song_number"];
 
-function EyebrowIcon({ icon: Icon }: { icon: React.ElementType }) {
-  return (
-    <div className="inline-flex p-4 rounded-2xl bg-blue-50 text-primary shadow-sm border border-blue-100">
-      <Icon className="w-10 h-10" />
-    </div>
-  );
-}
-
 function SectionHeader({
-  icon,
-  eyebrow,
+  icon: Icon,
   title,
   lede,
 }: {
@@ -258,18 +249,15 @@ function SectionHeader({
   lede?: React.ReactNode;
 }) {
   return (
-    <div className="space-y-6 reveal">
-      <EyebrowIcon icon={icon} />
-      {eyebrow && (
-        <div className="text-xs font-semibold uppercase tracking-widest text-primary/60">
-          {eyebrow}
-        </div>
-      )}
-      <h2 className="text-3xl md:text-4xl font-display font-bold text-primary tracking-tight">
+    <div className="reveal">
+      <h2 className="flex items-center gap-3 font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+          <Icon className="h-5 w-5" aria-hidden />
+        </span>
         {title}
       </h2>
       {lede && (
-        <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">{lede}</p>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{lede}</p>
       )}
     </div>
   );
@@ -344,7 +332,7 @@ function DirectiveCard({ entry }: { entry: DirectiveEntry }) {
   return (
     <div className="p-6 border border-border rounded-2xl hover:border-primary/30 transition-all hover:bg-blue-50/10 group shadow-sm relative">
       <div className="flex items-start justify-between gap-3 mb-2">
-        <code className="text-primary font-bold text-lg block group-hover:scale-105 transition-transform origin-left">
+        <code className="block text-lg font-bold text-primary">
           {`{${entry.directive}: ...}`}
         </code>
         {entry.hosanna && <HosannaBadge />}
@@ -374,6 +362,43 @@ export function ChordProGuide() {
     { id: "atalhos", label: t("chordproGuide.toc.shortcuts") },
     { id: "referencia", label: t("chordproGuide.toc.reference") },
   ];
+  const [activeId, setActiveId] = useState(TOC[0].id);
+
+  useEffect(() => {
+    const ids = ["fundamentos", "sintaxe", "diretivas", "estrutura", "notas", "tablatura", "atalhos", "referencia"];
+    let frame = 0;
+    const update = () => {
+      const marker = window.scrollY + 220;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (top <= marker) current = id;
+      }
+      setActiveId((prev) => (prev === current ? prev : current));
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const chip = document.querySelector<HTMLElement>(`[data-toc-mobile="${activeId}"]`);
+    const scroller = chip?.parentElement;
+    if (!chip || !scroller) return;
+    scroller.scrollTo({
+      left: chip.offsetLeft - scroller.clientWidth / 2 + chip.clientWidth / 2,
+      behavior: "auto",
+    });
+  }, [activeId]);
 
   const CATEGORY_META: Record<
     DirectiveCategory,
@@ -408,69 +433,64 @@ export function ChordProGuide() {
   return (
     <div className="bg-white min-h-screen selection:bg-primary/10 font-sans">
       {/* ============================= HERO ============================= */}
-      <section className="bg-hero-gradient pt-40 pb-16 text-white relative overflow-hidden -mt-30">
-        <div className="absolute inset-0 text-white/10">
-          <StaffLines className="top-24 opacity-40" />
-          <StaffLines className="bottom-12 opacity-20" />
-        </div>
-        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-          <div className="flex justify-center items-center gap-3 mb-8">
-            <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 border border-white/10">
-              <BookMarked className="w-3.5 h-3.5" />
-              {t("chordproGuide.heroBadge")}
-            </div>
-            <LanguageSelector />
-          </div>
-          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
-            {t("chordproGuide.heroTitleStart")}{" "}
-            <span className="text-blue-300">{t("chordproGuide.heroTitleHighlight")}</span>
-          </h1>
-          <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-3xl mx-auto mb-14">
-            {t("chordproGuide.heroSubtitle")}
-          </p>
+      <PageHeader
+        title={`${t("chordproGuide.heroTitleStart")} ${t("chordproGuide.heroTitleHighlight")}`}
+        lede={t("chordproGuide.heroSubtitle")}
+      />
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-5 py-12 md:px-8">
 
-          <div className="reveal grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
-            <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200/70 mb-4">
+          <div className="grid gap-4 text-left md:grid-cols-2">
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h2 className="mb-4 font-display text-xl font-semibold text-foreground">
                 {t("chordproGuide.traditionalDoc")}
-              </div>
-              <div className="font-mono text-sm text-blue-50/50 leading-loose whitespace-pre">
+              </h2>
+              <pre className="font-mono text-sm leading-loose text-muted-foreground whitespace-pre">
                 {"  A            D\nLord my God, when I in awesome wonder"}
-              </div>
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-amber-200/80">
-                <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+              </pre>
+              <p className="mt-5 flex items-start gap-2 text-sm text-warning">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
                 {t("chordproGuide.traditionalWarning")}
-              </div>
+              </p>
             </div>
-            <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-blue-300/30 p-6">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200 mb-4">
+            <div className="rounded-xl border border-primary/30 bg-accent p-6">
+              <h2 className="mb-4 font-display text-xl font-semibold text-foreground">
                 {t("chordproGuide.chordproInHosanna")}
-              </div>
-              <div className="font-mono text-sm leading-loose">
-                Lord my <span className="text-blue-300 font-bold">[A]</span>God, when I in{" "}
-                <span className="text-blue-300 font-bold">[D]</span>awesome wonder
-              </div>
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-blue-100">
-                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+              </h2>
+              <p className="font-mono text-sm leading-loose text-foreground">
+                Lord my <span className="font-bold text-primary">[A]</span>God, when I in{" "}
+                <span className="font-bold text-primary">[D]</span>awesome wonder
+              </p>
+              <p className="mt-5 flex items-start gap-2 text-sm text-foreground">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
                 {t("chordproGuide.chordproSuccess")}
-              </div>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* TOC mobile */}
-      <div className="lg:hidden sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-border">
-        <div className="flex gap-2 overflow-x-auto px-6 py-4 no-scrollbar">
-          {TOC.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="shrink-0 text-sm font-medium text-muted-foreground hover:text-primary px-3.5 py-1.5 rounded-full border border-border hover:border-primary/30 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+      <div className="sticky top-[var(--site-header)] z-20 border-b border-border bg-background/95 backdrop-blur-sm lg:hidden">
+        <div className="flex gap-2 overflow-x-auto px-5 py-3">
+          {TOC.map((item) => {
+            const active = item.id === activeId;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                data-toc-mobile={item.id}
+                aria-current={active ? "location" : undefined}
+                className={
+                  active
+                    ? "shrink-0 rounded-full border border-primary bg-primary px-3.5 py-1.5 text-sm font-medium text-primary-foreground"
+                    : "shrink-0 rounded-full border border-border px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
+                }
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
       </div>
 
@@ -479,27 +499,36 @@ export function ChordProGuide() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="lg:grid lg:grid-cols-[220px_1fr] lg:gap-16 items-start">
             {/* TOC desktop */}
-            <nav className="hidden lg:block sticky top-28 space-y-1">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-4 pl-3">
-                {t("chordproGuide.tocTitle")}
-              </div>
-              {TOC.map((item, idx) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="flex items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-blue-50/60 rounded-xl px-3 py-2.5 transition-colors"
-                >
-                  <span className="text-xs font-mono text-primary/40 w-4">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  {item.label}
-                </a>
-              ))}
+            <nav
+              className="sticky top-[calc(var(--site-header)+1.25rem)] hidden space-y-1 lg:block"
+              aria-label={t("chordproGuide.tocTitle")}
+            >
+              <div className="mb-3 pl-3 text-sm text-muted-foreground">{t("chordproGuide.tocTitle")}</div>
+              {TOC.map((item, idx) => {
+                const active = item.id === activeId;
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    aria-current={active ? "location" : undefined}
+                    className={
+                      active
+                        ? "flex items-center gap-3 rounded-full bg-primary/10 px-3 py-2.5 text-sm font-medium text-foreground"
+                        : "flex items-center gap-3 rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
+                    }
+                  >
+                    <span className={active ? "w-4 font-mono text-xs text-primary" : "w-4 font-mono text-xs text-muted-foreground"}>
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {item.label}
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="grid gap-20 min-w-0">
               {/* ---------------- Fundamentos ---------------- */}
-              <div id="fundamentos" className="scroll-mt-28">
+              <div id="fundamentos" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={BookOpen}
                   title={t("chordproGuide.whatIsTitle")}
@@ -524,7 +553,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Sintaxe de Acordes ---------------- */}
-              <div id="sintaxe" className="scroll-mt-28">
+              <div id="sintaxe" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Code2}
                   title={t("chordproGuide.anatomyTitle")}
@@ -580,7 +609,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Diretivas Essenciais ---------------- */}
-              <div id="diretivas" className="scroll-mt-28">
+              <div id="diretivas" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Music2}
                   title={t("chordproGuide.essentialDirectivesTitle")}
@@ -595,7 +624,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Estrutura & {chorus} ---------------- */}
-              <div id="estrutura" className="scroll-mt-28">
+              <div id="estrutura" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Layers}
                   title={t("chordproGuide.structureTitle")}
@@ -668,7 +697,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Notas & Grelhas ---------------- */}
-              <div id="notas" className="scroll-mt-28">
+              <div id="notas" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Grid3x3}
                   eyebrow={t("chordproGuide.gridsEyebrow")}
@@ -749,7 +778,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Tablatura ---------------- */}
-              <div id="tablatura" className="scroll-mt-28">
+              <div id="tablatura" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Music2}
                   eyebrow={t("chordproGuide.tabEyebrow")}
@@ -780,7 +809,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Atalhos & Snippets ---------------- */}
-              <div id="atalhos" className="scroll-mt-28">
+              <div id="atalhos" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Keyboard}
                   eyebrow={t("chordproGuide.shortcutsEyebrow")}
@@ -892,7 +921,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Referência Rápida ---------------- */}
-              <div id="referencia" className="scroll-mt-28">
+              <div id="referencia" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={BookMarked}
                   eyebrow={t("chordproGuide.quickRefEyebrow")}
@@ -951,28 +980,22 @@ export function ChordProGuide() {
       </section>
 
       {/* ============================= CTA ============================= */}
-      <section className="bg-secondary py-16 font-sans">
-        <div className="container mx-auto px-6 text-center max-w-3xl reveal">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-8 tracking-tight">
+      <section className="border-t border-border py-16">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
             {t("chordproGuide.ctaTitle")}
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+          <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted-foreground">
             {t("chordproGuide.ctaDesc")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Button
-              size="lg"
-              className="rounded-full bg-primary px-10 text-white font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all py-6"
-            >
-              {t("chordproGuide.ctaCreateSong")}
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button size="lg" className="min-h-11" asChild>
+              <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new`}>
+                {t("chordproGuide.ctaCreateSong")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full px-10 text-lg font-medium py-6"
-              asChild
-            >
+            <Button variant="outline" size="lg" className="min-h-11" asChild>
               <Link to="/">{t("chordproGuide.ctaBackHome")}</Link>
             </Button>
           </div>

@@ -6,6 +6,9 @@ export const pt = {
     comingSoon: "Em breve",
     backToHome: "Página Inicial",
     tryAgain: "Tente Novamente",
+    skipToContent: "Saltar para o conteúdo",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
     privacyPolicy: "Política de Privacidade",
     activeDevelopment: "Desenvolvimento Ativo",
     activeDevDesc:
@@ -33,33 +36,25 @@ export const pt = {
       "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
   },
   landing: {
-    demoPopup: {
-      title: "Experimenta HOSANNA",
-      description: "Já podes experimentar o Hosanna Studio sem necessidade de registo.",
-      cta: "Testar a Demo",
-    },
-    gofundPopup: {
-      title: "Ajuda o Hosanna",
-      description: "Apoia o desenvolvimento do Hosanna e ajuda-nos a levar a tecnologia às igrejas de todo o mundo.",
-      cta: "Doar Agora",
-    },
     banner: "Já estamos live! Experimenta a nossa Demo. Junta-te a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",
       chordpro: "ChordPro",
       pricing: "Preço",
-      about: "About",
+      about: "Sobre",
       contact: "Contacto",
-      tryFree: "Experimentar Grátis",
+      tryFree: "Experimentar grátis",
     },
     hero: {
       badge: "Desenvolvido para Líderes de Louvor",
+      title: "O culto preparado. A cifra no telemóvel de cada músico.",
       titleStart: "Organize o seu louvor com",
       titleHighlight: "excelência",
       subtitle:
-        "Dê à sua equipa a clareza e o foco que eles merecem. Planos de culto, cifras dinâmicas e escalas inteligentes num só lugar.",
-      ctaStart: "Começar Agora",
-      ctaDemo: "Ver Demonstração",
+        "O Hosanna guarda a biblioteca da igreja, monta a ordem do culto e deixa cada músico ler a mesma canção no seu tom — com ou sem acordes, mesmo sem internet.",
+      ctaStart: "Começar 14 dias grátis",
+      ctaDemo: "Abrir a demo",
+      exampleCaption: "Exemplo de uma ordem de culto. Seleciona a linha em que a equipa está.",
       dashboardAlt:
         "Pré-visualização do painel do Hosanna a mostrar a biblioteca de canções e o plano de culto de domingo",
       mobileAlt:
@@ -129,6 +124,12 @@ export const pt = {
         "Espreite por dentro da ferramenta que a sua equipa de louvor vai realmente usar — da biblioteca de músicas até ao palco.",
       openHint: "Clique duas vezes para abrir",
       dragHint: "Arraste qualquer captura para baixo para fechar",
+      captions: {
+        library: "Biblioteca de músicas",
+        service: "Plano do culto",
+        chords: "Cifra no telemóvel",
+        transpose: "Transposição",
+      },
     },
     organize: {
       eyebrow: "Organiza a tua música",
@@ -222,7 +223,7 @@ export const pt = {
     },
     pricing: {
       eyebrow: "Preço",
-      title: "Um investimento na vossa adoração",
+      title: "Um preço por igreja.",
       description: "Preço simples e transparente para que se possa focar no que é mais importante.",
       monthly: "Mensal",
       annual: "Anual",
@@ -270,6 +271,7 @@ export const pt = {
       title: "Ajude-nos a levar o Hosanna a igrejas de todo o mundo",
       description:
         "A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a mais equipas de louvor.",
+      cta: "Doar agora",
       iframeTitle: "Apoie o Hosanna no GoFundMe",
     },
     roadmap: {
@@ -329,15 +331,14 @@ export const pt = {
       ],
     },
     finalCta: {
-      title: "Pronto para elevar o nível do seu louvor?",
+      title: "Prepara o próximo culto no Hosanna.",
       subtitle:
-        "Junte-se a centenas de igrejas que já escolheram a excelência e a organização com o Hosanna.",
-      ctaStart: "Começar Agora",
+        "14 dias grátis. Um preço por igreja, com músicos ilimitados. A biblioteca fica em ChordPro, contigo.",
+      ctaStart: "Começar 14 dias grátis",
       ctaContact: "Fala connosco",
     },
     footer: {
-      tagline:
-        "A ferramenta definitiva para equipas de louvor que buscam excelência e organização.",
+      tagline: "A biblioteca, o plano do culto e a cifra de cada músico, no mesmo sítio.",
       colProduct: "Produto",
       colSupport: "Suporte",
       colLegal: "Legal",
@@ -352,6 +353,8 @@ export const pt = {
       termsOfService: "Termos de Serviço",
       privacyPolicy: "Política de Privacidade",
       cookies: "Cookies",
+      supportProject: "Apoiar o projeto",
+      source: "Código-fonte",
       copyright: "Todos os direitos reservados.",
     },
   },

@@ -1,6 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
 import { Check, ListMusic, Music2 } from "lucide-react";
 import { useState } from "react";
 
@@ -39,19 +38,11 @@ export function MigrationSection() {
   const current = SOURCE_APPS.find((a) => a.id === selectedId) || SOURCE_APPS[0];
 
   return (
-    <section id="features" className="relative bg-secondary py-16 md:py-16">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className={cn("reveal max-w-2xl", "mx-auto text-center")}>
-          <div className={cn("text-xs font-semibold uppercase tracking-[0.2em] text-primary-dark")}>
-            {t("migration.eyebrow")}
-          </div>
-          <h2
-            className={cn(
-              "mt-3 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl",
-            )}
-          >
-            {t("migration.titleStart")}{" "}
-            <span className="text-blue-400">{t("migration.titleHighlight")}</span>
+    <section id="import" className="bg-background py-14 md:py-20">
+      <div className="mx-auto max-w-[1068px] px-5 md:px-6">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-[clamp(1.75rem,2.6vw,2.35rem)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-foreground">
+            {t("migration.titleStart")} {t("migration.titleHighlight")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             {t("migration.subtitle")}
@@ -61,7 +52,7 @@ export function MigrationSection() {
           {/* Left: copy + picker */}
           <div className="min-w-0">
             <div className="reveal mb-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground/70 mb-3">
+              <p className="mb-3 text-sm font-semibold text-foreground">
                 {t("migration.whereFrom")}
               </p>
               <div
@@ -80,8 +71,8 @@ export function MigrationSection() {
                       onClick={() => setSelectedId(app.id)}
                       className={`group flex w-full items-center gap-3.5 rounded-xl border px-4 py-3 text-left transition-all duration-200 ${
                         isSelected
-                          ? "border-primary/50 bg-white shadow-md shadow-primary/10"
-                          : "border-border/70 bg-secondary/40 hover:border-border hover:bg-secondary/60"
+                          ? "border-foreground bg-white"
+                          : "border-border bg-white hover:border-foreground"
                       }`}
                     >
                       <span
@@ -98,7 +89,7 @@ export function MigrationSection() {
                             {app.name}
                           </span>
                           {!app.available && (
-                            <span className="text-[10px] font-bold uppercase tracking-wide text-blue-500 bg-blue-100 rounded-full px-2 py-0.5">
+                            <span className="rounded-full bg-surface px-2 py-0.5 text-xs text-muted-foreground">
                               {t("common.comingSoon")}
                             </span>
                           )}
@@ -181,7 +172,7 @@ export function MigrationSection() {
                       style={{ ["--hm-delay" as any]: "1050ms" }}
                     >
                       <Music2 className="h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-sm font-semibold text-primary">Praise You Anywere</span>
+                      <span className="text-sm font-semibold text-primary">Praise You Anywhere</span>
                       <span className="text-xs text-muted-foreground">Elevation Worship</span>
                       <span className="ml-auto rounded bg-blue-100 px-1.5 py-0.5 font-display text-[10px] font-bold text-primary">
                         F#m
