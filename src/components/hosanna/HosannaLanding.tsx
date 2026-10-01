@@ -97,7 +97,7 @@ function Hero() {
     <section id="top" className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[var(--site-header)] text-white">
       <StaffLines className="top-4 text-white/35" />
       <StaffLines className="bottom-6 text-white/20" />
-      <div className="relative mx-auto grid w-full max-w-[1720px] items-center gap-10 px-5 py-12 md:px-8 md:py-14 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:gap-6 lg:py-12 lg:pr-4 xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
+      <div className="relative mx-auto grid w-full max-w-[1720px] items-center gap-10 px-6 py-12 sm:px-8 md:py-14 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:gap-8 lg:py-12 lg:pl-12 lg:pr-6 xl:grid-cols-[minmax(0,32rem)_minmax(0,1fr)]">
         <div>
           <h1 className="font-display text-[clamp(2.35rem,4.6vw,4.05rem)] font-semibold leading-[1.06] tracking-[-0.02em] text-balance text-white">
             {t("landing.hero.title")}
@@ -150,7 +150,7 @@ function Hero() {
             </ol>
           </div>
         </div>
-        <div className="relative aspect-[1352/656] w-full">
+        <div className="relative aspect-[1352/656] w-full lg:w-[95%] lg:justify-self-end">
           <img
             src={dashboardImg}
             alt={t("landing.hero.dashboardAlt")}
