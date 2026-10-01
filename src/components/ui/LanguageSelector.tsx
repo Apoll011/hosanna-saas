@@ -33,7 +33,7 @@ export function LanguageSelector({
               "min-h-10 min-w-10 rounded-full px-2 text-xs font-semibold uppercase",
               onBlue
                 ? selected
-                  ? "bg-white text-[#075985]"
+                  ? "bg-white text-[#0c4a6e]"
                   : "text-white hover:bg-white/10"
                 : selected
                   ? "bg-primary text-primary-foreground"

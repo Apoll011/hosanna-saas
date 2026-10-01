@@ -53,11 +53,11 @@ function Logo({ onBlue = false }: { onBlue?: boolean }) {
     <Link to="/" hash="top" className="flex items-center gap-2.5 rounded-md">
       <span
         className={cn(
-          "grid place-items-center rounded-lg",
-          onBlue ? "h-8 w-8 bg-white" : "h-9 w-9",
+          "grid h-9 w-9 place-items-center overflow-hidden rounded-[10px]",
+          onBlue && "bg-white",
         )}
       >
-        <img src={logo} alt="" width={28} height={28} className={cn("object-contain", onBlue ? "h-7 w-7" : "h-8 w-8")} />
+        <img src={logo} alt="" width={36} height={36} className="h-full w-full object-cover" />
       </span>
       <span
         className={cn(
@@ -73,7 +73,7 @@ function Logo({ onBlue = false }: { onBlue?: boolean }) {
 
 export function Nav() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [wash, setWash] = useState(0);
   const { t } = useI18n();
   const { pathname } = useLocation();
 
@@ -86,11 +86,23 @@ export function Nav() {
   ] as const;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    let frame = 0;
+    const update = () => {
+      const amount = open ? 1 : Math.min(1, Math.max(0, (window.scrollY - 36) / 200));
+      const next = Math.round(amount * 100) / 100;
+      setWash((prev) => (prev === next ? prev : next));
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -101,15 +113,9 @@ export function Nav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const solid = scrolled || open;
-
   return (
-    <header
-      className={cn(
-        "relative sticky top-0 z-40 overflow-hidden text-white",
-        solid ? "bg-[#075985]" : "bg-transparent",
-      )}
-    >
+    <header className="relative sticky top-0 z-40 text-white">
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#0c4a6e]" style={{ opacity: wash }} />
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:bg-surface focus:px-3 focus:py-2"
@@ -141,7 +147,7 @@ export function Nav() {
           <LanguageSelector tone="onBlue" />
           <a
             href={dashboardUrl}
-            className="hidden min-h-11 items-center rounded-full bg-white px-4 text-sm text-[#075985] hover:bg-white/90 sm:inline-flex"
+            className="hidden min-h-11 items-center rounded-full bg-white px-4 text-sm text-[#0c4a6e] hover:bg-white/90 sm:inline-flex"
           >
             {t("landing.nav.tryFree")}
           </a>
@@ -175,7 +181,7 @@ export function Nav() {
             <a
               href={dashboardUrl}
               onClick={() => setOpen(false)}
-              className="mx-3 mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-4 text-sm text-[#075985]"
+              className="mx-3 mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-4 text-sm text-[#0c4a6e]"
             >
               {t("landing.nav.tryFree")}
             </a>
