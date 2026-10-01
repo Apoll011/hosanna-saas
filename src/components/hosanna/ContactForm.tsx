@@ -30,7 +30,7 @@ export function ContactForm() {
       <section className="py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-14 px-5 md:px-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.1fr)]">
           <div>
-            <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground">
+            <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground">
               {t("contact.alwaysReadyTitle")}
             </h2>
             <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-muted-foreground">

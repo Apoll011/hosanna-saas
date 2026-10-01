@@ -259,7 +259,7 @@ function SectionHeader({
   return (
     <div className="space-y-6 reveal">
       <EyebrowIcon icon={icon} />
-      <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
+      <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
         {title}
       </h2>
       {lede && (
@@ -933,7 +933,7 @@ export function ChordProGuide() {
       {/* ============================= CTA ============================= */}
       <section className="border-t border-border py-16">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
+          <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
             {t("chordproGuide.ctaTitle")}
           </h2>
           <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted-foreground">

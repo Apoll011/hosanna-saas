@@ -38,10 +38,10 @@ export function MigrationSection() {
   const current = SOURCE_APPS.find((a) => a.id === selectedId) || SOURCE_APPS[0];
 
   return (
-    <section id="import" className="bg-background py-24 md:py-32">
+    <section id="import" className="bg-background py-14 md:py-20">
       <div className="mx-auto max-w-[1068px] px-5 md:px-6">
         <div className="max-w-2xl">
-          <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance text-foreground">
+          <h2 className="font-display text-[clamp(1.75rem,2.6vw,2.35rem)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-foreground">
             {t("migration.titleStart")} {t("migration.titleHighlight")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">

@@ -29,7 +29,7 @@ const demoUrl = import.meta.env.VITE_DASHBOARD_URL + "/demo";
 export { Footer, Nav, StaffLines };
 
 const display =
-  "font-display font-semibold leading-[1.05] tracking-[-0.03em] text-balance";
+  "font-display font-medium leading-[1.15] tracking-[-0.02em] text-balance";
 
 function PrimaryLink({
   href,
@@ -97,11 +97,11 @@ function Hero() {
     <section id="top" className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[var(--site-header)] text-white">
       <StaffLines className="top-2 text-white/30" />
       <StaffLines className="bottom-0 text-white/15" />
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pt-16 text-center md:pt-24">
-        <h1 className={cn(display, "text-[clamp(2.75rem,6.4vw,5rem)] text-white")}>
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pt-10 text-center md:pt-14">
+        <h1 className={cn(display, "text-[clamp(2.05rem,3.6vw,3.05rem)] text-white")}>
           {t("landing.hero.title")}
         </h1>
-        <p className="mt-5 max-w-[34rem] text-[clamp(1.15rem,2vw,1.4rem)] leading-snug text-white/90">
+        <p className="mt-4 max-w-[34rem] text-lg leading-relaxed text-white/90">
           {t("landing.hero.subtitle")}
         </p>
         <div className="mt-8 flex flex-col items-center gap-1 sm:flex-row sm:gap-6">
@@ -133,8 +133,8 @@ function ServiceOrder() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto max-w-xl px-5 py-20 md:py-28">
-        <h2 className="text-xl font-semibold tracking-[-0.02em] text-foreground">
+      <div className="mx-auto max-w-xl px-5 py-14 md:py-16">
+        <h2 className="text-lg font-medium tracking-[-0.01em] text-foreground">
           {t("landing.hero.exampleCaption")}
         </h2>
         <ol className="mt-8 border-t border-border">
@@ -168,17 +168,17 @@ function Problem() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 text-center md:px-6 md:py-32">
-        <h2 className={cn(display, "mx-auto max-w-[18ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 text-center md:px-6 md:py-20">
+        <h2 className={cn(display, "mx-auto max-w-[18ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.problem.title")}
         </h2>
-        <p className="mx-auto mt-5 max-w-[40rem] text-xl leading-snug text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-[40rem] text-base leading-relaxed text-muted-foreground">
           {t("landing.problem.description")}
         </p>
         <ul className="mt-16 grid gap-12 text-left md:grid-cols-3 md:gap-10">
           {dict.landing.problem.cards.map((card: { title: string; body: string }) => (
             <li key={card.title}>
-              <h3 className="text-xl font-semibold tracking-[-0.02em] text-foreground">{card.title}</h3>
+              <h3 className="text-lg font-medium tracking-[-0.01em] text-foreground">{card.title}</h3>
               <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{card.body}</p>
             </li>
           ))}
@@ -193,11 +193,11 @@ function ProductBands() {
 
   return (
     <section id="features" className="bg-surface">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 text-center md:px-6 md:py-32">
-        <h2 className={cn(display, "mx-auto max-w-[16ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 text-center md:px-6 md:py-20">
+        <h2 className={cn(display, "mx-auto max-w-[16ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.twoApps.title")}
         </h2>
-        <p className="mx-auto mt-5 max-w-[36rem] text-xl leading-snug text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-[36rem] text-base leading-relaxed text-muted-foreground">
           {t("landing.twoApps.description")}
         </p>
         <img
@@ -208,7 +208,7 @@ function ProductBands() {
           loading="lazy"
           className="device-shadow mx-auto mt-12 h-auto w-full"
         />
-        <h3 className="mt-16 text-left text-[1.75rem] font-semibold tracking-[-0.02em] text-foreground">
+        <h3 className="mt-10 text-left text-xl font-medium tracking-[-0.01em] text-foreground">
           {t("landing.twoApps.dashboardTitle")}
         </h3>
         <ul className="mt-6 grid gap-x-12 text-left sm:grid-cols-2">
@@ -228,12 +228,12 @@ function MobileChapter() {
 
   return (
     <section id="mobile" className="bg-[#000000] text-white">
-      <div className="mx-auto grid max-w-[1068px] items-center gap-12 px-5 py-24 md:px-6 md:py-32 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
+      <div className="mx-auto grid max-w-[1068px] items-center gap-12 px-5 py-14 md:px-6 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
         <div>
-          <h2 className={cn(display, "max-w-[14ch] text-[clamp(2.4rem,5vw,4rem)]")}>
+          <h2 className={cn(display, "max-w-[14ch] text-[clamp(1.75rem,2.6vw,2.35rem)]")}>
             {t("landing.twoApps.mobileTitle")}
           </h2>
-          <p className="mt-5 max-w-[36rem] text-xl leading-snug text-white/80">
+          <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-white/80">
             {t("landing.mobileApp.description")}
           </p>
           <ul className="mt-8 border-t border-white/20">
@@ -270,17 +270,17 @@ function HowItWorks() {
 
   return (
     <section id="how" className="bg-background">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 md:px-6 md:py-32">
-        <h2 className={cn(display, "max-w-[16ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
+        <h2 className={cn(display, "max-w-[16ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.howItWorks.title")}
         </h2>
-        <p className="mt-5 max-w-[36rem] text-xl leading-snug text-muted-foreground">
+        <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-muted-foreground">
           {t("landing.howItWorks.description")}
         </p>
         <ol className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {dict.landing.howItWorks.steps.map((step: { n: string; title: string; body: string }) => (
             <li key={step.n}>
-              <h3 className="text-xl font-semibold tracking-[-0.02em] text-foreground">{step.title}</h3>
+              <h3 className="text-lg font-medium tracking-[-0.01em] text-foreground">{step.title}</h3>
               <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{step.body}</p>
             </li>
           ))}
@@ -301,11 +301,11 @@ function LiveWorship() {
 
   return (
     <section className="bg-surface">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 text-center md:px-6 md:py-32">
-        <h2 className={cn(display, "mx-auto max-w-[16ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 text-center md:px-6 md:py-20">
+        <h2 className={cn(display, "mx-auto max-w-[16ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.liveWorship.title")}
         </h2>
-        <p className="mx-auto mt-5 max-w-[40rem] text-xl leading-snug text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-[40rem] text-base leading-relaxed text-muted-foreground">
           {t("landing.liveWorship.description")}
         </p>
         <ul className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-x-8 gap-y-2 text-[17px] text-foreground">
@@ -331,11 +331,11 @@ function Gallery() {
 
   return (
     <section id="gallery" className="bg-background">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 md:px-6 md:py-32">
-        <h2 className={cn(display, "max-w-[16ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
+        <h2 className={cn(display, "max-w-[16ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.gallery.title")}
         </h2>
-        <p className="mt-5 max-w-[36rem] text-xl leading-snug text-muted-foreground">
+        <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-muted-foreground">
           {t("landing.gallery.description")}
         </p>
         <div className="mx-auto mt-12 max-w-3xl rounded-[2rem] bg-surface p-3 md:p-4">
@@ -379,9 +379,9 @@ function Portability() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto grid max-w-[1068px] gap-16 px-5 py-24 md:px-6 md:py-32 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1068px] gap-16 px-5 py-14 md:px-6 md:py-20 lg:grid-cols-2">
         <div>
-          <h2 className={cn(display, "text-[clamp(2.2rem,4vw,3.25rem)] text-foreground")}>
+          <h2 className={cn(display, "text-[clamp(1.65rem,2.2vw,2.05rem)] text-foreground")}>
             {t("landing.export.title")}
           </h2>
           <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-muted-foreground">
@@ -402,7 +402,7 @@ function Portability() {
           </p>
         </div>
         <div>
-          <h3 className={cn(display, "text-[clamp(2.2rem,4vw,3.25rem)] text-foreground")}>
+          <h3 className={cn(display, "text-[clamp(1.65rem,2.2vw,2.05rem)] text-foreground")}>
             {t("landing.organize.title")}
           </h3>
           <p className="mt-4 max-w-[58ch] leading-relaxed text-muted-foreground">
@@ -432,11 +432,11 @@ function Pricing() {
 
   return (
     <section id="pricing" className="bg-surface">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 md:px-6 md:py-32">
+      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
         <div className="rounded-[2rem] bg-white px-6 py-10 shadow-[0_24px_50px_-32px_rgba(0,0,0,0.35)] md:px-12 md:py-14">
           <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
             <div>
-              <h2 className={cn(display, "text-[clamp(2.2rem,4vw,3.25rem)] text-foreground")}>
+              <h2 className={cn(display, "text-[clamp(1.65rem,2.2vw,2.05rem)] text-foreground")}>
                 {t("landing.pricing.title")}
               </h2>
               <p className="mt-4 max-w-[36ch] text-lg leading-snug text-muted-foreground">
@@ -473,7 +473,7 @@ function Pricing() {
                   <span className="ml-2 text-xs opacity-80">{t("landing.pricing.discountBadge")}</span>
                 </button>
               </div>
-              <p className="mt-8 font-display text-[clamp(3.25rem,6vw,4.5rem)] font-semibold leading-none tabular-nums tracking-[-0.03em] text-foreground">
+              <p className="mt-8 font-display text-[clamp(2.5rem,4vw,3.15rem)] font-medium leading-none tabular-nums tracking-[-0.02em] text-foreground">
                 {price}€
               </p>
               <p className="mt-3 text-lg text-foreground">{unit}</p>
@@ -497,7 +497,7 @@ function Pricing() {
               </p>
             </div>
             <div className="rounded-[1.5rem] bg-surface px-6 py-7 md:px-8">
-              <h3 className="text-2xl font-semibold tracking-[-0.02em] text-foreground">
+              <h3 className="text-xl font-medium tracking-[-0.01em] text-foreground">
                 {t("landing.pricing.singlePlan")}
               </h3>
               <p className="mt-2 text-muted-foreground">{t("landing.pricing.singlePlanDesc")}</p>
@@ -539,11 +539,11 @@ function Founders() {
 
   return (
     <section className="bg-background">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 md:px-6 md:py-32">
-        <h2 className={cn(display, "max-w-[16ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
+        <h2 className={cn(display, "max-w-[16ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("about.storyTitle")}
         </h2>
-        <p className="mt-5 max-w-[36rem] text-xl leading-snug text-muted-foreground">
+        <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-muted-foreground">
           {t("about.heroSubtitle")}
         </p>
         <div className="mt-16 grid gap-16 md:grid-cols-2">
@@ -557,10 +557,10 @@ function Founders() {
                 className="h-24 w-24 rounded-full object-cover"
               />
               <figcaption className="mt-5">
-                <p className="text-2xl font-semibold tracking-[-0.02em] text-foreground">{person.name}</p>
+                <p className="text-xl font-medium tracking-[-0.01em] text-foreground">{person.name}</p>
                 <p className="mt-1 text-muted-foreground">{person.role}</p>
               </figcaption>
-              <blockquote className="mt-4 max-w-[36ch] text-xl leading-snug text-foreground">
+              <blockquote className="mt-4 max-w-[36ch] text-lg leading-snug text-foreground">
                 “{person.quote}”
               </blockquote>
             </figure>
@@ -582,8 +582,8 @@ function Roadmap() {
 
   return (
     <section className="bg-surface">
-      <div className="mx-auto max-w-[1068px] px-5 py-24 md:px-6 md:py-32">
-        <h2 className={cn(display, "max-w-[14ch] text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
+        <h2 className={cn(display, "max-w-[14ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.roadmap.title")}
         </h2>
         <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-muted-foreground">
@@ -606,8 +606,8 @@ function FAQ() {
 
   return (
     <section id="faq" className="bg-background">
-      <div className="mx-auto max-w-3xl px-5 py-24 md:py-32">
-        <h2 className={cn(display, "text-[clamp(2.4rem,5vw,4rem)] text-foreground")}>
+      <div className="mx-auto max-w-3xl px-5 py-14 md:py-20">
+        <h2 className={cn(display, "text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.faq.title")}
         </h2>
         <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-muted-foreground">
@@ -616,7 +616,7 @@ function FAQ() {
         <Accordion type="single" collapsible className="mt-10 w-full">
           {dict.landing.faq.items.map((item: { q: string; a: string }, index: number) => (
             <AccordionItem key={item.q} value={`item-${index}`} className="border-border">
-              <AccordionTrigger className="py-4 text-left font-display text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionTrigger className="py-4 text-left font-display text-base font-medium text-foreground hover:no-underline">
                 {item.q}
               </AccordionTrigger>
               <AccordionContent className="max-w-[65ch] text-base leading-relaxed text-muted-foreground">
@@ -636,14 +636,14 @@ function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-hero-gradient text-white">
       <StaffLines className="top-0 text-white/25" />
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 py-28 text-center md:py-36">
-        <h2 className={cn(display, "text-[clamp(2.6rem,5.5vw,4.5rem)]")}>
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 py-16 text-center md:py-20">
+        <h2 className={cn(display, "text-[clamp(1.85rem,3vw,2.5rem)]")}>
           {t("landing.finalCta.title")}
         </h2>
-        <p className="mt-5 max-w-[32rem] text-xl leading-snug text-white/90">
+        <p className="mt-5 max-w-[32rem] text-base leading-relaxed text-white/90">
           {t("landing.finalCta.subtitle")}
         </p>
-        <p className="mt-8 max-w-[28rem] text-2xl font-semibold leading-snug tracking-[-0.02em]">
+        <p className="mt-6 max-w-[32rem] text-lg font-medium leading-snug">
           {t("landing.vision.quote1")}
         </p>
         <div className="mt-8 flex flex-col items-center gap-1 sm:flex-row sm:gap-6">

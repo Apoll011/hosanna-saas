@@ -44,7 +44,7 @@ export function AboutUs() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
+          <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
             {t("about.storyTitle")}
           </h2>
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
@@ -58,7 +58,7 @@ export function AboutUs() {
 
       <section className="border-t border-border py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-5 md:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
+          <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
             {t("about.founderIntroTitle")}
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-2">
@@ -90,7 +90,7 @@ export function AboutUs() {
 
       <section className="border-t border-border py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
+          <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
             {t("about.ctaTitle")}
           </h2>
           <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted-foreground">

@@ -33,11 +33,11 @@ export function StaffLines({ className }: { className?: string }) {
 
 export function PageHeader({ title, lede }: { title: string; lede?: string }) {
   return (
-    <header className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[calc(var(--site-header)+4.5rem)] pb-16 text-white md:pb-20 md:pt-[calc(var(--site-header)+6rem)]">
+    <header className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[calc(var(--site-header)+2.75rem)] pb-12 text-white md:pb-14 md:pt-[calc(var(--site-header)+3.5rem)]">
       <StaffLines className="top-6 text-white/30" />
       <StaffLines className="bottom-0 text-white/15" />
       <div className="relative mx-auto max-w-3xl px-5 md:px-8">
-        <h1 className="font-display text-[clamp(2.6rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance text-white">
+        <h1 className="font-display text-[clamp(1.85rem,3vw,2.6rem)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-white">
           {title}
         </h1>
         {lede ? (

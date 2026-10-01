@@ -16,7 +16,7 @@ Display: Petrona Variable, semibold, slight negative tracking, for titles, price
 Text and UI: Source Sans 3 Variable.
 Both are self-hosted and cover Portuguese, English, and Spanish.
 
-Hero titles use `clamp(2.35rem, 4.6vw, 4.05rem)` with line-height about 1.06. Section titles use `clamp(1.8rem, 3vw, 2.55rem)`. Body is 1.0625rem / 1.6, held to about 62 characters. Prices use tabular numerals.
+Headlines are medium weight, not bold. The hero tops out near 3rem. Section titles top out near 2.35rem. Body is 1rem / 1.6, held to about 62 characters. Prices use tabular numerals at a modest size.
 
 ## Shape and elevation
 
