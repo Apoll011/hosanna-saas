@@ -435,20 +435,20 @@ function Pricing() {
 
   return (
     <section id="pricing" className="bg-surface">
-      <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
-        <div className="rounded-[2rem] bg-white px-6 py-10 shadow-[0_24px_50px_-32px_rgba(0,0,0,0.35)] md:px-12 md:py-14">
-          <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+      <div className="mx-auto max-w-[1068px] px-5 py-12 md:px-6 md:py-16">
+        <div className="rounded-[1.75rem] bg-white px-6 py-7 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.35)] md:px-8 md:py-8">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
             <div>
-              <h2 className={cn(display, "text-[clamp(1.65rem,2.2vw,2.05rem)] text-foreground")}>
+              <h2 className={cn(display, "text-[clamp(1.5rem,2vw,1.85rem)] text-foreground")}>
                 {t("landing.pricing.title")}
               </h2>
-              <p className="mt-4 max-w-[36ch] text-lg leading-snug text-muted-foreground">
+              <p className="mt-3 max-w-[36ch] text-base leading-snug text-muted-foreground">
                 {t("landing.pricing.description")}
               </p>
               <div
                 role="radiogroup"
                 aria-label={t("landing.pricing.title")}
-                className="mt-8 inline-flex rounded-full bg-surface p-1"
+                className="mt-5 inline-flex rounded-full bg-surface p-1"
               >
                 <button
                   type="button"
@@ -476,43 +476,40 @@ function Pricing() {
                   <span className="ml-2 text-xs opacity-80">{t("landing.pricing.discountBadge")}</span>
                 </button>
               </div>
-              <p className="mt-8 font-display text-[clamp(2.5rem,4vw,3.15rem)] font-medium leading-none tabular-nums tracking-[-0.02em] text-foreground">
+              <p className="mt-5 font-display text-[clamp(2rem,3vw,2.5rem)] font-medium leading-none tabular-nums tracking-[-0.02em] text-foreground">
                 {price}€
               </p>
-              <p className="mt-3 text-lg text-foreground">{unit}</p>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-base text-foreground">{unit}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
                 {annual ? t("landing.pricing.annualBilledNote") : t("landing.pricing.monthlyBilledNote")}
               </p>
-              <div className="mt-8">
+              <div className="mt-5">
                 <PrimaryLink href={`${signupUrl}/?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
                   {t("landing.pricing.ctaTry")}
                 </PrimaryLink>
               </div>
-              <p className="mt-5 max-w-[40ch] text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 max-w-[42ch] text-sm leading-relaxed text-muted-foreground">
                 {t("landing.pricing.pricingClarification")}
               </p>
-              <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">{t("landing.pricing.multiCampusLabel")}</span>{" "}
                 {t("landing.pricing.multiCampusText")}
               </p>
-              <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-muted-foreground">
-                {t("landing.anySize.description")}
-              </p>
             </div>
-            <div className="rounded-[1.5rem] bg-surface px-6 py-7 md:px-8">
-              <h3 className="text-xl font-medium tracking-[-0.01em] text-foreground">
+            <div>
+              <h3 className="text-lg font-medium tracking-[-0.01em] text-foreground">
                 {t("landing.pricing.singlePlan")}
               </h3>
-              <p className="mt-2 text-muted-foreground">{t("landing.pricing.singlePlanDesc")}</p>
-              <ul className="mt-6 space-y-3">
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t("landing.pricing.singlePlanDesc")}</p>
+              <ul className="mt-4 border-t border-border">
                 {dict.landing.pricing.features.map((feature: string) => (
-                  <li key={feature} className="text-[17px] leading-snug text-foreground">
+                  <li key={feature} className="border-b border-border py-2 text-[15px] leading-snug text-foreground">
                     {feature}
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                {t("landing.pricing.unlimitedMusicians")}. {t("landing.pricing.freeTrialDays")}.
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {t("landing.pricing.freeTrialDays")}. {t("landing.anySize.description")}
               </p>
             </div>
           </div>
