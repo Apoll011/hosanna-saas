@@ -60,8 +60,8 @@
   --color-surface: var(--surface);
   --color-success: var(--success);
   --color-warning: var(--warning);
-  --font-display: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-sans: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Petrona Variable", Palatino, "Palatino Linotype", serif;
+  --font-sans: "Source Sans 3 Variable", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {

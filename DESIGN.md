@@ -12,11 +12,11 @@ Below the mast the ground is cool paper `#f3f5f7`. Ink is `#1a2330`. Muted text 
 
 ## Type
 
-Display: Petrona Variable, semibold, slight negative tracking, for titles, prices, and quotes.
+Display: Petrona Variable, slight negative tracking, for titles, prices, and quotes.
 Text and UI: Source Sans 3 Variable.
 Both are self-hosted and cover Portuguese, English, and Spanish.
 
-Headlines are medium weight, not bold. The hero tops out near 3rem. Section titles top out near 2.35rem. Body is 1rem / 1.6, held to about 62 characters. Prices use tabular numerals at a modest size.
+The hero title is semibold and tops out near 4rem. Section titles are medium and top out near 2.35rem. Body is 1rem / 1.6. Prices use tabular numerals.
 
 ## Shape and elevation
 
