@@ -36,17 +36,6 @@ export const en: typeof import("./pt").pt = {
       "worship planning, chord charts, chordpro, church management, worship team, christian repertoire, church software, worship ministry",
   },
   landing: {
-    demoPopup: {
-      title: "HOSANNA's in Demo",
-      description:
-        "Experience Hosanna Studio without the need for registration.",
-      cta: "Check the Demo",
-    },
-    gofundPopup: {
-      title: "Support Hosanna",
-      description: "Support the development of Hosanna and help us bring this technology to churches worldwide.",
-      cta: "Donate Now",
-    },
     banner: "We're live! The Demo version is now available. Join us on this journey!",
     nav: {
       features: "Features",

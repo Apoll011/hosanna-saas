@@ -36,16 +36,6 @@ export const es: typeof import("./pt").pt = {
       "planificación de alabanza, acordes, chordpro, gestión de iglesia, equipo de alabanza, repertorio cristiano, software para iglesias, ministerio de alabanza",
   },
   landing: {
-    demoPopup: {
-      title: "Prueba HOSANNA",
-      description: "Experimenta Hosanna Studio sin necesidad de registro.",
-      cta: "Consulta la Demo",
-    },
-    gofundPopup: {
-      title: "Apoya a Hosanna",
-      description: "Apoya el desarrollo de Hosanna y ayúdanos a llevar la tecnología a iglesias de todo el mundo.",
-      cta: "Donar Ahora",
-    },
     banner: "¡Estamos en vivo! Experimenta nuestra Demo. Únete a nosotros en este viaje.",
     nav: {
       features: "Funciones",

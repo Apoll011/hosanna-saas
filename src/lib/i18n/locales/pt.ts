@@ -36,16 +36,6 @@ export const pt = {
       "planeamento de louvor, cifras, chordpro, gestão de igreja, equipa de louvor, repertório cristão, software para igrejas, ministério de louvor",
   },
   landing: {
-    demoPopup: {
-      title: "Experimenta HOSANNA",
-      description: "Já podes experimentar o Hosanna Studio sem necessidade de registo.",
-      cta: "Testar a Demo",
-    },
-    gofundPopup: {
-      title: "Ajuda o Hosanna",
-      description: "Apoia o desenvolvimento do Hosanna e ajuda-nos a levar a tecnologia às igrejas de todo o mundo.",
-      cta: "Doar Agora",
-    },
     banner: "Já estamos live! Experimenta a nossa Demo. Junta-te a nós nesta jornada!",
     nav: {
       features: "Funcionalidades",

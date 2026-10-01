@@ -13,8 +13,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { DemoPopup } from "@/components/ui/DemoPopup";
-import { GoFundPopup } from "@/components/ui/GoFundPopup";
 import { MigrationSection } from "@/components/ui/MigrationSection";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -666,8 +664,6 @@ export function HosannaLanding() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
-      <DemoPopup />
-      <GoFundPopup />
       <main id="content">
         <Hero />
         <Problem />

@@ -52,7 +52,7 @@ Name: Hosanna (Studio in the product). Mark: blue guitar headstock forming an H.
 - Email: hosanna.songbook@gmail.com
 - Blog: https://blog.hosanna.live
 - Code: https://github.com/Apoll011/Hosanna
-- GoFundMe link in the landing and popup
+- GoFundMe link in the footer. The timed demo and fundraising popups are not part of the site.
 - No verified testimonials, logos of churches, or usage statistics in the repo
 
 ## Product Principles
