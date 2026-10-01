@@ -272,6 +272,7 @@ export const es: typeof import("./pt").pt = {
       title: "Ayúdanos a llevar Hosanna a iglesias de todo el mundo",
       description:
         "Tu contribución nos permite seguir creando, mejorando y llevando esta herramienta a más ministerios de alabanza.",
+      cta: "Donar ahora",
       iframeTitle: "Apoya a Hosanna en GoFundMe",
     },
     roadmap: {

@@ -267,6 +267,7 @@ export const en: typeof import("./pt").pt = {
       title: "Help us bring Hosanna to churches worldwide",
       description:
         "Your support helps us build, refine, and deliver this tool to more worship ministries.",
+      cta: "Donate now",
       iframeTitle: "Support Hosanna on GoFundMe",
     },
     roadmap: {

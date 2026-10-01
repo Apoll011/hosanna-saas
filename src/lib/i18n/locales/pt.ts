@@ -271,6 +271,7 @@ export const pt = {
       title: "Ajude-nos a levar o Hosanna a igrejas de todo o mundo",
       description:
         "A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a mais equipas de louvor.",
+      cta: "Doar agora",
       iframeTitle: "Apoie o Hosanna no GoFundMe",
     },
     roadmap: {

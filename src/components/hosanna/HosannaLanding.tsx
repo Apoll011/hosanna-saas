@@ -580,11 +580,40 @@ function Founders() {
   );
 }
 
+const goFundMeLink = "https://gofund.me/e46a567a7";
+
+function Support() {
+  const { t } = useI18n();
+
+  return (
+    <section id="support" className="bg-surface">
+      <div className="mx-auto flex max-w-[1068px] flex-col items-start gap-8 px-5 py-14 md:px-6 md:py-20 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h2 className={cn(display, "max-w-[18ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
+            {t("landing.support.title")}
+          </h2>
+          <p className="mt-5 max-w-[40rem] text-base leading-relaxed text-muted-foreground">
+            {t("landing.support.description")}
+          </p>
+        </div>
+        <a
+          href={goFundMeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-primary px-5 text-[17px] text-primary-foreground hover:bg-primary-dark"
+        >
+          {t("landing.support.cta")}
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function Roadmap() {
   const { t, dict } = useI18n();
 
   return (
-    <section className="bg-surface">
+    <section className="bg-background">
       <div className="mx-auto max-w-[1068px] px-5 py-14 md:px-6 md:py-20">
         <h2 className={cn(display, "max-w-[14ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.roadmap.title")}
@@ -608,7 +637,7 @@ function FAQ() {
   const { t, dict } = useI18n();
 
   return (
-    <section id="faq" className="bg-background">
+    <section id="faq" className="bg-surface">
       <div className="mx-auto max-w-3xl px-5 py-14 md:py-20">
         <h2 className={cn(display, "text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
           {t("landing.faq.title")}
@@ -678,6 +707,7 @@ export function HosannaLanding() {
         <Portability />
         <Pricing />
         <Founders />
+        <Support />
         <Roadmap />
         <FAQ />
         <FinalCTA />
