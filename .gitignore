@@ -21,7 +21,7 @@ dist-ssr
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
-
+.skills
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -32,3 +32,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.agents/
+.impeccable/
+skills-lock.json
