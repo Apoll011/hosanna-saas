@@ -110,7 +110,6 @@ export function Nav() {
         solid ? "bg-[#075985]" : "bg-transparent",
       )}
     >
-      {solid ? <StaffLines className="top-0 text-white/25" /> : null}
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:bg-surface focus:px-3 focus:py-2"
