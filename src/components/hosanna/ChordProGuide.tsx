@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import { Link } from "@tanstack/react-router";
@@ -20,7 +19,7 @@ import {
   Repeat,
   Tags,
 } from "lucide-react";
-import { StaffLines } from "./HosannaLanding";
+import { PageHeader } from "./chrome";
 
 type DirectiveCategory = "metadata" | "comment" | "structure" | "notation";
 
@@ -260,12 +259,7 @@ function SectionHeader({
   return (
     <div className="space-y-6 reveal">
       <EyebrowIcon icon={icon} />
-      {eyebrow && (
-        <div className="text-xs font-semibold uppercase tracking-widest text-primary/60">
-          {eyebrow}
-        </div>
-      )}
-      <h2 className="text-3xl md:text-4xl font-display font-bold text-primary tracking-tight">
+      <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
         {title}
       </h2>
       {lede && (
@@ -408,59 +402,45 @@ export function ChordProGuide() {
   return (
     <div className="bg-white min-h-screen selection:bg-primary/10 font-sans">
       {/* ============================= HERO ============================= */}
-      <section className="bg-hero-gradient pt-40 pb-16 text-white relative overflow-hidden -mt-30">
-        <div className="absolute inset-0 text-white/10">
-          <StaffLines className="top-24 opacity-40" />
-          <StaffLines className="bottom-12 opacity-20" />
-        </div>
-        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-          <div className="flex justify-center items-center gap-3 mb-8">
-            <div className="reveal inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-blue-200 border border-white/10">
-              <BookMarked className="w-3.5 h-3.5" />
-              {t("chordproGuide.heroBadge")}
-            </div>
-            <LanguageSelector />
-          </div>
-          <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
-            {t("chordproGuide.heroTitleStart")}{" "}
-            <span className="text-blue-300">{t("chordproGuide.heroTitleHighlight")}</span>
-          </h1>
-          <p className="reveal text-lg md:text-xl text-blue-50/80 leading-relaxed max-w-3xl mx-auto mb-14">
-            {t("chordproGuide.heroSubtitle")}
-          </p>
+      <PageHeader
+        title={`${t("chordproGuide.heroTitleStart")} ${t("chordproGuide.heroTitleHighlight")}`}
+        lede={t("chordproGuide.heroSubtitle")}
+      />
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-5 py-12 md:px-8">
 
-          <div className="reveal grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
-            <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200/70 mb-4">
+          <div className="grid gap-4 text-left md:grid-cols-2">
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h2 className="mb-4 font-display text-xl font-semibold text-foreground">
                 {t("chordproGuide.traditionalDoc")}
-              </div>
-              <div className="font-mono text-sm text-blue-50/50 leading-loose whitespace-pre">
+              </h2>
+              <pre className="font-mono text-sm leading-loose text-muted-foreground whitespace-pre">
                 {"  A            D\nLord my God, when I in awesome wonder"}
-              </div>
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-amber-200/80">
-                <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
+              </pre>
+              <p className="mt-5 flex items-start gap-2 text-sm text-warning">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
                 {t("chordproGuide.traditionalWarning")}
-              </div>
+              </p>
             </div>
-            <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-blue-300/30 p-6">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-blue-200 mb-4">
+            <div className="rounded-xl border border-primary/30 bg-accent p-6">
+              <h2 className="mb-4 font-display text-xl font-semibold text-foreground">
                 {t("chordproGuide.chordproInHosanna")}
-              </div>
-              <div className="font-mono text-sm leading-loose">
-                Lord my <span className="text-blue-300 font-bold">[A]</span>God, when I in{" "}
-                <span className="text-blue-300 font-bold">[D]</span>awesome wonder
-              </div>
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-blue-100">
-                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+              </h2>
+              <p className="font-mono text-sm leading-loose text-foreground">
+                Lord my <span className="font-bold text-primary">[A]</span>God, when I in{" "}
+                <span className="font-bold text-primary">[D]</span>awesome wonder
+              </p>
+              <p className="mt-5 flex items-start gap-2 text-sm text-foreground">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
                 {t("chordproGuide.chordproSuccess")}
-              </div>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* TOC mobile */}
-      <div className="lg:hidden sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-border">
+      <div className="sticky top-16 z-20 border-b border-border bg-background/95 backdrop-blur-sm lg:hidden">
         <div className="flex gap-2 overflow-x-auto px-6 py-4 no-scrollbar">
           {TOC.map((item) => (
             <a
@@ -951,28 +931,22 @@ export function ChordProGuide() {
       </section>
 
       {/* ============================= CTA ============================= */}
-      <section className="bg-secondary py-16 font-sans">
-        <div className="container mx-auto px-6 text-center max-w-3xl reveal">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-8 tracking-tight">
+      <section className="border-t border-border py-16">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-foreground md:text-4xl">
             {t("chordproGuide.ctaTitle")}
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+          <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted-foreground">
             {t("chordproGuide.ctaDesc")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Button
-              size="lg"
-              className="rounded-full bg-primary px-10 text-white font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all py-6"
-            >
-              {t("chordproGuide.ctaCreateSong")}
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button size="lg" className="min-h-11" asChild>
+              <a href={`${import.meta.env.VITE_DASHBOARD_URL}/new`}>
+                {t("chordproGuide.ctaCreateSong")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full px-10 text-lg font-medium py-6"
-              asChild
-            >
+            <Button variant="outline" size="lg" className="min-h-11" asChild>
               <Link to="/">{t("chordproGuide.ctaBackHome")}</Link>
             </Button>
           </div>

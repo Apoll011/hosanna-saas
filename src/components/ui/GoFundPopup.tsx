@@ -1,33 +1,44 @@
 import { useI18n } from "@/lib/i18n";
-import { Heart } from "lucide-react";
-import { useState } from "react";
+import { X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const goFundMeLink = "https://gofund.me/e46a567a7";
 
 export function GoFundPopup() {
   const { t } = useI18n();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsOpen(true), 25000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   if (!isOpen) return null;
 
   return (
-    <div className="absolute bottom-8 left-5 z-20 hidden w-full max-w-[300px] md:block animate-in slide-in-from-bottom-5 fade-in duration-500">
-      <div className="relative flex items-center gap-3 rounded-[28px] border border-white/25 bg-white/10 p-2.5 shadow-sm backdrop-blur-xl">
-
-        <Heart className="h-4 w-4 shrink-0 fill-white/20 text-white" />
-        <h3 className="font-display text-sm font-semibold text-white pr-4 whitespace-nowrap">
-          {t("landing.gofundPopup.title")}
-        </h3>
-
-        <a
-          href={goFundMeLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ml-auto shrink-0 inline-flex items-center justify-center rounded-full border border-white bg-white px-3 py-1 text-xs font-semibold text-primary transition-all hover:bg-transparent hover:text-white active:scale-95"
-        >
-          {t("landing.gofundPopup.cta")}
-        </a>
-      </div>
+    <div className="fixed bottom-4 left-4 z-40 hidden max-w-xs rounded-xl border border-border bg-surface p-4 shadow-soft md:block">
+      <button
+        type="button"
+        onClick={() => setIsOpen(false)}
+        className="absolute right-2 top-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground"
+        aria-label={t("common.closeMenu")}
+      >
+        <X className="h-4 w-4" />
+      </button>
+      <h2 className="pr-8 font-display text-lg font-semibold text-foreground">
+        {t("landing.gofundPopup.title")}
+      </h2>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        {t("landing.gofundPopup.description")}
+      </p>
+      <a
+        href={goFundMeLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex min-h-11 items-center rounded-lg border border-border px-4 text-sm font-semibold text-foreground hover:bg-secondary"
+      >
+        {t("landing.gofundPopup.cta")}
+      </a>
     </div>
   );
 }
