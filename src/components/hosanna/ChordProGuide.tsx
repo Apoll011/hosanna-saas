@@ -19,6 +19,7 @@ import {
   Repeat,
   Tags,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { PageHeader } from "./chrome";
 
 type DirectiveCategory = "metadata" | "comment" | "structure" | "notation";
@@ -237,17 +238,8 @@ const DIRECTIVES: DirectiveEntry[] = [
 
 const ESSENTIAL_DIRECTIVES = ["title", "artist", "key", "duration", "youtube", "song_number"];
 
-function EyebrowIcon({ icon: Icon }: { icon: React.ElementType }) {
-  return (
-    <div className="inline-flex p-4 rounded-2xl bg-blue-50 text-primary shadow-sm border border-blue-100">
-      <Icon className="w-10 h-10" />
-    </div>
-  );
-}
-
 function SectionHeader({
-  icon,
-  eyebrow,
+  icon: Icon,
   title,
   lede,
 }: {
@@ -257,13 +249,15 @@ function SectionHeader({
   lede?: React.ReactNode;
 }) {
   return (
-    <div className="space-y-6 reveal">
-      <EyebrowIcon icon={icon} />
-      <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
+    <div className="reveal">
+      <h2 className="flex items-center gap-3 font-display text-2xl font-medium tracking-[-0.02em] text-foreground md:text-3xl">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+          <Icon className="h-5 w-5" aria-hidden />
+        </span>
         {title}
       </h2>
       {lede && (
-        <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">{lede}</p>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{lede}</p>
       )}
     </div>
   );
@@ -338,7 +332,7 @@ function DirectiveCard({ entry }: { entry: DirectiveEntry }) {
   return (
     <div className="p-6 border border-border rounded-2xl hover:border-primary/30 transition-all hover:bg-blue-50/10 group shadow-sm relative">
       <div className="flex items-start justify-between gap-3 mb-2">
-        <code className="text-primary font-bold text-lg block group-hover:scale-105 transition-transform origin-left">
+        <code className="block text-lg font-bold text-primary">
           {`{${entry.directive}: ...}`}
         </code>
         {entry.hosanna && <HosannaBadge />}
@@ -368,6 +362,43 @@ export function ChordProGuide() {
     { id: "atalhos", label: t("chordproGuide.toc.shortcuts") },
     { id: "referencia", label: t("chordproGuide.toc.reference") },
   ];
+  const [activeId, setActiveId] = useState(TOC[0].id);
+
+  useEffect(() => {
+    const ids = ["fundamentos", "sintaxe", "diretivas", "estrutura", "notas", "tablatura", "atalhos", "referencia"];
+    let frame = 0;
+    const update = () => {
+      const marker = window.scrollY + 220;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (top <= marker) current = id;
+      }
+      setActiveId((prev) => (prev === current ? prev : current));
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const chip = document.querySelector<HTMLElement>(`[data-toc-mobile="${activeId}"]`);
+    const scroller = chip?.parentElement;
+    if (!chip || !scroller) return;
+    scroller.scrollTo({
+      left: chip.offsetLeft - scroller.clientWidth / 2 + chip.clientWidth / 2,
+      behavior: "auto",
+    });
+  }, [activeId]);
 
   const CATEGORY_META: Record<
     DirectiveCategory,
@@ -440,17 +471,26 @@ export function ChordProGuide() {
       </section>
 
       {/* TOC mobile */}
-      <div className="sticky top-16 z-20 border-b border-border bg-background/95 backdrop-blur-sm lg:hidden">
-        <div className="flex gap-2 overflow-x-auto px-6 py-4 no-scrollbar">
-          {TOC.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="shrink-0 text-sm font-medium text-muted-foreground hover:text-primary px-3.5 py-1.5 rounded-full border border-border hover:border-primary/30 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+      <div className="sticky top-[var(--site-header)] z-20 border-b border-border bg-background/95 backdrop-blur-sm lg:hidden">
+        <div className="flex gap-2 overflow-x-auto px-5 py-3">
+          {TOC.map((item) => {
+            const active = item.id === activeId;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                data-toc-mobile={item.id}
+                aria-current={active ? "location" : undefined}
+                className={
+                  active
+                    ? "shrink-0 rounded-full border border-primary bg-primary px-3.5 py-1.5 text-sm font-medium text-primary-foreground"
+                    : "shrink-0 rounded-full border border-border px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
+                }
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
       </div>
 
@@ -459,27 +499,36 @@ export function ChordProGuide() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="lg:grid lg:grid-cols-[220px_1fr] lg:gap-16 items-start">
             {/* TOC desktop */}
-            <nav className="hidden lg:block sticky top-28 space-y-1">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-4 pl-3">
-                {t("chordproGuide.tocTitle")}
-              </div>
-              {TOC.map((item, idx) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="flex items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-blue-50/60 rounded-xl px-3 py-2.5 transition-colors"
-                >
-                  <span className="text-xs font-mono text-primary/40 w-4">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  {item.label}
-                </a>
-              ))}
+            <nav
+              className="sticky top-[calc(var(--site-header)+1.25rem)] hidden space-y-1 lg:block"
+              aria-label={t("chordproGuide.tocTitle")}
+            >
+              <div className="mb-3 pl-3 text-sm text-muted-foreground">{t("chordproGuide.tocTitle")}</div>
+              {TOC.map((item, idx) => {
+                const active = item.id === activeId;
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    aria-current={active ? "location" : undefined}
+                    className={
+                      active
+                        ? "flex items-center gap-3 rounded-full bg-primary/10 px-3 py-2.5 text-sm font-medium text-foreground"
+                        : "flex items-center gap-3 rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
+                    }
+                  >
+                    <span className={active ? "w-4 font-mono text-xs text-primary" : "w-4 font-mono text-xs text-muted-foreground"}>
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {item.label}
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="grid gap-20 min-w-0">
               {/* ---------------- Fundamentos ---------------- */}
-              <div id="fundamentos" className="scroll-mt-28">
+              <div id="fundamentos" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={BookOpen}
                   title={t("chordproGuide.whatIsTitle")}
@@ -504,7 +553,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Sintaxe de Acordes ---------------- */}
-              <div id="sintaxe" className="scroll-mt-28">
+              <div id="sintaxe" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Code2}
                   title={t("chordproGuide.anatomyTitle")}
@@ -560,7 +609,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Diretivas Essenciais ---------------- */}
-              <div id="diretivas" className="scroll-mt-28">
+              <div id="diretivas" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Music2}
                   title={t("chordproGuide.essentialDirectivesTitle")}
@@ -575,7 +624,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Estrutura & {chorus} ---------------- */}
-              <div id="estrutura" className="scroll-mt-28">
+              <div id="estrutura" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Layers}
                   title={t("chordproGuide.structureTitle")}
@@ -648,7 +697,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Notas & Grelhas ---------------- */}
-              <div id="notas" className="scroll-mt-28">
+              <div id="notas" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Grid3x3}
                   eyebrow={t("chordproGuide.gridsEyebrow")}
@@ -729,7 +778,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Tablatura ---------------- */}
-              <div id="tablatura" className="scroll-mt-28">
+              <div id="tablatura" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Music2}
                   eyebrow={t("chordproGuide.tabEyebrow")}
@@ -760,7 +809,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Atalhos & Snippets ---------------- */}
-              <div id="atalhos" className="scroll-mt-28">
+              <div id="atalhos" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={Keyboard}
                   eyebrow={t("chordproGuide.shortcutsEyebrow")}
@@ -872,7 +921,7 @@ export function ChordProGuide() {
               </div>
 
               {/* ---------------- Referência Rápida ---------------- */}
-              <div id="referencia" className="scroll-mt-28">
+              <div id="referencia" className="scroll-mt-36 lg:scroll-mt-24">
                 <SectionHeader
                   icon={BookMarked}
                   eyebrow={t("chordproGuide.quickRefEyebrow")}
