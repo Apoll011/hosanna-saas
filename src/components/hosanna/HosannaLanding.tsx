@@ -227,18 +227,18 @@ function MobileChapter() {
   const { t, dict } = useI18n();
 
   return (
-    <section id="mobile" className="bg-[#000000] text-white">
+    <section id="mobile" className="bg-background text-foreground">
       <div className="mx-auto grid max-w-[1068px] items-center gap-12 px-5 py-14 md:px-6 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
         <div>
-          <h2 className={cn(display, "max-w-[14ch] text-[clamp(1.75rem,2.6vw,2.35rem)]")}>
+          <h2 className={cn(display, "max-w-[14ch] text-[clamp(1.75rem,2.6vw,2.35rem)] text-foreground")}>
             {t("landing.twoApps.mobileTitle")}
           </h2>
-          <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-white/80">
+          <p className="mt-5 max-w-[36rem] text-base leading-relaxed text-muted-foreground">
             {t("landing.mobileApp.description")}
           </p>
-          <ul className="mt-8 border-t border-white/20">
+          <ul className="mt-8 border-t border-border">
             {dict.landing.twoApps.mobileFeatures.map((feature: string) => (
-              <li key={feature} className="border-b border-white/20 py-3 text-[17px]">
+              <li key={feature} className="border-b border-border py-3 text-[17px]">
                 {feature}
               </li>
             ))}
@@ -246,7 +246,7 @@ function MobileChapter() {
           <div className="mt-8">
             <a
               href="https://github.com/Apoll011/Hosanna/releases/latest"
-              className="inline-flex min-h-11 items-center rounded-full bg-white px-5 text-[17px] text-[#1d1d1f]"
+              className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 text-[17px] text-primary-foreground hover:bg-primary-dark"
             >
               {t("landing.footer.downloadApp")}
             </a>
