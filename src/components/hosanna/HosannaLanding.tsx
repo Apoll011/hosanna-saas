@@ -91,73 +91,76 @@ function SecondaryLink({
 }
 
 function Hero() {
-  const { t } = useI18n();
-
-  return (
-    <section id="top" className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[var(--site-header)] text-white">
-      <StaffLines className="top-2 text-white/30" />
-      <StaffLines className="bottom-0 text-white/15" />
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pt-10 text-center md:pt-14">
-        <h1 className={cn(display, "text-[clamp(2.05rem,3.6vw,3.05rem)] text-white")}>
-          {t("landing.hero.title")}
-        </h1>
-        <p className="mt-4 max-w-[34rem] text-lg leading-relaxed text-white/90">
-          {t("landing.hero.subtitle")}
-        </p>
-        <div className="mt-8 flex flex-col items-center gap-1 sm:flex-row sm:gap-6">
-          <PrimaryLink href={signupUrl} onBlue>
-            {t("landing.hero.ctaStart")}
-          </PrimaryLink>
-          <SecondaryLink href={demoUrl} onBlue>
-            {t("landing.hero.ctaDemo")}
-          </SecondaryLink>
-        </div>
-      </div>
-      <img
-        src={dashboardImg}
-        alt={t("landing.hero.dashboardAlt")}
-        width={1600}
-        height={1112}
-        decoding="async"
-        fetchPriority="high"
-        className="hero-rise device-shadow relative mx-auto mt-8 h-auto w-full max-w-[1600px] px-3 pb-4 sm:px-6 md:mt-10 md:pb-8"
-      />
-    </section>
-  );
-}
-
-function ServiceOrder() {
   const { t, dict } = useI18n();
   const items = dict.landing.export.sampleItems;
   const [current, setCurrent] = useState(1);
 
   return (
-    <section className="bg-background">
-      <div className="mx-auto max-w-xl px-5 py-14 md:py-16">
-        <h2 className="text-lg font-medium tracking-[-0.01em] text-foreground">
-          {t("landing.hero.exampleCaption")}
-        </h2>
-        <ol className="mt-8 border-t border-border">
-          {items.map((item: string, index: number) => {
-            const selected = index === current;
-            return (
-              <li key={item} className="border-b border-border">
-                <button
-                  type="button"
-                  aria-current={selected ? "true" : undefined}
-                  onClick={() => setCurrent(index)}
-                  className={cn(
-                    "flex min-h-12 w-full items-baseline gap-4 py-3 text-left text-[1.05rem]",
-                    selected ? "text-foreground" : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  <span className="w-6 shrink-0 tabular-nums">{index + 1}</span>
-                  <span className={selected ? "font-semibold" : undefined}>{item}</span>
-                </button>
-              </li>
-            );
-          })}
-        </ol>
+    <section id="top" className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[var(--site-header)] text-white">
+      <StaffLines className="top-4 text-white/35" />
+      <StaffLines className="bottom-6 text-white/20" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:py-20">
+        <div>
+          <h1 className="font-display text-[clamp(2.35rem,4.6vw,4.05rem)] font-semibold leading-[1.06] tracking-[-0.02em] text-balance text-white">
+            {t("landing.hero.title")}
+          </h1>
+          <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-white/90">
+            {t("landing.hero.subtitle")}
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <PrimaryLink href={signupUrl} onBlue>
+              {t("landing.hero.ctaStart")}
+            </PrimaryLink>
+            <a
+              href={demoUrl}
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/40 bg-white/10 px-5 text-[17px] text-white hover:bg-white/15"
+            >
+              {t("landing.hero.ctaDemo")}
+            </a>
+          </div>
+          <div className="mt-10 max-w-xl">
+            <p className="text-sm leading-relaxed text-white/75">
+              {t("landing.hero.exampleCaption")}
+            </p>
+            <ol className="mt-3 border-y border-white/25">
+              {items.map((item: string, index: number) => {
+                const selected = index === current;
+                return (
+                  <li key={item} className="border-b border-white/20 last:border-b-0">
+                    <button
+                      type="button"
+                      aria-current={selected ? "true" : undefined}
+                      onClick={() => setCurrent(index)}
+                      className={cn(
+                        "flex min-h-11 w-full items-baseline gap-4 px-2 py-2.5 text-left text-[0.98rem] text-white",
+                        selected ? "bg-white/15" : "hover:bg-white/10",
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          "w-6 shrink-0 font-semibold tabular-nums",
+                          selected ? "text-sky-200" : "text-white/60",
+                        )}
+                      >
+                        {index + 1}
+                      </span>
+                      <span className={selected ? "font-semibold" : undefined}>{item}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+        <img
+          src={dashboardImg}
+          alt={t("landing.hero.dashboardAlt")}
+          width={1600}
+          height={1112}
+          decoding="async"
+          fetchPriority="high"
+          className="device-shadow h-auto w-full"
+        />
       </div>
     </section>
   );
@@ -667,7 +670,6 @@ export function HosannaLanding() {
       <GoFundPopup />
       <main id="content">
         <Hero />
-        <ServiceOrder />
         <Problem />
         <ProductBands />
         <MobileChapter />
