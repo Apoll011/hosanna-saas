@@ -120,7 +120,7 @@ function Hero() {
         height={1112}
         decoding="async"
         fetchPriority="high"
-        className="hero-rise device-shadow relative mx-auto mt-10 h-auto w-full max-w-5xl px-5 pb-8 md:mt-14 md:pb-14"
+        className="hero-rise device-shadow relative mx-auto mt-8 h-auto w-full max-w-[1600px] px-3 pb-4 sm:px-6 md:mt-10 md:pb-8"
       />
     </section>
   );
