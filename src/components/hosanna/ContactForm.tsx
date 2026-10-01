@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { FormEvent } from "react";
 
 const fieldClass =
-  "mt-2 w-full min-h-11 rounded-lg border border-input bg-surface px-3 text-base text-foreground placeholder:text-muted-foreground";
+  "mt-2 w-full min-h-11 rounded-2xl border border-input bg-surface px-4 text-base text-foreground placeholder:text-muted-foreground";
 
 export function ContactForm() {
   const { t } = useI18n();
@@ -119,7 +119,7 @@ export function ContactForm() {
             </div>
             <button
               type="submit"
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary-dark"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary-dark"
             >
               {t("contact.sendButton")}
             </button>

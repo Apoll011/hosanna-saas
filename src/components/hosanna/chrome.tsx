@@ -33,11 +33,11 @@ export function StaffLines({ className }: { className?: string }) {
 
 export function PageHeader({ title, lede }: { title: string; lede?: string }) {
   return (
-    <header className="relative -mt-[4.5rem] overflow-hidden bg-hero-gradient pt-[calc(4.5rem+3.25rem)] pb-14 text-white md:pb-16 md:pt-[calc(4.5rem+4.5rem)]">
+    <header className="relative -mt-[var(--site-header)] overflow-hidden bg-hero-gradient pt-[calc(var(--site-header)+4.5rem)] pb-16 text-white md:pb-20 md:pt-[calc(var(--site-header)+6rem)]">
       <StaffLines className="top-6 text-white/30" />
       <StaffLines className="bottom-0 text-white/15" />
       <div className="relative mx-auto max-w-3xl px-5 md:px-8">
-        <h1 className="font-display text-[clamp(2.15rem,4vw,3.4rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-balance text-white">
+        <h1 className="font-display text-[clamp(2.6rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance text-white">
           {title}
         </h1>
         {lede ? (
@@ -53,15 +53,15 @@ function Logo({ onBlue = false }: { onBlue?: boolean }) {
     <Link to="/" hash="top" className="flex items-center gap-2.5 rounded-md">
       <span
         className={cn(
-          "grid h-11 w-11 place-items-center rounded-lg",
-          onBlue && "bg-white",
+          "grid place-items-center rounded-lg",
+          onBlue ? "h-8 w-8 bg-white" : "h-9 w-9",
         )}
       >
-        <img src={logo} alt="" width={36} height={36} className="h-9 w-9 object-contain" />
+        <img src={logo} alt="" width={28} height={28} className={cn("object-contain", onBlue ? "h-7 w-7" : "h-8 w-8")} />
       </span>
       <span
         className={cn(
-          "font-display text-xl font-semibold tracking-[-0.02em]",
+          "font-display text-lg font-semibold tracking-[-0.02em]",
           onBlue ? "text-white" : "text-foreground",
         )}
       >
@@ -117,7 +117,7 @@ export function Nav() {
       >
         {t("common.skipToContent")}
       </a>
-      <div className="relative mx-auto flex min-h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-5 md:px-8">
+      <div className="relative mx-auto flex min-h-[var(--site-header)] max-w-[1068px] items-center justify-between gap-4 px-5 md:px-6">
         <Logo onBlue />
         <nav className="hidden items-center gap-1 lg:flex" aria-label={t("landing.nav.features")}>
           {NAV.map((item) => {
@@ -128,7 +128,7 @@ export function Nav() {
                 to={item.to}
                 hash={item.hash}
                 className={cn(
-                  "rounded-md px-3 py-2 text-[0.95rem] font-medium text-white/85 hover:text-white",
+                  "rounded-md px-2.5 py-2 text-sm text-white/85 hover:text-white",
                   active && "text-white",
                 )}
                 aria-current={active ? "page" : undefined}
@@ -142,13 +142,13 @@ export function Nav() {
           <LanguageSelector tone="onBlue" />
           <a
             href={dashboardUrl}
-            className="hidden min-h-11 items-center rounded-lg bg-white px-4 text-sm font-semibold text-[#075985] hover:bg-white/90 sm:inline-flex"
+            className="hidden min-h-11 items-center rounded-full bg-white px-4 text-sm text-[#075985] hover:bg-white/90 sm:inline-flex"
           >
             {t("landing.nav.tryFree")}
           </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-white lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white lg:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="site-menu"
@@ -176,7 +176,7 @@ export function Nav() {
             <a
               href={dashboardUrl}
               onClick={() => setOpen(false)}
-              className="mx-3 mt-2 inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-4 text-sm font-semibold text-[#075985]"
+              className="mx-3 mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-4 text-sm text-[#075985]"
             >
               {t("landing.nav.tryFree")}
             </a>
@@ -221,8 +221,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-4 md:px-8">
+    <footer className="bg-surface">
+      <div className="mx-auto grid max-w-[1068px] gap-10 px-5 py-12 md:grid-cols-4 md:px-6">
         <div>
           <Logo />
           <p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-muted-foreground">
@@ -231,14 +231,14 @@ export function Footer() {
         </div>
         {columns.map((column) => (
           <div key={column.title}>
-            <h2 className="text-sm font-semibold text-foreground">{column.title}</h2>
-            <ul className="mt-4 space-y-2">
+            <h2 className="text-xs font-semibold text-foreground">{column.title}</h2>
+            <ul className="mt-3 space-y-2">
               {column.links.map((link) => (
                 <li key={link.label}>
                   {"href" in link && link.href ? (
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground"
+                      className="text-xs leading-5 text-muted-foreground hover:text-foreground"
                     >
                       {link.label}
                     </a>
@@ -246,7 +246,7 @@ export function Footer() {
                     <Link
                       to={link.to!}
                       hash={"hash" in link ? link.hash : undefined}
-                      className="text-sm text-muted-foreground hover:text-foreground"
+                      className="text-xs leading-5 text-muted-foreground hover:text-foreground"
                     >
                       {link.label}
                     </Link>
@@ -258,7 +258,7 @@ export function Footer() {
         ))}
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[1068px] flex-col gap-3 px-5 py-5 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-6">
           <p>
             © {new Date().getFullYear()} Hosanna Studio. {t("landing.footer.copyright")}
           </p>

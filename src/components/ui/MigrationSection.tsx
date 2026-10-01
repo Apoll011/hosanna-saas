@@ -38,10 +38,10 @@ export function MigrationSection() {
   const current = SOURCE_APPS.find((a) => a.id === selectedId) || SOURCE_APPS[0];
 
   return (
-    <section id="import" className="border-t border-border py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section id="import" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-[1068px] px-5 md:px-6">
         <div className="max-w-2xl">
-          <h2 className="font-display text-[clamp(1.8rem,3vw,2.55rem)] font-semibold leading-[1.12] tracking-[-0.02em] text-balance text-foreground">
+          <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance text-foreground">
             {t("migration.titleStart")} {t("migration.titleHighlight")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -71,8 +71,8 @@ export function MigrationSection() {
                       onClick={() => setSelectedId(app.id)}
                       className={`group flex w-full items-center gap-3.5 rounded-xl border px-4 py-3 text-left transition-all duration-200 ${
                         isSelected
-                          ? "border-primary/50 bg-white shadow-md shadow-primary/10"
-                          : "border-border/70 bg-secondary/40 hover:border-border hover:bg-secondary/60"
+                          ? "border-foreground bg-white"
+                          : "border-border bg-white hover:border-foreground"
                       }`}
                     >
                       <span
@@ -89,7 +89,7 @@ export function MigrationSection() {
                             {app.name}
                           </span>
                           {!app.available && (
-                            <span className="text-[10px] font-bold uppercase tracking-wide text-blue-500 bg-blue-100 rounded-full px-2 py-0.5">
+                            <span className="rounded-full bg-surface px-2 py-0.5 text-xs text-muted-foreground">
                               {t("common.comingSoon")}
                             </span>
                           )}

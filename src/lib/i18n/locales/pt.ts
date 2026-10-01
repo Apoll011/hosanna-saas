@@ -134,6 +134,12 @@ export const pt = {
         "Espreite por dentro da ferramenta que a sua equipa de louvor vai realmente usar — da biblioteca de músicas até ao palco.",
       openHint: "Clique duas vezes para abrir",
       dragHint: "Arraste qualquer captura para baixo para fechar",
+      captions: {
+        library: "Biblioteca de músicas",
+        service: "Plano do culto",
+        chords: "Cifra no telemóvel",
+        transpose: "Transposição",
+      },
     },
     organize: {
       eyebrow: "Organiza a tua música",

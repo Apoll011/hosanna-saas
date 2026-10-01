@@ -133,6 +133,12 @@ export const en: typeof import("./pt").pt = {
         "Peek inside the tool your worship team will actually use — from the song library to the stage.",
       openHint: "Double-click to open",
       dragHint: "Drag any screenshot down to close",
+      captions: {
+        library: "Song library",
+        service: "Service plan",
+        chords: "Chord chart",
+        transpose: "Transpose",
+      },
     },
     organize: {
       eyebrow: "Organize your music",

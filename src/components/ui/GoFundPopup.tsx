@@ -35,7 +35,7 @@ export function GoFundPopup() {
         href={goFundMeLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-flex min-h-11 items-center rounded-lg border border-border px-4 text-sm font-semibold text-foreground hover:bg-secondary"
+        className="mt-4 inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm font-semibold text-foreground hover:bg-secondary"
       >
         {t("landing.gofundPopup.cta")}
       </a>

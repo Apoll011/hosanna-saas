@@ -134,6 +134,12 @@ export const es: typeof import("./pt").pt = {
         "Echa un vistazo a la herramienta que tu equipo de alabanza realmente usará — desde la biblioteca de canciones hasta el escenario.",
       openHint: "Haz doble clic para abrir",
       dragHint: "Arrastra cualquier captura hacia abajo para cerrar",
+      captions: {
+        library: "Biblioteca de canciones",
+        service: "Plan del culto",
+        chords: "Cifra en el teléfono",
+        transpose: "Transposición",
+      },
     },
     organize: {
       eyebrow: "Organiza tu música",

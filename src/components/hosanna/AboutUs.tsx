@@ -99,13 +99,13 @@ export function AboutUs() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={signupUrl}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary-dark"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary-dark"
             >
               {t("about.ctaStart")}
             </a>
             <Link
               to="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-surface px-5 font-semibold text-foreground hover:bg-secondary"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-surface px-5 font-semibold text-foreground hover:bg-secondary"
             >
               {t("about.ctaContact")}
             </Link>

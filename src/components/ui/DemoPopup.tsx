@@ -33,7 +33,7 @@ export function DemoPopup() {
       </p>
       <a
         href={dashboardUrl}
-        className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary-dark"
+        className="mt-4 inline-flex min-h-11 items-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary-dark"
       >
         {t("landing.demoPopup.cta")}
       </a>

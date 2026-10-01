@@ -14,7 +14,7 @@ export function LanguageSelector({
   return (
     <div
       className={cn(
-        "inline-flex rounded-lg border p-0.5",
+        "inline-flex rounded-full border p-0.5",
         onBlue ? "border-white/30 bg-white/10" : "border-border bg-surface",
         className,
       )}
@@ -30,7 +30,7 @@ export function LanguageSelector({
             onClick={() => setLanguage(lang.code as Language)}
             aria-pressed={selected}
             className={cn(
-              "min-h-10 min-w-10 rounded-md px-2 text-xs font-semibold uppercase",
+              "min-h-10 min-w-10 rounded-full px-2 text-xs font-semibold uppercase",
               onBlue
                 ? selected
                   ? "bg-white text-[#075985]"
