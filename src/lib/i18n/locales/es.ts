@@ -6,9 +6,6 @@ export const es: typeof import("./pt").pt = {
     comingSoon: "Próximamente",
     backToHome: "Página Principal",
     tryAgain: "Intentar de Nuevo",
-    skipToContent: "Saltar al contenido",
-    openMenu: "Abrir menú",
-    closeMenu: "Cerrar menú",
     privacyPolicy: "Política de Privacidad",
     activeDevelopment: "Desarrollo Activo",
     activeDevDesc:
@@ -36,6 +33,16 @@ export const es: typeof import("./pt").pt = {
       "planificación de alabanza, acordes, chordpro, gestión de iglesia, equipo de alabanza, repertorio cristiano, software para iglesias, ministerio de alabanza",
   },
   landing: {
+    demoPopup: {
+      title: "Prueba HOSANNA",
+      description: "Experimenta Hosanna Studio sin necesidad de registro.",
+      cta: "Consulta la Demo",
+    },
+    gofundPopup: {
+      title: "Apoya a Hosanna",
+      description: "Apoya el desarrollo de Hosanna y ayúdanos a llevar la tecnología a iglesias de todo el mundo.",
+      cta: "Donar Ahora",
+    },
     banner: "¡Estamos en vivo! Experimenta nuestra Demo. Únete a nosotros en este viaje.",
     nav: {
       features: "Funciones",
@@ -43,18 +50,16 @@ export const es: typeof import("./pt").pt = {
       pricing: "Precios",
       about: "Sobre",
       contact: "Contacto",
-      tryFree: "Probar gratis",
+      tryFree: "Probar Gratis",
     },
     hero: {
       badge: "Creado para Líderes de Alabanza",
-      title: "El culto preparado. La cifra en el teléfono de cada músico.",
       titleStart: "Organiza tu alabanza con",
       titleHighlight: "excelencia",
       subtitle:
-        "Hosanna guarda la biblioteca de la iglesia, arma el orden del culto y deja que cada músico lea la misma canción en su tono — con o sin acordes, incluso sin internet.",
-      ctaStart: "Empezar 14 días gratis",
-      ctaDemo: "Abrir la demo",
-      exampleCaption: "Ejemplo de un orden de culto. Elige la línea en la que está el equipo.",
+        "Dale a tu equipo la claridad y el enfoque que merecen. Planes de culto, acordes dinámicos y calendarios inteligentes en un solo lugar.",
+      ctaStart: "Empezar Ahora",
+      ctaDemo: "Ver Demostración",
       dashboardAlt:
         "Vista previa del panel de Hosanna mostrando la biblioteca de canciones y el plan del culto dominical",
       mobileAlt:
@@ -124,12 +129,6 @@ export const es: typeof import("./pt").pt = {
         "Echa un vistazo a la herramienta que tu equipo de alabanza realmente usará — desde la biblioteca de canciones hasta el escenario.",
       openHint: "Haz doble clic para abrir",
       dragHint: "Arrastra cualquier captura hacia abajo para cerrar",
-      captions: {
-        library: "Biblioteca de canciones",
-        service: "Plan del culto",
-        chords: "Cifra en el teléfono",
-        transpose: "Transposición",
-      },
     },
     organize: {
       eyebrow: "Organiza tu música",
@@ -223,7 +222,7 @@ export const es: typeof import("./pt").pt = {
     },
     pricing: {
       eyebrow: "Precios",
-      title: "Un precio por iglesia.",
+      title: "Una inversión en vuestra adoración",
       description:
         "Precios simples y transparentes para que te concentres en lo verdaderamente importante.",
       monthly: "Mensual",
@@ -272,7 +271,6 @@ export const es: typeof import("./pt").pt = {
       title: "Ayúdanos a llevar Hosanna a iglesias de todo el mundo",
       description:
         "Tu contribución nos permite seguir creando, mejorando y llevando esta herramienta a más ministerios de alabanza.",
-      cta: "Donar ahora",
       iframeTitle: "Apoya a Hosanna en GoFundMe",
     },
     roadmap: {
@@ -332,14 +330,14 @@ export const es: typeof import("./pt").pt = {
       ],
     },
     finalCta: {
-      title: "Prepara el próximo culto en Hosanna.",
+      title: "¿Listo para llevar tu alabanza a otro nivel?",
       subtitle:
-        "14 días gratis. Un precio por iglesia, con músicos ilimitados. La biblioteca se queda en ChordPro, contigo.",
-      ctaStart: "Empezar 14 días gratis",
+        "Únete a cientos de iglesias que ya eligieron la excelencia y el orden con Hosanna.",
+      ctaStart: "Empezar Ahora",
       ctaContact: "Habla con nosotros",
     },
     footer: {
-      tagline: "La biblioteca, el plan del culto y la cifra de cada músico, en el mismo lugar.",
+      tagline: "La herramienta definitiva para equipos de alabanza que buscan excelencia y orden.",
       colProduct: "Producto",
       colSupport: "Soporte",
       colLegal: "Legal",
@@ -354,8 +352,6 @@ export const es: typeof import("./pt").pt = {
       termsOfService: "Términos de Servicio",
       privacyPolicy: "Política de Privacidad",
       cookies: "Cookies",
-      supportProject: "Apoyar el proyecto",
-      source: "Código fuente",
       copyright: "Todos los derechos reservados.",
     },
   },

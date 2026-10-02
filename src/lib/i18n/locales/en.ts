@@ -6,9 +6,6 @@ export const en: typeof import("./pt").pt = {
     comingSoon: "Coming soon",
     backToHome: "Home",
     tryAgain: "Try Again",
-    skipToContent: "Skip to content",
-    openMenu: "Open menu",
-    closeMenu: "Close menu",
     privacyPolicy: "Privacy Policy",
     activeDevelopment: "Active Development",
     activeDevDesc:
@@ -36,6 +33,17 @@ export const en: typeof import("./pt").pt = {
       "worship planning, chord charts, chordpro, church management, worship team, christian repertoire, church software, worship ministry",
   },
   landing: {
+    demoPopup: {
+      title: "HOSANNA's in Demo",
+      description:
+        "Experience Hosanna Studio without the need for registration.",
+      cta: "Check the Demo",
+    },
+    gofundPopup: {
+      title: "Support Hosanna",
+      description: "Support the development of Hosanna and help us bring this technology to churches worldwide.",
+      cta: "Donate Now",
+    },
     banner: "We're live! The Demo version is now available. Join us on this journey!",
     nav: {
       features: "Features",
@@ -43,18 +51,16 @@ export const en: typeof import("./pt").pt = {
       pricing: "Pricing",
       about: "About",
       contact: "Contact",
-      tryFree: "Try free",
+      tryFree: "Try for Free",
     },
     hero: {
       badge: "Built for Worship Leaders",
-      title: "The service, planned. The chart, on every musician’s phone.",
       titleStart: "Organize your worship with",
       titleHighlight: "excellence",
       subtitle:
-        "Hosanna keeps the church’s song library, builds the order of service, and lets each musician read the same song in their own key — with or without chords, even offline.",
-      ctaStart: "Start 14 days free",
-      ctaDemo: "Open the demo",
-      exampleCaption: "An example order of service. Select the line the team is on.",
+        "Give your team the clarity and focus they deserve. Service plans, dynamic chords, and smart schedules in one place.",
+      ctaStart: "Get Started",
+      ctaDemo: "Watch Demo",
       dashboardAlt: "Hosanna dashboard preview showing the song library and Sunday service plan",
       mobileAlt: "Hosanna mobile app preview showing a chord chart with transposition controls",
     },
@@ -122,12 +128,6 @@ export const en: typeof import("./pt").pt = {
         "Peek inside the tool your worship team will actually use — from the song library to the stage.",
       openHint: "Double-click to open",
       dragHint: "Drag any screenshot down to close",
-      captions: {
-        library: "Song library",
-        service: "Service plan",
-        chords: "Chord chart",
-        transpose: "Transpose",
-      },
     },
     organize: {
       eyebrow: "Organize your music",
@@ -221,7 +221,7 @@ export const en: typeof import("./pt").pt = {
     },
     pricing: {
       eyebrow: "Pricing",
-      title: "One price per church.",
+      title: "An investment in your worship",
       description: "Simple, transparent pricing so you can focus on what matters most.",
       monthly: "Monthly",
       annual: "Annual",
@@ -267,7 +267,6 @@ export const en: typeof import("./pt").pt = {
       title: "Help us bring Hosanna to churches worldwide",
       description:
         "Your support helps us build, refine, and deliver this tool to more worship ministries.",
-      cta: "Donate now",
       iframeTitle: "Support Hosanna on GoFundMe",
     },
     roadmap: {
@@ -317,14 +316,13 @@ export const en: typeof import("./pt").pt = {
       ],
     },
     finalCta: {
-      title: "Plan the next service in Hosanna.",
-      subtitle:
-        "14 days free. One price per church, with unlimited musicians. Your library stays in ChordPro, with you.",
-      ctaStart: "Start 14 days free",
+      title: "Ready to elevate your worship ministry?",
+      subtitle: "Join hundreds of churches already choosing excellence and order with Hosanna.",
+      ctaStart: "Get Started",
       ctaContact: "Talk with us",
     },
     footer: {
-      tagline: "The library, the service plan, and every musician’s chart, in one place.",
+      tagline: "The definitive tool for worship teams pursuing excellence and organization.",
       colProduct: "Product",
       colSupport: "Support",
       colLegal: "Legal",
@@ -339,8 +337,6 @@ export const en: typeof import("./pt").pt = {
       termsOfService: "Terms of Service",
       privacyPolicy: "Privacy Policy",
       cookies: "Cookies",
-      supportProject: "Support the project",
-      source: "Source code",
       copyright: "All rights reserved.",
     },
   },

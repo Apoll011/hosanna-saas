@@ -10,7 +10,7 @@
       content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
     />
     <meta name="author" content="Hosanna Studio" />
-    <meta name="theme-color" content="#f3f5f7" />
+    <meta name="theme-color" content="#0f172a" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -39,6 +39,13 @@
     />
     <meta name="twitter:image" content="https://hosanna.live/og-image.jpg" />
     <meta name="twitter:site" content="@hosannastudio" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    />
 
     <meta name="google-site-verification" content="aQkTNsrEhDcXm1wc0mMHp5bBaADpJoQjoQISyLK80qA" />
 
@@ -80,15 +87,15 @@
       html,
       body {
         margin: 0;
-        background: #f3f5f7;
-        color: #1a2330;
+        background: #0f172a;
       }
       #boot-splash {
         position: fixed;
         inset: 0;
         display: grid;
         place-items: center;
-        background: #f3f5f7;
+        background:
+          radial-gradient(60% 50% at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 60%), #0f172a;
       }
       #boot-splash .loader {
         display: flex;
@@ -101,18 +108,24 @@
         animation: hosanna-spin 1s linear infinite;
       }
       #boot-splash .spinner-track {
-        stroke: #d3dbe3;
+        stroke: rgba(255, 255, 255, 0.12);
       }
       #boot-splash .spinner-indicator {
-        stroke: #16689f;
+        stroke: #1973b2;
         stroke-linecap: round;
         stroke-dasharray: 44 132;
       }
       #boot-splash .loader-text {
-        font-family: system-ui, sans-serif;
-        font-size: 15px;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 12px;
         font-weight: 600;
-        color: #3d4c5c;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
       }
       @keyframes hosanna-spin {
         to {
@@ -179,7 +192,7 @@
               stroke-width="4"
             ></circle>
           </svg>
-          <span class="loader-text">Hosanna</span>
+          <span class="loader-text">Loading</span>
         </div>
       </div>
     </div>
