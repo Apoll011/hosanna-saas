@@ -10,8 +10,8 @@ export interface GalleryPhoto {
 
 export interface InteractiveFolderGalleryProps {
   photos: GalleryPhoto[];
-  openHintText?: string;
-  dragHintText?: string;
+  title?: string;
+  description?: string;
   className?: string;
 }
 
@@ -74,143 +74,84 @@ function PhotoLightbox({
 
 export function InteractiveFolderGallery({
   photos,
-  openHintText = "Double click to open",
-  dragHintText = "Drag any screenshot down to close",
+  title,
+  description,
   className,
 }: InteractiveFolderGalleryProps) {
-  const [isFolderOpen, setIsFolderOpen] = useState(false);
-  const [hoverFolder, setHoverFolder] = useState(false);
+  const [index, setIndex] = useState(0);
   const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
 
+  const activePhoto = photos[index];
+
   return (
-    <div className={`w-full py-32 relative ${className || ""}`}>
-      <div className="relative w-full min-h-[500px] flex flex-col items-center justify-center">
-        <div className="relative w-full max-w-[1050px] h-[500px] flex justify-center items-center pointer-events-none z-0 scale-75 sm:scale-90 md:scale-100">
-          {/* Folder back (tab + body) */}
-          <motion.div
-            className="absolute bottom-6 w-80 h-56 drop-shadow-2xl"
-            animate={{ opacity: isFolderOpen ? 0 : 1, scale: isFolderOpen ? 0.9 : 1 }}
-          >
-            <div className="absolute top-0 left-0 w-32 h-10 bg-primary-dark rounded-t-xl border-t border-l border-r border-white/10" />
-            <div className="absolute top-8 left-0 right-0 bottom-0 bg-primary-dark rounded-b-xl rounded-tr-xl border border-white/10 shadow-[inset_0_0_40px_rgba(0,0,0,0.35)]" />
-          </motion.div>
-
-          {/* Photos */}
-          <div className="absolute bottom-10 z-10 flex justify-center">
-            {photos.map((photo, i) => {
-              const offset = i - (photos.length - 1) / 2;
-
-              const stackY = hoverFolder ? offset * -10 - 40 : offset * -5;
-              const stackX = hoverFolder ? offset * 30 : offset * 3;
-              const stackRotate = hoverFolder ? offset * 8 : offset * 3;
-              const stackScale = 1 - Math.abs(offset) * 0.03;
-
-              const openY = -130;
-              const openX = offset * 260;
-              const openRotate = 0;
-              const openScale = 1.05;
-
-              return (
-                <motion.div
-                  key={photo.id}
-                  drag={isFolderOpen ? true : false}
-                  dragSnapToOrigin={true}
-                  onDragEnd={(e, info) => {
-                    if (info.offset.y > 100 && isFolderOpen) {
-                      setIsFolderOpen(false);
-                      setHoverFolder(false);
-                    }
-                  }}
-                  onTap={() => {
-                    if (isFolderOpen) setSelectedPhoto(photo);
-                  }}
-                  className={`absolute bottom-0 w-56 h-72 rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden border border-white/20 origin-bottom ${
-                    isFolderOpen
-                      ? "cursor-grab active:cursor-grabbing pointer-events-auto"
-                      : "pointer-events-none"
-                  }`}
-                  animate={
-                    !isFolderOpen
-                      ? {
-                          y: stackY,
-                          x: stackX,
-                          rotate: stackRotate,
-                          scale: stackScale,
-                          zIndex: i + 10,
-                        }
-                      : { y: openY, x: openX, rotate: openRotate, scale: openScale, zIndex: 50 }
-                  }
-                  whileHover={isFolderOpen ? { scale: openScale + 0.05, zIndex: 100 } : {}}
-                  whileDrag={isFolderOpen ? { scale: openScale + 0.1, rotate: 5, zIndex: 150 } : {}}
-                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                >
-                  <img
-                    src={photo.image}
-                    alt={photo.caption || "Hosanna screenshot"}
-                    className="w-full h-full object-cover pointer-events-none"
-                  />
-                  {photo.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 to-transparent px-3 pb-2.5 pt-6 pointer-events-none">
-                      <span className="text-[11px] font-medium uppercase tracking-widest text-white/90">
-                        {photo.caption}
-                      </span>
-                    </div>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Folder front (clickable flap, no label) */}
-          <motion.div
-            className="absolute bottom-0 w-[340px] h-44 drop-shadow-[0_-20px_40px_rgba(0,0,0,0.4)] cursor-pointer z-20 pointer-events-auto"
-            style={{ transformOrigin: "bottom" }}
-            animate={{
-              opacity: isFolderOpen ? 0 : 1,
-              rotateX: hoverFolder ? -25 : 0,
-              y: hoverFolder ? 10 : 0,
-              pointerEvents: isFolderOpen ? "none" : "auto",
-            }}
-            onMouseEnter={() => setHoverFolder(true)}
-            onMouseLeave={() => setHoverFolder(false)}
-            onDoubleClick={() => setIsFolderOpen(true)}
-          >
-            <div className="w-full h-full bg-primary rounded-2xl border border-white/20 shadow-[inset_0_2px_10px_rgba(255,255,255,0.15)] relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Open hint — visible only while the folder is closed */}
-        {!isFolderOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
-          >
-            {openHintText}
-          </motion.div>
+    <div className={`w-full py-8 md:py-16 flex flex-col items-center justify-center bg-transparent ${className || ""}`}>
+      {/* Heading & Description */}
+      <div className="text-center mb-10 max-w-lg mx-auto px-4">
+        {title && (
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3 font-medium tracking-tight">
+            {title}
+          </h2>
         )}
+        {description && (
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+        )}
+      </div>
 
-        {/* Drag hint — visible only once the folder is open */}
-        {isFolderOpen && (
+      {/* Main product screenshot */}
+      <div className="flex flex-col items-center">
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="w-[800px] max-w-full aspect-[320/510] relative rounded-2xl overflow-hidden bg-muted/20 border border-border/50"
           >
-            {dragHintText}
+            <img
+              src={activePhoto.image}
+              alt={activePhoto.caption || "Hosanna Screenshot"}
+              className="w-full h-full object-cover"
+            />
           </motion.div>
-        )}
-        {isFolderOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-10 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium uppercase tracking-widest pointer-events-none shadow-lg"
+        </AnimatePresence>
+
+        {/* Caption */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={`caption-${index}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4 text-[11px] font-medium uppercase tracking-widest text-muted-foreground text-center h-4"
           >
-            {dragHintText}
-          </motion.div>
-        )}
+            {activePhoto.caption}
+          </motion.p>
+        </AnimatePresence>
+      </div>
+
+      {/* Thumbnail Filmstrip */}
+      <div className="mt-8 flex items-center justify-center gap-3">
+        {photos.map((photo, i) => (
+          <button
+            key={photo.id}
+            onClick={() => setIndex(i)}
+            className={`relative w-[100px] h-[58px] rounded-lg overflow-hidden transition-all duration-300 ${index === i
+              ? "border-2 border-primary shadow-sm ring-2 ring-primary/20 ring-offset-2 ring-offset-background"
+              : "border border-border/40 opacity-60 hover:opacity-100 hover:border-border"
+              }`}
+          >
+            <img
+              src={photo.image}
+              alt={photo.caption || `Thumbnail ${i + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className={`absolute inset-0 bg-black/5 transition-opacity ${index === i ? "opacity-0" : "opacity-100"}`} />
+          </button>
+        ))}
       </div>
 
       <PhotoLightbox photo={selectedPhoto} onClose={() => setSelectedPhoto(null)} />
@@ -275,9 +216,8 @@ export function MobileFolderGallery({ photos }: { photos: GalleryPhoto[] }) {
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Go to screenshot ${i + 1}`}
-            className={`h-2.5 w-2.5 rounded-full transition-colors ${
-              i === index ? "bg-white" : "bg-white/40"
-            }`}
+            className={`h-2.5 w-2.5 rounded-full transition-colors ${i === index ? "bg-white" : "bg-white/40"
+              }`}
           />
         ))}
       </div>

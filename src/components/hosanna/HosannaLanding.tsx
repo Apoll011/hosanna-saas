@@ -895,11 +895,11 @@ function Roadmap() {
         <SectionHeader eyebrow={t("landing.roadmap.eyebrow")} title={t("landing.roadmap.title")}>
           {t("landing.roadmap.description")}
         </SectionHeader>
-        <div className="reveal mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal mt-14 grid gap-x-12 sm:grid-cols-2">
           {dict.landing.roadmap.items.map((item: string) => (
             <div
               key={item}
-              className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-soft"
+              className="flex items-center border-b border-border py-5"
             >
               <span className="text-sm leading-relaxed text-foreground">{item}</span>
             </div>

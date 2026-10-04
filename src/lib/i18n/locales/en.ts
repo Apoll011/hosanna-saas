@@ -128,6 +128,12 @@ export const en: typeof import("./pt").pt = {
         "Peek inside the tool your worship team will actually use — from the song library to the stage.",
       openHint: "Double-click to open",
       dragHint: "Drag any screenshot down to close",
+      captions: {
+        songLibrary: "Song Library",
+        servicePlanner: "Service Planner",
+        liveChordView: "Live Chord View",
+        transpose: "Transpose & Chord Toggle",
+      },
     },
     organize: {
       eyebrow: "Organize your music",
