@@ -7,8 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { DemoPopup } from "@/components/ui/DemoPopup";
-import { GoFundPopup } from "@/components/ui/GoFundPopup";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { LazySection } from "@/components/ui/LazySection";
@@ -89,7 +87,7 @@ export function Nav() {
 
   return (
     <div className="sticky -top-10 z-50">
-      <EarlyAccessBanner />
+      
       <header
         className={cn(
           "transition-all duration-300",
@@ -1076,18 +1074,7 @@ export function Footer() {
   );
 }
 
-function EarlyAccessBanner() {
-  const { t } = useI18n();
 
-  return (
-    <div className="bg-blue-600 py-2 text-center text-white px-4">
-      <div className="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">
-        <Zap className="h-4 w-4 fill-current text-blue-200" />
-        <span>{t("landing.banner")}</span>
-      </div>
-    </div>
-  );
-}
 
 /* ------------------------------------------------------------------ */
 /*  Root                                                              */
@@ -1098,8 +1085,6 @@ export function HosannaLanding() {
   return (
     <div ref={rootRef} className="min-h-screen bg-background font-sans text-foreground antialiased">
       <Nav />
-      <DemoPopup />
-      <GoFundPopup />
       <main>
         <Hero />
         <Problem />
