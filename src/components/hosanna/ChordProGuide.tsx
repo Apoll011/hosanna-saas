@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
@@ -363,6 +364,7 @@ function DirectiveCard({ entry }: { entry: DirectiveEntry }) {
 export function ChordProGuide() {
   useReveal();
   const { t, dict } = useI18n();
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const TOC = [
     { id: "fundamentos", label: t("chordproGuide.toc.fundamentals") },
@@ -374,6 +376,24 @@ export function ChordProGuide() {
     { id: "atalhos", label: t("chordproGuide.toc.shortcuts") },
     { id: "referencia", label: t("chordproGuide.toc.reference") },
   ];
+
+  useEffect(() => {
+    const ids = TOC.map((item) => item.id);
+    const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    if (elements.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length > 0) setActiveId(visible[0].target.id);
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: [0, 0.1, 0.25] },
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const CATEGORY_META: Record<
     DirectiveCategory,
@@ -479,22 +499,33 @@ export function ChordProGuide() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="lg:grid lg:grid-cols-[220px_1fr] lg:gap-16 items-start">
             {/* TOC desktop */}
-            <nav className="hidden lg:block sticky top-28 space-y-1">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-4 pl-3">
+            <nav
+              className="sticky top-[calc(var(--site-header,4rem)+1.25rem)] hidden space-y-1 lg:block"
+              aria-label={t("chordproGuide.tocTitle")}
+            >
+              <div className="mb-3 pl-3 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
                 {t("chordproGuide.tocTitle")}
               </div>
-              {TOC.map((item, idx) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="flex items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-blue-50/60 rounded-xl px-3 py-2.5 transition-colors"
-                >
-                  <span className="text-xs font-mono text-primary/40 w-4">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  {item.label}
-                </a>
-              ))}
+              {TOC.map((item, idx) => {
+                const active = item.id === activeId;
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    aria-current={active ? "location" : undefined}
+                    className={
+                      active
+                        ? "flex items-center gap-3 rounded-full bg-primary/10 px-3 py-2.5 text-sm font-medium text-foreground"
+                        : "flex items-center gap-3 rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
+                    }
+                  >
+                    <span className={active ? "w-4 font-mono text-xs text-primary" : "w-4 font-mono text-xs text-muted-foreground"}>
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {item.label}
+                  </a>
+                );
+              })}
             </nav>
 
             <div className="grid gap-20 min-w-0">

@@ -544,16 +544,15 @@ export const en: typeof import("./pt").pt = {
     heroTitleStart: "Built by cousins,",
     heroTitleHighlight: "for the church.",
     heroSubtitle:
-      "Two 18-year-olds, self-taught, three months in — building the tool we wished our own worship team had.",
+      "Two 18-year-olds, self-taught, several months in — building the tool we wished our own worship team had.",
     storyEyebrow: "Where it started",
     storyTitle: "It started with one church, not a business plan.",
     storyP1:
-      "Tiago and Éber are cousins. They grew up together in Cabo Verde before moving to Portugal, where they joined Igreja Baptista xxxxxx xxx xxxxxx — and found themselves serving on the same worship team.",
+      "Tiago and Éber are cousins. They grew up together in Cabo Verde before moving to Portugal, where they ended up serving on the same worship team at their local church.",
     storyP2:
       "Music runs in the family on both sides. Tiago's father is a church pianist, and Tiago followed him onto the keys. Éber's father plays guitar too — he's the one who first put an instrument in Éber's hands.",
     storyP3:
-      "When they saw their own church struggling with scattered chord sheets, outdated versions, and messy group chats before every rehearsal, they didn't wait for someone else to fix it. Three months ago, still full-time students, they started building Hosanna in the evenings — for their church first, and for every church like it.",
-    churchLinkLabel: "Igreja Baptista xxxxxx xxx xxxxxx",
+      "When they saw their own church struggling with scattered chord sheets, outdated versions, and messy group chats before every rehearsal, they didn't wait for someone else to fix it. Still full-time students, they started building Hosanna in the evenings — for their church first, and for every church like it.",
     founderIntroEyebrow: "Meet the founders",
     founderIntroTitle: "Still students. Still building.",
     tiagoName: "Tiago Inês",
@@ -570,7 +569,7 @@ export const en: typeof import("./pt").pt = {
       "«We didn't set out to build a company. We just wanted our own church's worship team to stop losing chord sheets between rehearsals.»",
     ctaTitle: "Still early. Still growing.",
     ctaSubtitle:
-      "Hosanna is three months old and built by two people who use it every Sunday. Come be part of the story.",
+      "Hosanna is built by two people who use it every Sunday. Come be part of the story.",
     ctaStart: "Get Started",
     ctaContact: "Talk with us",
   },

@@ -561,16 +561,15 @@ export const es: typeof import("./pt").pt = {
     heroTitleStart: "Creado por primos,",
     heroTitleHighlight: "para la iglesia.",
     heroSubtitle:
-      "Dos jóvenes de 18 años, autodidactas, con tres meses construyendo la herramienta que nos hubiera gustado tener en nuestro propio equipo de alabanza.",
+      "Dos jóvenes de 18 años, autodidactas, construyendo la herramienta que nos hubiera gustado tener en nuestro propio equipo de alabanza.",
     storyEyebrow: "Dónde empezó todo",
     storyTitle: "Empezó en una iglesia, no en un plan de negocio.",
     storyP1:
-      "Tiago y Éber son primos. Crecieron juntos en Cabo Verde antes de mudarse a Portugal, donde se unieron a la Igreja Baptista xxxxxx xxx xxxxxx — y terminaron sirviendo en el mismo equipo de alabanza.",
+      "Tiago y Éber son primos. Crecieron juntos en Cabo Verde antes de mudarse a Portugal, donde terminaron sirviendo en el mismo equipo de alabanza en su iglesia local.",
     storyP2:
       "La música corre en la familia por ambos lados. El padre de Tiago es pianista de iglesia, y Tiago siguió sus pasos en el teclado. El padre de Éber también toca guitarra — fue él quien puso un instrumento en las manos de Éber por primera vez.",
     storyP3:
-      "Cuando vieron a su propia iglesia luchar con cifrados dispersos, versiones desactualizadas y chats de grupo caóticos antes de cada ensayo, no esperaron a que alguien más lo resolviera. Hace tres meses, siendo todavía estudiantes a tiempo completo, empezaron a construir Hosanna por las tardes — primero para su iglesia, y luego para cada iglesia como la suya.",
-    churchLinkLabel: "Igreja Baptista xxxxx xxx xxxxxxx",
+      "Cuando vieron a su propia iglesia luchar con cifrados dispersos, versiones desactualizadas y chats de grupo caóticos antes de cada ensayo, no esperaron a que alguien más lo resolviera. Siendo todavía estudiantes a tiempo completo, empezaron a construir Hosanna por las tardes — primero para su iglesia, y luego para cada iglesia como la suya.",
     founderIntroEyebrow: "Conoce a los fundadores",
     founderIntroTitle: "Todavía estudiantes. Todavía construyendo.",
     tiagoName: "Tiago Inês",
@@ -588,7 +587,7 @@ export const es: typeof import("./pt").pt = {
       "«No empezamos con la idea de crear una empresa. Solo queríamos que nuestra propia iglesia dejara de perder cifrados entre ensayos.»",
     ctaTitle: "Todavía al principio. Todavía creciendo.",
     ctaSubtitle:
-      "Hosanna tiene tres meses y está construido por dos personas que lo usan cada domingo. Ven a formar parte de la historia.",
+      "Hosanna está construido por dos personas que lo usan cada domingo. Ven a formar parte de la historia.",
     ctaStart: "Empezar Ahora",
     ctaContact: "Habla con nosotros",
   },

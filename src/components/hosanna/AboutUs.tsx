@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useI18n } from "@/lib/i18n";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Code2, ExternalLink, Palette } from "lucide-react";
+import { ArrowRight, Code2, Palette } from "lucide-react";
 import { useEffect } from "react";
 import { StaffLines } from "./HosannaLanding";
 import tiagoPhoto from "@/assets/tiago_headshot.webp";
@@ -112,17 +112,6 @@ export function AboutUs() {
             <p>{t("about.storyP3")}</p>
           </div>
 
-          <div className="reveal mt-8 flex justify-center">
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-secondary"
-            >
-              {t("about.churchLinkLabel")}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          </div>
         </div>
       </section>
 
