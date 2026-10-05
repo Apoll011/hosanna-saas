@@ -86,7 +86,7 @@ export function Nav() {
   }, []);
 
   return (
-    <div className="sticky -top-10 z-50">
+    <div className="sticky z-50">
 
       <header
         className={cn(
