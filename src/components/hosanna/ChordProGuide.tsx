@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import { Link } from "@tanstack/react-router";
@@ -21,6 +19,7 @@ import {
   Repeat,
   Tags,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { StaffLines } from "./HosannaLanding";
 
 type DirectiveCategory = "metadata" | "comment" | "structure" | "notation";
@@ -392,7 +391,7 @@ export function ChordProGuide() {
     );
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const CATEGORY_META: Record<
@@ -439,7 +438,6 @@ export function ChordProGuide() {
               <BookMarked className="w-3.5 h-3.5" />
               {t("chordproGuide.heroBadge")}
             </div>
-            <LanguageSelector />
           </div>
           <h1 className="reveal text-5xl md:text-7xl lg:text-8xl font-display mb-8 tracking-tight">
             {t("chordproGuide.heroTitleStart")}{" "}
@@ -500,7 +498,7 @@ export function ChordProGuide() {
           <div className="lg:grid lg:grid-cols-[220px_1fr] lg:gap-16 items-start">
             {/* TOC desktop */}
             <nav
-              className="sticky top-[calc(var(--site-header,4rem)+1.25rem)] hidden space-y-1 lg:block"
+              className="sticky top-[calc(var(--site-header,4rem)+2rem)] hidden space-y-1 lg:block"
               aria-label={t("chordproGuide.tocTitle")}
             >
               <div className="mb-3 pl-3 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
@@ -519,7 +517,13 @@ export function ChordProGuide() {
                         : "flex items-center gap-3 rounded-full px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-foreground"
                     }
                   >
-                    <span className={active ? "w-4 font-mono text-xs text-primary" : "w-4 font-mono text-xs text-muted-foreground"}>
+                    <span
+                      className={
+                        active
+                          ? "w-4 font-mono text-xs text-primary"
+                          : "w-4 font-mono text-xs text-muted-foreground"
+                      }
+                    >
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     {item.label}
