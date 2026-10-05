@@ -32,7 +32,6 @@ import {
   Users,
   WifiOff,
   X,
-  Zap,
 } from "lucide-react";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
@@ -86,8 +85,7 @@ export function Nav() {
   }, []);
 
   return (
-    <div className="sticky z-50">
-
+    <div className="sticky top-0 z-50">
       <header
         className={cn(
           "transition-all duration-300",
@@ -897,10 +895,7 @@ function Roadmap() {
         </SectionHeader>
         <div className="reveal mt-14 grid gap-x-12 sm:grid-cols-2">
           {dict.landing.roadmap.items.map((item: string) => (
-            <div
-              key={item}
-              className="flex items-center border-b border-border py-5"
-            >
+            <div key={item} className="flex items-center border-b border-border py-5">
               <span className="text-sm leading-relaxed text-foreground">{item}</span>
             </div>
           ))}
@@ -1073,8 +1068,6 @@ export function Footer() {
     </footer>
   );
 }
-
-
 
 /* ------------------------------------------------------------------ */
 /*  Root                                                              */
