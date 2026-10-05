@@ -43,6 +43,7 @@ import { GetAppButton } from "../ui/StoreButton";
 // the scanner loads as soon as the hero renders, the gallery only when it
 // approaches the viewport.
 const LightRays = lazy(() => import("@/components/ui/Scanner"));
+const HeroDashboardMockup = lazy(() => import("./HeroDashboardMockup"));
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -258,7 +259,7 @@ function Hero() {
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-blue-50/80 md:text-xl reveal">
             {t("landing.hero.subtitle")}
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row reveal">
+          <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row reveal">
             <Button
               asChild
               size="lg"
@@ -283,16 +284,11 @@ function Hero() {
         </div>
 
         {/* Mockups */}
-        <div className="relative mx-auto -mt-10 max-w-6xl">
-          <div className="relative">
-            <img
-              src={dashboardImg}
-              alt={t("landing.hero.dashboardAlt")}
-              width={1600}
-              height={1104}
-              decoding="async"
-              className="w-full rounded-2xl"
-            />
+        <div className="pointer-events-none relative z-0 mx-auto -mt-10 max-w-6xl">
+          <div className="relative aspect-[1600/1104]">
+            <Suspense fallback={null}>
+              <HeroDashboardMockup alt={t("landing.hero.dashboardAlt")} />
+            </Suspense>
           </div>
         </div>
       </div>
