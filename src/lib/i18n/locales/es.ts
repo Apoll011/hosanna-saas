@@ -42,7 +42,8 @@ export const es: typeof import("./pt").pt = {
     },
     gofundPopup: {
       title: "Apoya a Hosanna",
-      description: "Apoya el desarrollo de Hosanna y ayúdanos a llevar la tecnología a iglesias de todo el mundo.",
+      description:
+        "Apoya el desarrollo de Hosanna y ayúdanos a llevar la tecnología a iglesias de todo el mundo.",
       cta: "Donar Ahora",
     },
     banner: "¡Estamos en vivo! Experimenta nuestra Demo. Únete a nosotros en este viaje.",
