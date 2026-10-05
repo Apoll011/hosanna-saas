@@ -1,5 +1,6 @@
 import logo from "@/assets/playstore.svg";
 import { useI18n } from "@/lib/i18n";
+import { Download } from "lucide-react";
 import React from "react";
 
 interface PlayStoreButtonProps {
@@ -41,6 +42,40 @@ export const PlayStoreButton: React.FC<PlayStoreButtonProps> = ({
         </span>
         <span className="-mt-0.5 text-base font-bold leading-tight tracking-tight text-black">
           {t("common.googlePlay")}
+        </span>
+      </div>
+    </a>
+  );
+};
+
+export const GetAppButton: React.FC<PlayStoreButtonProps> = ({
+  href = "#",
+  onClick,
+  className = "",
+}) => {
+  const { t } = useI18n();
+
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group relative inline-flex items-center gap-3.5 rounded-2xl bg-white px-5 py-3 text-slate-900
+        shadow-lg shadow-slate-200/50 ring-1 ring-slate-200 transition-all duration-300 ease-out
+        hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-xl hover:shadow-slate-200/60 hover:ring-slate-300/80
+        active:translate-y-0 active:scale-[0.98] ${className}`}
+    >
+      <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-r from-emerald-500/10 via-sky-500/10 to-amber-500/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="flex shrink-0 items-center justify-center rounded-lg bg-slate-900 p-1.5 text-white transition-transform duration-300 group-hover:scale-105">
+        <Download className="h-5 w-5" aria-hidden="true" />
+      </div>
+      <div className="flex flex-col text-left">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-600 transition-colors group-hover:text-slate-400">
+          {t("common.getApp")}
+        </span>
+        <span className="-mt-0.5 text-base font-bold leading-tight tracking-tight text-black">
+          {t("common.download")}
         </span>
       </div>
     </a>

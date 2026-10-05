@@ -2,6 +2,8 @@ export const es: typeof import("./pt").pt = {
   common: {
     getItOn: "Disponible en",
     googlePlay: "Google Play",
+    getApp: "Descarga la app",
+    download: "Descargar",
     exclusiveHosanna: "Exclusivo Hosanna",
     comingSoon: "Próximamente",
     backToHome: "Página Principal",

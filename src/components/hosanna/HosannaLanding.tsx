@@ -36,7 +36,7 @@ import {
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
-import { PlayStoreButton } from "../ui/StoreButton";
+import { GetAppButton } from "../ui/StoreButton";
 
 // The WebGL ray shader (ogl) and the interactive folder gallery (framer-motion)
 // are the two heaviest landing widgets. Both are split into their own chunks:
@@ -803,7 +803,7 @@ function MobileApp() {
               {t("landing.mobileApp.description")}
             </p>
             <div className="flex flex-wrap gap-5 pt-4">
-              <PlayStoreButton href="https://github.com/Apoll011/Hosanna/releases/latest" />
+              <GetAppButton href="https://github.com/Apoll011/Hosanna/releases/latest" />
             </div>
           </div>
           <div className="relative reveal">

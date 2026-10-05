@@ -2,6 +2,8 @@ export const pt = {
   common: {
     getItOn: "Disponível no",
     googlePlay: "Google Play",
+    getApp: "Obter a app",
+    download: "Download",
     exclusiveHosanna: "Exclusivo Hosanna",
     comingSoon: "Em breve",
     backToHome: "Página Inicial",
