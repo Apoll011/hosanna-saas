@@ -246,7 +246,7 @@ function Hero() {
         <StaffLines className="top-24" />
         <StaffLines className="bottom-24" />
       </div>
-      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-24 pt-26 md:px-8 md:pb-32 md:pt-18">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-8 pt-26 md:px-8 md:pb-24 md:pt-8">
         <div className="mx-auto max-w-4xl text-center">
           <div className="reveal inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/90">
             {t("landing.hero.badge")}
@@ -283,7 +283,7 @@ function Hero() {
         </div>
 
         {/* Mockups */}
-        <div className="relative mx-auto mt-16 max-w-6xl">
+        <div className="relative mx-auto -mt-10 max-w-6xl">
           <div className="relative">
             <img
               src={dashboardImg}
