@@ -109,6 +109,7 @@ const DIRECTIVES: DirectiveEntry[] = [
     alias: "c",
     category: "comment",
     descriptionKey: "comment",
+    example: "{c: Softly|warning}",
   },
   {
     directive: "comment_italic",
@@ -129,6 +130,20 @@ const DIRECTIVES: DirectiveEntry[] = [
     descriptionKey: "repeat",
   },
   // Estrutura
+  {
+    directive: "start_of_version",
+    alias: "sov_ver",
+    category: "structure",
+    descriptionKey: "start_of_version",
+    example: "{start_of_version: Acoustic}",
+    hosanna: true,
+  },
+  {
+    directive: "end_of_version",
+    alias: "eov_ver",
+    category: "structure",
+    descriptionKey: "end_of_version",
+  },
   {
     directive: "start_of_verse",
     alias: "sov",

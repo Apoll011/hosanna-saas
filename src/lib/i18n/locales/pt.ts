@@ -537,10 +537,14 @@ export const pt = {
     year: "Ano de lançamento ou composição",
     youtube: "Link do vídeo. Cria um mini-player de áudio na app para ouvir durante o ensaio!",
     song_number: "Número do hinário ou pasta da igreja, para pesquisa rápida",
-    comment: "Instrução para a banda (ex: Solo de guitarra, Apenas Bateria)",
+    comment:
+      "Instrução para a banda (ex: Solo de guitarra). Estilo opcional: {c: Suave|warning} ou |style=name",
     comment_italic: "Comentário em itálico, para notas mais discretas (dinâmica)",
     comment_box: "Comentário em caixa, ideal para avisos importantes no ecrã",
     repeat: "Marca um trecho a repetir (ex: 2x, ou até sinal do líder)",
+    start_of_version:
+      "Inicia uma variação/arranjo nomeado (Acústico, Capo 2…). Herda metadados; selecionável na pré-visualização",
+    end_of_version: "Termina a variação/arranjo nomeado atual",
     start_of_verse: "Inicia um verso",
     end_of_verse: "Termina o verso atual",
     start_of_chorus: "Inicia um refrão",
@@ -558,6 +562,10 @@ export const pt = {
     translator: "Nome do tradutor do cântico, útil para versões adaptadas",
     ccli: "Número CCLI (Christian Copyright Licensing International)",
     time_signature: "Alternativa à diretiva {time} para definir o compasso (ex: 4/4)",
+    define:
+      "Definições oficiais de acordes ChordPro — reconhecidas pelo formatador, mas não são de primeira classe no Hosanna",
+    new_page:
+      "Quebra de página — reconhecida pelo formatador; não aplicada na renderização Hosanna",
   },
   about: {
     eyebrow: "A História por trás do Hosanna",

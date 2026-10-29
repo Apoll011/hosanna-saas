@@ -519,10 +519,14 @@ export const en: typeof import("./pt").pt = {
     year: "Year of release or composition",
     youtube: "Video link. Creates a mini audio player in the app for rehearsals!",
     song_number: "Hymnal or church binder number for quick lookup",
-    comment: "Band direction (e.g. Guitar Solo, Drums Only)",
+    comment:
+      "Band direction (e.g. Guitar Solo). Optional style suffix: {c: Softly|warning} or |style=name",
     comment_italic: "Italic comment for subtle dynamic cues",
     comment_box: "Boxed comment, ideal for prominent on-screen notes",
     repeat: "Marks a repeated section (e.g. 2x, or on cue)",
+    start_of_version:
+      "Starts a named arrangement variant (Acoustic, Capo 2…). Inherits default metadata; select in preview",
+    end_of_version: "Ends the current named arrangement variant",
     start_of_verse: "Starts a verse section",
     end_of_verse: "Ends current verse section",
     start_of_chorus: "Starts a chorus section",
@@ -540,6 +544,10 @@ export const en: typeof import("./pt").pt = {
     translator: "Song translator name, useful for translated hymns",
     ccli: "CCLI number (Christian Copyright Licensing International)",
     time_signature: "Alternative to {time} directive for meter (e.g. 4/4)",
+    define:
+      "Official ChordPro chord definitions — recognized by the formatter but not first-class in Hosanna (use instrument diagrams instead)",
+    new_page:
+      "Page break hint — recognized by the formatter; not applied by Hosanna rendering",
   },
   about: {
     eyebrow: "The Story Behind Hosanna",
