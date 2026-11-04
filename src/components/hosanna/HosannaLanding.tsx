@@ -665,7 +665,29 @@ function ExportSection() {
 function Pricing() {
   const { t, dict } = useI18n();
   const [annual, setAnnual] = useState(true);
-  const price = annual ? 120 : 12;
+  // Defaults match Hosanna-server/src/config/pricing.ts — overridden by public API when available.
+  const [monthlyCents, setMonthlyCents] = useState(1200);
+  const [annualCents, setAnnualCents] = useState(12000);
+  useEffect(() => {
+    const api =
+      (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, "") ||
+      "https://api.hosanna.live/api";
+    void fetch(`${api}/billing/pricing`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!data) return;
+        if (typeof data.monthly?.amountCents === "number") {
+          setMonthlyCents(data.monthly.amountCents);
+        }
+        if (typeof data.annual?.amountCents === "number") {
+          setAnnualCents(data.annual.amountCents);
+        }
+      })
+      .catch(() => {
+        /* keep defaults */
+      });
+  }, []);
+  const price = annual ? annualCents / 100 : monthlyCents / 100;
   const unit = annual ? t("landing.pricing.perYearUnit") : t("landing.pricing.perMonthUnit");
 
   return (
