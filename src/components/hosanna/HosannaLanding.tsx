@@ -17,8 +17,10 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
+  CircleDot,
   FileDown,
   FolderTree,
+  Gauge,
   Mail,
   Menu,
   Monitor,
@@ -29,6 +31,7 @@ import {
   Sliders,
   Smartphone,
   Sun,
+  Timer,
   Users,
   WifiOff,
   X,
@@ -524,6 +527,10 @@ function LiveWorship() {
     { icon: Sun, label: t("landing.liveWorship.items.textSize") },
     { icon: Music, label: t("landing.liveWorship.items.chordsVisibility") },
     { icon: WifiOff, label: t("landing.liveWorship.items.offline") },
+    { icon: Timer, label: t("landing.liveWorship.items.metronome") },
+    { icon: Gauge, label: t("landing.liveWorship.items.autoScroll") },
+    { icon: FileDown, label: t("landing.liveWorship.items.pdfExport") },
+    { icon: CircleDot, label: t("landing.liveWorship.items.circleOfFifths") },
   ];
 
   return (

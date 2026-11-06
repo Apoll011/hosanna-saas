@@ -19,36 +19,38 @@ export interface RouteMeta {
 
 export const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Hosanna - Planeia o teu louvor. Organiza a tua música.",
+    title: "Hosanna | Cancioneiro ChordPro e planeamento de louvor",
     description:
-      "O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa.",
+      "Cancioneiro digital ChordPro para igrejas: transposição, capo, metrónomo, auto-scroll, diagramas, PDF, importação com IA e sincronização offline — com Studio para planear cultos.",
     url: SITE_URL,
+    keywords:
+      "cancioneiro digital, songbook app, chordpro, cifras, metrónomo, auto-scroll, planeamento de louvor, setlist igreja",
   },
   "/about": {
-    title: "Sobre Nós | Hosanna Studio",
+    title: "Sobre Nós | Hosanna",
     description:
-      "Conheça a história por trás do Hosanna: dois primos, uma igreja, e a missão de organizar o louvor.",
+      "A história do Hosanna: dois primos a construir um cancioneiro ChordPro e ferramentas de planeamento de louvor para a sua igreja — e para outras.",
     url: `${SITE_URL}/about`,
   },
   "/chordpro": {
-    title: "Guia ChordPro | Hosanna Studio",
+    title: "Guia ChordPro | Hosanna",
     description:
-      "Aprenda a escrever cifras inteligentes com o padrão ChordPro. O formato de excelência para a gestão de repertório cristão.",
+      "Como escrever cifras ChordPro no Hosanna: sintaxe, diretivas, grelhas, tablatura e atalhos do editor para a equipa de louvor.",
     url: `${SITE_URL}/chordpro`,
   },
   "/contact": {
-    title: "Contactos | Hosanna Studio",
+    title: "Contactos | Hosanna",
     description: "Fale com a equipa do Hosanna. Dúvidas, sugestões ou suporte para a sua igreja.",
     url: `${SITE_URL}/contact`,
   },
   "/privacy": {
-    title: "Política de Privacidade | Hosanna Studio",
+    title: "Política de Privacidade | Hosanna",
     description:
       "Política de Privacidade do Hosanna: como protegemos os teus dados e os dados da conta Google.",
     url: `${SITE_URL}/privacy`,
   },
   "/terms": {
-    title: "Termos de Serviço | Hosanna Studio",
+    title: "Termos de Serviço | Hosanna",
     description: "Termos de Serviço e Condições de Utilização da plataforma e aplicações Hosanna.",
     url: `${SITE_URL}/terms`,
   },

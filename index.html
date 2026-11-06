@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hosanna - Planeia o teu louvor. Organiza a tua música.</title>
+    <title>Hosanna | Cancioneiro ChordPro e planeamento de louvor</title>
     <meta
       name="description"
-      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+      content="Cancioneiro digital ChordPro para igrejas: transposição, capo, metrónomo, auto-scroll, diagramas de acordes, exportação PDF, importação com IA e sincronização offline — com Studio para planear cultos em equipa."
+    />
+    <meta
+      name="keywords"
+      content="cancioneiro digital, songbook app, chord chart, chordpro, cifras, metrónomo, auto-scroll, transpor acordes, planeamento de louvor, setlist igreja, PDF cifras, app de louvor"
     />
     <meta name="author" content="Hosanna Studio" />
     <meta name="theme-color" content="#0f172a" />
@@ -17,11 +21,11 @@
     <link rel="canonical" href="https://hosanna.live" />
 
     <!-- Open Graph -->
-    <meta property="og:site_name" content="Hosanna Studio" />
-    <meta property="og:title" content="Hosanna - Planeia o teu louvor. Organiza a tua música." />
+    <meta property="og:site_name" content="Hosanna" />
+    <meta property="og:title" content="Hosanna | Cancioneiro ChordPro e planeamento de louvor" />
     <meta
       property="og:description"
-      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+      content="Cancioneiro ChordPro para igrejas com metrónomo, auto-scroll, PDF, transposição por músico e Studio para planear cultos. Offline no telemóvel."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://hosanna.live/og-image.jpg" />
@@ -32,10 +36,10 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hosanna - Planeia o teu louvor. Organiza a tua música." />
+    <meta name="twitter:title" content="Hosanna | Cancioneiro ChordPro e planeamento de louvor" />
     <meta
       name="twitter:description"
-      content="O Hosanna é uma plataforma de planeamento de louvor que ajuda as igrejas a organizar a sua biblioteca musical, preparar cultos e dar a cada músico acesso imediato às canções de que precisa."
+      content="Cancioneiro ChordPro para igrejas com metrónomo, auto-scroll, PDF, transposição por músico e Studio para planear cultos. Offline no telemóvel."
     />
     <meta name="twitter:image" content="https://hosanna.live/og-image.jpg" />
     <meta name="twitter:site" content="@hosannastudio" />
@@ -57,9 +61,10 @@
             "@type": "WebSite",
             "@id": "https://hosanna.live/#website",
             "url": "https://hosanna.live",
-            "name": "Hosanna Studio",
-            "description": "Plataforma de planeamento de louvor para igrejas: biblioteca musical, preparação de cultos e acesso imediato às canções para cada músico.",
-            "inLanguage": "pt-PT",
+            "name": "Hosanna",
+            "alternateName": ["Hosanna Studio", "Hosanna Songbook"],
+            "description": "Cancioneiro digital ChordPro e plataforma de planeamento de louvor para igrejas: biblioteca partilhada, cultos/setlists, metrónomo, auto-scroll, PDF e app móvel offline.",
+            "inLanguage": ["pt-PT", "en", "es"],
             "publisher": { "@id": "https://hosanna.live/#organization" }
           },
           {
@@ -75,7 +80,65 @@
               "height": 180
             },
             "email": "hosanna.songbook@gmail.com",
-            "sameAs": ["https://blog.hosanna.live", "https://github.com/Apoll011/Hosanna"]
+            "sameAs": [
+              "https://blog.hosanna.live",
+              "https://github.com/Apoll011/Hosanna",
+              "https://studio.hosanna.live"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://hosanna.live/#mobile-app",
+            "name": "Hosanna",
+            "applicationCategory": "MusicApplication",
+            "applicationSubCategory": "Songbook",
+            "operatingSystem": "Android, iOS",
+            "url": "https://hosanna.live",
+            "description": "ChordPro songbook app for church worship teams with per-musician transpose and capo, metronome, auto-scroll, chord diagrams, circle of fifths, PDF export, AI chart import, offline sync, and shared service planning via Hosanna Studio.",
+            "featureList": [
+              "ChordPro song library",
+              "Service and setlist planning",
+              "Per-musician transpose and capo",
+              "Built-in metronome with tap tempo",
+              "Auto-scroll with speed control",
+              "Guitar and piano chord diagrams",
+              "Circle of fifths",
+              "Print-ready song PDF export from the mobile app",
+              "Service, songbook, and event print from Hosanna Studio",
+              "AI import from photo, gallery, or PDF",
+              "Offline sync",
+              "YouTube rehearsal player from song metadata",
+              "Portuguese, English, and Spanish"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "description": "Flat monthly or annual pricing per church with unlimited musicians; 14-day free trial"
+            },
+            "author": { "@id": "https://hosanna.live/#organization" },
+            "publisher": { "@id": "https://hosanna.live/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://hosanna.live/#studio",
+            "name": "Hosanna Studio",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://studio.hosanna.live",
+            "description": "Web dashboard for Hosanna: ChordPro library management, service planning, teams, roles, agendas, and sync with the Hosanna mobile songbook.",
+            "featureList": [
+              "ChordPro library with folders and collections",
+              "Service planner with song order and team notes",
+              "Print for songs, songbooks, services, and agenda events",
+              "Teams, roles, and permissions",
+              "Agendas",
+              "ChordPro import and export",
+              "AI song import and Studio AI assistant",
+              "Library health and analytics",
+              "Command palette"
+            ],
+            "author": { "@id": "https://hosanna.live/#organization" },
+            "publisher": { "@id": "https://hosanna.live/#organization" }
           }
         ]
       }
