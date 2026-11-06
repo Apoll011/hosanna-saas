@@ -1,5 +1,5 @@
 import logo from "@/assets/hosanna_logo.webp";
-import dashboardImg from "@/assets/main_mockup.png";
+import dashboardImg from "@/assets/main_mockup.webp";
 import mobileImg from "@/assets/mobile-view.webp";
 import {
   Accordion,
@@ -41,13 +41,10 @@ import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MigrationSection } from "../ui/MigrationSection";
 import { SectionHeader } from "../ui/SectionHeader";
 import { GetAppButton } from "../ui/StoreButton";
+import HeroDashboardMockup from "./HeroDashboardMockup";
 
-// The WebGL ray shader (ogl) and the interactive folder gallery (framer-motion)
-// are the two heaviest landing widgets. Both are split into their own chunks:
-// the scanner loads as soon as the hero renders, the gallery only when it
-// approaches the viewport.
+// WebGL rays are expensive — defer until idle so they never block LCP.
 const LightRays = lazy(() => import("@/components/ui/Scanner"));
-const HeroDashboardMockup = lazy(() => import("./HeroDashboardMockup"));
 
 /* ------------------------------------------------------------------ */
 /*  Logo                                                              */
@@ -136,7 +133,7 @@ export function Nav() {
             <LanguageSelector />
             <Button
               asChild
-              className="rounded-full bg-gold text-gold-foreground hover:bg-gold/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
+              className="rounded-full bg-primary-dark text-primary-foreground hover:bg-primary-dark/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
             >
               <a href={dashboardUrl}>{t("landing.nav.tryFree")}</a>
             </Button>
@@ -178,7 +175,7 @@ export function Nav() {
               )}
               <Button
                 asChild
-                className="mt-2 rounded-full bg-gold text-gold-foreground hover:bg-gold/90"
+                className="mt-2 rounded-full bg-primary-dark text-primary-foreground hover:bg-primary-dark/90"
               >
                 <a href={dashboardUrl} onClick={() => setOpen(false)}>
                   {t("landing.nav.tryFree")}
@@ -220,6 +217,47 @@ export function StaffLines({ className }: { className?: string }) {
 /*  Hero                                                              */
 /* ------------------------------------------------------------------ */
 
+function DeferredHeroRays() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let cancelled = false;
+    const timer = globalThis.setTimeout(() => {
+      if (!cancelled) setReady(true);
+    }, 1800);
+
+    return () => {
+      cancelled = true;
+      globalThis.clearTimeout(timer);
+    };
+  }, []);
+
+  if (!ready) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#ffffff"
+        raysSpeed={1}
+        lightSpread={1.5}
+        rayLength={4.5}
+        followMouse={true}
+        mouseInfluence={0.5}
+        noiseAmount={0}
+        distortion={0}
+        className="custom-rays"
+        pulsating={false}
+        fadeDistance={1}
+        saturation={1}
+      />
+    </Suspense>
+  );
+}
+
 function Hero() {
   const { t } = useI18n();
 
@@ -229,23 +267,7 @@ function Hero() {
       className="relative overflow-hidden bg-hero-gradient text-primary-foreground -mt-30 pt-30"
     >
       <div className="absolute inset-0 pointer-events-none z-0">
-        <Suspense fallback={null}>
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#ffffff"
-            raysSpeed={1}
-            lightSpread={1.5}
-            rayLength={4.5}
-            followMouse={true}
-            mouseInfluence={0.5}
-            noiseAmount={0}
-            distortion={0}
-            className="custom-rays"
-            pulsating={false}
-            fadeDistance={1}
-            saturation={1}
-          />
-        </Suspense>
+        <DeferredHeroRays />
       </div>
       <div className="absolute inset-0 text-gold/40 z-0">
         <StaffLines className="top-24" />
@@ -258,16 +280,16 @@ function Hero() {
           </div>
           <h1 className="mt-8 font-display text-5xl leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl reveal">
             {t("landing.hero.titleStart")}{" "}
-            <span className="text-blue-300">{t("landing.hero.titleHighlight")}</span>.
+            <span className="text-sky-200">{t("landing.hero.titleHighlight")}</span>.
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-blue-50/80 md:text-xl reveal">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-blue-50 md:text-xl reveal">
             {t("landing.hero.subtitle")}
           </p>
           <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row reveal">
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto rounded-full bg-white px-10 text-lg font-semibold text-primary shadow-xl transition-all hover:scale-105 active:scale-95 hover:bg-blue-50"
+              className="w-full sm:w-auto rounded-full bg-white px-10 text-lg font-semibold text-primary-dark shadow-xl transition-all hover:scale-105 active:scale-95 hover:bg-blue-50"
             >
               <a href={dashboardUrl}>
                 {t("landing.hero.ctaStart")} <ArrowRight className="ml-2 h-5 w-5" />
@@ -277,7 +299,7 @@ function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto rounded-full border-white/30 bg-white/5 px-10 text-lg text-white backdrop-blur-md transition-all hover:bg-white/10"
+              className="w-full sm:w-auto rounded-full border-white/40 bg-white/10 px-10 text-lg text-white backdrop-blur-md transition-all hover:bg-white/15"
             >
               <a href="#how">
                 <Play className="mr-2 h-5 w-5 fill-current" />
@@ -287,12 +309,10 @@ function Hero() {
           </div>
         </div>
 
-        {/* Mockups */}
+        {/* Mockups — eager LCP image (not Suspense-lazy) */}
         <div className="pointer-events-none relative z-0 mx-auto -mt-10 max-w-6xl">
-          <div className="relative aspect-[1600/1104]">
-            <Suspense fallback={null}>
-              <HeroDashboardMockup alt={t("landing.hero.dashboardAlt")} />
-            </Suspense>
+          <div className="relative aspect-[1400/972]">
+            <HeroDashboardMockup alt={t("landing.hero.dashboardAlt")} />
           </div>
         </div>
       </div>
@@ -376,8 +396,9 @@ function TwoApps() {
               src={dashboardImg}
               alt="Dashboard preview"
               loading="lazy"
-              width={1600}
-              height={1104}
+              width={1400}
+              height={972}
+              decoding="async"
               className="mt-8 w-full rounded-xl"
             />
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -775,7 +796,7 @@ function Pricing() {
               <Button
                 asChild
                 size="lg"
-                className="mt-10 w-full rounded-full bg-secondary text-muted-foreground hover:bg-secondary/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
+                className="mt-10 w-full rounded-full bg-white text-primary-dark hover:bg-blue-50 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
               >
                 <a href={`${dashboardUrl}/?plan=base&payment=${annual ? "yearly" : "monthly"}`}>
                   {t("landing.pricing.ctaTry")} <ArrowRight className="ml-1 h-4 w-4" />
@@ -837,6 +858,8 @@ function MobileApp() {
             <img
               src={mobileImg}
               alt="Hosanna Mobile App"
+              width={800}
+              height={1408}
               loading="lazy"
               decoding="async"
               className="relative z-10 w-full max-w-150 mx-auto drop-shadow-2xl rounded-3xl transform lg:rotate-6 transition-transform hover:rotate-0 duration-700"
@@ -925,8 +948,10 @@ function OpenSource() {
 /* ------------------------------------------------------------------ */
 function SupportTheMission() {
   const { t } = useI18n();
+  // Link out instead of embedding the GoFundMe widget — the iframe pulls ~1MB of
+  // third-party JS, trips CSP frame-ancestors reports, and 401s on api.gofundme.com.
   const goFundMeUrl =
-    "https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo/widget/medium?attribution_id=sl%3A6ae5cf26-7689-4639-ba2f-533a305c601d";
+    "https://www.gofundme.com/f/ajudenos-a-levar-o-hosanna-a-igrejas-de-todo-o-mundo";
 
   return (
     <section className="bg-secondary py-16 md:py-16">
@@ -935,18 +960,12 @@ function SupportTheMission() {
           {t("landing.support.description")}
         </SectionHeader>
 
-        <div className="reveal mx-auto mt-12 w-[481] max-w-full overflow-hidden">
-          <div className="w-195 -translate-x-37.5">
-            <iframe
-              className="block"
-              src={goFundMeUrl}
-              width="780"
-              height="202"
-              frameBorder="0"
-              scrolling="no"
-              title={t("landing.support.iframeTitle")}
-            />
-          </div>
+        <div className="reveal mt-10 flex justify-center">
+          <Button asChild size="lg" className="rounded-full bg-primary-dark text-primary-foreground">
+            <a href={goFundMeUrl} target="_blank" rel="noopener noreferrer">
+              {t("landing.support.cta")} <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
@@ -1102,7 +1121,7 @@ export function Footer() {
         </div>
         {footerCols.map((col) => (
           <div key={col.title}>
-            <div className="text-xs font-bold uppercase tracking-widest text-primary/40 font-sans">
+            <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground font-sans">
               {col.title}
             </div>
             <ul className="mt-6 space-y-3 text-sm font-sans">

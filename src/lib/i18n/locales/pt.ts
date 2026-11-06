@@ -299,6 +299,7 @@ export const pt = {
       description:
         "A sua contribuição ajuda-nos a continuar a construir, melhorar e levar esta ferramenta a mais equipas de louvor.",
       iframeTitle: "Apoie o Hosanna no GoFundMe",
+      cta: "Apoiar no GoFundMe",
     },
     roadmap: {
       eyebrow: "Roadmap",

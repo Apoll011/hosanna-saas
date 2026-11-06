@@ -295,6 +295,7 @@ export const en: typeof import("./pt").pt = {
       description:
         "Your support helps us build, refine, and deliver this tool to more worship ministries.",
       iframeTitle: "Support Hosanna on GoFundMe",
+      cta: "Support on GoFundMe",
     },
     roadmap: {
       eyebrow: "Roadmap",

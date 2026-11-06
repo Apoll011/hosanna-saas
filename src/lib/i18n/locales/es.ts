@@ -300,6 +300,7 @@ export const es: typeof import("./pt").pt = {
       description:
         "Tu contribución nos permite seguir creando, mejorando y llevando esta herramienta a más ministerios de alabanza.",
       iframeTitle: "Apoya a Hosanna en GoFundMe",
+      cta: "Apoyar en GoFundMe",
     },
     roadmap: {
       eyebrow: "Roadmap",
