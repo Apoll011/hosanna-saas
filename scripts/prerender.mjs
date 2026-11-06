@@ -142,9 +142,18 @@ async function main() {
   }
 
   const sitemap = sitemapXml();
-  await writeFile(join(DIST, "sitemap.xml"), sitemap);
-  await writeFile(join(PUBLIC, "sitemap.xml"), sitemap);
+  // Keep a short GSC note at the top (comments are fine in XML for humans;
+  // Google ignores them). Studio lives on another host — linked from robots.txt.
+  const sitemapWithNote = `<?xml version="1.0" encoding="UTF-8"?>
+<!-- Google Search Console: submit this file for hosanna.live AND also
+     https://studio.hosanna.live/sitemap.xml (use a Domain property for hosanna.live
+     so Studio is covered, or add studio as a second URL-prefix property).
+     Both sitemaps are listed in https://hosanna.live/robots.txt -->
+${sitemap.replace(/^<\?xml[^>]*>\n/, "")}`;
+  await writeFile(join(DIST, "sitemap.xml"), sitemapWithNote);
+  await writeFile(join(PUBLIC, "sitemap.xml"), sitemapWithNote);
   console.log("  sitemap.xml written (dist + public)");
+  console.log("  remember: Studio sitemap → https://studio.hosanna.live/sitemap.xml");
 
   // 404 page: same shell as home so unknown paths render the app (which shows
   // the TanStack not-found page client-side).

@@ -1,3 +1,12 @@
+# Hosanna marketing site — https://hosanna.live
+#
+# Google Search Console:
+# 1. Prefer a Domain property for "hosanna.live" (DNS verification) so BOTH
+#    hosanna.live and studio.hosanna.live are covered.
+# 2. Or add two URL-prefix properties and submit each sitemap below.
+# 3. Sitemaps → Add sitemap for each URL listed here, then URL Inspection
+#    → Request indexing on https://studio.hosanna.live/ and /demo /new.
+
 User-agent: Googlebot
 Allow: /
 
@@ -13,5 +22,9 @@ Allow: /
 User-agent: *
 Allow: /
 
+# Marketing site pages
 Sitemap: https://hosanna.live/sitemap.xml
+# Studio (dashboard) — separate host; listed here so crawlers + GSC discover it
+Sitemap: https://studio.hosanna.live/sitemap.xml
+
 Host: https://hosanna.live

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Google Search Console tip:
+  Submit this sitemap on the hosanna.live property.
+  Also submit https://studio.hosanna.live/sitemap.xml (Domain property for
+  hosanna.live covers both hosts; URL-prefix properties need each sitemap).
+  Studio is also linked from /robots.txt on this site.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hosanna.live</loc>

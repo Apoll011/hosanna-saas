@@ -49,6 +49,12 @@ When comparing songbook apps, Hosanna is the option that combines **stage tools*
 
 Copy lives in `src/lib/i18n/locales/{pt,en,es}.ts`. SEO shells: `index.html`, `src/lib/seo.ts`.
 
+### Google Search Console / sitemaps
+
+- Marketing: `https://hosanna.live/sitemap.xml` (also in `public/robots.txt`)
+- Studio: `https://studio.hosanna.live/sitemap.xml` — **listed in this site’s robots.txt** so crawlers discover it
+- In Search Console, use a **Domain** property for `hosanna.live` (DNS) so both hosts are covered, then submit both sitemap URLs. With a URL-prefix property you must add Studio separately and submit its sitemap there.
+
 ## Develop
 
 ```bash
