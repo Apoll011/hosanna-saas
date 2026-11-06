@@ -32,7 +32,7 @@ export const pt = {
     defaultDescription:
       "Cancioneiro digital ChordPro para igrejas: transposição, capo, metrónomo, auto-scroll, diagramas de acordes, exportação PDF, importação com IA e sincronização offline — com Studio para planear cultos em equipa.",
     defaultKeywords:
-      "cancioneiro digital, app de cifras, chordpro, songbook app, chord chart, transpor acordes, metrónomo, auto-scroll, planeamento de louvor, setlist igreja, cultos, equipa de louvor, software para igrejas, PDF cifras",
+      "cancioneiro digital, app de cifras, chordpro, songbook app, open source, apache 2.0, chord chart, transpor acordes, metrónomo, auto-scroll, planeamento de louvor, setlist igreja, cultos, equipa de louvor, software para igrejas, PDF cifras",
   },
   landing: {
     demoPopup: {
@@ -286,6 +286,13 @@ export const pt = {
       quote2:
         "«Que seja uma bênção para a tua igreja, para a tua equipa de louvor e para todos os que servem através da música.»",
     },
+    openSource: {
+      eyebrow: "Open source",
+      title: "O código é público. Lê, faz fork, contribui.",
+      body: "A app móvel e o Studio do Hosanna são open source sob a Apache License 2.0. Podes auditar a sincronização, o ChordPro e as permissões — ou construir em cima deles.",
+      ctaApp: "App móvel no GitHub",
+      ctaStudio: "Studio no GitHub",
+    },
     support: {
       eyebrow: "Apoie o projeto",
       title: "Ajude-nos a levar o Hosanna a igrejas de todo o mundo",
@@ -347,6 +354,10 @@ export const pt = {
           q: "Como funciona o preço?",
           a: "Valor fixo mensal ou anual por igreja, com músicos e utilizadores do Studio ilimitados. Multi-campus: pequeno valor por campus extra. Sem preço por utilizador nem funcionalidades bloqueadas.",
         },
+        {
+          q: "O Hosanna é open source?",
+          a: "Sim. A app Flutter e o Hosanna Studio estão no GitHub sob a Apache License 2.0. A cloud alojada é opcional — o código do produto está aberto para inspecionar e contribuir.",
+        },
       ],
     },
     finalCta: {
@@ -367,6 +378,8 @@ export const pt = {
       chordproGuide: "Guia ChordPro",
       pricing: "Preço",
       downloadApp: "Download App",
+      openSource: "Open source",
+      github: "GitHub",
       contact: "Contacto",
       helpCenter: "Centro de Ajuda",
       serviceStatus: "Estado do serviço",

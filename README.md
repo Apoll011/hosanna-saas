@@ -1,6 +1,6 @@
 # Hosanna (hosanna.live)
 
-Marketing site for **Hosanna** — a ChordPro **songbook** and **worship planning** platform for churches.
+Marketing site for **Hosanna** — a ChordPro **songbook** and **worship planning** platform for churches (open source: Apache 2.0).
 
 Musicians get a mobile songbook with transpose, capo, chord diagrams, metronome, auto-scroll, PDF export, AI chart import, and offline sync. Leaders get **Hosanna Studio** to manage the library, plan services, and run the team.
 

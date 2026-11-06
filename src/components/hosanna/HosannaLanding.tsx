@@ -19,6 +19,7 @@ import {
   Check,
   CircleDot,
   FileDown,
+  Code2,
   FolderTree,
   Gauge,
   Mail,
@@ -874,6 +875,52 @@ function Vision() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Open source                                                       */
+/* ------------------------------------------------------------------ */
+const githubAppUrl = "https://github.com/Apoll011/Hosanna";
+const githubStudioUrl = "https://github.com/Apoll011/hosanna-studio";
+
+function OpenSource() {
+  const { t } = useI18n();
+
+  return (
+    <section id="open-source" className="bg-secondary py-16 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1fr_auto] md:items-center md:px-8">
+        <div className="reveal">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            {t("landing.openSource.eyebrow")}
+          </div>
+          <h2 className="mt-3 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
+            {t("landing.openSource.title")}
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {t("landing.openSource.body")}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild className="rounded-full">
+              <a href={githubAppUrl} target="_blank" rel="noreferrer">
+                <Code2 className="mr-2 h-4 w-4" />
+                {t("landing.openSource.ctaApp")}
+              </a>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full">
+              <a href={githubStudioUrl} target="_blank" rel="noreferrer">
+                {t("landing.openSource.ctaStudio")}
+              </a>
+            </Button>
+          </div>
+        </div>
+        <div className="reveal hidden rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground md:block">
+          <div className="font-mono text-xs text-foreground">Apache License 2.0</div>
+          <div className="mt-2">github.com/Apoll011/Hosanna</div>
+          <div>github.com/Apoll011/hosanna-studio</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  Support                                                           */
 /* ------------------------------------------------------------------ */
 function SupportTheMission() {
@@ -1013,6 +1060,12 @@ export function Footer() {
         { label: t("landing.footer.pricing"), href: "/#pricing", isInternal: false },
         { label: t("landing.nav.about"), href: "/about", isInternal: true },
         { label: t("landing.footer.downloadApp"), href: "/#mobile", isInternal: false },
+        { label: t("landing.footer.openSource"), href: "/#open-source", isInternal: false },
+        {
+          label: t("landing.footer.github"),
+          href: githubAppUrl,
+          isInternal: false,
+        },
         {
           label: t("landing.footer.blog"),
           href: "https://blog.hosanna.live",
@@ -1066,6 +1119,9 @@ export function Footer() {
                     <a
                       href={href}
                       className="text-muted-foreground transition-colors hover:text-primary"
+                      {...(href.startsWith("http")
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
                     >
                       {label}
                     </a>
@@ -1117,6 +1173,7 @@ export function HosannaLanding() {
         <Pricing />
         <MobileApp />
         <Vision />
+        <OpenSource />
         <SupportTheMission />
         <Roadmap />
         <FAQ />

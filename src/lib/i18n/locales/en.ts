@@ -32,7 +32,7 @@ export const en: typeof import("./pt").pt = {
     defaultDescription:
       "ChordPro songbook for churches: transpose, capo, metronome, auto-scroll, chord diagrams, PDF export, AI chart import, and offline sync — plus Studio to plan services with your team.",
     defaultKeywords:
-      "songbook app, chord chart app, chordpro, digital songbook, transpose chords, metronome, auto-scroll, worship planning, church setlist, worship team software, chord PDF, church songbook",
+      "songbook app, chord chart app, chordpro, digital songbook, open source, apache 2.0, transpose chords, metronome, auto-scroll, worship planning, church setlist, worship team software, chord PDF, church songbook",
   },
   landing: {
     demoPopup: {
@@ -282,6 +282,13 @@ export const en: typeof import("./pt").pt = {
       quote2:
         "«May it be a blessing to your church, your worship team, and everyone serving through music.»",
     },
+    openSource: {
+      eyebrow: "Open source",
+      title: "The code is public. Fork it, read it, contribute.",
+      body: "Hosanna’s mobile app and Studio are open source under the Apache License 2.0. You can audit how sync, ChordPro, and permissions work — or build on top of them.",
+      ctaApp: "Mobile app on GitHub",
+      ctaStudio: "Studio on GitHub",
+    },
     support: {
       eyebrow: "Support the mission",
       title: "Help us bring Hosanna to churches worldwide",
@@ -343,6 +350,10 @@ export const en: typeof import("./pt").pt = {
           q: "How does pricing work?",
           a: "Flat monthly or annual fee per church, with unlimited musicians and Studio users. Multi-campus: a small fee per extra campus. No per-user fees. No locked features.",
         },
+        {
+          q: "Is Hosanna open source?",
+          a: "Yes. The Flutter mobile app and Hosanna Studio are published on GitHub under the Apache License 2.0. Hosted cloud billing is optional — the product code is open to inspect and contribute to.",
+        },
       ],
     },
     finalCta: {
@@ -362,6 +373,8 @@ export const en: typeof import("./pt").pt = {
       chordproGuide: "ChordPro Guide",
       pricing: "Pricing",
       downloadApp: "Download App",
+      openSource: "Open source",
+      github: "GitHub",
       contact: "Contact",
       helpCenter: "Help Center",
       serviceStatus: "System Status",

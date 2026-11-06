@@ -32,7 +32,7 @@ export const es: typeof import("./pt").pt = {
     defaultDescription:
       "Cancionero digital ChordPro para iglesias: transposición, capo, metrónomo, auto-scroll, diagramas de acordes, exportación PDF, importación con IA y sincronización offline — con Studio para planificar cultos en equipo.",
     defaultKeywords:
-      "cancionero digital, app de cifras, chordpro, songbook app, chord chart, transponer acordes, metrónomo, auto-scroll, planificación de alabanza, setlist iglesia, cultos, equipo de alabanza, software para iglesias, PDF cifras",
+      "cancionero digital, app de cifras, chordpro, songbook app, open source, apache 2.0, chord chart, transponer acordes, metrónomo, auto-scroll, planificación de alabanza, setlist iglesia, cultos, equipo de alabanza, software para iglesias, PDF cifras",
   },
   landing: {
     demoPopup: {
@@ -287,6 +287,13 @@ export const es: typeof import("./pt").pt = {
       quote2:
         "«Que sea de gran bendición para tu iglesia, tu equipo de alabanza y todos los que sirven con la música.»",
     },
+    openSource: {
+      eyebrow: "Open source",
+      title: "El código es público. Léelo, haz fork, contribuye.",
+      body: "La app móvil y Studio de Hosanna son open source bajo la Apache License 2.0. Puedes auditar la sincronización, ChordPro y los permisos — o construir encima.",
+      ctaApp: "App móvil en GitHub",
+      ctaStudio: "Studio en GitHub",
+    },
     support: {
       eyebrow: "Apoya el proyecto",
       title: "Ayúdanos a llevar Hosanna a iglesias de todo el mundo",
@@ -348,6 +355,10 @@ export const es: typeof import("./pt").pt = {
           q: "¿Cómo funcionan las tarifas?",
           a: "Tarifa fija mensual o anual por iglesia, con músicos y usuarios de Studio ilimitados. Multi-campus: pequeña cuota por sede extra. Sin cobro por usuario ni funciones bloqueadas.",
         },
+        {
+          q: "¿Hosanna es open source?",
+          a: "Sí. La app Flutter y Hosanna Studio están en GitHub bajo la Apache License 2.0. La nube alojada es opcional — el código del producto está abierto para inspeccionar y contribuir.",
+        },
       ],
     },
     finalCta: {
@@ -367,6 +378,8 @@ export const es: typeof import("./pt").pt = {
       pricing: "Precios",
       blog: "Blog",
       downloadApp: "Descargar App",
+      openSource: "Open source",
+      github: "GitHub",
       contact: "Contacto",
       helpCenter: "Centro de Ayuda",
       serviceStatus: "Estado del servicio",
