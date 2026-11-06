@@ -28,11 +28,11 @@ export const en: typeof import("./pt").pt = {
     errorDesc: "An error occurred on our end. You can try refreshing the page or going back home.",
   },
   seo: {
-    defaultTitle: "Hosanna | ChordPro Songbook & Worship Planning App",
+    defaultTitle: "Hosanna | Music Songbook App for Live Worship (ChordPro)",
     defaultDescription:
-      "ChordPro songbook for churches: transpose, capo, metronome, auto-scroll, chord diagrams, PDF export, AI chart import, and offline sync — plus Studio to plan services with your team.",
+      "Hosanna is a music songbook app for live worship: ChordPro charts, transpose, metronome, auto-scroll, PDF, offline sync, and Studio service planning for church teams.",
     defaultKeywords:
-      "songbook app, chord chart app, chordpro, digital songbook, open source, apache 2.0, transpose chords, metronome, auto-scroll, worship planning, church setlist, worship team software, chord PDF, church songbook",
+      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship app, chordpro, chord chart app, open source, worship planning, church setlist",
   },
   landing: {
     demoPopup: {
@@ -56,11 +56,11 @@ export const en: typeof import("./pt").pt = {
       tryFree: "Try for Free",
     },
     hero: {
-      badge: "ChordPro songbook for churches",
+      badge: "Hosanna music songbook app · live worship",
       titleStart: "Your team's songbook,",
-      titleHighlight: "for rehearsal and stage",
+      titleHighlight: "for rehearsal and live stage",
       subtitle:
-        "Shared ChordPro library, planned services, per-musician transpose, metronome, auto-scroll, and PDF — in the mobile app and Studio. Offline when you need it.",
+        "Hosanna is a music songbook app for live worship: shared ChordPro library, planned services, per-musician transpose, metronome, auto-scroll, and PDF — in the mobile app and Studio. Offline when you need it.",
       ctaStart: "Get Started",
       ctaDemo: "Watch Demo",
       dashboardAlt: "Hosanna dashboard preview showing the song library and Sunday service plan",
@@ -318,6 +318,10 @@ export const en: typeof import("./pt").pt = {
       title: "Clear answers",
       description: "Everything you need to know to get started with Hosanna in your church.",
       items: [
+        {
+          q: "What is the Hosanna music songbook app?",
+          a: "Hosanna is a music songbook app for live worship and church teams. It combines a ChordPro songbook (transpose, capo, diagrams, metronome, auto-scroll, PDF) with Studio service planning and offline sync on phone or tablet.",
+        },
         {
           q: "Is Hosanna a digital songbook / chord chart app?",
           a: "Yes. It is a ChordPro songbook for churches: shared library, transpose and capo, diagrams, metronome, auto-scroll, PDF export, and service/setlist planning — in the mobile app and Studio on the web.",

@@ -1,10 +1,9 @@
 /**
  * Static-site SEO.
  *
- * The per-route meta lives here (single source of truth) instead of in SSR
- * route `head()` functions: the static HTML shell (index.html + the per-route
- * shells emitted by scripts/prerender.mjs) carries the initial tags, and
- * `applyRouteMeta` keeps them in sync on client-side navigation.
+ * Keep titles/descriptions aligned with scripts/seo-routes.mjs (prerender +
+ * sitemap). The static HTML shell carries the initial tags; `applyRouteMeta`
+ * keeps them in sync on client-side navigation.
  */
 
 export const SITE_URL = "https://hosanna.live";
@@ -19,39 +18,39 @@ export interface RouteMeta {
 
 export const ROUTE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Hosanna | Cancioneiro ChordPro e planeamento de louvor",
+    title: "Hosanna | Music Songbook App for Live Worship (ChordPro)",
     description:
-      "Cancioneiro digital ChordPro para igrejas: transposição, capo, metrónomo, auto-scroll, diagramas, PDF, importação com IA e sincronização offline — com Studio para planear cultos.",
+      "Hosanna is a music songbook app for live worship: ChordPro charts, transpose, metronome, auto-scroll, PDF, offline sync, and Studio service planning for church teams.",
     url: SITE_URL,
     keywords:
-      "cancioneiro digital, songbook app, chordpro, cifras, metrónomo, auto-scroll, planeamento de louvor, setlist igreja",
+      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship app, chordpro, chord chart app, worship planning, cancioneiro digital, cifras",
   },
   "/about": {
-    title: "Sobre Nós | Hosanna",
+    title: "About | Hosanna Music Songbook",
     description:
-      "A história do Hosanna: dois primos a construir um cancioneiro ChordPro e ferramentas de planeamento de louvor para a sua igreja — e para outras.",
+      "Why we built Hosanna: an open-source music songbook and live worship planning app for churches, started by two cousins on a worship team.",
     url: `${SITE_URL}/about`,
   },
   "/chordpro": {
-    title: "Guia ChordPro | Hosanna",
+    title: "ChordPro Guide | Hosanna Songbook",
     description:
-      "Como escrever cifras ChordPro no Hosanna: sintaxe, diretivas, grelhas, tablatura e atalhos do editor para a equipa de louvor.",
+      "Learn ChordPro in Hosanna — the open format behind our music songbook app: chords, directives, grids, tabs, and editor shortcuts for worship teams.",
     url: `${SITE_URL}/chordpro`,
   },
   "/contact": {
-    title: "Contactos | Hosanna",
-    description: "Fale com a equipa do Hosanna. Dúvidas, sugestões ou suporte para a sua igreja.",
+    title: "Contact | Hosanna",
+    description:
+      "Talk to the Hosanna team — questions about the songbook app, Studio, pricing, or support for your church.",
     url: `${SITE_URL}/contact`,
   },
   "/privacy": {
-    title: "Política de Privacidade | Hosanna",
-    description:
-      "Política de Privacidade do Hosanna: como protegemos os teus dados e os dados da conta Google.",
+    title: "Privacy Policy | Hosanna",
+    description: "Hosanna privacy policy: how we protect your data and Google account data.",
     url: `${SITE_URL}/privacy`,
   },
   "/terms": {
-    title: "Termos de Serviço | Hosanna",
-    description: "Termos de Serviço e Condições de Utilização da plataforma e aplicações Hosanna.",
+    title: "Terms of Service | Hosanna",
+    description: "Terms of Service for the Hosanna platform and music songbook applications.",
     url: `${SITE_URL}/terms`,
   },
 };

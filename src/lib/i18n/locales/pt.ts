@@ -28,11 +28,11 @@ export const pt = {
       "Ocorreu um erro do nosso lado. Pode tentar atualizar a página ou voltar à página inicial.",
   },
   seo: {
-    defaultTitle: "Hosanna | Cancioneiro ChordPro e planeamento de louvor",
+    defaultTitle: "Hosanna | Music Songbook App for Live Worship (ChordPro)",
     defaultDescription:
-      "Cancioneiro digital ChordPro para igrejas: transposição, capo, metrónomo, auto-scroll, diagramas de acordes, exportação PDF, importação com IA e sincronização offline — com Studio para planear cultos em equipa.",
+      "O Hosanna é uma music songbook app para louvor ao vivo: cifras ChordPro, transposição, metrónomo, auto-scroll, PDF, sync offline e Studio para planear cultos em equipa.",
     defaultKeywords:
-      "cancioneiro digital, app de cifras, chordpro, songbook app, open source, apache 2.0, chord chart, transpor acordes, metrónomo, auto-scroll, planeamento de louvor, setlist igreja, cultos, equipa de louvor, software para igrejas, PDF cifras",
+      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship, cancioneiro digital, chordpro, cifras, metrónomo, planeamento de louvor",
   },
   landing: {
     demoPopup: {
@@ -56,11 +56,11 @@ export const pt = {
       tryFree: "Experimentar Grátis",
     },
     hero: {
-      badge: "Cancioneiro ChordPro para igrejas",
+      badge: "Hosanna music songbook app · louvor ao vivo",
       titleStart: "O cancioneiro da equipa,",
-      titleHighlight: "no palco e no ensaio",
+      titleHighlight: "no ensaio e no palco ao vivo",
       subtitle:
-        "Biblioteca partilhada, cultos planeados, transposição por músico, metrónomo, auto-scroll e PDF — na app móvel e no Studio. Offline quando precisa.",
+        "O Hosanna é uma music songbook app para louvor ao vivo: biblioteca ChordPro partilhada, cultos planeados, transposição por músico, metrónomo, auto-scroll e PDF — na app móvel e no Studio. Offline quando precisa.",
       ctaStart: "Começar Agora",
       ctaDemo: "Ver Demonstração",
       dashboardAlt:
@@ -322,6 +322,10 @@ export const pt = {
       title: "Esclareça as suas dúvidas",
       description: "Tudo o que precisa de saber para começar a usar o Hosanna na sua igreja.",
       items: [
+        {
+          q: "O que é a Hosanna music songbook app?",
+          a: "O Hosanna é uma music songbook app para louvor ao vivo e equipas de igreja. Junta um cancioneiro ChordPro (transposição, capo, diagramas, metrónomo, auto-scroll, PDF) com planeamento de cultos no Studio e sincronização offline no telemóvel ou tablet.",
+        },
         {
           q: "O Hosanna é um cancioneiro digital / songbook app?",
           a: "Sim. É um cancioneiro ChordPro para igrejas: biblioteca partilhada, cifras com transposição e capo, diagramas, metrónomo, auto-scroll, exportação PDF e cultos/setlists — na app móvel e no Studio web.",
