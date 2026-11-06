@@ -56,7 +56,7 @@ export const en: typeof import("./pt").pt = {
       tryFree: "Try for Free",
     },
     hero: {
-      badge: "Hosanna music songbook app · live worship",
+      badge: "ChordPro repertoire for worship teams",
       titleStart: "Your team's songbook,",
       titleHighlight: "for rehearsal and live stage",
       subtitle:

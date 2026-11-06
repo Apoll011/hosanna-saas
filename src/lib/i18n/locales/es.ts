@@ -32,7 +32,7 @@ export const es: typeof import("./pt").pt = {
     defaultDescription:
       "Hosanna es una music songbook app para alabanza en vivo: cifras ChordPro, transposición, metrónomo, auto-scroll, PDF, sync offline y Studio para planificar cultos en equipo.",
     defaultKeywords:
-      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship, cancionero digital, chordpro, cifras, metrónomo, planificación de alabanza",
+      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship, cancionero digital, repertorio digital, colección musical, repertorio chordpro, chordpro, cifras, metrónomo, planificación de alabanza",
   },
   landing: {
     demoPopup: {
@@ -56,8 +56,8 @@ export const es: typeof import("./pt").pt = {
       tryFree: "Probar Gratis",
     },
     hero: {
-      badge: "Hosanna music songbook app · alabanza en vivo",
-      titleStart: "El cancionero del equipo,",
+      badge: "Repertorio ChordPro para equipos de alabanza",
+      titleStart: "El repertorio del equipo,",
       titleHighlight: "en ensayo y en directo",
       subtitle:
         "Hosanna es una music songbook app para alabanza en vivo: biblioteca ChordPro compartida, cultos planificados, transposición por músico, metrónomo, auto-scroll y PDF — en la app móvil y en Studio. Offline cuando hace falta.",
@@ -72,7 +72,7 @@ export const es: typeof import("./pt").pt = {
       eyebrow: "El problema",
       title: "Preparar la alabanza no debería ser buscar PDFs en el chat.",
       description:
-        "Carpetas en la nube, cancioneros en papel, versiones viejas y caos en el ensayo. Hosanna junta biblioteca ChordPro, planificación de culto y herramientas de escenario en un solo sitio.",
+        "Carpetas en la nube, colecciones en papel, versiones viejas y caos en el ensayo. Hosanna junta biblioteca ChordPro, planificación de culto y herramientas de escenario en un solo sitio.",
       cards: [
         {
           title: "Una biblioteca ChordPro",
@@ -95,11 +95,11 @@ export const es: typeof import("./pt").pt = {
       eyebrow: "Dos apps, un solo flujo",
       title: "Studio para planificar. App para tocar.",
       description:
-        "Studio gestiona la biblioteca y los cultos. La app móvil es el cancionero de escenario: cifras ChordPro, metrónomo, auto-scroll y PDF — con vista personal por músico.",
+        "Studio gestiona la biblioteca y los cultos. La app móvil es el repertorio de escenario: cifras ChordPro, metrónomo, auto-scroll y PDF — con vista personal por músico.",
       dashboardBadge: "Studio (web)",
       dashboardTitle: "Para líderes y equipo",
       mobileBadge: "App móvil",
-      mobileTitle: "Cancionero para músicos",
+      mobileTitle: "Repertorio para músicos",
       dashboardFeatures: [
         "Biblioteca ChordPro con carpetas y colecciones",
         "Editor de letras y acordes",
@@ -112,7 +112,7 @@ export const es: typeof import("./pt").pt = {
         "Agendas y programación",
         "Paleta de comandos y búsqueda rápida",
         "Sincronización con la app móvil",
-        "Imprimir canciones, cancioneros, cultos y eventos de la agenda",
+        "Imprimir canciones, colecciones, cultos y eventos de la agenda",
         "Copias de seguridad de la biblioteca",
       ],
       mobileFeatures: [
@@ -193,7 +193,7 @@ export const es: typeof import("./pt").pt = {
     },
     liveWorship: {
       eyebrow: "Hecho para el escenario",
-      title: "Cancionero de escenario, no solo un lector de letras.",
+      title: "Repertorio de escenario, no solo un lector de letras.",
       description:
         "La misma canción en el mismo culto — cada músico con su tono, capo, acordes y tamaño de texto. Metrónomo y auto-scroll en la app. PDF cuando necesitas papel. Offline cuando cae la red.",
       items: {
@@ -223,11 +223,11 @@ export const es: typeof import("./pt").pt = {
       eyebrow: "Exportación y portabilidad",
       title: "ChordPro abierto. PDF cuando necesitas papel.",
       description:
-        "Importa y exporta ChordPro abierto — migra y respalda sin quedar atrapado. En la app móvil, exporta la canción en PDF con el tono, capo, acordes y diagramas actuales. En Studio, imprime canciones, cancioneros, cultos completos y eventos de la agenda.",
+        "Importa y exporta ChordPro abierto — migra y respalda sin quedar atrapado. En la app móvil, exporta la canción en PDF con el tono, capo, acordes y diagramas actuales. En Studio, imprime canciones, colecciones, cultos completos y eventos de la agenda.",
       bullets: [
         "Importación y exportación ChordPro",
         "PDF de canción en la app móvil",
-        "Impresión de culto / cancionero / evento en Studio",
+        "Impresión de culto / colección / evento en Studio",
         "Importación con IA desde foto o PDF en papel",
         "Sin lock-in — la biblioteca siempre es tuya",
       ],
@@ -266,19 +266,19 @@ export const es: typeof import("./pt").pt = {
       features: [
         "Músicos y usuarios de Studio ilimitados",
         "Canciones, carpetas, colecciones y cultos ilimitados",
-        "Cancionero ChordPro con búsqueda por título, artista, letra, tono, etiquetas o número",
+        "Repertorio ChordPro con búsqueda por título, artista, letra, tono, etiquetas o número",
         "App móvil: transposición, metrónomo, auto-scroll, diagramas, círculo de quintas",
         "Sincronización offline en la app",
-        "PDF de canción en la app; impresión de culto / cancionero en Studio",
+        "PDF de canción en la app; impresión de culto / colección en Studio",
         "Importación/exportación ChordPro + importación con IA",
       ],
     },
     mobileApp: {
-      badge: "Cancionero en el bolsillo",
+      badge: "Repertorio en el bolsillo",
       titleStart: "Cifras, metrónomo y culto en el",
       titleHighlight: "móvil",
       description:
-        "Abre la setlist, transpón a tu gusto, activa el metrónomo o el auto-scroll, y exporta PDF si necesitas papel. Hosanna es el cancionero que el equipo usa en el ensayo y en el culto.",
+        "Abre la setlist, transpón a tu gusto, activa el metrónomo o el auto-scroll, y exporta PDF si necesitas papel. Hosanna es el repertorio que el equipo usa en el ensayo y en el culto.",
     },
     vision: {
       eyebrow: "Nuestra visión",
@@ -306,7 +306,7 @@ export const es: typeof import("./pt").pt = {
       eyebrow: "Roadmap",
       title: "Lo que viene a continuación.",
       description:
-        "Ya incluye cancionero ChordPro, Studio, metrónomo, auto-scroll, PDF e importación con IA. A continuación:",
+        "Ya incluye repertorio ChordPro, Studio, metrónomo, auto-scroll, PDF e importación con IA. A continuación:",
       items: [
         "Plantillas de culto reutilizables y duplicación de cultos",
         "Sincronización en segundo plano y resolución de conflictos más rápida",
@@ -326,15 +326,15 @@ export const es: typeof import("./pt").pt = {
       items: [
         {
           q: "¿Qué es la Hosanna music songbook app?",
-          a: "Hosanna es una music songbook app para alabanza en vivo y equipos de iglesia. Combina un cancionero ChordPro (transposición, capo, diagramas, metrónomo, auto-scroll, PDF) con planificación de cultos en Studio y sincronización offline en el móvil o la tablet.",
+          a: "Hosanna es una music songbook app para alabanza en vivo y equipos de iglesia. Combina un repertorio ChordPro — el cancionero digital del equipo — (transposición, capo, diagramas, metrónomo, auto-scroll, PDF) con planificación de cultos en Studio y sincronización offline en el móvil o la tablet.",
         },
         {
-          q: "¿Hosanna es un cancionero digital / songbook app?",
-          a: "Sí. Es un cancionero ChordPro para iglesias: biblioteca compartida, cifras con transposición y capo, diagramas, metrónomo, auto-scroll, exportación PDF y cultos/setlists — en la app móvil y en Studio web.",
+          q: "¿Hosanna es un repertorio / cancionero digital / songbook app?",
+          a: "Sí. Es un repertorio ChordPro (cancionero digital) para iglesias: biblioteca compartida, cifras con transposición y capo, diagramas, metrónomo, auto-scroll, exportación PDF y cultos/setlists — en la app móvil y en Studio web.",
         },
         {
           q: "¿Incluye metrónomo, auto-scroll y exportación PDF?",
-          a: "Sí. La app móvil tiene metrónomo con tap tempo, auto-scroll con velocidad ajustable y exportación PDF de la canción (con el tono/capo/diagramas actuales). Studio imprime cultos completos, cancioneros y eventos.",
+          a: "Sí. La app móvil tiene metrónomo con tap tempo, auto-scroll con velocidad ajustable y exportación PDF de la canción (con el tono/capo/diagramas actuales). Studio imprime cultos completos, colecciones y eventos.",
         },
         {
           q: "¿Hosanna funciona sin conexión a internet?",
@@ -367,14 +367,14 @@ export const es: typeof import("./pt").pt = {
       ],
     },
     finalCta: {
-      title: "¿Listo para el cancionero de tu equipo?",
+      title: "¿Listo para el repertorio de tu equipo?",
       subtitle:
         "Biblioteca ChordPro, cultos compartidos y herramientas de escenario — prueba 14 días gratis.",
       ctaStart: "Empezar Ahora",
       ctaContact: "Habla con nosotros",
     },
     footer: {
-      tagline: "Cancionero ChordPro y planificación de alabanza para iglesias — Studio + app móvil.",
+      tagline: "Repertorio ChordPro y planificación de alabanza para iglesias — Studio + app móvil.",
       colProduct: "Producto",
       colSupport: "Soporte",
       colLegal: "Legal",

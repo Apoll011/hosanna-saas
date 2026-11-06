@@ -23,7 +23,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "Hosanna is a music songbook app for live worship: ChordPro charts, transpose, metronome, auto-scroll, PDF, offline sync, and Studio service planning for church teams.",
     url: SITE_URL,
     keywords:
-      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship app, chordpro, chord chart app, worship planning, cancioneiro digital, cifras",
+      "hosanna, hosanna music, hosanna songbook, songbook app, music songbook app, live worship app, chordpro, chord chart app, worship planning, cancioneiro digital, repertório digital, coletânea, repertorio, cancionero digital, cifras",
   },
   "/about": {
     title: "About | Hosanna Music Songbook",
