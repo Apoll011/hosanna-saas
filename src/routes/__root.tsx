@@ -1,7 +1,6 @@
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
-import { Analytics } from "@vercel/analytics/react";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { applyRouteMeta, getRouteMeta } from "@/lib/seo";
 
@@ -16,9 +15,10 @@ function useRouteMetaUpdater() {
 export function RootComponent() {
   useRouteMetaUpdater();
 
+  // Vercel Analytics (/_vercel/insights/script.js) 404s on Cloudflare Pages —
+  // keep analytics on the host (Cloudflare Web Analytics beacon in index.html).
   return (
     <I18nProvider>
-      <Analytics />
       <Outlet />
     </I18nProvider>
   );
