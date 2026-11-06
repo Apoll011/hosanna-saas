@@ -118,7 +118,7 @@ export function ContactForm() {
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-3">
-                    <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
+                    <label className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">
                       {t("contact.nameLabel")}
                     </label>
                     <input
@@ -128,7 +128,7 @@ export function ContactForm() {
                     />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
+                    <label className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">
                       {t("contact.churchLabel")}
                     </label>
                     <input
@@ -140,7 +140,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
+                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">
                     {t("contact.emailLabel")}
                   </label>
                   <input
@@ -151,7 +151,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
+                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">
                     {t("contact.subjectLabel")}
                   </label>
                   <div className="relative">
@@ -169,7 +169,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="space-y-3">
-                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-primary/40">
+                  <label className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">
                     {t("contact.messageLabel")}
                   </label>
                   <textarea
