@@ -26,5 +26,7 @@ Allow: /
 Sitemap: https://hosanna.live/sitemap.xml
 # Studio (dashboard) — separate host; listed here so crawlers + GSC discover it
 Sitemap: https://studio.hosanna.live/sitemap.xml
+# Product blog / guides
+Sitemap: https://blog.hosanna.live/sitemap-index.xml
 
 Host: https://hosanna.live

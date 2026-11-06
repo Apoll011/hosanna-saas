@@ -1096,6 +1096,26 @@ export function Footer() {
       title: t("landing.footer.colSupport"),
       links: [
         { label: t("landing.footer.contact"), href: "/contact", isInternal: true },
+        {
+          label: t("landing.footer.blogGuides"),
+          href: "https://blog.hosanna.live",
+          isInternal: false,
+        },
+        {
+          label: t("landing.footer.blogChordPro"),
+          href: "https://blog.hosanna.live/blog/chordpro-editor-guide",
+          isInternal: false,
+        },
+        {
+          label: t("landing.footer.blogOffline"),
+          href: "https://blog.hosanna.live/blog/offline-first-worship-software",
+          isInternal: false,
+        },
+        {
+          label: t("landing.footer.blogServices"),
+          href: "https://blog.hosanna.live/blog/planning-a-sunday-service",
+          isInternal: false,
+        },
         { label: t("landing.footer.helpCenter"), href: "#", isInternal: false },
         { label: t("landing.footer.serviceStatus"), href: "#", isInternal: false },
       ],
